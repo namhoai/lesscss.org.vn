@@ -1,14 +1,14 @@
-> Combine properties
+> Kết hợp các thuộc tính
 
-The `merge` feature allows for aggregating values from multiple properties into a comma or space separated list under a single property. `merge` is useful for properties such as background and transform.
+Tính năng `hợp nhất` cho phép ta gộp chung giá trị từ nhiều thuộc tính vào một danh sách ngăn cách bằng dấu phẩy hoặc khoảng trống trong một thuộc tính đơn. `hợp nhất` hữu ích cho các thuộc tính như background và transform.
 
-## Comma
+## Dấu phẩy
 
-> Append property value with comma
+> Gắn thêm giá trị thuộc tính bằng dầu phẩy
 
-Released [v1.5.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.5.0]({{ less.master }}CHANGELOG.md)
 
-Example:
+Ví dụ:
 
 ```less
 .mixin() {
@@ -19,7 +19,7 @@ Example:
   box-shadow+: 0 0 20px black;
 }
 ```
-Outputs
+Kết quả:
 
 ```css
 .myclass {
@@ -27,13 +27,13 @@ Outputs
 }
 ```
 
-## Space
+## Khoảng trống
 
-> Append property value with space
+> Gắn thêm giá trị thuộc tính bằng khoảng trống
 
-Released [v1.7.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.7.0]({{ less.master }}CHANGELOG.md)
 
-Example:
+Ví dụ:
 
 ```less
 .mixin() {
@@ -44,7 +44,7 @@ Example:
   transform+_: rotate(15deg);
 }
 ```
-Outputs
+Kết quả:
 
 ```css
 .myclass {
@@ -52,4 +52,4 @@ Outputs
 }
 ```
 
-To avoid any unintentional joins, `merge` requires an explicit `+` or `+_` flag on each join pending declaration.
+Để tránh việc gắn kết ngoài dự kiến, `hợp nhất` yêu cầu phải có chỉ báo `+` hoặc `+_` ở mỗi khai báo chưa kết thúc.
