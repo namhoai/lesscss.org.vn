@@ -135,7 +135,7 @@
 <li><a href="#variables-feature-variable-names">Variable Names</a></li>
 <li><a href="#variables-feature-lazy-loading">Lazy Loading</a></li>
 <li><a href="#variables-feature-default-variables">default variables</a></li></ul></li>
-<li><a href="#extend-feature">M&#x1EDF; r&#x1ED9;ng</a><ul class="nav"><li><a href="#extend-feature-extend-syntax">Extend syntax</a></li>
+<li><a href="#extend-feature">Extend</a><ul class="nav"><li><a href="#extend-feature-extend-syntax">Extend syntax</a></li>
 <li><a href="#extend-feature-extend-attached-to-selector">Extend attached to selector</a></li>
 <li><a href="#extend-feature-extend-inside-ruleset">Extend inside ruleset</a></li>
 <li><a href="#extend-feature-extending-nested-selectors">Extending nested Selectors</a></li>
@@ -175,11 +175,11 @@
 <li><a href="#mixin-guards-feature-conditional-mixins">Conditional mixins</a></li></ul></li>
 <li><a href="#css-guards-feature">CSS Guards</a></li>
 <li><a href="#loops-feature">V&#xF2;ng l&#x1EB7;p</a></li>
-<li><a href="#merge-feature">Merge</a><ul class="nav"><li><a href="#merge-feature-comma">Comma</a></li>
-<li><a href="#merge-feature-space">Space</a></li></ul></li>
-<li><a href="#parent-selectors-feature">Parent Selectors</a><ul class="nav"><li><a href="#parent-selectors-feature-multiple-">Multiple &amp;</a></li>
-<li><a href="#parent-selectors-feature-changing-selector-order">Changing selector order</a></li>
-<li><a href="#parent-selectors-feature-combinatorial-explosion">Combinatorial explosion</a></li></ul></li></ul></div>
+<li><a href="#merge-feature">Merge</a><ul class="nav"><li><a href="#merge-feature-d-u-ph-y">D&#x1EA5;u ph&#x1EA9;y</a></li>
+<li><a href="#merge-feature-kho-ng-tr-ng">Kho&#x1EA3;ng tr&#x1ED1;ng</a></li></ul></li>
+<li><a href="#parent-selectors-feature">Parent Selectors</a><ul class="nav"><li><a href="#parent-selectors-feature-nhi-u-">Nhi&#x1EC1;u &amp;</a></li>
+<li><a href="#parent-selectors-feature-thay-i-th-t-selector">Thay &#x111;&#x1ED5;i th&#x1EE9; t&#x1EF1; selector</a></li>
+<li><a href="#parent-selectors-feature-b-ng-n-t-h-p">B&#xF9;ng n&#x1ED5; t&#x1ED5; h&#x1EE3;p</a></li></ul></li></ul></div>
           </div>
         </div>
         <div class="col-md-9" role="main">
@@ -433,206 +433,10 @@ style comment! */</span>
 
   </div>
 
-  <!-- Biến số -->
+  <!-- Extend -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Bi&#x1EBF;n s&#x1ED1;<span class="anchor-target" id="variables-feature"></span>
-<a href="#variables-feature" name="variables-feature" class="anchor glyphicon glyphicon-link"></a></h1>
-    </div>
-
-    
-    <div class="section-content">
-      
-<a class="glyphicon glyphicon-pencil source-link right" href="https://github.com/less/less-docs/blob/master/content/features/variables.md" data-content="variablesmd" target="_blank"></a>
-
-
-
-<a id="variablesmd" href="https://github.com/less/less-docs/blob/master/content/features/variables.md" target="_blank">Edit the markdown source for &quot;variables&quot;
-  <span class="glyphicon glyphicon-new-window"></span>
-</a>
-
-
-      <!-- variables -->
-       
-
-
-<blockquote>
-<p>Control commonly used values in a single location.</p>
-</blockquote>
-<h2 class="docs-heading">Overview<span class="anchor-target" id="variables-feature-overview"></span>
-<a href="#variables-feature-overview" name="variables-feature-overview" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>It&apos;s not uncommon to see the same value repeated dozens <em>if not hundreds of times</em> across your stylesheets:</p>
-<pre><code class="lang-css"><span class="hljs-tag">a</span>,
-<span class="hljs-class">.link</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#428bca</span>;
-}
-<span class="hljs-class">.widget</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#fff</span>;
-  <span class="hljs-attribute">background</span>: <span class="hljs-hexcolor">#428bca</span>;
-}
-</code></pre>
-<p>Variables make your code easier to maintain by giving you a way to control those values from a single location:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
-<span class="hljs-variable">@link-color:</span>        <span class="hljs-hexcolor">#428bca</span>; <span class="hljs-comment">// sea blue</span>
-<span class="hljs-variable">@link-color-hover:</span>  <span class="hljs-function">darken</span>(<span class="hljs-variable">@link-color</span>, <span class="hljs-number">10%</span>);
-
-<span class="hljs-comment">// Usage</span>
-<span class="hljs-tag">a</span>,
-<span class="hljs-class">.link</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">@link-color</span>;
-}
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">@link-color-hover</span>;
-}
-<span class="hljs-class">.widget</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#fff</span>;
-  <span class="hljs-attribute">background</span>: <span class="hljs-variable">@link-color</span>;
-}
-</code></pre>
-<h2 class="docs-heading">Variable Interpolation<span class="anchor-target" id="variables-feature-variable-interpolation"></span>
-<a href="#variables-feature-variable-interpolation" name="variables-feature-variable-interpolation" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>The examples above focused on using variables to control <em>values in CSS rules</em>, but they can also be used in other places as well, such as selector names, property names, URLs and <code>@import</code> statements.</p>
-<h3 class="docs-heading">Selectors<span class="anchor-target" id="variables-feature-selectors"></span>
-<a href="#variables-feature-selectors" name="variables-feature-selectors" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Version: 1.4.0</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
-<span class="hljs-variable">@mySelector:</span> banner;
-
-<span class="hljs-comment">// Usage</span>
-<span class="hljs-class">.@{mySelector}</span> {
-  <span class="hljs-attribute">font-weight</span>: bold;
-  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">40px</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
-}
-</code></pre>
-<p>Compiles to:</p>
-<pre><code class="lang-css"><span class="hljs-class">.banner</span> {
-  <span class="hljs-attribute">font-weight</span>: bold;
-  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">40px</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
-}
-</code></pre>
-<h3 class="docs-heading">URLs<span class="anchor-target" id="variables-feature-urls"></span>
-<a href="#variables-feature-urls" name="variables-feature-urls" class="anchor glyphicon glyphicon-link"></a></h3>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
-<span class="hljs-variable">@images:</span> <span class="hljs-string">&quot;../img&quot;</span>;
-
-<span class="hljs-comment">// Usage</span>
-<span class="hljs-tag">body</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#444</span>;
-  <span class="hljs-attribute">background</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&quot;@{images}/white-sand.png&quot;</span>);
-}
-</code></pre>
-<h3 class="docs-heading">Import statements<span class="anchor-target" id="variables-feature-import-statements"></span>
-<a href="#variables-feature-import-statements" name="variables-feature-import-statements" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Version: 1.4.0</p>
-<p>Syntax: <code>@import &quot;@{themes}/tidal-wave.less&quot;;</code></p>
-<p>Note that before v2.0.0, only variables which have been declared in the root or current scope were considered and that only the current file and calling files were considered when looking for a variable.</p>
-<p>Example:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
-<span class="hljs-variable">@themes:</span> <span class="hljs-string">&quot;../../src/themes&quot;</span>;
-
-<span class="hljs-comment">// Usage</span>
-<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;@{themes}/tidal-wave.less&quot;</span>;
-</code></pre>
-<h3 class="docs-heading">Properties<span class="anchor-target" id="variables-feature-properties"></span>
-<a href="#variables-feature-properties" name="variables-feature-properties" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Version: 1.6.0</p>
-<pre><code class="lang-less"><span class="hljs-variable">@property:</span> color;
-
-<span class="hljs-class">.widget</span> {
-  <span class="hljs-attribute">@{property}</span>: <span class="hljs-hexcolor">#0ee</span>;
-  <span class="hljs-attribute">background-@{property}</span>: <span class="hljs-hexcolor">#999</span>;
-}
-</code></pre>
-<p>Compiles to:</p>
-<pre><code class="lang-css"><span class="hljs-class">.widget</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#0ee</span>;
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-hexcolor">#999</span>;
-}
-</code></pre>
-<h2 class="docs-heading">Variable Names<span class="anchor-target" id="variables-feature-variable-names"></span>
-<a href="#variables-feature-variable-names" name="variables-feature-variable-names" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>It is also possible to define variables with a variable name:</p>
-<pre><code class="lang-less"><span class="hljs-variable">@fnord:</span>  <span class="hljs-string">&quot;I am fnord.&quot;</span>;
-<span class="hljs-variable">@var:</span>    <span class="hljs-string">&quot;fnord&quot;</span>;
-<span class="hljs-attribute">content</span>: <span class="hljs-variable">@@var</span>;
-</code></pre>
-<p>Which compiles to:</p>
-<pre><code>content: &quot;I am fnord.&quot;;
-</code></pre><h2 class="docs-heading">Lazy Loading<span class="anchor-target" id="variables-feature-lazy-loading"></span>
-<a href="#variables-feature-lazy-loading" name="variables-feature-lazy-loading" class="anchor glyphicon glyphicon-link"></a></h2>
-<blockquote>
-<p>Variables are lazy loaded and do not have to be declared before being used.</p>
-</blockquote>
-<p>Valid Less snippet:</p>
-<pre><code class="lang-less"><span class="hljs-class">.lazy-eval</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-variable">@var</span>;
-}
-
-<span class="hljs-variable">@var:</span> <span class="hljs-variable">@a</span>;
-<span class="hljs-variable">@a:</span> <span class="hljs-number">9%</span>;
-</code></pre>
-<p>this is valid Less too:</p>
-<pre><code class="lang-less"><span class="hljs-class">.lazy-eval-scope</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-variable">@var</span>;
-  <span class="hljs-variable">@a:</span> <span class="hljs-number">9%</span>;
-}
-
-<span class="hljs-variable">@var:</span> <span class="hljs-variable">@a</span>;
-<span class="hljs-variable">@a:</span> <span class="hljs-number">100%</span>;
-</code></pre>
-<p>both compile into:</p>
-<pre><code class="lang-css"><span class="hljs-class">.lazy-eval-scope</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">9%</span>;
-}
-</code></pre>
-<p>When defining a variable twice, the last definition of the variable is used, searching from the current scope upwards. This is similar to css itself where the last property inside a definition is used to determine the value.</p>
-<p>For instance:</p>
-<pre><code class="lang-less"><span class="hljs-variable">@var:</span> <span class="hljs-number">0</span>;
-<span class="hljs-class">.class</span> {
-  <span class="hljs-variable">@var:</span> <span class="hljs-number">1</span>;
-  <span class="hljs-class">.brass</span> {
-    <span class="hljs-variable">@var:</span> <span class="hljs-number">2</span>;
-    <span class="hljs-attribute">three</span>: <span class="hljs-variable">@var</span>;
-    <span class="hljs-variable">@var:</span> <span class="hljs-number">3</span>;
-  }
-  <span class="hljs-attribute">one</span>: <span class="hljs-variable">@var</span>;
-}
-</code></pre>
-<p>Compiles to:</p>
-<pre><code class="lang-css"><span class="hljs-class">.class</span> {
-  <span class="hljs-attribute">one</span>: <span class="hljs-number">1</span>;
-}
-<span class="hljs-class">.class</span> <span class="hljs-class">.brass</span> {
-  <span class="hljs-attribute">three</span>: <span class="hljs-number">3</span>;
-}
-</code></pre>
-<h2 class="docs-heading">default variables<span class="anchor-target" id="variables-feature-default-variables"></span>
-<a href="#variables-feature-default-variables" name="variables-feature-default-variables" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>We sometimes get requests for default variables - an ability to set a variable only if it is not already set. This feature is not required because you can easily override a variable by putting the definition afterwards.</p>
-<p>For instance:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// library</span>
-<span class="hljs-variable">@base-color:</span> green;
-<span class="hljs-variable">@dark-color:</span> <span class="hljs-function">darken</span>(<span class="hljs-variable">@base-color</span>, <span class="hljs-number">10%</span>);
-
-<span class="hljs-comment">// use of library</span>
-<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;library.less&quot;</span>;
-<span class="hljs-variable">@base-color:</span> red;
-</code></pre>
-<p>This works fine because of <a href="#variables-feature-lazy-loading">Lazy Loading</a> - base-color is overidden and dark-color is a dark red.</p>
-
-
-      <br>
-    </div>
-    
-
-  </div>
-
-  <!-- Mở rộng -->
-  <div class="docs-section">
-    <div class="page-header">
-      <h1 class="docs-heading">M&#x1EDF; r&#x1ED9;ng<span class="anchor-target" id="extend-feature"></span>
+      <h1 class="docs-heading">Extend<span class="anchor-target" id="extend-feature"></span>
 <a href="#extend-feature" name="extend-feature" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1272,10 +1076,10 @@ style comment! */</span>
 
   </div>
 
-  <!-- Mixins dạng tham số -->
+  <!-- Parametric Mixins -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Mixins d&#x1EA1;ng tham s&#x1ED1;<span class="anchor-target" id="mixins-parametric-feature"></span>
+      <h1 class="docs-heading">Parametric Mixins<span class="anchor-target" id="mixins-parametric-feature"></span>
 <a href="#mixins-parametric-feature" name="mixins-parametric-feature" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1501,10 +1305,10 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
   </div>
 
-  <!-- Mixins dạng function -->
+  <!-- Mixins as Functions -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Mixins d&#x1EA1;ng function<span class="anchor-target" id="mixins-as-functions-feature"></span>
+      <h1 class="docs-heading">Mixins as Functions<span class="anchor-target" id="mixins-as-functions-feature"></span>
 <a href="#mixins-as-functions-feature" name="mixins-as-functions-feature" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1605,10 +1409,10 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
   </div>
 
-  <!-- Truyền Rulesets vào Mixins -->
+  <!-- Passing Rulesets to Mixins -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Truy&#x1EC1;n Rulesets v&#xE0;o Mixins<span class="anchor-target" id="detached-rulesets-feature"></span>
+      <h1 class="docs-heading">Passing Rulesets to Mixins<span class="anchor-target" id="detached-rulesets-feature"></span>
 <a href="#detached-rulesets-feature" name="detached-rulesets-feature" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -2136,11 +1940,11 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
 
 <blockquote>
-<p>&quot;if&quot;&apos;s around selectors</p>
+<p>&quot;if&quot; v&#x1EDB;i selector</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
-<p>Guards can also be applied to css selectors, which is syntactic sugar for declaring the mixin and then calling it immediately.</p>
-<p>For instance, before 1.5.0 you would have had to do this:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
+<p>Ch&#x1EAF;n c&#xF2;n &#x111;&#x1B0;&#x1EE3;c &#xE1;p d&#x1EE5;ng v&#xE0;o c&#xE1;c selector css, thu&#x1EAD;n ti&#x1EC7;n cho vi&#x1EC7;c t&#x1EA1;o v&#xE0; g&#x1ECD;i mixin t&#x1EE9;c th&#xEC;.</p>
+<p>V&#xED; d&#x1EE5;, tr&#x1B0;&#x1EDB;c phi&#xEA;n b&#x1EA3;n 1.5.0, b&#x1EA1;n c&#xF3; th&#x1EC3; ph&#x1EA3;i vi&#x1EBF;t nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.my-optional-style</span>() <span class="hljs-keyword">when</span> (<span class="hljs-variable">@my-option</span> = true) {
   <span class="hljs-tag">button</span> {
     <span class="hljs-attribute">color</span>: white;
@@ -2148,12 +1952,12 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 }
 <span class="hljs-class">.my-optional-style</span>();
 </code></pre>
-<p>Now, you can apply the guard directly to a style.</p>
+<p>Gi&#x1EDD; &#x111;&#xE2;y, b&#x1EA1;n c&#xF3; th&#x1EC3; &#xE1;p d&#x1EE5;ng tr&#x1EF1;c ti&#x1EBF;p ch&#x1EAF;n l&#xEA;n m&#x1ED9;t style.</p>
 <pre><code class="lang-less"><span class="hljs-tag">button</span> <span class="hljs-keyword">when</span> (<span class="hljs-variable">@my-option</span> = true) {
   <span class="hljs-attribute">color</span>: white;
 }
 </code></pre>
-<p>You can also achieve an <code>if</code> type statement by combining this with the <code>&amp;</code> feature, allowing you to group multiple guards. </p>
+<p>B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; t&#x1EA1;o ra m&#x1ED9;t m&#x1EC7;nh &#x111;&#x1EC1; <code>if</code> b&#x1EB1;ng c&#xE1;ch k&#x1EBF;t h&#x1EE3;p ch&#x1EAF;n v&#x1EDB;i <code>&amp;</code>, cho ph&#xE9;p b&#x1EA1;n gom nh&#xF3;m nhi&#x1EC1;u ch&#x1EAF;n.</p>
 <pre><code class="lang-less"><span class="hljs-keyword">&amp;</span> <span class="hljs-keyword">when</span> (<span class="hljs-variable">@my-option</span> = true) {
   <span class="hljs-tag">button</span> {
     <span class="hljs-attribute">color</span>: white;
@@ -2171,10 +1975,10 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
   </div>
 
-  <!-- Vòng lặp -->
+  <!-- Loops -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">V&#xF2;ng l&#x1EB7;p<span class="anchor-target" id="loops-feature"></span>
+      <h1 class="docs-heading">Loops<span class="anchor-target" id="loops-feature"></span>
 <a href="#loops-feature" name="loops-feature" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -2195,9 +1999,9 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
 
 <blockquote>
-<p>Creating loops</p>
+<p>T&#x1EA1;o c&#xE1;c v&#xF2;ng l&#x1EB7;p</p>
 </blockquote>
-<p>In Less a mixin can call itself. Such recursive mixins, when combined with <a href="#mixin-guards-feature">Guard Expressions</a> and <a href="#mixins-parametric-feature-pattern-matching">Pattern Matching</a>, can be used to create various iterative/loop structures.</p>
+<p>V&#x1EDB;i Less, c&#xE1;c mixin c&#xF3; th&#x1EC3; g&#x1ECD;i &#x111;&#x1EBF;n ch&#xED;nh n&#xF3;. Nh&#x1EEF;ng mixin nh&#x1B0; v&#x1EAD;y, khi k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i <a href="#mixin-guards-feature">bi&#x1EC3;u th&#x1EE9;c ch&#x1EAF;n</a> v&#xE0; <a href="#mixins-parametric-feature-pattern-matching">so kh&#x1EDB;p m&#x1EAB;u</a>, s&#x1EBD; t&#x1EA1;o th&#xE0;nh nhi&#x1EC1;u c&#x1EA5;u tr&#xFA;c l&#x1EB7;p kh&#xE1;c nhau.</p>
 <p>Example:</p>
 <pre><code class="lang-less"><span class="hljs-class">.loop</span>(<span class="hljs-variable">@counter</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@counter</span> &gt; <span class="hljs-number">0</span>) {
   <span class="hljs-class">.loop</span>((<span class="hljs-variable">@counter</span> - <span class="hljs-number">1</span>));    <span class="hljs-comment">// next iteration</span>
@@ -2208,7 +2012,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-class">.loop</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// launch the loop</span>
 }
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-tag">div</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">10px</span>;
   <span class="hljs-attribute">width</span>: <span class="hljs-number">20px</span>;
@@ -2217,7 +2021,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
 }
 </code></pre>
-<p>A generic example of using a recursive loop to generate CSS grid classes:</p>
+<p>M&#x1ED9;t v&#xED; d&#x1EE5; chung v&#x1EC1; c&#xE1;ch s&#x1EED; d&#x1EE5;ng v&#xF2;ng l&#x1EB7;p &#x111;&#x1EC7; quy &#x111;&#x1EC3; t&#x1EA1;o ra class cho grid:</p>
 <pre><code class="lang-less"><span class="hljs-class">.generate-columns</span>(<span class="hljs-number">4</span>);
 
 <span class="hljs-class">.generate-columns</span>(<span class="hljs-variable">@n</span>, <span class="hljs-variable">@i</span>: <span class="hljs-number">1</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@i</span> =&lt; <span class="hljs-variable">@n</span>) {
@@ -2227,7 +2031,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-class">.generate-columns</span>(<span class="hljs-variable">@n</span>, (<span class="hljs-variable">@i</span> + <span class="hljs-number">1</span>));
 }
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.column-1</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>;
 }
@@ -2273,16 +2077,16 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
 
 <blockquote>
-<p>Combine properties</p>
+<p>K&#x1EBF;t h&#x1EE3;p c&#xE1;c thu&#x1ED9;c t&#xED;nh</p>
 </blockquote>
-<p>The <code>merge</code> feature allows for aggregating values from multiple properties into a comma or space separated list under a single property. <code>merge</code> is useful for properties such as background and transform.</p>
-<h2 class="docs-heading">Comma<span class="anchor-target" id="merge-feature-comma"></span>
-<a href="#merge-feature-comma" name="merge-feature-comma" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>T&#xED;nh n&#x103;ng <code>h&#x1EE3;p nh&#x1EA5;t</code> cho ph&#xE9;p ta g&#x1ED9;p chung gi&#xE1; tr&#x1ECB; t&#x1EEB; nhi&#x1EC1;u thu&#x1ED9;c t&#xED;nh v&#xE0;o m&#x1ED9;t danh s&#xE1;ch ng&#x103;n c&#xE1;ch b&#x1EB1;ng d&#x1EA5;u ph&#x1EA9;y ho&#x1EB7;c kho&#x1EA3;ng tr&#x1ED1;ng trong m&#x1ED9;t thu&#x1ED9;c t&#xED;nh &#x111;&#x1A1;n. <code>h&#x1EE3;p nh&#x1EA5;t</code> h&#x1EEF;u &#xED;ch cho c&#xE1;c thu&#x1ED9;c t&#xED;nh nh&#x1B0; background v&#xE0; transform.</p>
+<h2 class="docs-heading">D&#x1EA5;u ph&#x1EA9;y<span class="anchor-target" id="merge-feature-d-u-ph-y"></span>
+<a href="#merge-feature-d-u-ph-y" name="merge-feature-d-u-ph-y" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Append property value with comma</p>
+<p>G&#x1EAF;n th&#xEA;m gi&#xE1; tr&#x1ECB; thu&#x1ED9;c t&#xED;nh b&#x1EB1;ng d&#x1EA7;u ph&#x1EA9;y</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>() {
   <span class="hljs-attribute">box-shadow</span>+: inset <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-hexcolor">#555</span>;
 }
@@ -2291,18 +2095,18 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">box-shadow</span>+: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">20px</span> black;
 }
 </code></pre>
-<p>Outputs</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.myclass</span> {
   <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-hexcolor">#555</span>, <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">20px</span> black;
 }
 </code></pre>
-<h2 class="docs-heading">Space<span class="anchor-target" id="merge-feature-space"></span>
-<a href="#merge-feature-space" name="merge-feature-space" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">Kho&#x1EA3;ng tr&#x1ED1;ng<span class="anchor-target" id="merge-feature-kho-ng-tr-ng"></span>
+<a href="#merge-feature-kho-ng-tr-ng" name="merge-feature-kho-ng-tr-ng" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Append property value with space</p>
+<p>G&#x1EAF;n th&#xEA;m gi&#xE1; tr&#x1ECB; thu&#x1ED9;c t&#xED;nh b&#x1EB1;ng kho&#x1EA3;ng tr&#x1ED1;ng</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>() {
   <span class="hljs-attribute">transform</span>+_: <span class="hljs-function">scale</span>(<span class="hljs-number">2</span>);
 }
@@ -2311,12 +2115,12 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">transform</span>+_: <span class="hljs-function">rotate</span>(<span class="hljs-number">15deg</span>);
 }
 </code></pre>
-<p>Outputs</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.myclass</span> {
   <span class="hljs-attribute">transform</span>: <span class="hljs-function">scale</span>(<span class="hljs-number">2</span>) <span class="hljs-function">rotate</span>(<span class="hljs-number">15deg</span>);
 }
 </code></pre>
-<p>To avoid any unintentional joins, <code>merge</code> requires an explicit <code>+</code> or <code>+_</code> flag on each join pending declaration.</p>
+<p>&#x110;&#x1EC3; tr&#xE1;nh vi&#x1EC7;c g&#x1EAF;n k&#x1EBF;t ngo&#xE0;i d&#x1EF1; ki&#x1EBF;n, <code>h&#x1EE3;p nh&#x1EA5;t</code> y&#xEA;u c&#x1EA7;u ph&#x1EA3;i c&#xF3; ch&#x1EC9; b&#xE1;o <code>+</code> ho&#x1EB7;c <code>+_</code> &#x1EDF; m&#x1ED7;i khai b&#xE1;o ch&#x1B0;a k&#x1EBF;t th&#xFA;c.</p>
 
 
       <br>
@@ -2351,7 +2155,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 <blockquote>
 <p>Referencing parent selectors with <code>&amp;</code></p>
 </blockquote>
-<p>The <code>&amp;</code> operator represents the parent selectors of a <a href="#features-overview-feature-nested-rules">nested rule</a> and is most commonly used when applying a modifying class or pseudo-class to an existing selector:</p>
+<p>To&#xE1;n t&#x1EED; <code>&amp;</code> &#x111;&#x1EA1;i di&#x1EC7;n cho selector cha c&#x1EE7;a m&#x1ED9;t <a href="#features-overview-feature-nested-rules">lu&#x1EAD;t l&#x1ED3;ng</a> v&#xE0; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nhi&#x1EC1;u nh&#x1EA5;t khi &#xE1;p d&#x1EE5;ng class bi&#x1EBF;n &#x111;&#x1ED5;i hay gi&#x1EA3;-class v&#xE0;o selector c&#xF3; s&#x1EB5;n:</p>
 <pre><code class="lang-less"><span class="hljs-tag">a</span> {
   <span class="hljs-attribute">color</span>: blue;
   <span class="hljs-keyword">&amp;</span><span class="hljs-pseudo">:hover</span> {
@@ -2359,7 +2163,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   }
 }
 </code></pre>
-<p>results in:</p>
+<p>k&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-tag">a</span> {
   <span class="hljs-attribute">color</span>: blue;
 }
@@ -2368,8 +2172,8 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: green;
 }
 </code></pre>
-<p>Notice that without the <code>&amp;</code>, the above example would result in <code>a :hover</code> rule (a descendant selector that matches hovered elements inside of <code>&lt;a&gt;</code> tags) and this is not what we typically would want with the nested <code>:hover</code>.</p>
-<p>The &quot;parent selectors&quot; operator has a variety of uses. Basically any time you need the selectors of the nested rules to be combined in other ways than the default. For example another typical use of the <code>&amp;</code> is to produce repetitive class names:</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng khi kh&#xF4;ng c&#xF3; <code>&amp;</code>, v&#xED; d&#x1EE5; tr&#xEA;n s&#x1EBD; th&#xE0;nh <code>a :hover</code> (&#x1EE9;ng v&#x1EDB;i c&#xE1;c ph&#x1EA7;n t&#x1EED; &#x111;&#x1B0;&#x1EE3;c di chu&#x1ED9;t qua n&#x1EB1;m trong th&#x1EBB; <code>&lt;a&gt;</code>) v&#xE0; kh&#xF4;ng ph&#x1EA3;i l&#xE0; &#x111;i&#x1EC1;u ch&#xFA;ng ta th&#x1B0;&#x1EDD;ng mu&#x1ED1;n th&#x1EF1;c hi&#x1EC7;n v&#x1EDB;i lu&#x1EAD;t l&#x1ED3;ng <code>:hover</code>.</p>
+<p>To&#xE1;n t&#x1EED; &quot;selector cha&quot; c&#xF3; nhi&#x1EC1;u c&#xE1;ch s&#x1EED; d&#x1EE5;ng, v&#x1EC1; c&#x1A1; b&#x1EA3;n, l&#xE0; b&#x1EA5;t c&#x1EE9; khi n&#xE0;o b&#x1EA1;n c&#x1EA7;n k&#x1EBF;t h&#x1EE3;p c&#xE1;c selector con trong lu&#x1EAD;t l&#x1ED3;ng theo c&#xE1;ch kh&#xE1;c v&#x1EDB;i c&#xE1;ch th&#xF4;ng th&#x1B0;&#x1EDD;ng. V&#xED; d&#x1EE5;, m&#x1ED9;t c&#xE1;ch d&#xF9;ng  &#x111;i&#x1EC3;n h&#xEC;nh kh&#xE1;c c&#x1EE7;a <code>&amp;</code> l&#xE0; t&#x1EA1;o ra c&#xE1;c class l&#x1EB7;p &#x111;i l&#x1EB7;p l&#x1EA1;i:</p>
 <pre><code class="lang-less"><span class="hljs-class">.button</span> {
   <span class="hljs-keyword">&amp;</span><span class="hljs-tag">-ok</span> {
     <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&quot;ok.png&quot;</span>);
@@ -2383,7 +2187,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   }
 }
 </code></pre>
-<p>output:</p>
+<p>k&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.button-ok</span> {
   <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&quot;ok.png&quot;</span>);
 }
@@ -2394,9 +2198,9 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&quot;custom.png&quot;</span>);
 }
 </code></pre>
-<h3 class="docs-heading">Multiple <code>&amp;</code><span class="anchor-target" id="parent-selectors-feature-multiple-"></span>
-<a href="#parent-selectors-feature-multiple-" name="parent-selectors-feature-multiple-" class="anchor glyphicon glyphicon-link"></a></h3>
-<p><code>&amp;</code> may appear more than once within a selector. This makes it possible to repeatedly refer to a parent selector without repeating its name.</p>
+<h3 class="docs-heading">Nhi&#x1EC1;u <code>&amp;</code><span class="anchor-target" id="parent-selectors-feature-nhi-u-"></span>
+<a href="#parent-selectors-feature-nhi-u-" name="parent-selectors-feature-nhi-u-" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Trong m&#x1ED9;t selector c&#xF3; th&#x1EC3; c&#xF3; nhi&#x1EC1;u <code>&amp;</code>, cho ph&#xE9;p tham chi&#x1EBF;u &#x111;&#x1EBF;n selector cha m&#xE0; kh&#xF4;ng c&#x1EA7;n l&#x1EB7;p l&#x1EA1;i t&#xEA;n.</p>
 <pre><code class="lang-less"><span class="hljs-class">.link</span> {
   <span class="hljs-keyword">&amp;</span> + <span class="hljs-keyword">&amp;</span> {
     <span class="hljs-attribute">color</span>: red;
@@ -2415,7 +2219,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   }
 }
 </code></pre>
-<p>will output:</p>
+<p>k&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.link</span> + <span class="hljs-class">.link</span> {
   <span class="hljs-attribute">color</span>: red;
 }
@@ -2429,7 +2233,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: cyan;
 }
 </code></pre>
-<p>Note that <code>&amp;</code> represents all parent selectors (not just the nearest ancestor) so the following example:</p>
+<p>L&#x1B0;u &#xFD; l&#xE0; <code>&amp;</code> thay th&#x1EBF; cho t&#x1EA5;t c&#x1EA3; c&#xE1;c selector cha (kh&#xF4;ng ch&#x1EC9; l&#xE0; m&#x1ED9;t selector cha g&#x1EA7;n nh&#x1EA5;t), v&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.grand</span> {
   <span class="hljs-class">.parent</span> {
     <span class="hljs-keyword">&amp;</span> &gt; <span class="hljs-keyword">&amp;</span> {
@@ -2450,7 +2254,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   }
 }
 </code></pre>
-<p>results in:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.grand</span> <span class="hljs-class">.parent</span> &gt; <span class="hljs-class">.grand</span> <span class="hljs-class">.parent</span> {
   <span class="hljs-attribute">color</span>: red;
 }
@@ -2465,10 +2269,10 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: cyan;
 }
 </code></pre>
-<h3 class="docs-heading">Changing selector order<span class="anchor-target" id="parent-selectors-feature-changing-selector-order"></span>
-<a href="#parent-selectors-feature-changing-selector-order" name="parent-selectors-feature-changing-selector-order" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>It can be useful to prepend a selector to the inherited (parent) selectors.  This can be done by putting the <code>&amp;</code> after current selector.
-For example, when using Modernizr, you might want to specify different rules based on supported features:</p>
+<h3 class="docs-heading">Thay &#x111;&#x1ED5;i th&#x1EE9; t&#x1EF1; selector<span class="anchor-target" id="parent-selectors-feature-thay-i-th-t-selector"></span>
+<a href="#parent-selectors-feature-thay-i-th-t-selector" name="parent-selectors-feature-thay-i-th-t-selector" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Trong m&#x1ED9;t s&#x1ED1; tr&#x1B0;&#x1EDD;ng h&#x1EE3;p, b&#x1EA1;n c&#xF3; th&#x1EC3; c&#x1EA7;n th&#xEA;m m&#x1ED9;t selector v&#xE0;o tr&#x1B0;&#x1EDB;c selector cha (selector k&#x1EBF; th&#x1EEB;a). C&#xF3; th&#x1EC3; th&#x1EF1;c hi&#x1EC7;n vi&#x1EC7;c n&#xE0;y b&#x1EB1;ng c&#xE1;ch &#x111;&#x1EB7;t <code>&amp;</code> v&#xE0;o sau selector hi&#x1EC7;n t&#x1EA1;i.
+V&#xED; d&#x1EE5;, khi s&#x1EED; d&#x1EE5;ng Modernizr, b&#x1EA1;n c&#xF3; th&#x1EC3; mu&#x1ED1;n t&#x1EA1;o ra c&#xE1;c lu&#x1EAD;t kh&#xE1;c nhau d&#x1EF1;a tr&#xEA;n c&#xE1;c t&#xED;nh n&#x103;ng &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3; b&#x1EDF;i tr&#xEC;nh duy&#x1EC7;t:</p>
 <pre><code class="lang-less"><span class="hljs-class">.header</span> {
   <span class="hljs-class">.menu</span> {
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
@@ -2478,7 +2282,7 @@ For example, when using Modernizr, you might want to specify different rules bas
   }
 }
 </code></pre>
-<p>The selector <code>.no-borderradius &amp;</code> will prepend <code>.no-borderradius</code> to its parent <code>.header .menu</code> to form the<code>.no-borderradius .header .menu</code> on output:</p>
+<p>Selector <code>.no-borderradius &amp;</code> s&#x1EBD; g&#x1EAF;n <code>.no-borderradius</code> v&#xE0; selector cha <code>.header .menu</code>, t&#x1EA1;o th&#xE0;nh <code>.no-borderradius .header .menu</code>:</p>
 <pre><code class="lang-css"><span class="hljs-class">.header</span> <span class="hljs-class">.menu</span> {
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
 }
@@ -2486,9 +2290,9 @@ For example, when using Modernizr, you might want to specify different rules bas
   <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&apos;images/button-background.png&apos;</span>);
 }
 </code></pre>
-<h3 class="docs-heading">Combinatorial explosion<span class="anchor-target" id="parent-selectors-feature-combinatorial-explosion"></span>
-<a href="#parent-selectors-feature-combinatorial-explosion" name="parent-selectors-feature-combinatorial-explosion" class="anchor glyphicon glyphicon-link"></a></h3>
-<p><code>&amp;</code> can also be used to generate every possible permutation of selectors in a comma separated list:</p>
+<h3 class="docs-heading">B&#xF9;ng n&#x1ED5; t&#x1ED5; h&#x1EE3;p<span class="anchor-target" id="parent-selectors-feature-b-ng-n-t-h-p"></span>
+<a href="#parent-selectors-feature-b-ng-n-t-h-p" name="parent-selectors-feature-b-ng-n-t-h-p" class="anchor glyphicon glyphicon-link"></a></h3>
+<p><code>&amp;</code> c&#x169;ng &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#x1EA1;o ra ho&#xE1;n v&#x1ECB; c&#x1EE7;a c&#xE1;c c&#x1EB7;p selector trong m&#x1ED9;t danh s&#xE1;ch (ng&#x103;n c&#xE1;ch b&#x1EB1;ng d&#x1EA5;u ph&#x1EA9;y):</p>
 <pre><code class="lang-less"><span class="hljs-tag">p</span>, <span class="hljs-tag">a</span>, <span class="hljs-tag">ul</span>, <span class="hljs-tag">li</span> {
   <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> dotted <span class="hljs-hexcolor">#366</span>;
   <span class="hljs-keyword">&amp;</span> + <span class="hljs-keyword">&amp;</span> {
@@ -2496,7 +2300,7 @@ For example, when using Modernizr, you might want to specify different rules bas
   }
 }
 </code></pre>
-<p>This expands to all possible (16) combinations of the specified elements:</p>
+<p>T&#x1EA1;o ra t&#x1EA5;t c&#x1EA3; (16) t&#x1ED5; h&#x1EE3;p c&#x1EE7;a c&#xE1;c ph&#x1EA7;n t&#x1EED; &#x111;&#xE3; &#x111;&#x1ECB;nh:</p>
 <pre><code class="lang-css"><span class="hljs-tag">p</span>,
 <span class="hljs-tag">a</span>,
 <span class="hljs-tag">ul</span>,
