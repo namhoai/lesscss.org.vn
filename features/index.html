@@ -116,16 +116,16 @@
           <div class="sidebar hidden-print" role="complementary">
             <div id="navigation">
   
-<ul class="nav sidenav"><li><a href="#features-overview-feature">T&#x1ED5;ng quan</a><ul class="nav"><li><a href="#features-overview-feature-variables">Variables</a></li>
+<ul class="nav sidenav"><li><a href="#features-overview-feature">T&#x1ED5;ng quan</a><ul class="nav"><li><a href="#features-overview-feature-bi-n-s-">Bi&#x1EBF;n s&#x1ED1;</a></li>
 <li><a href="#features-overview-feature-mixins">Mixins</a></li>
-<li><a href="#features-overview-feature-nested-rules">Nested rules</a></li>
-<li><a href="#features-overview-feature-media-query-bubbling-and-nested-media-queries">Media query bubbling and nested media queries</a></li>
-<li><a href="#features-overview-feature-operations">Operations</a></li>
+<li><a href="#features-overview-feature-c-c-quy-t-c-l-ng-nhau">C&#xE1;c quy t&#x1EAF;c l&#x1ED3;ng nhau</a></li>
+<li><a href="#features-overview-feature-bong-b-ng-media-query-v-c-c-media-query-l-ng-nhau">Bong b&#xF3;ng media query v&#xE0; c&#xE1;c media query l&#x1ED3;ng nhau</a></li>
+<li><a href="#features-overview-feature-c-c-ph-p-to-n">C&#xE1;c ph&#xE9;p to&#xE1;n</a></li>
 <li><a href="#features-overview-feature-functions">Functions</a></li>
 <li><a href="#features-overview-feature-namespaces-and-accessors">Namespaces and Accessors</a></li>
-<li><a href="#features-overview-feature-scope">Scope</a></li>
-<li><a href="#features-overview-feature-comments">Comments</a></li>
-<li><a href="#features-overview-feature-importing">Importing</a></li></ul></li>
+<li><a href="#features-overview-feature-ph-m-vi">Ph&#x1EA1;m vi</a></li>
+<li><a href="#features-overview-feature-ch-th-ch">Ch&#xFA; th&#xED;ch</a></li>
+<li><a href="#features-overview-feature-import">Import</a></li></ul></li>
 <li><a href="#variables-feature">Bi&#x1EBF;n s&#x1ED1;</a><ul class="nav"><li><a href="#variables-feature-overview">Overview</a></li>
 <li><a href="#variables-feature-variable-interpolation">Variable Interpolation</a></li>
 <li><a href="#variables-feature-selectors">Selectors</a></li>
@@ -212,11 +212,11 @@
 
 
 <blockquote>
-<p>As an extension to CSS, Less is not only backwards compatible with CSS, but the extra features it adds use existing CSS syntax. This makes learning Less a breeze, and if in doubt, lets you fall back to vanilla CSS.</p>
+<p>Gi&#x1ED1;ng nh&#x1B0; m&#x1ED9;t ph&#x1EA7;n m&#x1EDF; r&#x1ED9;ng c&#x1EE7;a CSS, Less kh&#xF4;ng ch&#x1EC9; t&#x1B0;&#x1A1;ng th&#xED;ch ng&#x1B0;&#x1EE3;c v&#x1EDB;i CSS m&#xE0; c&#xE1;c t&#xED;nh n&#x103;ng c&#x1EE7;a Less c&#x169;ng &#x111;&#x1EC1;u s&#x1EED; d&#x1EE5;ng c&#xFA; ph&#xE1;p s&#x1EB5;n c&#xF3; c&#x1EE7;a CSS. &#x110;i&#x1EC1;u n&#xE0;y gi&#xFA;p cho vi&#x1EC7;c h&#x1ECD;c Less tr&#x1EDF; n&#xEA;n d&#x1EC5; d&#xE0;ng h&#x1A1;n bao gi&#x1EDD; h&#x1EBF;t.</p>
 </blockquote>
-<h3 class="docs-heading">Variables<span class="anchor-target" id="features-overview-feature-variables"></span>
-<a href="#features-overview-feature-variables" name="features-overview-feature-variables" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>These are pretty self-explanatory:</p>
+<h3 class="docs-heading">Bi&#x1EBF;n s&#x1ED1;<span class="anchor-target" id="features-overview-feature-bi-n-s-"></span>
+<a href="#features-overview-feature-bi-n-s-" name="features-overview-feature-bi-n-s-" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>H&#xE3;y xem v&#xED; d&#x1EE5; &#x111;&#x1A1;n gi&#x1EA3;n sau &#x111;&#xE2;y:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@nice-blue:</span> <span class="hljs-hexcolor">#5B83AD</span>;
 <span class="hljs-variable">@light-blue:</span> <span class="hljs-variable">@nice-blue</span> + <span class="hljs-hexcolor">#111</span>;
 
@@ -224,21 +224,21 @@
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">@light-blue</span>;
 }
 </code></pre>
-<p>Outputs:</p>
+<p>Sau khi bi&#xEA;n d&#x1ECB;ch:</p>
 <pre><code class="lang-css"><span class="hljs-id">#header</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#6c94be</span>;
 }
 </code></pre>
-<p>Note that variables are actually &quot;constants&quot; in that they can only be defined once.</p>
+<p>H&#xE3;y ch&#xFA; &#xFD; r&#x1EB1;ng c&#xE1;c bi&#x1EBF;n s&#x1ED1; th&#x1EF1;c s&#x1EF1; l&#xE0; &quot;h&#x1EB1;ng s&#x1ED1;&quot; b&#x1EDF;i ch&#xFA;ng ch&#x1EC9; c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1ECB;nh ngh&#x129;a m&#x1ED9;t l&#x1EA7;n duy nh&#x1EA5;t.</p>
 <h3 class="docs-heading">Mixins<span class="anchor-target" id="features-overview-feature-mixins"></span>
 <a href="#features-overview-feature-mixins" name="features-overview-feature-mixins" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Mixins are a way of including (&quot;mixing in&quot;) a bunch of properties from one rule-set into another rule-set. So say we have the following class:</p>
+<p>Mixins th&#x1EF1;c ch&#x1EA5;t l&#xE0; vi&#x1EC7;c t&#xED;ch h&#x1EE3;p (&quot;mixing in&quot;) m&#x1ED9;t t&#x1EAD;p h&#x1EE3;p c&#xE1;c thu&#x1ED9;c t&#xED;nh t&#x1EEB; m&#x1ED9;t rule-set v&#xE0;o m&#x1ED9;t rule-set kh&#xE1;c. Gi&#x1EA3; s&#x1EED; ch&#xFA;ng ta c&#xF3; class sau &#x111;&#xE2;y:</p>
 <pre><code class="lang-css"><span class="hljs-class">.bordered</span> {
   <span class="hljs-attribute">border-top</span>: dotted <span class="hljs-number">1px</span> black;
   <span class="hljs-attribute">border-bottom</span>: solid <span class="hljs-number">2px</span> black;
 }
 </code></pre>
-<p>And we want to use these properties inside other rule-sets. Well, we just have to drop in the name of the class where we want the properties, like so:</p>
+<p>V&#xE0; ch&#xFA;ng ta mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng nh&#x1EEF;ng thu&#x1ED9;c t&#xED;nh n&#xE0;y v&#xE0;o b&#xEA;n trong c&#xE1;c rule-set kh&#xE1;c. &#x110;&#x1EC3; th&#x1EF1;c hi&#x1EC7;n &#x111;i&#x1EC1;u &#x111;&#xF3;, ch&#xFA;ng ta ch&#x1EC9; vi&#x1EC7;c th&#xEA;m t&#xEA;n c&#x1EE7;a class &#x111;&#xF3; v&#xE0; n&#x1A1;i m&#xE0; ta mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a n&#xF3;, nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-id">#menu</span> <span class="hljs-tag">a</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#111</span>;
   <span class="hljs-class">.bordered</span>;
@@ -249,15 +249,15 @@
   <span class="hljs-class">.bordered</span>;
 }
 </code></pre>
-<p>The properties of the <code>.bordered</code> class will now appear in both <code>#menu a</code> and <code>.post a</code>. (Note that you can also use <code>#ids</code> as mixins.)</p>
-<p><strong>Learn more</strong></p>
+<p>C&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a class <code>.bordered</code> l&#xFA;c n&#xE0;y s&#x1EBD; xu&#x1EA5;t hi&#x1EC7;n trong c&#x1EA3; <code>#menu a</code> v&#xE0; <code>.post a</code>. (L&#x1B0;u &#xFD; r&#x1EB1;ng b&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng <code>#ids</code> nh&#x1B0; l&#xE0; mixins.)</p>
+<p><strong>Tham kh&#x1EA3;o</strong></p>
 <ul>
-<li><a href="#mixins-feature">More about mixins</a></li>
-<li><a href="#mixins-parametric-feature">Parametric Mixins</a></li>
+<li><a href="#mixins-feature">Tham kh&#x1EA3;o v&#x1EC1; mixins</a></li>
+<li><a href="#mixins-parametric-feature">Mixins d&#x1EA1;ng tham s&#x1ED1;</a></li>
 </ul>
-<h3 class="docs-heading">Nested rules<span class="anchor-target" id="features-overview-feature-nested-rules"></span>
-<a href="#features-overview-feature-nested-rules" name="features-overview-feature-nested-rules" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Less gives you the ability to use nesting instead of, or in combination with cascading. Let&apos;s say we have the following CSS:</p>
+<h3 class="docs-heading">C&#xE1;c quy t&#x1EAF;c l&#x1ED3;ng nhau<span class="anchor-target" id="features-overview-feature-c-c-quy-t-c-l-ng-nhau"></span>
+<a href="#features-overview-feature-c-c-quy-t-c-l-ng-nhau" name="features-overview-feature-c-c-quy-t-c-l-ng-nhau" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Less cho ph&#xE9;p b&#x1EA1;n s&#x1EED; d&#x1EE5;ng quy t&#x1EAF;c l&#x1ED3;ng nhau thay v&#xEC; ho&#x1EB7;c k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i ph&#xE2;n t&#x1EA7;ng (cascading). Gi&#x1EA3; s&#x1EED; ch&#xFA;ng ta c&#xF3; &#x111;o&#x1EA1;n m&#xE3; CSS sau:</p>
 <pre><code class="lang-css"><span class="hljs-id">#header</span> {
   <span class="hljs-attribute">color</span>: black;
 }
@@ -268,7 +268,7 @@
   <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
 }
 </code></pre>
-<p>In Less, we can also write it this way:</p>
+<p>Trong Less, ch&#xFA;ng ta c&#xF3; th&#x1EC3; vi&#x1EBF;t nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-id">#header</span> {
   <span class="hljs-attribute">color</span>: black;
   <span class="hljs-class">.navigation</span> {
@@ -279,8 +279,8 @@
   }
 }
 </code></pre>
-<p>The resulting code is more concise, and mimics the structure of your HTML.</p>
-<p>You can also bundle pseudo-selectors with your mixins using this method. Here&apos;s the classic clearfix hack, rewritten as a mixin (<code>&amp;</code> represents the current selector parent):</p>
+<p>K&#x1EBF;t qu&#x1EA3; c&#x1EE7;a 2 &#x111;o&#x1EA1;n code tr&#xEA;n l&#xE0; nh&#x1B0; nhau, v&#xE0; &#x111;&#x1EC1;u m&#xF4; ph&#x1ECF;ng c&#x1EA5;u tr&#xFA;c HTML c&#x1EE7;a b&#x1EA1;n.</p>
+<p>B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; k&#x1EBF;t h&#x1EE3;p pseudo-selectors v&#x1EDB;i c&#xE1;c mixin c&#x1EE7;a b&#x1EA1;n b&#x1EB1;ng c&#xE1;ch s&#x1EED; d&#x1EE5;ng ph&#x1B0;&#x1A1;ng ph&#xE1;p n&#xE0;y. Sau &#x111;&#xE2;y l&#xE0; &#x111;o&#x1EA1;n m&#xE3; hack clearfix c&#x1ED5; &#x111;i&#x1EC3;n, &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t l&#x1EA1;i b&#x1EB1;ng c&#xE1;ch s&#x1EED; d&#x1EE5;ng mixin (<code>&amp;</code> &#x111;&#x1EA1;i di&#x1EC7;n cho selector cha hi&#x1EC7;n t&#x1EA1;i):</p>
 <pre><code class="lang-less"><span class="hljs-class">.clearfix</span> {
   <span class="hljs-attribute">display</span>: block;
   <span class="hljs-attribute">zoom</span>: <span class="hljs-number">1</span>;
@@ -295,13 +295,13 @@
   }
 }
 </code></pre>
-<p><strong>See also</strong></p>
+<p><strong>Tham kh&#x1EA3;o</strong></p>
 <ul>
-<li><a href="#parent-selectors-feature">Parent Selectors</a></li>
+<li><a href="#parent-selectors-feature">Selector cha</a></li>
 </ul>
-<h3 class="docs-heading">Media query bubbling and nested media queries<span class="anchor-target" id="features-overview-feature-media-query-bubbling-and-nested-media-queries"></span>
-<a href="#features-overview-feature-media-query-bubbling-and-nested-media-queries" name="features-overview-feature-media-query-bubbling-and-nested-media-queries" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Media queries can be nested in the same way as selectors. Selectors are copied into the body of the media query:</p>
+<h3 class="docs-heading">Bong b&#xF3;ng media query v&#xE0; c&#xE1;c media query l&#x1ED3;ng nhau<span class="anchor-target" id="features-overview-feature-bong-b-ng-media-query-v-c-c-media-query-l-ng-nhau"></span>
+<a href="#features-overview-feature-bong-b-ng-media-query-v-c-c-media-query-l-ng-nhau" name="features-overview-feature-bong-b-ng-media-query-v-c-c-media-query-l-ng-nhau" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#xE1;c media query c&#xF3; th&#x1EC3; l&#x1ED3;ng nhau gi&#x1ED1;ng nh&#x1B0; c&#xE1;c selector. C&#xE1;c selector &#x111;&#x1B0;&#x1EE3;c copy sang ph&#x1EA7;n n&#x1ED9;i dung c&#x1EE7;a media query:</p>
 <pre><code class="lang-less"><span class="hljs-class">.screencolor</span> {
   <span class="hljs-at_rule">@media</span> screen {
     <span class="hljs-attribute">color</span>: green;
@@ -314,7 +314,7 @@
   }
 }
 </code></pre>
-<p>outputs:</p>
+<p>&#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch ra:</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@media</span> screen {
   <span class="hljs-class">.screencolor</span> {
     <span class="hljs-attribute">color</span>: green;
@@ -331,9 +331,9 @@
   }
 }
 </code></pre>
-<h3 class="docs-heading">Operations<span class="anchor-target" id="features-overview-feature-operations"></span>
-<a href="#features-overview-feature-operations" name="features-overview-feature-operations" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Any number, color or variable can be operated on. Here are a couple of examples:</p>
+<h3 class="docs-heading">C&#xE1;c ph&#xE9;p to&#xE1;n<span class="anchor-target" id="features-overview-feature-c-c-ph-p-to-n"></span>
+<a href="#features-overview-feature-c-c-ph-p-to-n" name="features-overview-feature-c-c-ph-p-to-n" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#xE1;c con s&#x1ED1;, m&#xE0;u s&#x1EAF;c ho&#x1EB7;c bi&#x1EBF;n s&#x1ED1; &#x111;&#x1EC1;u c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#xED;nh to&#xE1;n. H&#xE3;y xem c&#xE1;c v&#xED; d&#x1EE5; sau &#x111;&#xE2;y:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@base:</span> <span class="hljs-number">5%</span>;
 <span class="hljs-variable">@filler:</span> <span class="hljs-variable">@base</span> * <span class="hljs-number">2</span>;
 <span class="hljs-variable">@other:</span> <span class="hljs-variable">@base</span> + <span class="hljs-variable">@filler</span>;
@@ -342,14 +342,14 @@
 <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">@base-color</span> + <span class="hljs-hexcolor">#111</span>;
 <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span> / <span class="hljs-number">2</span> + <span class="hljs-variable">@filler</span>;
 </code></pre>
-<p>The output is pretty much what you expect&#x2014;Less understands the difference between colors and units. If a unit is used in an operation, like in:</p>
+<p>K&#x1EBF;t qu&#x1EA3; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch ra s&#x1EBD; gi&#x1ED1;ng nh&#x1B0; nh&#x1EEF;ng g&#xEC; b&#x1EA1;n mong &#x111;&#x1EE3;i - Less hi&#x1EC3;u &#x111;&#x1B0;&#x1EE3;c s&#x1EF1; kh&#xE1;c nhau gi&#x1EEF;a m&#xE0;u s&#x1EAF;c v&#xE0; &#x111;&#x1A1;n v&#x1ECB;. N&#x1EBF;u m&#x1ED9;t &#x111;&#x1A1;n v&#x1ECB; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng trong ph&#xE9;p to&#xE1;n, gi&#x1ED1;ng nh&#x1B0;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@var:</span> <span class="hljs-number">1px</span> + <span class="hljs-number">5</span>;
 </code></pre>
-<p>Less will use that unit for the final output&#x2014;<code>6px</code> in this case.</p>
+<p>Less s&#x1EBD; s&#x1EED; d&#x1EE5;ng &#x111;&#x1A1;n v&#x1ECB; &#x111;&#xF3; cho k&#x1EBF;t qu&#x1EA3; cu&#x1ED1;i c&#xF9;ng&#x2014;<code>6px</code> trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p n&#xE0;y.</p>
 <h3 class="docs-heading">Functions<span class="anchor-target" id="features-overview-feature-functions"></span>
 <a href="#features-overview-feature-functions" name="features-overview-feature-functions" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Less provides a variety of functions which transform colors, manipulate strings and do maths. They are documented fully in the function reference.</p>
-<p>Using them is pretty straightforward. The following example uses percentage to convert 0.5 to 50%, increases the saturation of a base color by 5% and then sets the background color to one that is lightened by 25% and spun by 8 degrees:</p>
+<p>Less cung c&#x1EA5;p m&#x1ED9;t s&#x1ED1; l&#x1B0;&#x1EE3;ng l&#x1EDB;n c&#xE1;c function h&#x1ED7; tr&#x1EE3; bi&#x1EBF;n &#x111;&#x1ED5;i m&#xE0;u s&#x1EAF;c, x&#x1EED; l&#xFD; chu&#x1ED7;i v&#xE0; th&#x1EF1;c hi&#x1EC7;n t&#xED;nh to&#xE1;n. Ch&#xFA;ng &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t chi ti&#x1EBF;t v&#xE0; &#x111;&#x1EA7;y &#x111;&#x1EE7; trong ph&#x1EA7;n tham kh&#x1EA3;o c&#x1EE7;a function.</p>
+<p>C&#xE1;ch s&#x1EED; d&#x1EE5;ng function kh&#xE1; r&#xF5; r&#xE0;ng. V&#xED; d&#x1EE5; sau &#x111;&#xE2;y s&#x1EED; d&#x1EE5;ng ph&#x1EA7;n tr&#x103;m &#x111;&#x1EC3; chuy&#x1EC3;n &#x111;&#x1ED5;i 0.5 th&#xE0;nh 50%, t&#x103;ng &#x111;&#x1ED9; b&#xE3;o h&#xF2;a c&#x1EE7;a m&#xE0;u c&#x1A1; s&#x1EDF; l&#xEA;n 5% v&#xE0; sau &#x111;&#xF3; t&#x103;ng &#x111;&#x1ED9; s&#xE1;ng c&#x1EE7;a m&#xE0;u background l&#xEA;n 25% v&#xE0; xoay &#x111;i 8 &#x111;&#x1ED9;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@base:</span> <span class="hljs-hexcolor">#f04615</span>;
 <span class="hljs-variable">@width:</span> <span class="hljs-number">0.5</span>;
 
@@ -361,8 +361,8 @@
 </code></pre>
 <h3 class="docs-heading">Namespaces and Accessors<span class="anchor-target" id="features-overview-feature-namespaces-and-accessors"></span>
 <a href="#features-overview-feature-namespaces-and-accessors" name="features-overview-feature-namespaces-and-accessors" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>(Not to be confused with <a href="http://www.w3.org/TR/css3-namespace/">CSS <code>@namespace</code></a> or <a href="http://www.w3.org/TR/css3-selectors/#typenmsp">namespace selectors</a>).</p>
-<p>Sometimes, you may want to group your mixins, for organizational purposes, or just to offer some encapsulation. You can do this pretty intuitively in Less, say you want to bundle some mixins and variables under <code>#bundle</code>, for later reuse or distributing:</p>
+<p>(&#x110;&#x1EEB;ng nh&#x1EA7;m l&#x1EAB;n v&#x1EDB;i <a href="http://www.w3.org/TR/css3-namespace/">CSS <code>@namespace</code></a> ho&#x1EB7;c <a href="http://www.w3.org/TR/css3-selectors/#typenmsp">namespace selectors</a>).</p>
+<p>&#x110;&#xF4;i khi, b&#x1EA1;n c&#xF3; th&#x1EC3; mu&#x1ED1;n nh&#xF3;m c&#xE1;c mixin l&#x1EA1;i v&#x1EDB;i nhau &#x111;&#x1EC3; t&#x1ED5; ch&#x1EE9;c &#x111;&#x1B0;&#x1EE3;c t&#x1ED1;t h&#x1A1;n , ho&#x1EB7;c &#x111;&#x1EC3; vi&#x1EC7;c &#x111;&#xF3;ng g&#xF3;i d&#x1EC5; d&#xE0;ng h&#x1A1;n. Khi &#x111;&#xF3;, b&#x1EA1;n c&#xF3; th&#x1EC3; th&#x1EF1;c hi&#x1EC7;n &#x111;&#x1B0;&#x1EE3;c &#x111;i&#x1EC1;u n&#xE0;y m&#x1ED9;t c&#xE1;ch tr&#x1EF1;c quan v&#x1EDB;i Less, gi&#x1EA3; s&#x1EED; b&#x1EA1;n mu&#x1ED1;n nh&#xF3;m m&#x1ED9;t s&#x1ED1; c&#xE1;c mixin v&#xE0; bi&#x1EBF;n s&#x1ED1; cho <code>#bundle</code>, &#x111;&#x1EC3; t&#xE1;i s&#x1EED; d&#x1EE5;ng sau n&#xE0;y ho&#x1EB7;c &#x111;em ph&#xE2;n ph&#x1ED1;i:</p>
 <pre><code class="lang-less"><span class="hljs-id">#bundle</span> {
   <span class="hljs-class">.button</span> {
     <span class="hljs-attribute">display</span>: block;
@@ -376,16 +376,16 @@
   <span class="hljs-class">.citation</span> { ... }
 }
 </code></pre>
-<p>Now if we want to mixin the <code>.button</code> class in our <code>#header a</code>, we can do:</p>
+<p>L&#xFA;c n&#xE0;y, n&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n mixin class <code>.button</code> v&#xE0;o <code>#header a</code>, ta c&#xF3; th&#x1EC3; l&#xE0;m nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-id">#header</span> <span class="hljs-tag">a</span> {
   <span class="hljs-attribute">color</span>: orange;
   <span class="hljs-id">#bundle</span> &gt; <span class="hljs-class">.button</span>;
 }
 </code></pre>
-<p>Note that variables declared within a namespace will be scoped to that namespace only and will not be available outside of the scope via the same syntax that you would use to reference a mixin (<code>#Namespace &gt; .mixin-name</code>). So, for example, you can&apos;t do the following: (<code>#Namespace &gt; @this-will-not-work</code>).</p>
-<h3 class="docs-heading">Scope<span class="anchor-target" id="features-overview-feature-scope"></span>
-<a href="#features-overview-feature-scope" name="features-overview-feature-scope" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Scope in Less is very similar to that of programming languages. Variables and mixins are first looked for locally, and if they aren&apos;t found, the compiler will look in the parent scope, and so on.</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng c&#xE1;c bi&#x1EBF;n s&#x1ED1; &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o b&#xEA;n trong m&#x1ED9;t namespace s&#x1EBD; b&#x1ECB; c&#xF4; l&#x1EAD;p v&#xE0; kh&#xF4;ng th&#x1EC3; s&#x1EED; d&#x1EE5;ng b&#xEA;n ngo&#xE0;i ph&#x1EA1;m vi &#x111;&#xF3; th&#xF4;ng qua c&#xFA; ph&#xE1;p t&#x1B0;&#x1A1;ng t&#x1EF1; m&#xE0; b&#x1EA1;n s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; tham chi&#x1EBF;u t&#x1EDB;i m&#x1ED9;t mixin (<code>#Namespace &gt; .mixin-name</code>). V&#xEC; th&#x1EBF;, b&#x1EA1;n kh&#xF4;ng th&#x1EC3; th&#x1EF1;c hi&#x1EC7;n vi&#x1EC7;c gi&#x1ED1;ng nh&#x1B0; sau: (<code>#Namespace &gt; @this-will-not-work</code>).</p>
+<h3 class="docs-heading">Ph&#x1EA1;m vi<span class="anchor-target" id="features-overview-feature-ph-m-vi"></span>
+<a href="#features-overview-feature-ph-m-vi" name="features-overview-feature-ph-m-vi" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Kh&#xE1;i ni&#x1EC7;m ph&#x1EA1;m vi trong Less kh&#xE1; gi&#x1ED1;ng v&#x1EDB;i c&#xE1;c ng&#xF4;n ng&#x1EEF; l&#x1EAD;p tr&#xEC;nh kh&#xE1;c. &#x110;&#x1EA7;u ti&#xEA;n, c&#xE1;c bi&#x1EBF;n s&#x1ED1; v&#xE0; mixin s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c t&#xEC;m ki&#x1EBF;m &#x1EDF; c&#x1EE5;c b&#x1ED9;, v&#xE0; n&#x1EBF;u kh&#xF4;ng t&#xEC;m th&#x1EA5;y, tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch s&#x1EBD; t&#xEC;m trong ph&#x1EA1;m vi cha, v&#xE0; c&#x1EE9; ti&#x1EBF;p t&#x1EE5;c nh&#x1B0; v&#x1EAD;y.</p>
 <pre><code class="lang-less"><span class="hljs-variable">@var:</span> red;
 
 <span class="hljs-id">#page</span> {
@@ -395,7 +395,7 @@
   }
 }
 </code></pre>
-<p>Variables and mixins do not have to be declared before being used so the following Less code is identical to the previous example:</p>
+<p>C&#xE1;c bi&#x1EBF;n s&#x1ED1; v&#xE0; mixin kh&#xF4;ng nh&#x1EA5;t thi&#x1EBF;t ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o tr&#x1B0;&#x1EDB;c khi s&#x1EED; d&#x1EE5;ng. V&#xEC; v&#x1EAD;y &#x111;o&#x1EA1;n m&#xE3; Less sau &#x111;&#xE2;y s&#x1EBD; t&#x1B0;&#x1A1;ng t&#x1EF1; v&#x1EDB;i v&#xED; d&#x1EE5; ph&#xED;a tr&#xEA;n:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@var:</span> red;
 
 <span class="hljs-id">#page</span> {
@@ -405,13 +405,13 @@
   <span class="hljs-variable">@var:</span> white;
 }
 </code></pre>
-<p><strong>See also</strong></p>
+<p><strong>Tham kh&#x1EA3;o</strong></p>
 <ul>
 <li><a href="#variables-feature-lazy-loading">Lazy Loading</a></li>
 </ul>
-<h3 class="docs-heading">Comments<span class="anchor-target" id="features-overview-feature-comments"></span>
-<a href="#features-overview-feature-comments" name="features-overview-feature-comments" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Both block-style and inline comments may be used:</p>
+<h3 class="docs-heading">Ch&#xFA; th&#xED;ch<span class="anchor-target" id="features-overview-feature-ch-th-ch"></span>
+<a href="#features-overview-feature-ch-th-ch" name="features-overview-feature-ch-th-ch" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#x1EA3; ch&#xFA; th&#xED;ch d&#x1EA1;ng block v&#xE0; d&#x1EA1;ng inline &#x111;&#x1EC1;u &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng:</p>
 <pre><code class="lang-less"><span class="hljs-comment">/* One hell of a block
 style comment! */</span>
 <span class="hljs-variable">@var:</span> red;
@@ -419,9 +419,9 @@ style comment! */</span>
 <span class="hljs-comment">// Get in line!</span>
 <span class="hljs-variable">@var:</span> white;
 </code></pre>
-<h3 class="docs-heading">Importing<span class="anchor-target" id="features-overview-feature-importing"></span>
-<a href="#features-overview-feature-importing" name="features-overview-feature-importing" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Importing works pretty much as expected. You can import a <code>.less</code> file, and all the variables in it will be available. The extension is optionally specified for <code>.less</code> files.</p>
+<h3 class="docs-heading">Import<span class="anchor-target" id="features-overview-feature-import"></span>
+<a href="#features-overview-feature-import" name="features-overview-feature-import" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Import ho&#x1EA1;t &#x111;&#x1ED9;ng kh&#xE1; hi&#x1EC7;u qu&#x1EA3;. B&#x1EA1;n c&#xF3; th&#x1EC3; import m&#x1ED9;t t&#x1EC7;p tin <code>.less</code>, v&#xE0; to&#xE0;n b&#x1ED9; c&#xE1;c bi&#x1EBF;n s&#x1ED1; trong &#x111;&#xF3; s&#x1EBD; &#x111;&#x1EC1;u &#x111;&#x1B0;&#x1EE3;c import v&#xE0;o. Ph&#x1EA7;n m&#x1EDF; r&#x1ED9;ng &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; &#x111;&#x1ECB;nh m&#x1ED9;t c&#xE1;ch t&#xF9;y &#xFD; cho c&#xE1;c t&#x1EC7;p tin <code>.less</code>.</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;library&quot;</span>; <span class="hljs-comment">// library.less</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;typo.css&quot;</span>;
 </code></pre>
