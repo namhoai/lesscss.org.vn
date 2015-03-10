@@ -1,6 +1,6 @@
-> Creating loops
+> Tạo các vòng lặp
 
-In Less a mixin can call itself. Such recursive mixins, when combined with [Guard Expressions](#mixin-guards-feature) and [Pattern Matching](#mixins-parametric-feature-pattern-matching), can be used to create various iterative/loop structures.
+Với Less, các mixin có thể gọi đến chính nó. Những mixin như vậy, khi kết hợp với [biểu thức chắn](#mixin-guards-feature) và [so khớp mẫu](#mixins-parametric-feature-pattern-matching), sẽ tạo thành nhiều cấu trúc lặp khác nhau.
 
 Example:
 
@@ -15,7 +15,7 @@ div {
 }
 ```
 
-Output:
+Kết quả:
 
 ```css
 div {
@@ -27,7 +27,7 @@ div {
 }
 ```
 
-A generic example of using a recursive loop to generate CSS grid classes:
+Một ví dụ chung về cách sử dụng vòng lặp đệ quy để tạo ra class cho grid:
 
 ```less
 .generate-columns(4);
@@ -40,7 +40,7 @@ A generic example of using a recursive loop to generate CSS grid classes:
 }
 ```
 
-Output:
+Kết quả:
 
 ```css
 .column-1 {
