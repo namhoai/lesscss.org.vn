@@ -1,10 +1,10 @@
-> "if"'s around selectors
+> "if" với selector
 
-Released [v1.5.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.5.0]({{ less.master }}CHANGELOG.md)
 
-Guards can also be applied to css selectors, which is syntactic sugar for declaring the mixin and then calling it immediately.
+Chắn còn được áp dụng vào các selector css, thuận tiện cho việc tạo và gọi mixin tức thì.
 
-For instance, before 1.5.0 you would have had to do this:
+Ví dụ, trước phiên bản 1.5.0, bạn có thể phải viết như sau:
 
 ```less
 .my-optional-style() when (@my-option = true) {
@@ -15,7 +15,7 @@ For instance, before 1.5.0 you would have had to do this:
 .my-optional-style();
 ```
 
-Now, you can apply the guard directly to a style.
+Giờ đây, bạn có thể áp dụng trực tiếp chắn lên một style.
 
 ```less
 button when (@my-option = true) {
@@ -23,7 +23,7 @@ button when (@my-option = true) {
 }
 ```
 
-You can also achieve an `if` type statement by combining this with the `&` feature, allowing you to group multiple guards. 
+Bạn cũng có thể tạo ra một mệnh đề `if` bằng cách kết hợp chắn với `&`, cho phép bạn gom nhóm nhiều chắn.
 ```less
 & when (@my-option = true) {
   button {
