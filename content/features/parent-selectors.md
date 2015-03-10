@@ -1,6 +1,6 @@
 > Referencing parent selectors with `&`
 
-The `&` operator represents the parent selectors of a [nested rule](#features-overview-feature-nested-rules) and is most commonly used when applying a modifying class or pseudo-class to an existing selector:
+Toán tử `&` đại diện cho selector cha của một [luật lồng](#features-overview-feature-nested-rules) và được sử dụng nhiều nhất khi áp dụng class biến đổi hay giả-class vào selector có sẵn:
 
 ```less
 a {
@@ -11,7 +11,7 @@ a {
 }
 ```
 
-results in:
+kết quả:
 
 ```css
 a {
@@ -23,9 +23,9 @@ a:hover {
 }
 ```
 
-Notice that without the `&`, the above example would result in `a :hover` rule (a descendant selector that matches hovered elements inside of `<a>` tags) and this is not what we typically would want with the nested `:hover`.
+Lưu ý rằng khi không có `&`, ví dụ trên sẽ thành `a :hover` (ứng với các phần tử được di chuột qua nằm trong thẻ `<a>`) và không phải là điều chúng ta thường muốn thực hiện với luật lồng `:hover`.
 
-The "parent selectors" operator has a variety of uses. Basically any time you need the selectors of the nested rules to be combined in other ways than the default. For example another typical use of the `&` is to produce repetitive class names:
+Toán tử "selector cha" có nhiều cách sử dụng, về cơ bản, là bất cứ khi nào bạn cần kết hợp các selector con trong luật lồng theo cách khác với cách thông thường. Ví dụ, một cách dùng  điển hình khác của `&` là tạo ra các class lặp đi lặp lại:
 
 ```less
 .button {
@@ -42,7 +42,7 @@ The "parent selectors" operator has a variety of uses. Basically any time you ne
 }
 ```
 
-output:
+kết quả:
 
 ```css
 .button-ok {
@@ -56,9 +56,9 @@ output:
 }
 ```
 
-### Multiple `&`
+### Nhiều `&`
 
-`&` may appear more than once within a selector. This makes it possible to repeatedly refer to a parent selector without repeating its name.
+Trong một selector có thể có nhiều `&`, cho phép tham chiếu đến selector cha mà không cần lặp lại tên.
 
 ```less
 .link {
@@ -80,7 +80,7 @@ output:
 }
 ```
 
-will output:
+kết quả:
 
 ```css
 .link + .link {
@@ -98,7 +98,7 @@ will output:
 ```
 
 
-Note that `&` represents all parent selectors (not just the nearest ancestor) so the following example:
+Lưu ý là `&` thay thế cho tất cả các selector cha (không chỉ là một selector cha gần nhất), ví dụ:
 
 ```less
 .grand {
@@ -122,7 +122,7 @@ Note that `&` represents all parent selectors (not just the nearest ancestor) so
 }
 ```
 
-results in:
+Kết quả:
 
 ```css
 .grand .parent > .grand .parent {
@@ -141,10 +141,10 @@ results in:
 ```
 
 
-### Changing selector order
+### Thay đổi thứ tự selector
 
-It can be useful to prepend a selector to the inherited (parent) selectors.  This can be done by putting the `&` after current selector.
-For example, when using Modernizr, you might want to specify different rules based on supported features:
+Trong một số trường hợp, bạn có thể cần thêm một selector vào trước selector cha (selector kế thừa). Có thể thực hiện việc này bằng cách đặt `&` vào sau selector hiện tại.
+Ví dụ, khi sử dụng Modernizr, bạn có thể muốn tạo ra các luật khác nhau dựa trên các tính năng được hỗ trợ bởi trình duyệt:
 
 ```less
 .header {
@@ -157,7 +157,7 @@ For example, when using Modernizr, you might want to specify different rules bas
 }
 ```
 
-The selector `.no-borderradius &` will prepend `.no-borderradius` to its parent `.header .menu` to form the`.no-borderradius .header .menu` on output:
+Selector `.no-borderradius &` sẽ gắn `.no-borderradius` và selector cha `.header .menu`, tạo thành `.no-borderradius .header .menu`:
 
 ```css
 .header .menu {
@@ -169,9 +169,10 @@ The selector `.no-borderradius &` will prepend `.no-borderradius` to its parent 
 ```
 
 
-### Combinatorial explosion
+### Bùng nổ tổ hợp
 
-`&` can also be used to generate every possible permutation of selectors in a comma separated list:
+
+`&` cũng được sử dụng để tạo ra hoán vị của các cặp selector trong một danh sách (ngăn cách bằng dấu phẩy):
 
 ```less
 p, a, ul, li {
@@ -182,7 +183,7 @@ p, a, ul, li {
 }
 ```
 
-This expands to all possible (16) combinations of the specified elements:
+Tạo ra tất cả (16) tổ hợp của các phần tử đã định:
 
 ```css
 p,
