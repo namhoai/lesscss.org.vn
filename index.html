@@ -141,9 +141,9 @@
     <h1 class="docs-heading">M&#x1EDF; &#x111;&#x1EA7;u<span class="anchor-target" id="getting-started"></span>
 <a href="#getting-started" name="getting-started" class="anchor glyphicon glyphicon-link"></a></h1>
   </div>
-  <p>Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.</p>
-<p>Less runs inside Node, in the browser and inside Rhino. There are also many 3rd party tools that allow you to compile your files and watch for changes.</p>
-<p>For example:</p>
+  <p>Less l&#xE0; m&#x1ED9;t b&#x1ED9; ti&#x1EC1;n x&#x1EED; l&#xFD; CSS, m&#x1EDF; r&#x1ED9;ng ng&#xF4;n ng&#x1EEF; CSS s&#x1EB5;n c&#xF3; b&#x1EB1;ng c&#xE1;ch th&#xEA;m c&#xE1;c t&#xED;nh n&#x103;ng nh&#x1B0; cho ph&#xE9;p &#x111;&#x1EB7;t bi&#x1EBF;n, mixins, c&#xE1;c ch&#x1EE9;c n&#x103;ng v&#xE0; nhi&#x1EC1;u k&#x1EF9; thu&#x1EAD;t gi&#xFA;p b&#x1EA1;n t&#x1EA1;o ra &#x111;&#x1B0;&#x1EE3;c m&#xE3; CSS c&#xF3; c&#x1EA5;u tr&#xFA;c t&#x1ED1;t h&#x1A1;n, &#x1ED5;n &#x111;&#x1ECB;nh h&#x1A1;n v&#xE0; d&#x1EC5; m&#x1EDF; r&#x1ED9;ng h&#x1A1;n.</p>
+<p>Less ch&#x1EA1;y b&#xEA;n trong Node, trong tr&#xEC;nh duy&#x1EC7;t v&#xE0; b&#xEA;n trong Rhino. Ngo&#xE0;i ra c&#xF3; r&#x1EA5;t nhi&#x1EC1;u c&#xF4;ng c&#x1EE5; c&#x1EE7;a b&#xEA;n th&#x1EE9; 3 cho ph&#xE9;p b&#x1EA1;n bi&#xEA;n d&#x1ECB;ch c&#xE1;c t&#x1EC7;p tin v&#xE0; theo d&#xF5;i c&#xE1;c thay &#x111;&#x1ED5;i c&#x1EE7;a b&#x1EA1;n.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@base:</span> <span class="hljs-hexcolor">#f938ab</span>;
 
 <span class="hljs-class">.box-shadow</span>(<span class="hljs-variable">@style</span>, <span class="hljs-variable">@c</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">iscolor</span>(<span class="hljs-variable">@c</span>)) {
@@ -159,7 +159,7 @@
   <span class="hljs-tag">div</span> { <span class="hljs-class">.box-shadow</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span>, <span class="hljs-number">30%</span>) }
 }
 </code></pre>
-<p>compiles to</p>
+<p>&#x111;&#x1B0;&#x1EE3;c bi&#xEA;n d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-class">.box</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#fe33ac</span>;
   <span class="hljs-attribute">border-color</span>: <span class="hljs-hexcolor">#fdcdea</span>;
