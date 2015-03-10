@@ -117,14 +117,14 @@
             <div id="navigation">
   
 <ul class="nav sidenav"><li><a href="#getting-started">M&#x1EDF; &#x111;&#x1EA7;u</a></li>
-<li><a href="#using-less">C&#xE1;ch s&#x1EED; d&#x1EE5;ng</a><ul class="nav"><li><a href="#using-less-installation">Installation</a></li>
-<li><a href="#using-less-command-line-usage">Command-line usage</a></li>
-<li><a href="#using-less-usage-in-code">Usage in Code</a></li>
-<li><a href="#using-less-configuration">Configuration</a></li>
-<li><a href="#using-less-third-party-tools">Third party tools</a></li></ul></li>
-<li><a href="#command-line-with-rhino">Command-line With Rhino</a></li>
-<li><a href="#client-side-usage">Client-side usage</a><ul class="nav"><li><a href="#client-side-usage-tips">Tips</a></li>
-<li><a href="#client-side-usage-browser-options">Browser Options</a></li></ul></li>
+<li><a href="#using-less">C&#xE1;ch s&#x1EED; d&#x1EE5;ng</a><ul class="nav"><li><a href="#using-less-c-ch-c-i-t">C&#xE1;ch c&#xE0;i &#x111;&#x1EB7;t</a></li>
+<li><a href="#using-less-s-d-ng-d-ng-l-nh">S&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh</a></li>
+<li><a href="#using-less-c-ch-s-d-ng-trong-code">C&#xE1;ch s&#x1EED; d&#x1EE5;ng trong Code</a></li>
+<li><a href="#using-less-c-u-h-nh">C&#x1EA5;u h&#xEC;nh</a></li>
+<li><a href="#using-less-c-c-c-ng-c-c-a-b-n-th-3">C&#xE1;c c&#xF4;ng c&#x1EE5; c&#x1EE7;a b&#xEA;n th&#x1EE9; 3</a></li></ul></li>
+<li><a href="#d-ng-l-nh-v-i-rhino">D&#xF2;ng l&#x1EC7;nh v&#x1EDB;i Rhino</a></li>
+<li><a href="#c-ch-s-d-ng-ph-a-client">C&#xE1;ch s&#x1EED; d&#x1EE5;ng &#x1EDF; ph&#xED;a Client</a><ul class="nav"><li><a href="#c-ch-s-d-ng-ph-a-client-l-u-">L&#x1B0;u &#xFD;</a></li>
+<li><a href="#c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t">C&#xE1;c t&#xF9;y ch&#x1ECD;n c&#x1EE7;a tr&#xEC;nh duy&#x1EC7;t</a></li></ul></li>
 <li><a href="#download-options">H&#x1B0;&#x1EDB;ng d&#x1EAB;n t&#x1EA3;i v&#x1EC1; Less.js</a><ul class="nav"><li><a href="#download-options-browser-downloads">T&#x1EA3;i v&#x1EC1; t&#x1EEB; tr&#xEC;nh duy&#x1EC7;t</a></li>
 <li><a href="#download-options--less-cdn-cdnjs-cloudflare-com-ajax-libs-less-js-2-2-0-less-min-js-">Less CDN</a></li></ul></li>
 <li><a href="#license-faqs">C&#xE1;c c&#xE2;u h&#x1ECF;i th&#x1B0;&#x1EDD;ng g&#x1EB7;p v&#x1EC1; b&#x1EA3;n quy&#x1EC1;n</a></li></ul></div>
@@ -181,43 +181,42 @@
 <a href="#using-less" name="using-less" class="anchor glyphicon glyphicon-link"></a></h1>
   </div>
   <blockquote>
-<p>Less can be used on the command line via npm, downloaded as a script file for the browser or used in a wide variety of third party tools. See the <a href="usage/index.html">Usage</a> section for more
+<p>Less c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng th&#xF4;ng qua d&#xF2;ng l&#x1EC7;nh b&#x1EB1;ng npm, ho&#x1EB7;c t&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin d&#x1B0;&#x1EDB;i d&#x1EA1;ng script t&#x1EEB; tr&#xEC;nh duy&#x1EC7;t ho&#x1EB7;c th&#xF4;ng qua r&#x1EA5;t nhi&#x1EC1;u c&#xE1;c c&#xF4;ng c&#x1EE5; c&#x1EE7;a b&#xEA;n th&#x1EE9; 3. H&#xE3;y xem ph&#x1EA7;n <a href="usage/index.html">S&#x1EED; d&#x1EE5;ng</a> &#x111;&#x1EC3; bi&#x1EBF;t th&#xEA;m chi ti&#x1EBF;t
 detailed information.</p>
 </blockquote>
-<h2 class="docs-heading">Installation<span class="anchor-target" id="using-less-installation"></span>
-<a href="#using-less-installation" name="using-less-installation" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>The easiest way to install Less on the server, is via npm, the <a href="http://nodejs.org/">node.js</a> package manager, as so:</p>
+<h2 class="docs-heading">C&#xE1;ch c&#xE0;i &#x111;&#x1EB7;t<span class="anchor-target" id="using-less-c-ch-c-i-t"></span>
+<a href="#using-less-c-ch-c-i-t" name="using-less-c-ch-c-i-t" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xE1;ch &#x111;&#x1A1;n gi&#x1EA3;n nh&#x1EA5;t &#x111;&#x1EC3; c&#xE0;i &#x111;&#x1EB7;t Less tr&#xEA;n server l&#xE0; s&#x1EED; d&#x1EE5;ng npm, m&#x1ED9;t b&#x1ED9; qu&#x1EA3;n l&#xFD; g&#xF3;i c&#x1EE7;a <a href="http://nodejs.org/">node.js</a> nh&#x1B0; sau:</p>
 <pre><code class="lang-bash">$ npm install -g less
 </code></pre>
-<h2 class="docs-heading">Command-line usage<span class="anchor-target" id="using-less-command-line-usage"></span>
-<a href="#using-less-command-line-usage" name="using-less-command-line-usage" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>Once installed, you can invoke the compiler from the command-line, as such:</p>
+<h2 class="docs-heading">S&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh<span class="anchor-target" id="using-less-s-d-ng-d-ng-l-nh"></span>
+<a href="#using-less-s-d-ng-d-ng-l-nh" name="using-less-s-d-ng-d-ng-l-nh" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>Sau khi c&#xE0;i &#x111;&#x1EB7;t th&#xE0;nh c&#xF4;ng, b&#x1EA1;n c&#xF3; th&#x1EC3; g&#x1ECD;i tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch b&#x1EB1;ng d&#xF2;ng l&#x1EC7;nh nh&#x1B0; sau:</p>
 <pre><code class="lang-bash">$ lessc styles.less
 </code></pre>
-<p>This will output the compiled CSS to <code>stdout</code>, you may then redirect it to a file of your choice:</p>
+<p>D&#xF2;ng l&#x1EC7;nh tr&#xEA;n s&#x1EBD; ghi t&#x1EC7;p tin CSS &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c bi&#xEA;n d&#x1ECB;ch ra <code>stdout</code>, v&#xE0; sau &#x111;&#xF3; b&#x1EA1;n c&#xF3; th&#x1EC3; chuy&#x1EC3;n h&#x1B0;&#x1EDB;ng ra t&#x1EC7;p tin m&#xE0; b&#x1EA1;n mong mu&#x1ED1;n nh&#x1B0; sau:</p>
 <pre><code class="lang-bash">$ lessc styles.less &gt; styles.css
 </code></pre>
-<p>To output minified CSS, simply pass the <code>-x</code> option. If you would like more involved minification,
-the <a href="https://github.com/GoalSmashers/clean-css">Clean CSS</a> is also available with
-the <code>--clean-css</code> <a href="https://github.com/less/less-plugin-clean-css">plugin</a>.</p>
-<p>To see all the command line options run lessc without parameters or see <a href="usage/index.html">Usage</a>.</p>
-<h2 class="docs-heading">Usage in Code<span class="anchor-target" id="using-less-usage-in-code"></span>
-<a href="#using-less-usage-in-code" name="using-less-usage-in-code" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>You can invoke the compiler from node, as such:</p>
+<p>&#x110;&#x1EC3; ghi ra t&#x1EC7;p tin CSS &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c n&#xE9;n, b&#x1EA1;n ch&#x1EC9; vi&#x1EC7;c truy&#x1EC1;n th&#xEA;m t&#xF9;y ch&#x1ECD;n <code>-x</code>. N&#x1EBF;u nh&#x1B0; b&#x1EA1;n mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng nhi&#x1EC1;u t&#xF9;y ch&#x1ECD;n n&#xE9;n h&#x1A1;n,
+<a href="https://github.com/GoalSmashers/clean-css">Clean CSS</a> c&#xF3; th&#x1EC3; gi&#xFA;p b&#x1EA1;n &#x111;i&#x1EC1;u &#x111;&#xF3; v&#x1EDB;i <a href="https://github.com/less/less-plugin-clean-css">plugin</a> <code>--clean-css</code>.</p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t to&#xE0;n b&#x1ED9; c&#xE1;c t&#xF9;y ch&#x1ECD;n d&#xF2;ng l&#x1EC7;nh khi ch&#x1EA1;y lessc ngo&#xE0;i c&#xE1;c tham s&#x1ED1;, h&#xE3;y xem <a href="usage/index.html">C&#xE1;ch s&#x1EED; d&#x1EE5;ng</a>.</p>
+<h2 class="docs-heading">C&#xE1;ch s&#x1EED; d&#x1EE5;ng trong Code<span class="anchor-target" id="using-less-c-ch-s-d-ng-trong-code"></span>
+<a href="#using-less-c-ch-s-d-ng-trong-code" name="using-less-c-ch-s-d-ng-trong-code" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; g&#x1ECD;i tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch t&#x1EEB; node nh&#x1B0; sau:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;less&apos;</span>);
 
 less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e, output)</span> </span>{
   <span class="hljs-built_in">console</span>.log(output.css);
 });
 </code></pre>
-<p>which will output</p>
+<p>S&#x1EBD; t&#x1EA1;o ra:</p>
 <pre><code class="lang-css"><span class="hljs-class">.class</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">2</span>;
 }
 </code></pre>
-<h2 class="docs-heading">Configuration<span class="anchor-target" id="using-less-configuration"></span>
-<a href="#using-less-configuration" name="using-less-configuration" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>You may pass some options to the compiler:</p>
+<h2 class="docs-heading">C&#x1EA5;u h&#xEC;nh<span class="anchor-target" id="using-less-c-u-h-nh"></span>
+<a href="#using-less-c-u-h-nh" name="using-less-c-u-h-nh" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; truy&#x1EC1;n m&#x1ED9;t s&#x1ED1; t&#xF9;y ch&#x1ECD;n v&#xE0;o tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;less&apos;</span>);
 
 less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</span>,
@@ -230,44 +229,44 @@ less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</spa
        <span class="hljs-built_in">console</span>.log(output.css);
     });
 </code></pre>
-<p>See <a href="usage/index.html">Usage</a> for more information.</p>
-<h2 class="docs-heading">Third party tools<span class="anchor-target" id="using-less-third-party-tools"></span>
-<a href="#using-less-third-party-tools" name="using-less-third-party-tools" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>See the <a href="usage/index.html">Usage</a> section for details of other tools.</p>
-<h1 class="docs-heading">Command-line With Rhino<span class="anchor-target" id="command-line-with-rhino"></span>
-<a href="#command-line-with-rhino" name="command-line-with-rhino" class="anchor glyphicon glyphicon-link"></a></h1>
+<p>H&#xE3;y xem ph&#x1EA7;n <a href="usage/index.html">C&#xE1;ch s&#x1EED; d&#x1EE5;ng</a> &#x111;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t.</p>
+<h2 class="docs-heading">C&#xE1;c c&#xF4;ng c&#x1EE5; c&#x1EE7;a b&#xEA;n th&#x1EE9; 3<span class="anchor-target" id="using-less-c-c-c-ng-c-c-a-b-n-th-3"></span>
+<a href="#using-less-c-c-c-ng-c-c-a-b-n-th-3" name="using-less-c-c-c-ng-c-c-a-b-n-th-3" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>H&#xE3;y xem ph&#x1EA7;n <a href="usage/index.html">C&#xE1;ch s&#x1EED; d&#x1EE5;ng</a> &#x111;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t v&#x1EC1; c&#xE1;c c&#xF4;ng c&#x1EE5;.</p>
+<h1 class="docs-heading">D&#xF2;ng l&#x1EC7;nh v&#x1EDB;i Rhino<span class="anchor-target" id="d-ng-l-nh-v-i-rhino"></span>
+<a href="#d-ng-l-nh-v-i-rhino" name="d-ng-l-nh-v-i-rhino" class="anchor glyphicon glyphicon-link"></a></h1>
 <blockquote>
-<p>Each less.js release contains also rhino-compatible version.</p>
+<p>M&#x1ED7;i phi&#xEA;n b&#x1EA3;n less.js &#x111;&#x1EC1;u ch&#x1EE9;a m&#x1ED9;t phi&#xEA;n b&#x1EA3;n t&#x1B0;&#x1A1;ng th&#xED;ch v&#x1EDB;i rhino.</p>
 </blockquote>
-<p>Command line rhino version requires two files:</p>
+<p>&#x110;&#x1EC3; s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh v&#x1EDB;i Rhino, y&#xEA;u c&#x1EA7;u ph&#x1EA3;i c&#xF3; 2 t&#x1EC7;p tin sau:</p>
 <ul>
-<li>less-rhino-<version>.js - compiler implementation,</version></li>
-<li>lessc-rhino-<version>.js - command line support.</version></li>
+<li>less-rhino-<version>.js - t&#x1EC7;p tin th&#x1EF1;c thi tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch,</version></li>
+<li>lessc-rhino-<version>.js - t&#x1EC7;p tin h&#x1ED7; tr&#x1EE3; tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch.</version></li>
 </ul>
-<p>Command to run the compiler:</p>
+<p>D&#xF2;ng l&#x1EC7;nh &#x111;&#x1EC3; ch&#x1EA1;y tr&#xEC;nh bi&#xEA;n d&#x1ECB;ch:</p>
 <pre><code>java -jar js.jar -f less-rhino-&lt;version&gt;.js lessc-rhino-&lt;version&gt;.js styles.less styles.css
-</code></pre><p>This will compile styles.less file and save the result to styles.css file. The output file parameter is optional. If it is missing, less will output the result to <code>stdout</code>.</p>
-<h1 class="docs-heading">Client-side usage<span class="anchor-target" id="client-side-usage"></span>
-<a href="#client-side-usage" name="client-side-usage" class="anchor glyphicon glyphicon-link"></a></h1>
+</code></pre><p>D&#xF2;ng l&#x1EC7;nh n&#xE0;y s&#x1EBD; bi&#xEA;n d&#x1ECB;ch t&#x1EC7;p tin styles.less v&#xE0; l&#x1B0;u k&#x1EBF;t qu&#x1EA3; v&#xE0;o t&#x1EC7;p tin styles.css. B&#x1EA1;n c&#xF3; th&#x1EC3; t&#xF9;y &#xFD; l&#x1EF1;a ch&#x1ECD;n t&#x1EC7;p tin &#x111;&#x1EA7;u ra. N&#x1EBF;u nh&#x1B0; kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c cung c&#x1EA5;p, less s&#x1EBD; &#x111;&#x1B0;a k&#x1EBF;t qu&#x1EA3; ra <code>stdout</code>.</p>
+<h1 class="docs-heading">C&#xE1;ch s&#x1EED; d&#x1EE5;ng &#x1EDF; ph&#xED;a Client<span class="anchor-target" id="c-ch-s-d-ng-ph-a-client"></span>
+<a href="#c-ch-s-d-ng-ph-a-client" name="c-ch-s-d-ng-ph-a-client" class="anchor glyphicon glyphicon-link"></a></h1>
 <blockquote>
-<p>Using less.js in the browser is great for development, but it&apos;s not recommended for production</p>
+<p>S&#x1EED; d&#x1EE5;ng less.js trong tr&#xEC;nh duy&#x1EC7;t &#x111;&#x1B0;&#x1EE3;c khuy&#x1EBF;n kh&#xED;ch khi ph&#xE1;t tri&#x1EC3;n, tuy nhi&#xEA;n kh&#xF4;ng n&#xEA;n s&#x1EED; d&#x1EE5;ng khi ph&#xE1;t h&#xE0;nh</p>
 </blockquote>
-<p>Client-side is the easiest way to get started and good for developing with Less, but in production, when performance and reliability is important, <em>we recommend pre-compiling using node.js or one of the many third party tools available</em>.</p>
-<p>To start off, link your <code>.less</code> stylesheets with the <code>rel</code> attribute set to &quot;<code>stylesheet/less</code>&quot;:</p>
+<p>S&#x1EED; d&#x1EE5;ng Less &#x1EDF; ph&#xED;a Client l&#xE0; c&#xE1;ch &#x111;&#x1A1;n gi&#x1EA3;n nh&#x1EA5;t &#x111;&#x1EC3; l&#xE0;m quen v&#x1EDB;i vi&#x1EC7;c ph&#xE1;t tri&#x1EC3;n b&#x1EB1;ng Less, nhung khi ph&#xE1;t h&#xE0;nh, th&#x1EDD;i &#x111;i&#x1EC3;m m&#xE0; hi&#x1EC7;u n&#x103;ng v&#xE0; &#x111;&#x1ED9; tin c&#x1EAD;y &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t l&#xEA;n h&#xE0;ng &#x111;&#x1EA7;u, <em>b&#x1EA1;n n&#xEA;n s&#x1EED; d&#x1EE5;ng phi&#xEA;n b&#x1EA3;n &#x111;&#x1B0;&#x1EE3;c bi&#xEA;n d&#x1ECB;ch tr&#x1B0;&#x1EDB;c (pre-compiling) b&#x1EDF;i node.js ho&#x1EB7;c s&#x1EED; d&#x1EE5;ng m&#x1ED9;t trong c&#xE1;c c&#xF4;ng c&#x1EE5; s&#x1EB5;n c&#xF3; c&#x1EE7;a b&#xEA;n th&#x1EE9; 3</em> .</p>
+<p>&#x110;&#x1EC3; b&#x1EAF;t &#x111;&#x1EA7;u, h&#xE3;y li&#xEA;n k&#x1EBF;t stylesheet <code>.less</code> v&#xE0;o d&#x1EF1; &#xE1;n c&#x1EE7;a b&#x1EA1;n v&#x1EDB;i thu&#x1ED9;c t&#xED;nh <code>rel</code> &#x111;&#x1B0;&#x1EE3;c thi&#x1EBF;t l&#x1EAD;p &quot;<code>stylesheet/less</code>&quot;:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;stylesheet/less&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/css&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;styles.less&quot;</span> /&gt;</span>
 </code></pre>
-<p>Next, <a href="https://github.com/less/less.js/archive/master.zip">download less.js</a> and include it in a <code>&lt;script&gt;&lt;/script&gt;</code> tag in the <code>&lt;head&gt;</code> element of your page:</p>
+<p>Ti&#x1EBF;p theo, <a href="https://github.com/less/less.js/archive/master.zip">t&#x1EA3;i v&#x1EC1; less.js</a> v&#xE0; th&#xEA;m n&#xF3; v&#xE0;o th&#x1EBB; <code>&lt;script&gt;&lt;/script&gt;</code> n&#x1EB1;m trong th&#xE0;nh ph&#x1EA7;n <code>&lt;head&gt;</code> trong trang c&#x1EE7;a b&#x1EA1;n:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;less.js&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
-<h3 class="docs-heading">Tips<span class="anchor-target" id="client-side-usage-tips"></span>
-<a href="#client-side-usage-tips" name="client-side-usage-tips" class="anchor glyphicon glyphicon-link"></a></h3>
+<h3 class="docs-heading">L&#x1B0;u &#xFD;<span class="anchor-target" id="c-ch-s-d-ng-ph-a-client-l-u-"></span>
+<a href="#c-ch-s-d-ng-ph-a-client-l-u-" name="c-ch-s-d-ng-ph-a-client-l-u-" class="anchor glyphicon glyphicon-link"></a></h3>
 <ul>
-<li>Make sure you include your stylesheets <strong>before</strong> the script.</li>
-<li>When you link more than one <code>.less</code> stylesheet each of them is compiled independently. So any variables, mixins or namespaces you define in a stylesheet are not accessible in any other.</li>
+<li>H&#xE3;y ch&#x1EAF;c ch&#x1EAF;n r&#x1EB1;ng b&#x1EA1;n &#x111;&#xE3; th&#xEA;m stylesheet c&#x1EE7;a b&#x1EA1;n <strong>v&#xE0;o tr&#x1B0;&#x1EDB;c</strong> script.</li>
+<li>Khi b&#x1EA1;n s&#x1EED; d&#x1EE5;ng nhi&#x1EC1;u stylesheet <code>.less</code> th&#xEC; c&#xE1;c t&#x1EC7;p tin &#x111;&#xF3; ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c bi&#xEA;n d&#x1ECB;ch m&#x1ED9;t c&#xE1;ch &#x111;&#x1ED9;c l&#x1EAD;p. Khi &#x111;&#xF3; c&#xE1;c bi&#x1EBF;n s&#x1ED1;, mixins ho&#x1EB7;c namespaces m&#xE0; b&#x1EA1;n &#x111;&#x1ECB;nh ngh&#x129;a trong c&#xE1;c stylesheet c&#x169;ng s&#x1EBD; &#x111;&#x1ED9;c l&#x1EAD;p v&#x1EDB;i nhau.</li>
 </ul>
-<h2 class="docs-heading">Browser Options<span class="anchor-target" id="client-side-usage-browser-options"></span>
-<a href="#client-side-usage-browser-options" name="client-side-usage-browser-options" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>Options are defined by setting them on a global <code>less</code> object <strong>before</strong> the <code>&lt;script src=&quot;less.js&quot;&gt;&lt;/script&gt;</code>:</p>
+<h2 class="docs-heading">C&#xE1;c t&#xF9;y ch&#x1ECD;n c&#x1EE7;a tr&#xEC;nh duy&#x1EC7;t<span class="anchor-target" id="c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t"></span>
+<a href="#c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t" name="c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xE1;c t&#xF9;y ch&#x1ECD;n tr&#xEA;n &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng <code>less</code> ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c thi&#x1EBF;t l&#x1EAD;p <strong>tr&#x1B0;&#x1EDB;c</strong> th&#x1EBB; <code>&lt;script src=&quot;less.js&quot;&gt;&lt;/script&gt;</code>:</p>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- set options before less.js script --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
   less = {
@@ -283,11 +282,11 @@ less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</spa
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;less.js&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
-<p>Or for brevity they can be set as attributes on the script and link tags (requires JSON.parse browser support or polyfill).</p>
+<p>Ho&#x1EB7;c ng&#x1EAF;n g&#x1ECD;n, ch&#xFA;ng c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c thi&#x1EBF;t l&#x1EAD;p nh&#x1B0; c&#xE1;c thu&#x1ED9;c t&#xED;nh trong script v&#xE0; c&#xE1;c th&#x1EBB; link (y&#xEA;u c&#x1EA7;u tr&#xEC;nh duy&#x1EC7;t h&#x1ED7; tr&#x1EE3; JSON.parse ho&#x1EB7;c polyfill).</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;less.js&quot;</span> <span class="hljs-attribute">data-poll</span>=<span class="hljs-value">&quot;1000&quot;</span> <span class="hljs-attribute">data-relative-urls</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">data-dump-line-numbers</span>=<span class="hljs-value">&quot;all&quot;</span> <span class="hljs-attribute">data-global-vars</span>=<span class="hljs-value">&apos;{ myvar: &quot;#ddffee&quot;, mystr: &quot;\&quot;quoted\&quot;&quot; }&apos;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;stylesheet/less&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/css&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;less/styles.less&quot;</span>&gt;</span>
 </code></pre>
-<p>Learn more about <a href="usage/#using-less-in-the-browser-setting-options">Browser Options</a></p>
+<p>H&#xE3;y xem ph&#x1EA7;n <a href="usage/#using-less-in-the-browser-setting-options">C&#xE1;c t&#xF9;y ch&#x1ECD;n c&#x1EE7;a tr&#xEC;nh duy&#x1EC7;t</a> &#x111;&#x1EC3; bi&#x1EBF;t th&#xEA;m chi ti&#x1EBF;t.</p>
 
 </div>
 
