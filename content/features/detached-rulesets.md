@@ -1,10 +1,10 @@
 > Allow wrapping of a css block, defined in a mixin
 
-Released [v1.7.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.7.0]({{ less.master }}CHANGELOG.md)
 
-A detached ruleset is a group of css properties, nested rulesets, media declarations or anything else stored in a variable. You can include it into a ruleset or another structure and all its properties are going to be copied there. You can also use it as a mixin argument and pass it around as any other variable.
+Tập luật tách rời là một nhóm các thuộc tính css, các tập luật lồng, các khai báo media hoặc bất cứ thứ gì khác lưu trong một biến. Bạn có thể thêm nó vào một tập luật khác hoặc một cấu trúc khác, và tất cả các thuộc tính của nó sẽ được sao chép sang đó. Bạn cũng có thể sử dụng nó như một tham số gọi mixin hay sử dụng nó như một biến bình thường.
 
-Simple example:
+Ví dụ đơn giản:
 ````less
 // declare detached ruleset
 @detached-ruleset: { background: red; };
@@ -15,16 +15,16 @@ Simple example:
 }
 ````
 
-compiles into:
+Kết quả:
 ````css
 .top {
   background: red;
 }
 ````
 
-Parentheses after a detached ruleset call are mandatory. The call `@detached-ruleset;` would NOT work.
+Cặp dấu ngoặc ở sau lời gọi tập luật là bắt buộc. Câu lệnh `@detached-ruleset;` sẽ KHÔNG hoạt động.
 
-It is useful when you want to define a mixin that abstracts out either wrapping a piece of code in a media query or a non-supported browser class name. The rulesets can be passed to mixin so that the mixin can wrap the content, e.g.
+Có thể ứng dụng tập luât tách rời để tạo ra một mixin làm nhiệm vụ bọc một đoạn code trong một câu media query hoặc trong một class dành riêng cho trình duyệt không được hỗ trợ. Các tập luật có thể được ném vào trong mixin và sau đó được mixin bọc lại, ví dụ:
 
 ```less
 .desktop-and-old-ie(@rules) {
@@ -41,7 +41,7 @@ header {
 }
 ```
 
-Here the `desktop-and-old-ie` mixin defines the media query and root class so that you can use a mixin to wrap a piece of code. This will output
+Ở đây, mixin `desktop-and-old-ie` tạo ra câu media query và class gốc, và bạn có thể dùng mixin này để bọc một đoạn code. Kết quả như sau:
 
 ```css
 header {
@@ -57,7 +57,7 @@ html.lt-ie9 header {
 }
 ```
 
-A ruleset can be now assigned to a variable or passed in to a mixin and can contain the full set of less features, e.g.
+Tập luật có thế được gán vào một biến và có thể sử dụng khi gọi mixin, và cũng có thể chứa tất cả các tính năng của less, ví dụ:
 
 ```less
 @my-ruleset: {
@@ -67,7 +67,7 @@ A ruleset can be now assigned to a variable or passed in to a mixin and can cont
   };
 ```
 
-You can even take advantage of [media query bubbling](#features-overview-feature-media-query-bubbling-and-nested-media-queries), for instance
+Bạn cũng có thể sử dụng cùng [bong bóng media query](#features-overview-feature-media-query-bubbling-and-nested-media-queries), ví dụ
 
 ```less
 @my-ruleset: {
@@ -82,7 +82,7 @@ You can even take advantage of [media query bubbling](#features-overview-feature
 }
 ```
 
-which will output
+kết quả:
 
 ```css
 @media (orientation: portrait) and tv {
@@ -92,9 +92,9 @@ which will output
 }
 ```
 
-A detached ruleset call unlocks (returns) all its mixins into caller the same way as mixin calls do. However, it does NOT return variables.
+Lệnh gọi tập luật tách rời có thể mở (trả về) tất cả các mixin vào trong selector gọi, tương tự như khi sử dụng mixin. Tuy nhiên, nó KHÔNG trả về biến.
 
-Returned mixin:
+Mixin trả về:
 ````less
 // detached ruleset with a mixin
 @detached-ruleset: { 
@@ -109,14 +109,14 @@ Returned mixin:
 }
 ````
 
-Results in:
+Kết quả:
 ````css
 .caller {
   color: blue;
 }
 ````
 
-Private variables:
+Biến private:
 ````less
 detached-ruleset: { 
     @color:blue; // this variable is private
@@ -126,15 +126,15 @@ detached-ruleset: {
 }
 ````
 
-## Scoping
-A detached ruleset can use all variables and mixins accessible where it is *defined* and where it is *called*. Otherwise said, both definition and caller scopes are available to it. If both scopes contains the same variable or mixin, declaration scope value takes precedence. 
+## Phạm vị
+Một tập luật tách rời có thể sử dụng tất cả các biến và mixin trong phạm vi ở nơi nó được *khai báo* và ở nơi nó được *gọi*. Nói cách khác, nó có quyền truy cập trong phạm vi khai báo và phạm vi gọi của nó. Nếu cả hai phạm vi đều có cùng một biến hay mixin, phạm vi khai báo sẽ được ưu tiên.
 
-*Declaration scope* is the one where detached ruleset body is defined. Copying a detached ruleset from one variable into another cannot modify its scope. The ruleset does not gain access to new scopes just by being referenced there.
+*Phạm vi khai báo* là nơi phần thân tập luật tách rời được khai báo. Copy một luật tách rời từ một biến này vào một biến khác không thể thay đổi phạm vi của nó. Tập luật không có quyền truy cập đến phạm vi mới khi chỉđược tham chiếu ở đó.
 
-Lastly, a detached ruleset can gain access to scope by being unlocked (imported) into it.
+Cuối cùng, một tập luật tách rời có thể truy cập đến phạm vi bằng cách được mở (được nhập) vào nó.
 
-#### Definition and Caller Scope Visibility
-A detached ruleset sees the caller's variables and mixins:
+#### Tầm nhìn của phạm vi khai báo và phạm vi gọi
+Tập luật tách rồi nhìn thấy các biến và mixin của selector gọi nó:
 
 ````less
 @detached-ruleset: {
@@ -154,7 +154,7 @@ selector {
 }
 ````
 
-compiles into:
+Kết quả:
 ````css
 selector {
   caller-variable: value;
@@ -162,7 +162,7 @@ selector {
 }
 ````
 
-Variable and mixins accessible form definition win over those available in the caller:
+Biến và mixin có thể truy cập được từ nơi khai báo được ưu tiên hơn biến và mixin ở nơi gọi:
 ````less
 @variable: global;
 @detached-ruleset: {
@@ -177,15 +177,15 @@ selector {
 }
 ````
 
-compiles into:
+Kết quả:
 ````css
 selector {
   variable: global;
 }
 ````
 
-#### Referencing *Won't* Modify Detached Ruleset Scope
-A ruleset does not gain access to new scopes just by being referenced there:
+#### Việc Tham Chiếu *Không* Thay Đổi Phạm Vi Của Tập Luật Tách Rời
+Một tập luận không có quyền truy cập tại phạm vi khi chỉ được tham chiếu ở đó:
 ````less
 @detached-1: { scope-detached: @one @two; };
 .one {
@@ -202,13 +202,13 @@ A ruleset does not gain access to new scopes just by being referenced there:
 }
 ````
 
-throws an error:
+Sẽ sinh ra lỗi:
 ````
 ERROR 1:32 The variable "@one" was not declared.
 ````
 
-#### Unlocking *Will* Modify Detached Ruleset Scope
-A detached ruleset gains access by being unlocked (imported) inside a scope:
+#### Mở Khóa *Có* Thay Đổi Phạm Vi Của Tập Luật Tách Rời
+Một tập luật tách rời sẽ được thêm quyền truy cập khi được mở khóa (được nhập) ở trong một phạm vi:
 ````less
 #space {
   .importer1() {
@@ -227,7 +227,7 @@ A detached ruleset gains access by being unlocked (imported) inside a scope:
 }
 ````
 
-compiles into:
+Kết quả:
 ````css
 .usePlace {
   scope-detached: value;
