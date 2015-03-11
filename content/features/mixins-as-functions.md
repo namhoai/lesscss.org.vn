@@ -1,8 +1,8 @@
-> Return variables or mixins from mixins
+> Trả về biến hoặc mixin từ mixin
 
-Variables and mixins defined in a mixin are visible and can be used in caller's scope. There is only one exception, variable is not copied if the caller contains a variable with the same name (that includes variables defined by another mixin call).  Only variables present in callers local scope are protected. Variables inherited from parent scopes are overridden.
+Biến và mixin được khai báo trong một mixin sẽ được nhìn thấy và được sử dụng trong phạm vi gọi. Chỉ có một ngoại lệ, biến không được copy nếu selector gọi chứa một biến cùng tên. Chỉ những biến được khai báo trong phạm vị selector gọi mới được an toàn, các biến kế thừa từ phạm vi cha sẽ bị ghi đè.
 
-Example:
+Ví dụ:
 
 ```less
 .mixin() {
@@ -17,7 +17,7 @@ Example:
 }
 
 ```
-Results in:
+Kết quả:
 
 ```css
 .caller {
@@ -26,9 +26,9 @@ Results in:
 }
 ```
 
-Thus variables defined in a mixin can act as its return values. This allows us to create a mixin that can be used almost like a function.
+Như vậy, biến khai báo trong một mixin sẽ giống như các giá trị trả về của nó, cho phép ta tạo ra những mixin hoạt động gần như một hàm.
 
-Example:
+Ví dụ:
 
 ```less
 .average(@x, @y) {
@@ -41,7 +41,7 @@ div {
 }
 ```
 
-Results in:
+Kết quả:
 
 ```css
 div {
@@ -49,7 +49,8 @@ div {
 }
 ```
 
-Variable defined directly in callers scope can not be overriden. However, variable defined in callers parent scope is not protected and will be overriden:
+Các biến khai báo trực tiếp trong phạm vi gọi không thể bị đè. Tuy nhiên, biến trong phạm vi cha của phạm vi khai báo sẽ có thể bị đè:
+
 ````less
 .mixin() {
   @size: in-mixin; 
@@ -64,14 +65,14 @@ Variable defined directly in callers scope can not be overriden. However, variab
 @size: globaly-defined-value; // callers parent scope - no protection
 ````
 
-Results in:
+Kết quả:
 ````css
 .class {
   margin: in-mixin in-mixin;
 }
 ````
 
-Finally, mixin defined in mixin acts as return value too:
+Cuối cùng, mixin khai báo trong mixin cũng hoạt động như biến trả về:
 ````less
 .unlock(@value) { // outer mixin
   .doSomething() { // nested mixin
@@ -85,7 +86,7 @@ Finally, mixin defined in mixin acts as return value too:
 }
 ````
 
-Results in:
+Kết quả:
 ````css
 #namespace {
   declaration: 5;
