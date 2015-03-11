@@ -1,6 +1,6 @@
-> "mix-in" properties from existing styles
+> Các thuộc tính "mix-in" (tạm dịch: hòa trộn) từ những style sẵn có
 
-You can mix-in class selectors and id selectors, e.g.
+Bạn có thể mix-in các selector dạng class và dạng id, ví dụ như sau:
 
 ```less
 .a, #b {
@@ -13,7 +13,7 @@ You can mix-in class selectors and id selectors, e.g.
   #b();
 }
 ```
-which results in:
+Kết quả:
 ```css
 .a, #b {
   color: red;
@@ -26,16 +26,16 @@ which results in:
 }
 ```
 
-Notice that when you call the mixin, the parentheses are optional.
+Lưu ý rằng để gọi mixin không bắt buộc phải có dấu ngoặc.
 
 ```less
 .a();   //these lines do the same thing
 .a;
 ```
 
-## Not outputting the mixin
+## Không in ra mixin
 
-If you want to create a mixin but you do not want that mixin to be output, you can put parentheses after it.
+Nếu bạn muốn tạo một mixin nhưng không muốn in mixin đó ra, bạn có thể đặt cặp dấu ngoặc đằng sau nó.
 
 ```less
 .my-mixin {
@@ -49,7 +49,7 @@ If you want to create a mixin but you do not want that mixin to be output, you c
   .my-other-mixin;
 }
 ```
-outputs
+Kết quả
 
 ```css
 .my-mixin {
@@ -61,11 +61,11 @@ outputs
 }
 ```
 
-## Selectors in mixins
+## Selector trong mixin
 
-Mixins can contain more than just properties, they can contain selectors too.
+Ngoài các thuộc tính, mixin còn có thể chứa các selector.
 
-For example:
+Ví dụ:
 
 ```less
 .my-hover-mixin() {
@@ -78,7 +78,7 @@ button {
 }
 ```
 
-Outputs
+Kết quả
 
 ```css
 button:hover {
@@ -86,9 +86,9 @@ button:hover {
 }
 ```
 
-## Namespaces
+## Namespace
 
-If you want to mixin properties inside a more complicated selector, you can stack up multiple id's or classes.
+Nếu bạn muốn hòa trộn các thuộc tính trong một selector phức tạp, bạn có thể chồng nhiều id hoặc class.
 
 ```less
 #outer {
@@ -102,7 +102,7 @@ If you want to mixin properties inside a more complicated selector, you can stac
 }
 ```
 
-and again both `>` and whitespace are optional
+cả `>` và khoảng trống đều là không bắt buộc
 
 ```less
 // all do the same thing
@@ -114,9 +114,9 @@ and again both `>` and whitespace are optional
 #outer.inner();
 ```
 
-One use of this is known as namespacing. You can put your mixins under a id selector and this makes sure it won't conflict with another library.
+Bằng cách trên, ta có thể tạo ra namespace. Bạn có thể đặt các mixin bên trong một selector dạng id và có thể yên tâm rằng chúng không xung đột với các thư viện khác.
 
-Example:
+Ví dụ:
 
 ```less
 #my-library {
@@ -130,11 +130,11 @@ Example:
 }
 ```
 
-## The `!important` keyword
+## Từ khóa `!important`
 
-Use the `!important` keyword after mixin call to mark all properties inherited by it as `!important`:
+Sử dụng từ khóa `!important` sau lệnh gọi mixin để đánh dấu tất cả các thuộc tính kế thừa là `!important`:
 
-Example:
+Ví dụ:
 
 ```less
 .foo (@bg: #f5f5f5, @color: #900) {
@@ -149,7 +149,7 @@ Example:
 }
 ```
 
-Results in:
+Kết quả:
 
 ```css
 .unimportant {
