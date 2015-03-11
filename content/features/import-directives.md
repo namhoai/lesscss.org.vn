@@ -1,8 +1,8 @@
-> Import styles from other style sheets
+> Nhập style từ các file style sheet khác
 
-In standard CSS, `@import` at-rules must precede all other types of rules. But Less.js doesn't care where you put `@import` statements.
+Trong CSS chuẩn, luật `@import` phải khai báo trước tất cả các luật khác. Nhưng Less.js không quan tâm đến việc bạn đặt câu lệnh `@import` ở đâu.
 
-Example:
+Ví dụ:
 
 ```less
 .foo {
@@ -11,14 +11,14 @@ Example:
 @import "this-is-valid.less";
 ```
 
-## File extensions
-`@import` statements may be treated differently by Less depending on the file extension:
+## Đuôi file
+Câu lệnh `@import` sẽ được Less diễn giải khác nhau tùy theo đuôi file:
 
-* If the file has a `.css` extension it will be treated as CSS and the `@import` statement left as-is (see the [inline option](#import-options-inline) below).
-* If it has _any other extension_ it will be treated as Less and imported.
-* If it does not have an extension, `.less` will be appended and it will be included as a imported Less file.
+* Tên file có đuôi `.css` sẽ được hiểu như CSS và lệnh `@import` sẽ được để nguyên không dịch (tham khảm [tùy chọn trực tiếp](#import-options-inline) bên dưới).
+* Tên file có đuôi khác sẽ được hiểu như Less và sẽ được nhập.
+* Tên file không có đuôi, Less sẽ mặc định hiểu là file `.less` và sẽ nhập file dạng less
 
-Examples:
+Ví dụ:
 
 ```less
 @import "foo";      // foo.less is imported
@@ -27,70 +27,74 @@ Examples:
 @import "foo.css";  // statement left in place, as-is
 ```
 
-The following options can be used to override this behavior.
+Các tùy chọn sau có thể được sử dụng để thay đổi hành vi mặc định trên.
 
-# Import Options
-> Less offers several extensions to the CSS `@import` CSS at-rule to provide more flexibility over what you can do with external files.
+# Tùy chọn nhập
+> Less hỗ trợ rất nhiều đuôi file với câu lệnh CSS `@import`, nhằm tăng tính linh hoạt trong việc nhập file ngoài.
 
-Syntax: `@import (keyword) "filename";`
+Cú pháp: `@import (tu-khoa) "ten-file";`
 
-The following import directives have been implemented:
+Less hiện đã hỗ trợ các chỉ thị import sau:
 
-* `reference`: use a Less file but do not output it
-* `inline`: include the source file in the output but do not process it
-* `less`: treat the file as a Less file, no matter what the file extension
-* `css`: treat the file as a CSS file, no matter what the file extension
-* `once`: only include the file once (this is default behavior)
-* `multiple`: include the file multiple times
-* `optional`: continue compiling when file is not found
+* `reference`: sử dụng một file Less nhưng không in ra
+* `inline`: in ra nội dung file đó nhưng không xử lý
+* `less`: xử lý như file Less, bất kể đuôi file như thế nào
+* `css`: xử lý như file CSS, bất kể đuổi file như thế nào
+* `once`: chỉ nhập một lần (hành vi mặc định)
+* `multiple`: nhập nhiều lần
+* `optional`: tiếp tục dịch kể cả khi file đó không tìm thấy
 
-> More than one keyword per `@import` is allowed, you will have to use commas to seperate the keywords:
+> Less cho phép sử dụng nhiều hơn một từ khóa trong câu lệnh `@import`, phân cách nhau bằng dấu phẩy:
 
-Example: `@import (optional, reference) "foo.less";`
+Ví dụ: `@import (optional, reference) "foo.less";`
 
 ## reference
-> Use `@import (reference)` to import external files, but without adding the imported styles to the compiled output unless referenced.
 
-Released [v1.5.0]({{ less.master }}CHANGELOG.md)
+> Sử dụng `@import (reference)` để nhập file ngoài, nhưng không in ra nội dung ở đầu ra CSS, trừ khi được tham chiếu.
 
-Example: `@import (reference) "foo.less";`
+Có từ phiên bản [v1.5.0]({{ less.master }}CHANGELOG.md)
 
-`reference` is one of the most powerful features in the Less language. Imagine that `reference` marks every directive and selector with a _reference flag_ in the imported file, imports as normal, but when the CSS is generated, "reference" selectors (as well as any media queries containing only reference selectors) are not output. `reference` styles will not show up in your generated CSS unless the reference styles are used as [mixins](#mixins-feature) or [extended](#extend-feature).
+Ví dụ: `@import (reference) "foo.less";`
 
-Additionally, **`reference`** produces different results depending on which method was used (mixin or extend):
+`reference` là một trong những tính năng mạnh nhất của ngôn ngữ Less. Hãy thử tưởng tượng rằng `reference` đánh dấu tất cả các chỉ thị và selector với một _cờ tham chiếu_ trong file đươcj nhập, sau đó nhập bình thường, nhưng khi sinh CSS, các selector "tham chiếu" (và tất cả các media query chỉ chứa các selector tham chiếu) được lược bỏ. Các style `reference` sẽ không xuất hiện trong CSS được sinh ra, trừ khi các style tham chiếu được sử dụng như [mixins](#mixins-feature) hoặc [extended](#extend-feature).
+
+Ngoài ra, **`reference`** tạo ra các kết quả khác nhau với mixin và extend:
 
 * **[extend](#extend-feature)**: When a selector is extended, only the new selector is marked as _not referenced_, and it is pulled in at the position of the reference `@import` statement.
 * **[mixins](#mixins-feature)**: When a `reference` style is used as an [implicit mixin](#mixins-feature), its rules are mixed-in, marked "not reference", and appear in the referenced place as normal.
 
+* **[extend](#extend-feature)**: Khi một selector được mở rộng, chỉ có selector mới được đánh dấu là _không tham chiếu_, và sẽ được in ra ở vị trí câu lệnh `@import`
+* **[mixins](#mixins-feature)**: Khi một style `reference` được sử dụng như một [mixin ngầm](#mixins-feature), các luật của nó được trộn vào, được đánh dấu là "không tham chiếu", và xuất hiện ở vị trí tham chiếu như thường.
 
-### reference example
-This allows you to pull in only specific, targeted styles from a library such as [Bootstrap](https://github.com/twbs/bootstrap) by doing something like this:
+
+### ví dụ về reference
+Với reference, bạn có thể chỉ sử dụngnhững style mong muốn trong một thư viên như [Bootstrap](https://github.com/twbs/bootstrap) bằng cách làm như sau:
 
 ```less
 .navbar:extend(.navbar all) {}
 ```
 
-And you will pull in only `.navbar` related styles from Bootstrap.
+Và sẽ chỉ những style liên quan đến `.navbar` được in ra trong file CSS sinh bởi Less.
 
 
 ## inline
-> Use `@import (inline)` to include external files, but not process them.
+> Sử dụng `@import (inline)` để nhập những file ngoài, nhưng không xử lý chúng.
 
-Released [v1.5.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.5.0]({{ less.master }}CHANGELOG.md)
 
-Example: `@import (inline) "not-less-compatible.css";`
+Ví dụ: `@import (inline) "not-less-compatible.css";`
 
-You will use this when a CSS file may not be Less compatible; this is because although Less supports most known standards CSS, it does not support comments in some places and does not support all known CSS hacks without modifying the CSS.
+Less hỗ trợ hầu hết các chuẩn CSS, nhưng không hỗ trợ comment ở một số chỗ và không hỗ trợ tất cả các `CSS hacks` mà không phải thay đổi CSS. Vậy nên bạn sẽ muốn sử dụng từ khóa inline này khi file CSS không tương thích với Less
 
-So you can use this to include the file in the output so that all CSS will be in one file.
+Bạn có thể sử dụng tùy chọn này để nhập các file vào để chỉ cần có một file CSS ở đầu ra.
 
 
 ## less
-> Use `@import (less)` to treat imported files as Less, regardless of file extension.
+> Sử dụng `@import (less)` để nhập các file theo dạng Less, bất kể đuôi file.
 
-Released [v1.4.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.4.0]({{ less.master }}CHANGELOG.md)
 
-Example:
+Ví dụ:
 
 ```less
 @import (less) "foo.css";
@@ -98,16 +102,16 @@ Example:
 
 
 ## css
-> Use `@import (css)` to treat imported files as regular CSS, regardless of file extension. This means the import statement will be left as it is.
+> Sử dụng `@import (css)` để nhập các file theo dạng CSS thông thường, bất kể đuôi file. Less sẽ để nguyên câu lệnh import và không xử lý.
 
-Released [v1.4.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.4.0]({{ less.master }}CHANGELOG.md)
 
-Example:
+Ví dụ:
 
 ```less
 @import (css) "foo.less";
 ```
-outputs
+Kết quả:
 
 ```less
 @import "foo.less";
@@ -115,13 +119,13 @@ outputs
 
 
 ## once
-> The default behavior of `@import` statements. It means the file is imported only once and subsequent import statements for that file will be ignored.
+> Hành vi mặc định của câu lệnh `@import`. File đó sẽ được nhập duy nhất một lần, và các lệnh nhập sau sẽ bị bỏ qua.
 
-Released [v1.4.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.4.0]({{ less.master }}CHANGELOG.md)
 
-This is the default behavior of `@import` statements.
+Đây là hành vi mặc định của các câu lệnh `@import`.
 
-Example:
+Ví dụ:
 
 ```less
 @import (once) "foo.less";
@@ -130,11 +134,11 @@ Example:
 
 
 ## multiple
-> Use `@import (multiple)` to allow importing of multiple files with the same name. This is the opposite behavior to once.
+> Sử dụng `@import (multiple)` để nhập nhiều lần một file. Đây là hành vi ngược lại với `once`.
 
-Released [v1.4.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v1.4.0]({{ less.master }}CHANGELOG.md)
 
-Example:
+Ví dụ:
 
 ```less
 // file: foo.less
@@ -145,7 +149,7 @@ Example:
 @import (multiple) "foo.less";
 @import (multiple) "foo.less";
 ```
-Outputs
+Kết quả:
 
 ```less
 .a {
@@ -157,6 +161,6 @@ Outputs
 ```
 
 ## optional
-> Use `@import (optional)` to allow importing of a file only when it exists. Without the `optional` keyword Less throws a FileError and stops compiling when importing a file that can not be found. 
+> Sử dụng `@import (optional)` để nhập các file khi nó tồn tại. Nếu không có từ khóa `optional`, Less sẽ tung ra lỗi FileError và sẽ dừng quá trình dịch khi nhập một file không tồn tại.
 
-Released [v2.3.0]({{ less.master }}CHANGELOG.md)
+Có từ phiên bản [v2.3.0]({{ less.master }}CHANGELOG.md)
