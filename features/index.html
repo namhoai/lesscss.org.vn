@@ -419,9 +419,9 @@ style comment! */</span>
 <span class="hljs-comment">// Get in line!</span>
 <span class="hljs-variable">@var:</span> white;
 </code></pre>
-<h3 class="docs-heading">Import<span class="anchor-target" id="features-overview-feature-import"></span>
-<a href="#features-overview-feature-import" name="features-overview-feature-import" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Import ho&#x1EA1;t &#x111;&#x1ED9;ng kh&#xE1; hi&#x1EC7;u qu&#x1EA3;. B&#x1EA1;n c&#xF3; th&#x1EC3; import m&#x1ED9;t t&#x1EC7;p tin <code>.less</code>, v&#xE0; to&#xE0;n b&#x1ED9; c&#xE1;c bi&#x1EBF;n s&#x1ED1; trong &#x111;&#xF3; s&#x1EBD; &#x111;&#x1EC1;u &#x111;&#x1B0;&#x1EE3;c import v&#xE0;o. Ph&#x1EA7;n m&#x1EDF; r&#x1ED9;ng &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; &#x111;&#x1ECB;nh m&#x1ED9;t c&#xE1;ch t&#xF9;y &#xFD; cho c&#xE1;c t&#x1EC7;p tin <code>.less</code>.</p>
+<h3 class="docs-heading">Importing<span class="anchor-target" id="features-overview-feature-importing"></span>
+<a href="#features-overview-feature-importing" name="features-overview-feature-importing" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Importing works pretty much as expected. You can import a <code>.less</code> file, and all the variables in it will be available. The extension is optionally specified for <code>.less</code> files.</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;library&quot;</span>; <span class="hljs-comment">// library.less</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;typo.css&quot;</span>;
 </code></pre>
@@ -1851,117 +1851,121 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
 
 <blockquote>
-<p>Import styles from other style sheets</p>
+<p>Nh&#x1EAD;p style t&#x1EEB; c&#xE1;c file style sheet kh&#xE1;c</p>
 </blockquote>
-<p>In standard CSS, <code>@import</code> at-rules must precede all other types of rules. But Less.js doesn&apos;t care where you put <code>@import</code> statements.</p>
-<p>Example:</p>
+<p>Trong CSS chu&#x1EA9;n, lu&#x1EAD;t <code>@import</code> ph&#x1EA3;i khai b&#xE1;o tr&#x1B0;&#x1EDB;c t&#x1EA5;t c&#x1EA3; c&#xE1;c lu&#x1EAD;t kh&#xE1;c. Nh&#x1B0;ng Less.js kh&#xF4;ng quan t&#xE2;m &#x111;&#x1EBF;n vi&#x1EC7;c b&#x1EA1;n &#x111;&#x1EB7;t c&#xE2;u l&#x1EC7;nh <code>@import</code> &#x1EDF; &#x111;&#xE2;u.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.foo</span> {
   <span class="hljs-attribute">background</span>: <span class="hljs-hexcolor">#900</span>;
 }
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;this-is-valid.less&quot;</span>;
 </code></pre>
-<h2 class="docs-heading">File extensions<span class="anchor-target" id="import-directives-feature-file-extensions"></span>
-<a href="#import-directives-feature-file-extensions" name="import-directives-feature-file-extensions" class="anchor glyphicon glyphicon-link"></a></h2>
-<p><code>@import</code> statements may be treated differently by Less depending on the file extension:</p>
+<h2 class="docs-heading">&#x110;u&#xF4;i file<span class="anchor-target" id="import-directives-feature--u-i-file"></span>
+<a href="#import-directives-feature--u-i-file" name="import-directives-feature--u-i-file" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xE2;u l&#x1EC7;nh <code>@import</code> s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c Less di&#x1EC5;n gi&#x1EA3;i kh&#xE1;c nhau t&#xF9;y theo &#x111;u&#xF4;i file:</p>
 <ul>
-<li>If the file has a <code>.css</code> extension it will be treated as CSS and the <code>@import</code> statement left as-is (see the <a href="#import-options-inline">inline option</a> below).</li>
-<li>If it has <em>any other extension</em> it will be treated as Less and imported.</li>
-<li>If it does not have an extension, <code>.less</code> will be appended and it will be included as a imported Less file.</li>
+<li>T&#xEA;n file c&#xF3; &#x111;u&#xF4;i <code>.css</code> s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c hi&#x1EC3;u nh&#x1B0; CSS v&#xE0; l&#x1EC7;nh <code>@import</code> s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EC3; nguy&#xEA;n kh&#xF4;ng d&#x1ECB;ch (tham kh&#x1EA3;m <a href="#import-options-inline">t&#xF9;y ch&#x1ECD;n tr&#x1EF1;c ti&#x1EBF;p</a> b&#xEA;n d&#x1B0;&#x1EDB;i).</li>
+<li>T&#xEA;n file c&#xF3; &#x111;u&#xF4;i kh&#xE1;c s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c hi&#x1EC3;u nh&#x1B0; Less v&#xE0; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p.</li>
+<li>T&#xEA;n file kh&#xF4;ng c&#xF3; &#x111;u&#xF4;i, Less s&#x1EBD; m&#x1EB7;c &#x111;&#x1ECB;nh hi&#x1EC3;u l&#xE0; file <code>.less</code> v&#xE0; s&#x1EBD; nh&#x1EAD;p file d&#x1EA1;ng less</li>
 </ul>
-<p>Examples:</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo&quot;</span>;      <span class="hljs-comment">// foo.less is imported</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// foo.less is imported</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.php&quot;</span>;  <span class="hljs-comment">// foo.php imported as a less file</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.css&quot;</span>;  <span class="hljs-comment">// statement left in place, as-is</span>
 </code></pre>
-<p>The following options can be used to override this behavior.</p>
-<h1 class="docs-heading">Import Options<span class="anchor-target" id="import-options"></span>
-<a href="#import-options" name="import-options" class="anchor glyphicon glyphicon-link"></a></h1>
+<p>C&#xE1;c t&#xF9;y ch&#x1ECD;n sau c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; thay &#x111;&#x1ED5;i h&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh tr&#xEA;n.</p>
+<h1 class="docs-heading">T&#xF9;y ch&#x1ECD;n nh&#x1EAD;p<span class="anchor-target" id="t-y-ch-n-nh-p"></span>
+<a href="#t-y-ch-n-nh-p" name="t-y-ch-n-nh-p" class="anchor glyphicon glyphicon-link"></a></h1>
 <blockquote>
-<p>Less offers several extensions to the CSS <code>@import</code> CSS at-rule to provide more flexibility over what you can do with external files.</p>
+<p>Less h&#x1ED7; tr&#x1EE3; r&#x1EA5;t nhi&#x1EC1;u &#x111;u&#xF4;i file v&#x1EDB;i c&#xE2;u l&#x1EC7;nh CSS <code>@import</code>, nh&#x1EB1;m t&#x103;ng t&#xED;nh linh ho&#x1EA1;t trong vi&#x1EC7;c nh&#x1EAD;p file ngo&#xE0;i.</p>
 </blockquote>
-<p>Syntax: <code>@import (keyword) &quot;filename&quot;;</code></p>
-<p>The following import directives have been implemented:</p>
+<p>C&#xFA; ph&#xE1;p: <code>@import (tu-khoa) &quot;ten-file&quot;;</code></p>
+<p>Less hi&#x1EC7;n &#x111;&#xE3; h&#x1ED7; tr&#x1EE3; c&#xE1;c ch&#x1EC9; th&#x1ECB; import sau:</p>
 <ul>
-<li><code>reference</code>: use a Less file but do not output it</li>
-<li><code>inline</code>: include the source file in the output but do not process it</li>
-<li><code>less</code>: treat the file as a Less file, no matter what the file extension</li>
-<li><code>css</code>: treat the file as a CSS file, no matter what the file extension</li>
-<li><code>once</code>: only include the file once (this is default behavior)</li>
-<li><code>multiple</code>: include the file multiple times</li>
-<li><code>optional</code>: continue compiling when file is not found</li>
+<li><code>reference</code>: s&#x1EED; d&#x1EE5;ng m&#x1ED9;t file Less nh&#x1B0;ng kh&#xF4;ng in ra</li>
+<li><code>inline</code>: in ra n&#x1ED9;i dung file &#x111;&#xF3; nh&#x1B0;ng kh&#xF4;ng x&#x1EED; l&#xFD;</li>
+<li><code>less</code>: x&#x1EED; l&#xFD; nh&#x1B0; file Less, b&#x1EA5;t k&#x1EC3; &#x111;u&#xF4;i file nh&#x1B0; th&#x1EBF; n&#xE0;o</li>
+<li><code>css</code>: x&#x1EED; l&#xFD; nh&#x1B0; file CSS, b&#x1EA5;t k&#x1EC3; &#x111;u&#x1ED5;i file nh&#x1B0; th&#x1EBF; n&#xE0;o</li>
+<li><code>once</code>: ch&#x1EC9; nh&#x1EAD;p m&#x1ED9;t l&#x1EA7;n (h&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh)</li>
+<li><code>multiple</code>: nh&#x1EAD;p nhi&#x1EC1;u l&#x1EA7;n</li>
+<li><code>optional</code>: ti&#x1EBF;p t&#x1EE5;c d&#x1ECB;ch k&#x1EC3; c&#x1EA3; khi file &#x111;&#xF3; kh&#xF4;ng t&#xEC;m th&#x1EA5;y</li>
 </ul>
 <blockquote>
-<p>More than one keyword per <code>@import</code> is allowed, you will have to use commas to seperate the keywords:</p>
+<p>Less cho ph&#xE9;p s&#x1EED; d&#x1EE5;ng nhi&#x1EC1;u h&#x1A1;n m&#x1ED9;t t&#x1EEB; kh&#xF3;a trong c&#xE2;u l&#x1EC7;nh <code>@import</code>, ph&#xE2;n c&#xE1;ch nhau b&#x1EB1;ng d&#x1EA5;u ph&#x1EA9;y:</p>
 </blockquote>
-<p>Example: <code>@import (optional, reference) &quot;foo.less&quot;;</code></p>
-<h2 class="docs-heading">reference<span class="anchor-target" id="import-options-reference"></span>
-<a href="#import-options-reference" name="import-options-reference" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>V&#xED; d&#x1EE5;: <code>@import (optional, reference) &quot;foo.less&quot;;</code></p>
+<h2 class="docs-heading">reference<span class="anchor-target" id="t-y-ch-n-nh-p-reference"></span>
+<a href="#t-y-ch-n-nh-p-reference" name="t-y-ch-n-nh-p-reference" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (reference)</code> to import external files, but without adding the imported styles to the compiled output unless referenced.</p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (reference)</code> &#x111;&#x1EC3; nh&#x1EAD;p file ngo&#xE0;i, nh&#x1B0;ng kh&#xF4;ng in ra n&#x1ED9;i dung &#x1EDF; &#x111;&#x1EA7;u ra CSS, tr&#x1EEB; khi &#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
-<p>Example: <code>@import (reference) &quot;foo.less&quot;;</code></p>
-<p><code>reference</code> is one of the most powerful features in the Less language. Imagine that <code>reference</code> marks every directive and selector with a <em>reference flag</em> in the imported file, imports as normal, but when the CSS is generated, &quot;reference&quot; selectors (as well as any media queries containing only reference selectors) are not output. <code>reference</code> styles will not show up in your generated CSS unless the reference styles are used as <a href="#mixins-feature">mixins</a> or <a href="#extend-feature">extended</a>.</p>
-<p>Additionally, <strong><code>reference</code></strong> produces different results depending on which method was used (mixin or extend):</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
+<p>V&#xED; d&#x1EE5;: <code>@import (reference) &quot;foo.less&quot;;</code></p>
+<p><code>reference</code> l&#xE0; m&#x1ED9;t trong nh&#x1EEF;ng t&#xED;nh n&#x103;ng m&#x1EA1;nh nh&#x1EA5;t c&#x1EE7;a ng&#xF4;n ng&#x1EEF; Less. H&#xE3;y th&#x1EED; t&#x1B0;&#x1EDF;ng t&#x1B0;&#x1EE3;ng r&#x1EB1;ng <code>reference</code> &#x111;&#xE1;nh d&#x1EA5;u t&#x1EA5;t c&#x1EA3; c&#xE1;c ch&#x1EC9; th&#x1ECB; v&#xE0; selector v&#x1EDB;i m&#x1ED9;t <em>c&#x1EDD; tham chi&#x1EBF;u</em> trong file &#x111;&#x1B0;&#x1A1;cj nh&#x1EAD;p, sau &#x111;&#xF3; nh&#x1EAD;p b&#xEC;nh th&#x1B0;&#x1EDD;ng, nh&#x1B0;ng khi sinh CSS, c&#xE1;c selector &quot;tham chi&#x1EBF;u&quot; (v&#xE0; t&#x1EA5;t c&#x1EA3; c&#xE1;c media query ch&#x1EC9; ch&#x1EE9;a c&#xE1;c selector tham chi&#x1EBF;u) &#x111;&#x1B0;&#x1EE3;c l&#x1B0;&#x1EE3;c b&#x1ECF;. C&#xE1;c style <code>reference</code> s&#x1EBD; kh&#xF4;ng xu&#x1EA5;t hi&#x1EC7;n trong CSS &#x111;&#x1B0;&#x1EE3;c sinh ra, tr&#x1EEB; khi c&#xE1;c style tham chi&#x1EBF;u &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nh&#x1B0; <a href="#mixins-feature">mixins</a> ho&#x1EB7;c <a href="#extend-feature">extended</a>.</p>
+<p>Ngo&#xE0;i ra, <strong><code>reference</code></strong> t&#x1EA1;o ra c&#xE1;c k&#x1EBF;t qu&#x1EA3; kh&#xE1;c nhau v&#x1EDB;i mixin v&#xE0; extend:</p>
 <ul>
 <li><strong><a href="#extend-feature">extend</a></strong>: When a selector is extended, only the new selector is marked as <em>not referenced</em>, and it is pulled in at the position of the reference <code>@import</code> statement.</li>
-<li><strong><a href="#mixins-feature">mixins</a></strong>: When a <code>reference</code> style is used as an <a href="#mixins-feature">implicit mixin</a>, its rules are mixed-in, marked &quot;not reference&quot;, and appear in the referenced place as normal.</li>
+<li><p><strong><a href="#mixins-feature">mixins</a></strong>: When a <code>reference</code> style is used as an <a href="#mixins-feature">implicit mixin</a>, its rules are mixed-in, marked &quot;not reference&quot;, and appear in the referenced place as normal.</p>
+</li>
+<li><p><strong><a href="#extend-feature">extend</a></strong>: Khi m&#x1ED9;t selector &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; r&#x1ED9;ng, ch&#x1EC9; c&#xF3; selector m&#x1EDB;i &#x111;&#x1B0;&#x1EE3;c &#x111;&#xE1;nh d&#x1EA5;u l&#xE0; <em>kh&#xF4;ng tham chi&#x1EBF;u</em>, v&#xE0; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c in ra &#x1EDF; v&#x1ECB; tr&#xED; c&#xE2;u l&#x1EC7;nh <code>@import</code></p>
+</li>
+<li><strong><a href="#mixins-feature">mixins</a></strong>: Khi m&#x1ED9;t style <code>reference</code> &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nh&#x1B0; m&#x1ED9;t <a href="#mixins-feature">mixin ng&#x1EA7;m</a>, c&#xE1;c lu&#x1EAD;t c&#x1EE7;a n&#xF3; &#x111;&#x1B0;&#x1EE3;c tr&#x1ED9;n v&#xE0;o, &#x111;&#x1B0;&#x1EE3;c &#x111;&#xE1;nh d&#x1EA5;u l&#xE0; &quot;kh&#xF4;ng tham chi&#x1EBF;u&quot;, v&#xE0; xu&#x1EA5;t hi&#x1EC7;n &#x1EDF; v&#x1ECB; tr&#xED; tham chi&#x1EBF;u nh&#x1B0; th&#x1B0;&#x1EDD;ng.</li>
 </ul>
-<h3 class="docs-heading">reference example<span class="anchor-target" id="import-options-reference-example"></span>
-<a href="#import-options-reference-example" name="import-options-reference-example" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>This allows you to pull in only specific, targeted styles from a library such as <a href="https://github.com/twbs/bootstrap">Bootstrap</a> by doing something like this:</p>
+<h3 class="docs-heading">v&#xED; d&#x1EE5; v&#x1EC1; reference<span class="anchor-target" id="t-y-ch-n-nh-p-v-d-v-reference"></span>
+<a href="#t-y-ch-n-nh-p-v-d-v-reference" name="t-y-ch-n-nh-p-v-d-v-reference" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>V&#x1EDB;i reference, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EC9; s&#x1EED; d&#x1EE5;ngnh&#x1EEF;ng style mong mu&#x1ED1;n trong m&#x1ED9;t th&#x1B0; vi&#xEA;n nh&#x1B0; <a href="https://github.com/twbs/bootstrap">Bootstrap</a> b&#x1EB1;ng c&#xE1;ch l&#xE0;m nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.navbar</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.navbar</span> <span class="hljs-keyword">all</span>) {}
 </code></pre>
-<p>And you will pull in only <code>.navbar</code> related styles from Bootstrap.</p>
-<h2 class="docs-heading">inline<span class="anchor-target" id="import-options-inline"></span>
-<a href="#import-options-inline" name="import-options-inline" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>V&#xE0; s&#x1EBD; ch&#x1EC9; nh&#x1EEF;ng style li&#xEA;n quan &#x111;&#x1EBF;n <code>.navbar</code> &#x111;&#x1B0;&#x1EE3;c in ra trong file CSS sinh b&#x1EDF;i Less.</p>
+<h2 class="docs-heading">inline<span class="anchor-target" id="t-y-ch-n-nh-p-inline"></span>
+<a href="#t-y-ch-n-nh-p-inline" name="t-y-ch-n-nh-p-inline" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (inline)</code> to include external files, but not process them.</p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (inline)</code> &#x111;&#x1EC3; nh&#x1EAD;p nh&#x1EEF;ng file ngo&#xE0;i, nh&#x1B0;ng kh&#xF4;ng x&#x1EED; l&#xFD; ch&#xFA;ng.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
-<p>Example: <code>@import (inline) &quot;not-less-compatible.css&quot;;</code></p>
-<p>You will use this when a CSS file may not be Less compatible; this is because although Less supports most known standards CSS, it does not support comments in some places and does not support all known CSS hacks without modifying the CSS.</p>
-<p>So you can use this to include the file in the output so that all CSS will be in one file.</p>
-<h2 class="docs-heading">less<span class="anchor-target" id="import-options-less"></span>
-<a href="#import-options-less" name="import-options-less" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.5.0</a></p>
+<p>V&#xED; d&#x1EE5;: <code>@import (inline) &quot;not-less-compatible.css&quot;;</code></p>
+<p>Less h&#x1ED7; tr&#x1EE3; h&#x1EA7;u h&#x1EBF;t c&#xE1;c chu&#x1EA9;n CSS, nh&#x1B0;ng kh&#xF4;ng h&#x1ED7; tr&#x1EE3; comment &#x1EDF; m&#x1ED9;t s&#x1ED1; ch&#x1ED7; v&#xE0; kh&#xF4;ng h&#x1ED7; tr&#x1EE3; t&#x1EA5;t c&#x1EA3; c&#xE1;c <code>CSS hacks</code> m&#xE0; kh&#xF4;ng ph&#x1EA3;i thay &#x111;&#x1ED5;i CSS. V&#x1EAD;y n&#xEA;n b&#x1EA1;n s&#x1EBD; mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng t&#x1EEB; kh&#xF3;a inline n&#xE0;y khi file CSS kh&#xF4;ng t&#x1B0;&#x1A1;ng th&#xED;ch v&#x1EDB;i Less</p>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1EC3; nh&#x1EAD;p c&#xE1;c file v&#xE0;o &#x111;&#x1EC3; ch&#x1EC9; c&#x1EA7;n c&#xF3; m&#x1ED9;t file CSS &#x1EDF; &#x111;&#x1EA7;u ra.</p>
+<h2 class="docs-heading">less<span class="anchor-target" id="t-y-ch-n-nh-p-less"></span>
+<a href="#t-y-ch-n-nh-p-less" name="t-y-ch-n-nh-p-less" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (less)</code> to treat imported files as Less, regardless of file extension.</p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (less)</code> &#x111;&#x1EC3; nh&#x1EAD;p c&#xE1;c file theo d&#x1EA1;ng Less, b&#x1EA5;t k&#x1EC3; &#x111;u&#xF4;i file.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">&quot;foo.css&quot;</span>;
 </code></pre>
-<h2 class="docs-heading">css<span class="anchor-target" id="import-options-css"></span>
-<a href="#import-options-css" name="import-options-css" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">css<span class="anchor-target" id="t-y-ch-n-nh-p-css"></span>
+<a href="#t-y-ch-n-nh-p-css" name="t-y-ch-n-nh-p-css" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (css)</code> to treat imported files as regular CSS, regardless of file extension. This means the import statement will be left as it is.</p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (css)</code> &#x111;&#x1EC3; nh&#x1EAD;p c&#xE1;c file theo d&#x1EA1;ng CSS th&#xF4;ng th&#x1B0;&#x1EDD;ng, b&#x1EA5;t k&#x1EC3; &#x111;u&#xF4;i file. Less s&#x1EBD; &#x111;&#x1EC3; nguy&#xEA;n c&#xE2;u l&#x1EC7;nh import v&#xE0; kh&#xF4;ng x&#x1EED; l&#xFD;.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> (css) <span class="hljs-string">&quot;foo.less&quot;</span>;
 </code></pre>
-<p>outputs</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.less&quot;</span>;
 </code></pre>
-<h2 class="docs-heading">once<span class="anchor-target" id="import-options-once"></span>
-<a href="#import-options-once" name="import-options-once" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">once<span class="anchor-target" id="t-y-ch-n-nh-p-once"></span>
+<a href="#t-y-ch-n-nh-p-once" name="t-y-ch-n-nh-p-once" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>The default behavior of <code>@import</code> statements. It means the file is imported only once and subsequent import statements for that file will be ignored.</p>
+<p>H&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh c&#x1EE7;a c&#xE2;u l&#x1EC7;nh <code>@import</code>. File &#x111;&#xF3; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p duy nh&#x1EA5;t m&#x1ED9;t l&#x1EA7;n, v&#xE0; c&#xE1;c l&#x1EC7;nh nh&#x1EAD;p sau s&#x1EBD; b&#x1ECB; b&#x1ECF; qua.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
-<p>This is the default behavior of <code>@import</code> statements.</p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
+<p>&#x110;&#xE2;y l&#xE0; h&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh c&#x1EE7;a c&#xE1;c c&#xE2;u l&#x1EC7;nh <code>@import</code>.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> (once) <span class="hljs-string">&quot;foo.less&quot;</span>;
 <span class="hljs-at_rule">@import</span> (once) <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// this statement will be ignored</span>
 </code></pre>
-<h2 class="docs-heading">multiple<span class="anchor-target" id="import-options-multiple"></span>
-<a href="#import-options-multiple" name="import-options-multiple" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">multiple<span class="anchor-target" id="t-y-ch-n-nh-p-multiple"></span>
+<a href="#t-y-ch-n-nh-p-multiple" name="t-y-ch-n-nh-p-multiple" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (multiple)</code> to allow importing of multiple files with the same name. This is the opposite behavior to once.</p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (multiple)</code> &#x111;&#x1EC3; nh&#x1EAD;p nhi&#x1EC1;u l&#x1EA7;n m&#x1ED9;t file. &#x110;&#xE2;y l&#xE0; h&#xE0;nh vi ng&#x1B0;&#x1EE3;c l&#x1EA1;i v&#x1EDB;i <code>once</code>.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
-<p>Example:</p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.4.0</a></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-comment">// file: foo.less</span>
 <span class="hljs-class">.a</span> {
   <span class="hljs-attribute">color</span>: green;
@@ -1970,7 +1974,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 <span class="hljs-at_rule">@import</span> (multiple) <span class="hljs-string">&quot;foo.less&quot;</span>;
 <span class="hljs-at_rule">@import</span> (multiple) <span class="hljs-string">&quot;foo.less&quot;</span>;
 </code></pre>
-<p>Outputs</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.a</span> {
   <span class="hljs-attribute">color</span>: green;
 }
@@ -1978,12 +1982,12 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: green;
 }
 </code></pre>
-<h2 class="docs-heading">optional<span class="anchor-target" id="import-options-optional"></span>
-<a href="#import-options-optional" name="import-options-optional" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">optional<span class="anchor-target" id="t-y-ch-n-nh-p-optional"></span>
+<a href="#t-y-ch-n-nh-p-optional" name="t-y-ch-n-nh-p-optional" class="anchor glyphicon glyphicon-link"></a></h2>
 <blockquote>
-<p>Use <code>@import (optional)</code> to allow importing of a file only when it exists. Without the <code>optional</code> keyword Less throws a FileError and stops compiling when importing a file that can not be found. </p>
+<p>S&#x1EED; d&#x1EE5;ng <code>@import (optional)</code> &#x111;&#x1EC3; nh&#x1EAD;p c&#xE1;c file khi n&#xF3; t&#x1ED3;n t&#x1EA1;i. N&#x1EBF;u kh&#xF4;ng c&#xF3; t&#x1EEB; kh&#xF3;a <code>optional</code>, Less s&#x1EBD; tung ra l&#x1ED7;i FileError v&#xE0; s&#x1EBD; d&#x1EEB;ng qu&#xE1; tr&#xEC;nh d&#x1ECB;ch khi nh&#x1EAD;p m&#x1ED9;t file kh&#xF4;ng t&#x1ED3;n t&#x1EA1;i.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v2.3.0</a></p>
+<p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v2.3.0</a></p>
 
 
       <br>
