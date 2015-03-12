@@ -153,11 +153,11 @@
 <li><a href="#mixins-feature-selector-trong-mixin">Selector trong mixin</a></li>
 <li><a href="#mixins-feature-namespace">Namespace</a></li>
 <li><a href="#mixins-feature-t-kh-a-important-">T&#x1EEB; kh&#xF3;a !important</a></li></ul></li>
-<li><a href="#mixins-parametric-feature">Mixins d&#x1EA1;ng tham s&#x1ED1;</a><ul class="nav"><li><a href="#mixins-parametric-feature-mixins-with-multiple-parameters">Mixins With Multiple Parameters</a></li>
-<li><a href="#mixins-parametric-feature-named-parameters">Named Parameters</a></li>
-<li><a href="#mixins-parametric-feature-the-arguments-variable">The @arguments variable</a></li>
-<li><a href="#mixins-parametric-feature-advanced-arguments-and-the-rest-variable">Advanced arguments and the @rest variable</a></li>
-<li><a href="#mixins-parametric-feature-pattern-matching">Pattern-matching</a></li></ul></li>
+<li><a href="#mixins-parametric-feature">Mixins d&#x1EA1;ng tham s&#x1ED1;</a><ul class="nav"><li><a href="#mixins-parametric-feature-mixins-nhi-u-tham-s-">Mixins nhi&#x1EC1;u tham s&#x1ED1;</a></li>
+<li><a href="#mixins-parametric-feature-truy-n-tham-s-b-ng-t-n">Truy&#x1EC1;n tham s&#x1ED1; b&#x1EB1;ng t&#xEA;n</a></li>
+<li><a href="#mixins-parametric-feature-bi-n-arguments-">Bi&#x1EBF;n @arguments</a></li>
+<li><a href="#mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-">Tham s&#x1ED1; n&#xE2;ng cao v&#xE0; bi&#x1EBF;n @rest</a></li>
+<li><a href="#mixins-parametric-feature-so-kh-p-m-u">So kh&#x1EDB;p m&#x1EAB;u</a></li></ul></li>
 <li><a href="#mixins-as-functions-feature">Mixins d&#x1EA1;ng function</a></li>
 <li><a href="#detached-rulesets-feature">Truy&#x1EC1;n Rulesets v&#xE0;o Mixins</a><ul class="nav"><li><a href="#detached-rulesets-feature-ph-m-v-">Ph&#x1EA1;m v&#x1ECB;</a></li></ul></li>
 <li><a href="#import-directives-feature">Import Directives</a><ul class="nav"><li><a href="#import-directives-feature--u-i-file">&#x110;u&#xF4;i file</a></li></ul></li>
@@ -169,10 +169,10 @@
 <li><a href="#t-y-ch-n-nh-p-once">once</a></li>
 <li><a href="#t-y-ch-n-nh-p-multiple">multiple</a></li>
 <li><a href="#t-y-ch-n-nh-p-optional">optional</a></li></ul></li>
-<li><a href="#mixin-guards-feature">Mixin Guards</a><ul class="nav"><li><a href="#mixin-guards-feature-guard-comparison-operators">Guard comparison operators</a></li>
-<li><a href="#mixin-guards-feature-guard-logical-operators">Guard logical operators</a></li>
-<li><a href="#mixin-guards-feature-type-checking-functions">Type checking functions</a></li>
-<li><a href="#mixin-guards-feature-conditional-mixins">Conditional mixins</a></li></ul></li>
+<li><a href="#mixin-guards-feature">Mixin Guards</a><ul class="nav"><li><a href="#mixin-guards-feature-to-n-t-so-s-nh-ch-n">To&#xE1;n t&#x1EED; so s&#xE1;nh ch&#x1EAF;n</a></li>
+<li><a href="#mixin-guards-feature-to-n-t-logic-trong-i-u-ki-n-ch-n">To&#xE1;n t&#x1EED; logic trong &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n</a></li>
+<li><a href="#mixin-guards-feature-h-m-ki-m-tra-ki-u">H&#xE0;m ki&#x1EC3;m tra ki&#x1EC3;u</a></li>
+<li><a href="#mixin-guards-feature-mixin-c-i-u-ki-n">Mixin c&#xF3; &#x111;i&#x1EC1;u ki&#x1EC7;n</a></li></ul></li>
 <li><a href="#css-guards-feature">CSS Guards</a></li>
 <li><a href="#loops-feature">V&#xF2;ng l&#x1EB7;p</a></li>
 <li><a href="#merge-feature">Merge</a><ul class="nav"><li><a href="#merge-feature-d-u-ph-y">D&#x1EA5;u ph&#x1EA9;y</a></li>
@@ -1296,17 +1296,17 @@ style comment! */</span>
 
 
 <blockquote>
-<p>How to pass arguments to mixins</p>
+<p>C&#xE1;ch truy&#x1EC1;n tham s&#x1ED1; v&#xE0;o mixin</p>
 </blockquote>
-<p>Mixins can also take arguments, which are variables passed to the block of selectors when it is mixed in.</p>
-<p>For example:</p>
+<p>Mixin c&#xF3; th&#x1EC3; nh&#x1EAD;n tham s&#x1ED1; l&#xE0; c&#xE1;c bi&#x1EBF;n.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.border-radius</span>(<span class="hljs-variable">@radius</span>) {
   <span class="hljs-attribute">-webkit-border-radius</span>: <span class="hljs-variable">@radius</span>;
      <span class="hljs-attribute">-moz-border-radius</span>: <span class="hljs-variable">@radius</span>;
           <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">@radius</span>;
 }
 </code></pre>
-<p>And here&apos;s how we can mix it into various rulesets:</p>
+<p>V&#xE0; sau &#x111;&#xF3; ta c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; trong c&#xE1;c ruleset:</p>
 <pre><code class="lang-less"><span class="hljs-id">#header</span> {
   <span class="hljs-class">.border-radius</span>(<span class="hljs-number">4px</span>);
 }
@@ -1314,20 +1314,20 @@ style comment! */</span>
   <span class="hljs-class">.border-radius</span>(<span class="hljs-number">6px</span>);
 }
 </code></pre>
-<p>Parametric mixins can also have default values for their parameters:</p>
+<p>C&#xE1;c tham s&#x1ED1; c&#x169;ng c&#xF3; th&#x1EC3; c&#xF3; gi&#xE1; tr&#x1ECB; m&#x1EB7;c &#x111;&#x1ECB;nh:</p>
 <pre><code class="lang-less"><span class="hljs-class">.border-radius</span>(<span class="hljs-variable">@radius</span>: <span class="hljs-number">5px</span>) {
   <span class="hljs-attribute">-webkit-border-radius</span>: <span class="hljs-variable">@radius</span>;
      <span class="hljs-attribute">-moz-border-radius</span>: <span class="hljs-variable">@radius</span>;
           <span class="hljs-attribute">border-radius</span>: <span class="hljs-variable">@radius</span>;
 }
 </code></pre>
-<p>We can invoke it like this now:</p>
+<p>Ta c&#xF3; th&#x1EC3; g&#x1ECD;i n&#xF3; nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-id">#header</span> {
   <span class="hljs-class">.border-radius</span>;
 }
 </code></pre>
-<p>And it will include a 5px border-radius.</p>
-<p>You can also use parametric mixins which don&apos;t take parameters. This is useful if you want to hide the ruleset from the CSS output, but want to include its properties in other rulesets:</p>
+<p>V&#xE0; #header s&#x1EBD; c&#xF3; border-radius 5px</p>
+<p>Ta c&#x169;ng c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng mixin tham s&#x1ED1; nh&#x1B0;ng kh&#xF4;ng &#x111;&#x1EB7;t tham s&#x1ED1; n&#xE0;o. C&#xE1;ch n&#xE0;y h&#x1EEF;u d&#x1EE5;ng khi ta kh&#xF4;ng mu&#x1ED1;n in mixin &#x111;&#xF3; ra CSS, nh&#x1B0;ng l&#x1EA1;i mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a n&#xF3; &#x1EDF; trong c&#xE1;c ruleset kh&#xE1;c:</p>
 <pre><code class="lang-less"><span class="hljs-class">.wrap</span>() {
   <span class="hljs-attribute">text-wrap</span>: wrap;
   <span class="hljs-attribute">white-space</span>: -moz-pre-wrap;
@@ -1337,7 +1337,7 @@ style comment! */</span>
 
 <span class="hljs-tag">pre</span> { <span class="hljs-class">.wrap</span> }
 </code></pre>
-<p>Which would output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-tag">pre</span> {
   <span class="hljs-attribute">text-wrap</span>: wrap;
   <span class="hljs-attribute">white-space</span>: -moz-pre-wrap;
@@ -1345,17 +1345,17 @@ style comment! */</span>
   <span class="hljs-attribute">word-wrap</span>: break-word;
 }
 </code></pre>
-<h3 class="docs-heading">Mixins With Multiple Parameters<span class="anchor-target" id="mixins-parametric-feature-mixins-with-multiple-parameters"></span>
-<a href="#mixins-parametric-feature-mixins-with-multiple-parameters" name="mixins-parametric-feature-mixins-with-multiple-parameters" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Parameters are either <em>semicolon</em> or <em>comma</em> separated. It is recommended to use <em>semicolon</em>. The symbol comma has double meaning: it can be interpreted either as a mixin parameters separator or css list separator.</p>
-<p>Using comma as mixin separator makes it impossible to create comma separated lists as an argument. On the other hand, if the compiler sees at least one semicolon inside mixin call or declaration, it assumes that arguments are separated by semicolons and all commas belong to css lists:</p>
+<h3 class="docs-heading">Mixins nhi&#x1EC1;u tham s&#x1ED1;<span class="anchor-target" id="mixins-parametric-feature-mixins-nhi-u-tham-s-"></span>
+<a href="#mixins-parametric-feature-mixins-nhi-u-tham-s-" name="mixins-parametric-feature-mixins-nhi-u-tham-s-" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#xE1;c tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o mixin c&#xE1;ch nhau b&#x1EB1;ng <em>ch&#x1EA5;m ph&#x1EA9;y (;)</em> ho&#x1EB7;c <em>ph&#x1EA9;y (,)</em>, tuy nhi&#xEA;n n&#xEA;n s&#x1EED; d&#x1EE5;ng <em>ch&#x1EA5;m ph&#x1EA9;y</em>. D&#x1EA5;u ph&#x1EA9;y c&#xF3; khi mang hai ngh&#x129;a: v&#x1EEB;a l&#xE0; k&#xFD; t&#x1EF1; ph&#xE2;n c&#xE1;ch tham s&#x1ED1; mixin, c&#x169;ng &#x111;&#x1ED3;ng th&#x1EDD;i l&#xE0; k&#xFD; t&#x1EF1; ph&#xE2;n c&#xE1;ch c&#x1EE7;a m&#x1ED9;t danh s&#xE1;ch trong CSS chu&#x1EA9;n.</p>
+<p>B&#x1EDF;i v&#x1EAD;y, khi s&#x1EED; d&#x1EE5;ng d&#x1EA5;u ph&#x1EA9;y &#x111;&#x1EC3; ph&#xE2;n c&#xE1;ch tham s&#x1ED1; mixin, ta s&#x1EBD; kh&#xF4;ng c&#xF3; c&#xE1;ch n&#xE0;o truy&#x1EC1;n v&#xE0;o m&#x1ED9;t danh s&#xE1;ch CSS. H&#x1A1;n n&#x1EEF;a, n&#x1EBF;u tr&#xEC;nh d&#x1ECB;ch nh&#xEC;n th&#x1EA5;y &#xED;t nh&#x1EA5;t m&#x1ED9;t k&#xFD; t&#x1EF1; ch&#x1EA5;m ph&#x1EA9;y trong l&#x1EDD;i g&#x1ECD;i mixin, n&#xF3; s&#x1EBD; ng&#x1EA7;m hi&#x1EC3;u r&#x1EB1;ng c&#xE1;c tham s&#x1ED1; &#x111;&#x1B0;&#x1EE3;c ph&#xE2;n c&#xE1;ch b&#x1EB1;ng ch&#x1EA5;m ph&#x1EA9;y, v&#xE0; v&#xEC; v&#x1EAD;y c&#xE1;c d&#x1EA5;u ph&#x1EA9;y l&#xE0; c&#x1EE7;a danh s&#xE1;ch CSS:</p>
 <ul>
-<li>two arguments and each contains comma separated list: <code>.name(1, 2, 3; something, else)</code>,</li>
-<li>three arguments and each contains one number: <code>.name(1, 2, 3)</code>,</li>
-<li>use dummy semicolon to create mixin call with one argument containing comma separated css list: <code>.name(1, 2, 3;)</code>,</li>
-<li>comma separated default value: <code>.name(@param1: red, blue;)</code>.</li>
+<li>hai tham s&#x1ED1; &#x111;&#x1EC1;u l&#xE0; danh s&#xE1;ch: <code>.name(1, 2, 3; something, else)</code>,</li>
+<li>ba tham s&#x1ED1; &#x111;&#x1EC1;u l&#xE0; s&#x1ED1;: <code>.name(1, 2, 3)</code>,</li>
+<li>s&#x1EED; d&#x1EE5;ng d&#x1EA5;u ch&#x1EA5;m ph&#x1EA9;y b&#xF9; nh&#xEC;n &#x111;&#x1EC3; g&#x1ECD;i m&#x1ED9;t mixin v&#x1EDB;i tham s&#x1ED1; l&#xE0; danh s&#xE1;ch css c&#xF3; ch&#x1EE9;a d&#x1EA5;u ph&#x1EA9;y: <code>.name(1, 2, 3;)</code>,</li>
+<li>gi&#xE1; tr&#x1ECB; m&#x1EB7;c &#x111;&#x1ECB;nh c&#x1EE7;a tham s&#x1ED1; l&#xE0; danh s&#xE1;ch</li>
 </ul>
-<p>It is legal to define multiple mixins with the same name and number of parameters. Less will use properties of all that can apply. If you used the mixin with one parameter e.g. <code>.mixin(green);</code>, then properties of all mixins with exactly one mandatory parameter will be used:</p>
+<p>Less cho ph&#xE9;p khai b&#xE1;o nhi&#x1EC1;u mixin c&#xF9;ng t&#xEA;n v&#xE0; s&#x1ED1; l&#x1B0;&#x1EE3;ng tham s&#x1ED1;. Trong s&#x1ED1; c&#xE1;c mixin c&#xF9;ng t&#xEA;n &#x111;&#xF3;, Less s&#x1EBD; s&#x1EED; d&#x1EE5;ng c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a t&#x1EA5;t c&#x1EA3; c&#xE1;c mixin c&#xF3; th&#x1EC3;. N&#x1EBF;u b&#x1EA1;n g&#x1ECD;i mixin v&#x1EDB;i m&#x1ED9;t tham s&#x1ED1;, v&#xED; d&#x1EE5; <code>.mixin(green);</code>, th&#xEC; t&#x1EA5;t c&#x1EA3; thu&#x1ED9;c t&#xED;nh c&#x1EE7;a c&#xE1;c mixin v&#x1EDB;i ch&#xED;nh x&#xE1;c m&#x1ED9;t tham s&#x1ED1; thi&#x1EBF;t y&#x1EBF;u s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@color</span>) {
   <span class="hljs-attribute">color-1</span>: <span class="hljs-variable">@color</span>;
 }
@@ -1372,16 +1372,16 @@ style comment! */</span>
   <span class="hljs-class">.mixin</span>(<span class="hljs-hexcolor">#008000</span>);
 }
 </code></pre>
-<p>compiles into:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.some</span> <span class="hljs-class">.selector</span> <span class="hljs-tag">div</span> {
   <span class="hljs-attribute">color-1</span>: <span class="hljs-hexcolor">#008000</span>;
   <span class="hljs-attribute">color-2</span>: <span class="hljs-hexcolor">#008000</span>;
   <span class="hljs-attribute">padding-2</span>: <span class="hljs-number">2</span>;
 }
 </code></pre>
-<h3 class="docs-heading">Named Parameters<span class="anchor-target" id="mixins-parametric-feature-named-parameters"></span>
-<a href="#mixins-parametric-feature-named-parameters" name="mixins-parametric-feature-named-parameters" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>A mixin reference can supply parameters values by their names instead of just positions. Any parameter can be referenced by its name and they do not have to be in any special order:</p>
+<h3 class="docs-heading">Truy&#x1EC1;n tham s&#x1ED1; b&#x1EB1;ng t&#xEA;n<span class="anchor-target" id="mixins-parametric-feature-truy-n-tham-s-b-ng-t-n"></span>
+<a href="#mixins-parametric-feature-truy-n-tham-s-b-ng-t-n" name="mixins-parametric-feature-truy-n-tham-s-b-ng-t-n" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Khi truy&#x1EC1;n tham s&#x1ED1; v&#xE0;o l&#x1EC7;nh g&#x1ECD;i mixin, ta c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng t&#xEA;n thay v&#xEC; v&#x1ECB; tr&#xED;. B&#x1EA5;t k&#x1EF3; tham s&#x1ED1; n&#xE0;o c&#x169;ng c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u b&#x1EB1;ng t&#xEA;n, v&#xE0; kh&#xF4;ng b&#x1EAF;t bu&#x1ED9;c ph&#x1EA3;i &#x1EDF; trong v&#x1ECB; tr&#xED; &#x111;&#x1EB7;c bi&#x1EC7;t n&#xE0;o:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@color</span>: black; <span class="hljs-variable">@margin</span>: <span class="hljs-number">10px</span>; <span class="hljs-variable">@padding</span>: <span class="hljs-number">20px</span>) {
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">@color</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-variable">@margin</span>;
@@ -1394,7 +1394,7 @@ style comment! */</span>
   <span class="hljs-class">.mixin</span>(<span class="hljs-hexcolor">#efca44</span>; <span class="hljs-variable">@padding</span>: <span class="hljs-number">40px</span>);
 }
 </code></pre>
-<p>compiles into:</p>
+<p>k&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.class1</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#33acfe</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
@@ -1406,9 +1406,9 @@ style comment! */</span>
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">40px</span>;
 }
 </code></pre>
-<h3 class="docs-heading">The <code>@arguments</code> variable<span class="anchor-target" id="mixins-parametric-feature-the-arguments-variable"></span>
-<a href="#mixins-parametric-feature-the-arguments-variable" name="mixins-parametric-feature-the-arguments-variable" class="anchor glyphicon glyphicon-link"></a></h3>
-<p><code>@arguments</code> has a special meaning inside mixins, it contains all the arguments passed, when the mixin was called. This is useful if you don&apos;t want to deal with individual parameters:</p>
+<h3 class="docs-heading">Bi&#x1EBF;n <code>@arguments</code><span class="anchor-target" id="mixins-parametric-feature-bi-n-arguments-"></span>
+<a href="#mixins-parametric-feature-bi-n-arguments-" name="mixins-parametric-feature-bi-n-arguments-" class="anchor glyphicon glyphicon-link"></a></h3>
+<p><code>@arguments</code> l&#xE0; bi&#x1EBF;n &#x111;&#x1EB7;c bi&#x1EC7;t trong mixin, c&#xF3; gi&#xE1; tr&#x1ECB; l&#xE0; t&#x1EA5;t c&#x1EA3; c&#xE1;c tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o khi mixin &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i. <code>@arguments</code> s&#x1EBD; h&#x1EEF;u &#xED;ch cho b&#x1EA1;n khi b&#x1EA1;n kh&#xF4;ng mu&#x1ED1;n x&#x1EED; l&#xFD; c&#xE1;c tham s&#x1ED1; r&#x1EDD;i:</p>
 <pre><code class="lang-less"><span class="hljs-class">.box-shadow</span>(<span class="hljs-variable">@x</span>: <span class="hljs-number">0</span>; <span class="hljs-variable">@y</span>: <span class="hljs-number">0</span>; <span class="hljs-variable">@blur</span>: <span class="hljs-number">1px</span>; <span class="hljs-variable">@color</span>: <span class="hljs-hexcolor">#000</span>) {
   <span class="hljs-attribute">-webkit-box-shadow</span>: <span class="hljs-variable">@arguments</span>;
      <span class="hljs-attribute">-moz-box-shadow</span>: <span class="hljs-variable">@arguments</span>;
@@ -1418,38 +1418,38 @@ style comment! */</span>
   <span class="hljs-class">.box-shadow</span>(<span class="hljs-number">2px</span>; <span class="hljs-number">5px</span>);
 }
 </code></pre>
-<p>Which results in:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.big-block</span> {
   <span class="hljs-attribute">-webkit-box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> <span class="hljs-number">1px</span> <span class="hljs-hexcolor">#000</span>;
      <span class="hljs-attribute">-moz-box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> <span class="hljs-number">1px</span> <span class="hljs-hexcolor">#000</span>;
           <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> <span class="hljs-number">1px</span> <span class="hljs-hexcolor">#000</span>;
 }
 </code></pre>
-<h3 class="docs-heading">Advanced arguments and the <code>@rest</code> variable<span class="anchor-target" id="mixins-parametric-feature-advanced-arguments-and-the-rest-variable"></span>
-<a href="#mixins-parametric-feature-advanced-arguments-and-the-rest-variable" name="mixins-parametric-feature-advanced-arguments-and-the-rest-variable" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>You can use <code>...</code> if you want your mixin to take a variable number of arguments. Using this after a variable name will assign those arguments to the variable.</p>
+<h3 class="docs-heading">Tham s&#x1ED1; n&#xE2;ng cao v&#xE0; bi&#x1EBF;n <code>@rest</code><span class="anchor-target" id="mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-"></span>
+<a href="#mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-" name="mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng <code>...</code> n&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n mixin c&#x1EE7;a b&#x1EA1;n nh&#x1EAD;n m&#x1ED9;t s&#x1ED1; l&#x1B0;&#x1EE3;ng tham s&#x1ED1; b&#x1EA5;t k&#x1EF3;. S&#x1EED; dunjg <code>...</code> sau m&#x1ED9;t t&#xEA;n bi&#x1EBF;n s&#x1EBD; g&#xE1;n c&#xE1;c tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o v&#xE0;o bi&#x1EBF;n &#x111;&#xF3;.</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(...) {        <span class="hljs-comment">// matches 0-N arguments</span>
 <span class="hljs-class">.mixin</span>() {           <span class="hljs-comment">// matches exactly 0 arguments</span>
 <span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>) {      <span class="hljs-comment">// matches 0-1 arguments</span>
 <span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>; ...) { <span class="hljs-comment">// matches 0-N arguments</span>
 <span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>; ...) {    <span class="hljs-comment">// matches 1-N arguments</span>
 </code></pre>
-<p>Furthermore:</p>
+<p>Ngo&#xE0;i ra:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>; <span class="hljs-variable">@rest</span>...) {
    <span class="hljs-comment">// @rest is bound to arguments after @a</span>
    <span class="hljs-comment">// @arguments is bound to all arguments</span>
 }
 </code></pre>
-<h2 class="docs-heading">Pattern-matching<span class="anchor-target" id="mixins-parametric-feature-pattern-matching"></span>
-<a href="#mixins-parametric-feature-pattern-matching" name="mixins-parametric-feature-pattern-matching" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>Sometimes, you may want to change the behavior of a mixin, based on the parameters you pass to it. Let&apos;s start with something basic:</p>
+<h2 class="docs-heading">So kh&#x1EDB;p m&#x1EAB;u<span class="anchor-target" id="mixins-parametric-feature-so-kh-p-m-u"></span>
+<a href="#mixins-parametric-feature-so-kh-p-m-u" name="mixins-parametric-feature-so-kh-p-m-u" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>&#x110;&#xF4;i khi b&#x1EA1;n s&#x1EBD; mu&#x1ED1;n thay &#x111;&#x1ED5;i h&#xE0;nh vi c&#x1EE7;a mixin d&#x1EF1;a v&#xE0;o tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o. H&#xE3;y xem v&#x1EDB;i v&#xED; d&#x1EE5; c&#x1A1; b&#x1EA3;n sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@s</span>; <span class="hljs-variable">@color</span>) { ... }
 
 <span class="hljs-class">.class</span> {
   <span class="hljs-class">.mixin</span>(<span class="hljs-variable">@switch</span>; <span class="hljs-hexcolor">#888</span>);
 }
 </code></pre>
-<p>Now let&apos;s say we want <code>.mixin</code> to behave differently, based on the value of <code>@switch</code>, we could define <code>.mixin</code> as such:</p>
+<p>Gi&#x1EA3; d&#x1EE5; b&#x1EA1;n mu&#x1ED1;n <code>.mixin</code> &#x111;&#x1B0;a ra c&#xE1;c x&#x1EED; l&#xFD; kh&#xE1;c nhau d&#x1EF1;a tr&#xEA;n gi&#xE1; tr&#x1ECB; c&#x1EE7;a <code>@switch</code>, ta c&#xF3; th&#x1EC3; khai b&#xE1;o <code>.mixin</code> nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(dark; <span class="hljs-variable">@color</span>) {
   <span class="hljs-attribute">color</span>: <span class="hljs-function">darken</span>(<span class="hljs-variable">@color</span>, <span class="hljs-number">10%</span>);
 }
@@ -1460,30 +1460,30 @@ style comment! */</span>
   <span class="hljs-attribute">display</span>: block;
 }
 </code></pre>
-<p>Now, if we run:</p>
+<p>V&#xE0; ta g&#x1ECD;i mixin nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@switch:</span> light;
 
 <span class="hljs-class">.class</span> {
   <span class="hljs-class">.mixin</span>(<span class="hljs-variable">@switch</span>; <span class="hljs-hexcolor">#888</span>);
 }
 </code></pre>
-<p>We will get the following CSS:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.class</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#a2a2a2</span>;
   <span class="hljs-attribute">display</span>: block;
 }
 </code></pre>
-<p>Where the color passed to <code>.mixin</code> was lightened. If the value of <code>@switch</code> was <code>dark</code>,
-the result would be a darker color.</p>
-<p>Here&apos;s what happened:</p>
+<p>Trong &#x111;&#xF3;, m&#xE0;u &#x111;&#x1B0;&#x1EE3;c truy&#x1EC1;n v&#xE0;o <code>.mixin</code> &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c l&#xE0;m s&#xE1;ng l&#xEA;n. N&#x1EBF;u gi&#xE1; tr&#x1ECB; <code>@switch</code> l&#xE0; <code>dark</code>,
+m&#xE0;u truy&#x1EC1;n v&#xE0;o s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c l&#xE0;m t&#x1ED1;i &#x111;i.</p>
+<p>C&#x1EE5; th&#x1EC3; nh&#x1B0; sau:</p>
 <ul>
-<li>The first mixin definition didn&apos;t match because it expected <code>dark</code> as the first argument.</li>
-<li>The second mixin definition matched, because it expected <code>light</code>.</li>
-<li>The third mixin definition matched because it expected any value.</li>
+<li>Mixin &#x111;&#x1EA7;u ti&#xEA;n kh&#xF4;ng kh&#x1EDB;p v&#xEC; tham s&#x1ED1; &#x111;&#x1EA7;u ti&#xEA;n n&#xF3; nh&#x1EAD;n ph&#x1EA3;i l&#xE0; <code>dark</code></li>
+<li>Mixin th&#x1EE9; hai kh&#x1EDB;p, v&#xEC; tham s&#x1ED1; &#x111;&#x1EA7;u ti&#xEA;n n&#xF3; nh&#x1EAD;n l&#xE0; <code>light</code>.</li>
+<li>Mixin th&#x1EE9; ba kh&#x1EDB;p v&#xEC; n&#xF3; nh&#x1EAD;n gi&#xE1; tr&#x1ECB; b&#x1EA5;t k&#x1EF3;.</li>
 </ul>
-<p>Only mixin definitions which matched were used. Variables match and bind to any value.
+<p>Less s&#x1EBD; ch&#x1EC9; s&#x1EED; d&#x1EE5;ng c&#xE1;c mixin kh&#x1EDB;p. C&#xE1;c bi&#x1EBF;n &#x111;&#x1B0;&#x1EE3;c so kh&#x1EDB;p v&#xE0; g&#xE1;n v&#xE0;o gi&#xE1; tr&#x1ECB; b&#x1EA5;t k&#x1EF3;.
 Anything other than a variable matches only with a value equal to itself.</p>
-<p>We can also match on arity, here&apos;s an example:</p>
+<p>Ta c&#x169;ng c&#xF3; th&#x1EC3; so kh&#x1EDB;p d&#x1EF1;a tr&#xEA;n s&#x1ED1; l&#x1B0;&#x1EE3;ng tham s&#x1ED1;, v&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>) {
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">@a</span>;
 }
@@ -1491,8 +1491,8 @@ Anything other than a variable matches only with a value equal to itself.</p>
   <span class="hljs-attribute">color</span>: <span class="hljs-function">fade</span>(<span class="hljs-variable">@a</span>; <span class="hljs-variable">@b</span>);
 }
 </code></pre>
-<p>Now if we call <code>.mixin</code> with a single argument, we will get the output of the first definition,
-but if we call it with <em>two</em> arguments, we will get the second definition, namely <code>@a</code> faded to <code>@b</code>.</p>
+<p>N&#x1EBF;u ta g&#x1ECD;i <code>.mixin</code> v&#x1EDB;i m&#x1ED9;t tham s&#x1ED1;, ta s&#x1EBD; g&#x1ECD;i &#x111;&#x1EBF;n khai b&#xE1;o &#x111;&#x1EA7;u ti&#xEA;n, nh&#x1B0;ng n&#x1EBF;u ta g&#x1ECD;i mixin v&#x1EDB;i
+<em>hai</em> tham s&#x1ED1;, ta s&#x1EBD; g&#x1ECD;i &#x111;&#x1EBF;n khai b&#xE1;o th&#x1EE9; hai.</p>
 
 
       <br>
@@ -1632,7 +1632,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 <p>Allow wrapping of a css block, defined in a mixin</p>
 </blockquote>
 <p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
-<p>T&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i l&#xE0; m&#x1ED9;t nh&#xF3;m c&#xE1;c thu&#x1ED9;c t&#xED;nh css, c&#xE1;c t&#x1EAD;p lu&#x1EAD;t l&#x1ED3;ng, c&#xE1;c khai b&#xE1;o media ho&#x1EB7;c b&#x1EA5;t c&#x1EE9; th&#x1EE9; g&#xEC; kh&#xE1;c l&#x1B0;u trong m&#x1ED9;t bi&#x1EBF;n. B&#x1EA1;n c&#xF3; th&#x1EC3; th&#xEA;m n&#xF3; v&#xE0;o m&#x1ED9;t t&#x1EAD;p lu&#x1EAD;t kh&#xE1;c ho&#x1EB7;c m&#x1ED9;t c&#x1EA5;u tr&#xFA;c kh&#xE1;c, v&#xE0; t&#x1EA5;t c&#x1EA3; c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a n&#xF3; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c sao ch&#xE9;p sang &#x111;&#xF3;. B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t tham s&#x1ED1; g&#x1ECD;i mixin hay s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t bi&#x1EBF;n b&#xEC;nh th&#x1B0;&#x1EDD;ng.</p>
+<p>Ruleset t&#xE1;ch r&#x1EDD;i l&#xE0; m&#x1ED9;t nh&#xF3;m c&#xE1;c thu&#x1ED9;c t&#xED;nh css, c&#xE1;c ruleset l&#x1ED3;ng, c&#xE1;c khai b&#xE1;o media ho&#x1EB7;c b&#x1EA5;t c&#x1EE9; th&#x1EE9; g&#xEC; kh&#xE1;c l&#x1B0;u trong m&#x1ED9;t bi&#x1EBF;n. B&#x1EA1;n c&#xF3; th&#x1EC3; th&#xEA;m n&#xF3; v&#xE0;o m&#x1ED9;t ruleset kh&#xE1;c ho&#x1EB7;c m&#x1ED9;t c&#x1EA5;u tr&#xFA;c kh&#xE1;c, v&#xE0; t&#x1EA5;t c&#x1EA3; c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a n&#xF3; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c sao ch&#xE9;p sang &#x111;&#xF3;. B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t tham s&#x1ED1; g&#x1ECD;i mixin hay s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t bi&#x1EBF;n b&#xEC;nh th&#x1B0;&#x1EDD;ng.</p>
 <p>V&#xED; d&#x1EE5; &#x111;&#x1A1;n gi&#x1EA3;n:</p>
 <pre><code class="lang-less"><span class="hljs-comment">// declare detached ruleset</span>
 <span class="hljs-variable">@detached-ruleset:</span> { <span class="hljs-attribute">background</span>: red; };
@@ -1647,8 +1647,8 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">background</span>: red;
 }
 </code></pre>
-<p>C&#x1EB7;p d&#x1EA5;u ngo&#x1EB7;c &#x1EDF; sau l&#x1EDD;i g&#x1ECD;i t&#x1EAD;p lu&#x1EAD;t l&#xE0; b&#x1EAF;t bu&#x1ED9;c. C&#xE2;u l&#x1EC7;nh <code>@detached-ruleset;</code> s&#x1EBD; KH&#xD4;NG ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
-<p>C&#xF3; th&#x1EC3; &#x1EE9;ng d&#x1EE5;ng t&#x1EAD;p lu&#xE2;t t&#xE1;ch r&#x1EDD;i &#x111;&#x1EC3; t&#x1EA1;o ra m&#x1ED9;t mixin l&#xE0;m nhi&#x1EC7;m v&#x1EE5; b&#x1ECD;c m&#x1ED9;t &#x111;o&#x1EA1;n code trong m&#x1ED9;t c&#xE2;u media query ho&#x1EB7;c trong m&#x1ED9;t class d&#xE0;nh ri&#xEA;ng cho tr&#xEC;nh duy&#x1EC7;t kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3;. C&#xE1;c t&#x1EAD;p lu&#x1EAD;t c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c n&#xE9;m v&#xE0;o trong mixin v&#xE0; sau &#x111;&#xF3; &#x111;&#x1B0;&#x1EE3;c mixin b&#x1ECD;c l&#x1EA1;i, v&#xED; d&#x1EE5;:</p>
+<p>C&#x1EB7;p d&#x1EA5;u ngo&#x1EB7;c &#x1EDF; sau l&#x1EDD;i g&#x1ECD;i ruleset l&#xE0; b&#x1EAF;t bu&#x1ED9;c. C&#xE2;u l&#x1EC7;nh <code>@detached-ruleset;</code> s&#x1EBD; KH&#xD4;NG ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
+<p>C&#xF3; th&#x1EC3; &#x1EE9;ng d&#x1EE5;ng t&#x1EAD;p lu&#xE2;t t&#xE1;ch r&#x1EDD;i &#x111;&#x1EC3; t&#x1EA1;o ra m&#x1ED9;t mixin l&#xE0;m nhi&#x1EC7;m v&#x1EE5; b&#x1ECD;c m&#x1ED9;t &#x111;o&#x1EA1;n code trong m&#x1ED9;t c&#xE2;u media query ho&#x1EB7;c trong m&#x1ED9;t class d&#xE0;nh ri&#xEA;ng cho tr&#xEC;nh duy&#x1EC7;t kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3;. C&#xE1;c ruleset c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c n&#xE9;m v&#xE0;o trong mixin v&#xE0; sau &#x111;&#xF3; &#x111;&#x1B0;&#x1EE3;c mixin b&#x1ECD;c l&#x1EA1;i, v&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.desktop-and-old-ie</span>(<span class="hljs-variable">@rules</span>) {
   <span class="hljs-at_rule">@media</span> screen and (min-width: <span class="hljs-number">1200</span>) { <span class="hljs-variable">@rules</span>(); }
   <span class="hljs-tag">html</span><span class="hljs-class">.lt-ie9</span> <span class="hljs-keyword">&amp;</span>                       { <span class="hljs-variable">@rules</span>(); }
@@ -1675,7 +1675,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">background-color</span>: red;
 }
 </code></pre>
-<p>T&#x1EAD;p lu&#x1EAD;t c&#xF3; th&#x1EBF; &#x111;&#x1B0;&#x1EE3;c g&#xE1;n v&#xE0;o m&#x1ED9;t bi&#x1EBF;n v&#xE0; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng khi g&#x1ECD;i mixin, v&#xE0; c&#x169;ng c&#xF3; th&#x1EC3; ch&#x1EE9;a t&#x1EA5;t c&#x1EA3; c&#xE1;c t&#xED;nh n&#x103;ng c&#x1EE7;a less, v&#xED; d&#x1EE5;:</p>
+<p>Ruleset c&#xF3; th&#x1EBF; &#x111;&#x1B0;&#x1EE3;c g&#xE1;n v&#xE0;o m&#x1ED9;t bi&#x1EBF;n v&#xE0; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng khi g&#x1ECD;i mixin, v&#xE0; c&#x169;ng c&#xF3; th&#x1EC3; ch&#x1EE9;a t&#x1EA5;t c&#x1EA3; c&#xE1;c t&#xED;nh n&#x103;ng c&#x1EE7;a less, v&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@my-ruleset:</span> {
     <span class="hljs-class">.my-selector</span> {
       <span class="hljs-attribute">background-color</span>: black;
@@ -1701,7 +1701,7 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   }
 }
 </code></pre>
-<p>L&#x1EC7;nh g&#x1ECD;i t&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; m&#x1EDF; (tr&#x1EA3; v&#x1EC1;) t&#x1EA5;t c&#x1EA3; c&#xE1;c mixin v&#xE0;o trong selector g&#x1ECD;i, t&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; khi s&#x1EED; d&#x1EE5;ng mixin. Tuy nhi&#xEA;n, n&#xF3; KH&#xD4;NG tr&#x1EA3; v&#x1EC1; bi&#x1EBF;n.</p>
+<p>L&#x1EC7;nh g&#x1ECD;i ruleset t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; m&#x1EDF; (tr&#x1EA3; v&#x1EC1;) t&#x1EA5;t c&#x1EA3; c&#xE1;c mixin v&#xE0;o trong selector g&#x1ECD;i, t&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; khi s&#x1EED; d&#x1EE5;ng mixin. Tuy nhi&#xEA;n, n&#xF3; KH&#xD4;NG tr&#x1EA3; v&#x1EC1; bi&#x1EBF;n.</p>
 <p>Mixin tr&#x1EA3; v&#x1EC1;:</p>
 <pre><code class="lang-less"><span class="hljs-comment">// detached ruleset with a mixin</span>
 <span class="hljs-variable">@detached-ruleset:</span> { 
@@ -1730,12 +1730,12 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 </code></pre>
 <h2 class="docs-heading">Ph&#x1EA1;m v&#x1ECB;<span class="anchor-target" id="detached-rulesets-feature-ph-m-v-"></span>
 <a href="#detached-rulesets-feature-ph-m-v-" name="detached-rulesets-feature-ph-m-v-" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>M&#x1ED9;t t&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng t&#x1EA5;t c&#x1EA3; c&#xE1;c bi&#x1EBF;n v&#xE0; mixin trong ph&#x1EA1;m vi &#x1EDF; n&#x1A1;i n&#xF3; &#x111;&#x1B0;&#x1EE3;c <em>khai b&#xE1;o</em> v&#xE0; &#x1EDF; n&#x1A1;i n&#xF3; &#x111;&#x1B0;&#x1EE3;c <em>g&#x1ECD;i</em>. N&#xF3;i c&#xE1;ch kh&#xE1;c, n&#xF3; c&#xF3; quy&#x1EC1;n truy c&#x1EAD;p trong ph&#x1EA1;m vi khai b&#xE1;o v&#xE0; ph&#x1EA1;m vi g&#x1ECD;i c&#x1EE7;a n&#xF3;. N&#x1EBF;u c&#x1EA3; hai ph&#x1EA1;m vi &#x111;&#x1EC1;u c&#xF3; c&#xF9;ng m&#x1ED9;t bi&#x1EBF;n hay mixin, ph&#x1EA1;m vi khai b&#xE1;o s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c &#x1B0;u ti&#xEA;n.</p>
-<p><em>Ph&#x1EA1;m vi khai b&#xE1;o</em> l&#xE0; n&#x1A1;i ph&#x1EA7;n th&#xE2;n t&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o. Copy m&#x1ED9;t lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i t&#x1EEB; m&#x1ED9;t bi&#x1EBF;n n&#xE0;y v&#xE0;o m&#x1ED9;t bi&#x1EBF;n kh&#xE1;c kh&#xF4;ng th&#x1EC3; thay &#x111;&#x1ED5;i ph&#x1EA1;m vi c&#x1EE7;a n&#xF3;. T&#x1EAD;p lu&#x1EAD;t kh&#xF4;ng c&#xF3; quy&#x1EC1;n truy c&#x1EAD;p &#x111;&#x1EBF;n ph&#x1EA1;m vi m&#x1EDB;i khi ch&#x1EC9;&#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u &#x1EDF; &#x111;&#xF3;.</p>
-<p>Cu&#x1ED1;i c&#xF9;ng, m&#x1ED9;t t&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; truy c&#x1EAD;p &#x111;&#x1EBF;n ph&#x1EA1;m vi b&#x1EB1;ng c&#xE1;ch &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; (&#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p) v&#xE0;o n&#xF3;.</p>
+<p>M&#x1ED9;t ruleset t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng t&#x1EA5;t c&#x1EA3; c&#xE1;c bi&#x1EBF;n v&#xE0; mixin trong ph&#x1EA1;m vi &#x1EDF; n&#x1A1;i n&#xF3; &#x111;&#x1B0;&#x1EE3;c <em>khai b&#xE1;o</em> v&#xE0; &#x1EDF; n&#x1A1;i n&#xF3; &#x111;&#x1B0;&#x1EE3;c <em>g&#x1ECD;i</em>. N&#xF3;i c&#xE1;ch kh&#xE1;c, n&#xF3; c&#xF3; quy&#x1EC1;n truy c&#x1EAD;p trong ph&#x1EA1;m vi khai b&#xE1;o v&#xE0; ph&#x1EA1;m vi g&#x1ECD;i c&#x1EE7;a n&#xF3;. N&#x1EBF;u c&#x1EA3; hai ph&#x1EA1;m vi &#x111;&#x1EC1;u c&#xF3; c&#xF9;ng m&#x1ED9;t bi&#x1EBF;n hay mixin, ph&#x1EA1;m vi khai b&#xE1;o s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c &#x1B0;u ti&#xEA;n.</p>
+<p><em>Ph&#x1EA1;m vi khai b&#xE1;o</em> l&#xE0; n&#x1A1;i ph&#x1EA7;n th&#xE2;n ruleset t&#xE1;ch r&#x1EDD;i &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o. Copy m&#x1ED9;t lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i t&#x1EEB; m&#x1ED9;t bi&#x1EBF;n n&#xE0;y v&#xE0;o m&#x1ED9;t bi&#x1EBF;n kh&#xE1;c kh&#xF4;ng th&#x1EC3; thay &#x111;&#x1ED5;i ph&#x1EA1;m vi c&#x1EE7;a n&#xF3;. ruleset kh&#xF4;ng c&#xF3; quy&#x1EC1;n truy c&#x1EAD;p &#x111;&#x1EBF;n ph&#x1EA1;m vi m&#x1EDB;i khi ch&#x1EC9;&#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u &#x1EDF; &#x111;&#xF3;.</p>
+<p>Cu&#x1ED1;i c&#xF9;ng, m&#x1ED9;t ruleset t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; truy c&#x1EAD;p &#x111;&#x1EBF;n ph&#x1EA1;m vi b&#x1EB1;ng c&#xE1;ch &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; (&#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p) v&#xE0;o n&#xF3;.</p>
 <h4 class="docs-heading">T&#x1EA7;m nh&#xEC;n c&#x1EE7;a ph&#x1EA1;m vi khai b&#xE1;o v&#xE0; ph&#x1EA1;m vi g&#x1ECD;i<span class="anchor-target" id="detached-rulesets-feature-t-m-nh-n-c-a-ph-m-vi-khai-b-o-v-ph-m-vi-g-i"></span>
 <a href="#detached-rulesets-feature-t-m-nh-n-c-a-ph-m-vi-khai-b-o-v-ph-m-vi-g-i" name="detached-rulesets-feature-t-m-nh-n-c-a-ph-m-vi-khai-b-o-v-ph-m-vi-g-i" class="anchor glyphicon glyphicon-link"></a></h4>
-<p>T&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1ED3;i nh&#xEC;n th&#x1EA5;y c&#xE1;c bi&#x1EBF;n v&#xE0; mixin c&#x1EE7;a selector g&#x1ECD;i n&#xF3;:</p>
+<p>Ruleset t&#xE1;ch r&#x1ED3;i nh&#xEC;n th&#x1EA5;y c&#xE1;c bi&#x1EBF;n v&#xE0; mixin c&#x1EE7;a selector g&#x1ECD;i n&#xF3;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@detached-ruleset:</span> {
   <span class="hljs-attribute">caller-variable</span>: <span class="hljs-variable">@callerVariable</span>; <span class="hljs-comment">// variable is undefined here</span>
   <span class="hljs-class">.callerMixin</span>(); <span class="hljs-comment">// mixin is undefined here</span>
@@ -1776,8 +1776,8 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">variable</span>: global;
 }
 </code></pre>
-<h4 class="docs-heading">Vi&#x1EC7;c Tham Chi&#x1EBF;u <em>Kh&#xF4;ng</em> Thay &#x110;&#x1ED5;i Ph&#x1EA1;m Vi C&#x1EE7;a T&#x1EAD;p Lu&#x1EAD;t T&#xE1;ch R&#x1EDD;i<span class="anchor-target" id="detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i"></span>
-<a href="#detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i" name="detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">Vi&#x1EC7;c Tham Chi&#x1EBF;u <em>Kh&#xF4;ng</em> Thay &#x110;&#x1ED5;i Ph&#x1EA1;m Vi C&#x1EE7;a Ruleset T&#xE1;ch R&#x1EDD;i<span class="anchor-target" id="detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i"></span>
+<a href="#detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i" name="detached-rulesets-feature-vi-c-tham-chi-u-kh-ng-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i" class="anchor glyphicon glyphicon-link"></a></h4>
 <p>M&#x1ED9;t t&#x1EAD;p lu&#x1EAD;n kh&#xF4;ng c&#xF3; quy&#x1EC1;n truy c&#x1EAD;p t&#x1EA1;i ph&#x1EA1;m vi khi ch&#x1EC9; &#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u &#x1EDF; &#x111;&#xF3;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@detached-1:</span> { <span class="hljs-attribute">scope-detached</span>: <span class="hljs-variable">@one</span> <span class="hljs-variable">@two</span>; };
 <span class="hljs-class">.one</span> {
@@ -1795,9 +1795,9 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 </code></pre>
 <p>S&#x1EBD; sinh ra l&#x1ED7;i:</p>
 <pre><code>ERROR 1:32 The variable &quot;@one&quot; was not declared.
-</code></pre><h4 class="docs-heading">M&#x1EDF; Kh&#xF3;a <em>C&#xF3;</em> Thay &#x110;&#x1ED5;i Ph&#x1EA1;m Vi C&#x1EE7;a T&#x1EAD;p Lu&#x1EAD;t T&#xE1;ch R&#x1EDD;i<span class="anchor-target" id="detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i"></span>
-<a href="#detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i" name="detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-t-p-lu-t-t-ch-r-i" class="anchor glyphicon glyphicon-link"></a></h4>
-<p>M&#x1ED9;t t&#x1EAD;p lu&#x1EAD;t t&#xE1;ch r&#x1EDD;i s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c th&#xEA;m quy&#x1EC1;n truy c&#x1EAD;p khi &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; kh&#xF3;a (&#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p) &#x1EDF; trong m&#x1ED9;t ph&#x1EA1;m vi:</p>
+</code></pre><h4 class="docs-heading">M&#x1EDF; Kh&#xF3;a <em>C&#xF3;</em> Thay &#x110;&#x1ED5;i Ph&#x1EA1;m Vi C&#x1EE7;a Ruleset T&#xE1;ch R&#x1EDD;i<span class="anchor-target" id="detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i"></span>
+<a href="#detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i" name="detached-rulesets-feature-m-kh-a-c-thay-i-ph-m-vi-c-a-ruleset-t-ch-r-i" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>M&#x1ED9;t ruleset t&#xE1;ch r&#x1EDD;i s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c th&#xEA;m quy&#x1EC1;n truy c&#x1EAD;p khi &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; kh&#xF3;a (&#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p) &#x1EDF; trong m&#x1ED9;t ph&#x1EA1;m vi:</p>
 <pre><code class="lang-less"><span class="hljs-id">#space</span> {
   <span class="hljs-class">.importer1</span>() {
     <span class="hljs-variable">@detached:</span> { <span class="hljs-attribute">scope-detached</span>: <span class="hljs-variable">@variable</span>; }; <span class="hljs-comment">// define detached ruleset</span>
@@ -2020,11 +2020,11 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 
 
 <blockquote>
-<p>Conditional mixins</p>
+<p>Mixin c&#xF3; &#x111;i&#x1EC1;u ki&#x1EC7;n</p>
 </blockquote>
-<p>Guards are useful when you want to match on <em>expressions</em>, as opposed to simple values or arity. If you are familiar with functional programming, you have probably encountered them already.</p>
-<p>In trying to stay as close as possible to the declarative nature of CSS, Less has opted to implement conditional execution via <strong>guarded mixins</strong> instead of <code>if</code>/<code>else</code> statements, in the vein of <code>@media</code> query feature specifications.</p>
-<p>Let&apos;s start with an example:</p>
+<p>Ch&#x1EAF;n th&#x1B0;&#x1EDD;ng &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng khi b&#x1EA1;n mu&#x1ED1;n so kh&#x1EDB;p <em>bi&#x1EC3;u th&#x1EE9;c</em> thay v&#xEC; so kh&#x1EDB;p nh&#x1EEF;ng gi&#xE1; tr&#x1ECB; &#x111;&#x1A1;n gi&#x1EA3;n hay s&#x1ED1; l&#x1B0;&#x1EE3;ng tham s&#x1ED1;. N&#x1EBF;u b&#x1EA1;n &#x111;&#xE3; quen v&#x1EDB;i l&#x1EAD;p tr&#xEC;nh h&#xE0;m th&#xEC; c&#xF3; th&#x1EC3; b&#x1EA1;n c&#x169;ng t&#x1EEB;ng g&#x1EB7;p ch&#x1EAF;n.</p>
+<p>V&#x1EDB;i c&#x1ED1; g&#x1EAF;ng gi&#x1EEF; c&#xFA; ph&#xE1;p g&#x1EA7;n g&#x169;i v&#x1EDB;i CSS chu&#x1EA9;n, Less &#x111;&#xE3; ch&#x1ECD;n c&#xFA; ph&#xE1;p &#x111;i&#x1EC1;u ki&#x1EC7;n d&#x1EA1;ng <strong>mixin c&#xF3; ch&#x1EAF;n</strong> thay v&#xEC; c&#xE1;c l&#x1EC7;nh <code>if</code>/<code>else</code>, b&#x1EAF;t ch&#x1B0;&#x1EDB;c theo c&#xFA; ph&#xE1;p c&#x1EE7;a <code>@media</code> query trong chu&#x1EA9;n CSS.</p>
+<p>H&#xE3;y c&#xF9;ng b&#x1EAF;t &#x111;&#x1EA7;u v&#x1EDB;i v&#xED; d&#x1EE5; sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">lightness</span>(<span class="hljs-variable">@a</span>) &gt;= <span class="hljs-number">50%</span>) {
   <span class="hljs-attribute">background-color</span>: black;
 }
@@ -2035,11 +2035,11 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">@a</span>;
 }
 </code></pre>
-<p>The key is the <code>when</code> keyword, which introduces a guard sequence (here with only one guard). Now if we run the following code:</p>
+<p>&#x110;i&#x1EC3;m m&#x1EA5;u ch&#x1ED1;t &#x1EDF; &#x111;&#xE2;y l&#xE0; t&#x1EEB; kh&#xF3;a <code>when</code>, theo sau l&#xE0; m&#x1ED9;t chu&#x1ED7;i &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n (&#x1EDF; &#x111;&#xE2;y ch&#x1EC9; c&#xF3; m&#x1ED9;t ch&#x1EAF;n). N&#x1EBF;u ta vi&#x1EBF;t nh&#x1B0; sau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class1</span> { <span class="hljs-class">.mixin</span>(<span class="hljs-hexcolor">#ddd</span>) }
 <span class="hljs-class">.class2</span> { <span class="hljs-class">.mixin</span>(<span class="hljs-hexcolor">#555</span>) }
 </code></pre>
-<p>Here&apos;s what we&apos;ll get:</p>
+<p>S&#x1EBD; &#x111;&#x1B0;&#x1EE3;c k&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.class1</span> {
   <span class="hljs-attribute">background-color</span>: black;
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#ddd</span>;
@@ -2049,18 +2049,18 @@ but if we call it with <em>two</em> arguments, we will get the second definition
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#555</span>;
 }
 </code></pre>
-<h3 class="docs-heading">Guard comparison operators<span class="anchor-target" id="mixin-guards-feature-guard-comparison-operators"></span>
-<a href="#mixin-guards-feature-guard-comparison-operators" name="mixin-guards-feature-guard-comparison-operators" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>The full list of comparison operators usable in guards are: <code>&gt;</code>, <code>&gt;=</code>, <code>=</code>, <code>=&lt;</code>, <code>&lt;</code>. Additionally, the keyword <code>true</code> is the only truthy value, making these two mixins equivalent:</p>
+<h3 class="docs-heading">To&#xE1;n t&#x1EED; so s&#xE1;nh ch&#x1EAF;n<span class="anchor-target" id="mixin-guards-feature-to-n-t-so-s-nh-ch-n"></span>
+<a href="#mixin-guards-feature-to-n-t-so-s-nh-ch-n" name="mixin-guards-feature-to-n-t-so-s-nh-ch-n" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#xE1;c to&#xE1;n t&#x1EED; so s&#xE1;nh d&#xF9;ng &#x111;&#x1B0;&#x1EE3;c trong &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n g&#x1ED3;m c&#xF3; <code>&gt;</code>, <code>&gt;=</code>, <code>=</code>, <code>=&lt;</code>, <code>&lt;</code>. Ngo&#xE0;i ra, t&#x1EEB; kh&#xF3;a <code>true</code> l&#xE0; gi&#xE1; tr&#x1ECB; &#x111;&#xFA;ng duy nh&#x1EA5;t, v&#xE0; nh&#x1B0; v&#x1EAD;y hai mixin sau gi&#x1ED1;ng h&#x1EC7;t nhau:</p>
 <pre><code class="lang-less"><span class="hljs-class">.truth</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span>) { ... }
 <span class="hljs-class">.truth</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> = true) { ... }
 </code></pre>
-<p>Any value other than the keyword <code>true</code> is falsy:</p>
+<p>C&#xE1;c gi&#xE1; tr&#x1ECB; kh&#xE1;c ngo&#xE0;i <code>true</code> &#x111;&#x1EC1;u l&#xE0; ph&#x1EE7; &#x111;&#x1ECB;nh:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class</span> {
   <span class="hljs-class">.truth</span>(<span class="hljs-number">40</span>); <span class="hljs-comment">// Will not match any of the above definitions.</span>
 }
 </code></pre>
-<p>Note that you can also compare arguments with each other, or with non-arguments:</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng b&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; so s&#xE1;nh c&#xE1;c tham s&#x1ED1; v&#x1EDB;i nhau, ho&#x1EB7;c v&#x1EDB;i m&#x1ED9;t gi&#xE1; tr&#x1ECB;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@media</span>: mobile;
 
 <span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@media</span> = mobile) { ... }
@@ -2069,25 +2069,26 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 <span class="hljs-class">.max</span> (<span class="hljs-variable">@a</span>; <span class="hljs-variable">@b</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> &gt; <span class="hljs-variable">@b</span>) { <span class="hljs-attribute">width</span>: <span class="hljs-variable">@a</span> }
 <span class="hljs-class">.max</span> (<span class="hljs-variable">@a</span>; <span class="hljs-variable">@b</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> &lt; <span class="hljs-variable">@b</span>) { <span class="hljs-attribute">width</span>: <span class="hljs-variable">@b</span> }
 </code></pre>
-<h3 class="docs-heading">Guard logical operators<span class="anchor-target" id="mixin-guards-feature-guard-logical-operators"></span>
-<a href="#mixin-guards-feature-guard-logical-operators" name="mixin-guards-feature-guard-logical-operators" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>You can use logical operators with guards. The syntax is based on CSS media queries.</p>
-<p>Use the <code>and</code> keyword to combine guards:</p>
+<h3 class="docs-heading">To&#xE1;n t&#x1EED; logic trong &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n<span class="anchor-target" id="mixin-guards-feature-to-n-t-logic-trong-i-u-ki-n-ch-n"></span>
+<a href="#mixin-guards-feature-to-n-t-logic-trong-i-u-ki-n-ch-n" name="mixin-guards-feature-to-n-t-logic-trong-i-u-ki-n-ch-n" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng to&#xE1;n t&#x1EED; logic trong &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n v&#x1EDB;i c&#xFA; ph&#xE1;p gi&#x1ED1;ng nh&#x1B0; media query c&#x1EE7;a CSS.</p>
+<p>S&#x1EED; d&#x1EE5;ng t&#x1EEB; kh&#xF3;a <code>and</code> &#x111;&#x1EC3; k&#x1EBF;t h&#x1EE3;p c&#xE1;c &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">isnumber</span>(<span class="hljs-variable">@a</span>)) <span class="hljs-keyword">and</span> (<span class="hljs-variable">@a</span> &gt; <span class="hljs-number">0</span>) { ... }
 </code></pre>
-<p>You can emulate the <em>or</em> operator by separating guards with a comma <code>,</code>. If any of the guards evaluate to true, it&apos;s considered a match:</p>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; d&#xF9;ng <code>,</code> ph&#xE2;n c&#xE1;ch c&#xE1;c &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n thay cho to&#xE1;n t&#x1EED; <em>or</em>. Ch&#x1EC9; m&#x1ED9;t &#x111;i&#x1EC1;u ki&#x1EC7;n ch&#x1EAF;n &#x111;&#xFA;ng s&#x1EBD; d&#x1EAB;n &#x111;&#x1EBF;n &#x111;&#xFA;ng to&#xE0;n b&#x1ED9;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> &gt; <span class="hljs-number">10</span>), (<span class="hljs-variable">@a</span> &lt; -<span class="hljs-number">10</span>) { ... }
 </code></pre>
-<p>Use the <code>not</code> keyword to negate conditions:</p>
+<p>Use the <code>not</code> keyword to negate conditions:
+S&#x1EED; d&#x1EE5;ng t&#x1EEB; kh&#xF3;a <code>not</code> &#x111;&#x1EC3; ph&#x1EE7; &#x111;&#x1ECB;nh &#x111;i&#x1EC1;u ki&#x1EC7;n:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@b</span>) <span class="hljs-keyword">when</span> <span class="hljs-keyword">not</span> (<span class="hljs-variable">@b</span> &gt; <span class="hljs-number">0</span>) { ... }
 </code></pre>
-<h3 class="docs-heading">Type checking functions<span class="anchor-target" id="mixin-guards-feature-type-checking-functions"></span>
-<a href="#mixin-guards-feature-type-checking-functions" name="mixin-guards-feature-type-checking-functions" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Lastly, if you want to match mixins based on value type, you can use the <code>is</code> functions:</p>
+<h3 class="docs-heading">H&#xE0;m ki&#x1EC3;m tra ki&#x1EC3;u<span class="anchor-target" id="mixin-guards-feature-h-m-ki-m-tra-ki-u"></span>
+<a href="#mixin-guards-feature-h-m-ki-m-tra-ki-u" name="mixin-guards-feature-h-m-ki-m-tra-ki-u" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Cu&#x1ED1;i c&#xF9;ng, n&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n kh&#x1EDB;p mixin d&#x1EF1;a tr&#xEA;n ki&#x1EC3;u d&#x1EEF; lieeuj, b&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng h&#xE0;m <code>is</code>:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>; <span class="hljs-variable">@b</span>: <span class="hljs-number">0</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">isnumber</span>(<span class="hljs-variable">@b</span>)) { ... }
 <span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>; <span class="hljs-variable">@b</span>: black) <span class="hljs-keyword">when</span> (<span class="hljs-function">iscolor</span>(<span class="hljs-variable">@b</span>)) { ... }
 </code></pre>
-<p>Here are the basic type checking functions:</p>
+<p>D&#x1B0;&#x1EDB;i &#x111;&#xE2;y l&#xE0; nh&#x1EEF;ng h&#xE0;m ki&#x1EC3;m tra ki&#x1EC3;u c&#x1A1; b&#x1EA3;n:</p>
 <ul>
 <li><code>iscolor</code></li>
 <li><code>isnumber</code></li>
@@ -2095,15 +2096,15 @@ but if we call it with <em>two</em> arguments, we will get the second definition
 <li><code>iskeyword</code></li>
 <li><code>isurl</code></li>
 </ul>
-<p>If you want to check if a value is in a specific unit in addition to being a number, you may use one of:</p>
+<p>C&#xE1;c h&#xE0;m d&#x1B0;&#x1EDB;i &#x111;&#xE2;y ki&#x1EC3;m tra &#x111;&#x1A1;n v&#x1ECB; c&#x1EE7;a gi&#xE1; tr&#x1ECB;:</p>
 <ul>
 <li><code>ispixel</code></li>
 <li><code>ispercentage</code></li>
 <li><code>isem</code></li>
 <li><code>isunit</code></li>
 </ul>
-<h3 class="docs-heading">Conditional mixins<span class="anchor-target" id="mixin-guards-feature-conditional-mixins"></span>
-<a href="#mixin-guards-feature-conditional-mixins" name="mixin-guards-feature-conditional-mixins" class="anchor glyphicon glyphicon-link"></a></h3>
+<h3 class="docs-heading">Mixin c&#xF3; &#x111;i&#x1EC1;u ki&#x1EC7;n<span class="anchor-target" id="mixin-guards-feature-mixin-c-i-u-ki-n"></span>
+<a href="#mixin-guards-feature-mixin-c-i-u-ki-n" name="mixin-guards-feature-mixin-c-i-u-ki-n" class="anchor glyphicon glyphicon-link"></a></h3>
 <p><em>(<strong>FIXME</strong>)</em> Additionally, the <code>default</code> function may be used to make a mixin match depending on other mixing matches, and you may use it to create &quot;conditional mixins&quot; similar to <code>else</code> or <code>default</code> statements (of <code>if</code> and <code>case</code> structures respectively):</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> &gt; <span class="hljs-number">0</span>) { ...  }
 <span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">default</span>()) { ... } <span class="hljs-comment">// matches only if first mixin does not, i.e. when @a &lt;= 0</span>
@@ -2582,6 +2583,27 @@ V&#xED; d&#x1EE5;, khi s&#x1EED; d&#x1EE5;ng Modernizr, b&#x1EA1;n c&#xF3; th&#x
 <script src="../public/js/application.js"></script>
 
 
+
+<!-- Google analytics
+================================================= -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59799793-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script type="text/javascript">
+(function() {
+var hm = document.createElement('script'); hm.type ='text/javascript'; hm.async = true;
+hm.src = ('++u-heatmap-it+log-js').replace(/[+]/g,'/').replace(/-/g,'.');
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
   </body>
