@@ -1,16 +1,16 @@
-#### [Download source code]({{ less.sourcearchive }}{{ less.version }}.zip)
+#### [Tải về mã nguồn]({{ less.sourcearchive }}{{ less.version }}.zip)
 
-Get the latest Less.js source code by downloading it directly from GitHub.
-
-
-#### [Clone or fork via GitHub]({{ less.repo }})
-
-Fork the project and send us a pull request!
+Tải mã nguồn mới nhất của Less.js trực tiếp từ GitHub.
 
 
-#### [Install with Bower](http://bower.io)
+#### [Clone hoặc fork từ GitHub]({{ less.repo }})
 
-Install the Less.js project and JavaScript by running the following in the command line:
+Fork dự án và gửi cho chúng tôi một yêu cầu pull!
+
+
+#### [Cài đặt với Bower](http://bower.io)
+
+Cài đặt Less.js và Javascript bằng cách chạy dòng lệnh sau đây:
 
 ```bash
 bower install less

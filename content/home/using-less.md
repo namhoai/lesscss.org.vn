@@ -1,41 +1,40 @@
 ---
-title: Server-side usage
+title: Cách sử dụng ở phía server
 ---
 
-> Less can be used on the command line via npm, downloaded as a script file for the browser or used in a wide variety of third party tools. See the [Usage]({{resolve 'usage'}}) section for more
+> Less có thể được sử dụng thông qua dòng lệnh bằng npm, hoặc tải về tệp tin dưới dạng script từ trình duyệt hoặc thông qua rất nhiều các công cụ của bên thứ 3. Hãy xem phần [Sử dụng]({{resolve 'usage'}}) để biết thêm chi tiết
 detailed information.
 
-## Installation
+## Cách cài đặt
 
-The easiest way to install Less on the server, is via npm, the [node.js](http://nodejs.org/) package manager, as so:
+Cách đơn giản nhất để cài đặt Less trên server là sử dụng npm, một bộ quản lý gói của [node.js](http://nodejs.org/) như sau:
 
 ```bash
 $ npm install -g less
 ```
 
-## Command-line usage
+## Sử dụng dòng lệnh
 
-Once installed, you can invoke the compiler from the command-line, as such:
+Sau khi cài đặt thành công, bạn có thể gọi trình biên dịch bằng dòng lệnh như sau:
 
 ```bash
 $ lessc styles.less
 ```
 
-This will output the compiled CSS to `stdout`, you may then redirect it to a file of your choice:
+Dòng lệnh trên sẽ ghi tệp tin CSS đã được biên dịch ra `stdout`, và sau đó bạn có thể chuyển hướng ra tệp tin mà bạn mong muốn như sau:
 
 ```bash
 $ lessc styles.less > styles.css
 ```
 
-To output minified CSS, simply pass the `-x` option. If you would like more involved minification,
-the [Clean CSS](https://github.com/GoalSmashers/clean-css) is also available with
-the `--clean-css` [plugin](https://github.com/less/less-plugin-clean-css).
+Để ghi ra tệp tin CSS đã được nén, bạn chỉ việc truyền thêm tùy chọn `-x`. Nếu như bạn muốn sử dụng nhiều tùy chọn nén hơn,
+[Clean CSS](https://github.com/GoalSmashers/clean-css) có thể giúp bạn điều đó với [plugin](https://github.com/less/less-plugin-clean-css) `--clean-css`.
 
-To see all the command line options run lessc without parameters or see [Usage]({{resolve 'usage'}}).
+Để biết toàn bộ các tùy chọn dòng lệnh khi chạy lessc ngoài các tham số, hãy xem [Cách sử dụng]({{resolve 'usage'}}).
 
-## Usage in Code
+## Cách sử dụng trong Code
 
-You can invoke the compiler from node, as such:
+Bạn có thể gọi trình biên dịch từ node như sau:
 
 ```js
 var less = require('less');
@@ -45,7 +44,7 @@ less.render('.class { width: (1 + 1) }', function (e, output) {
 });
 ```
 
-which will output
+Sẽ tạo ra:
 
 ```css
 .class {
@@ -53,9 +52,9 @@ which will output
 }
 ```
 
-## Configuration
+## Cấu hình
 
-You may pass some options to the compiler:
+Bạn có thể truyền một số tùy chọn vào trình biên dịch:
 
 ```js
 var less = require('less');
@@ -71,52 +70,52 @@ less.render('.class { width: (1 + 1) }',
     });
 ```
 
-See [Usage]({{resolve 'usage'}}) for more information.
+Hãy xem phần [Cách sử dụng]({{resolve 'usage'}}) để biết thêm thông tin chi tiết.
 
-## Third party tools
+## Các công cụ của bên thứ 3
 
-See the [Usage]({{resolve 'usage'}}) section for details of other tools.
+Hãy xem phần [Cách sử dụng]({{resolve 'usage'}}) để biết thêm thông tin chi tiết về các công cụ.
 
-# Command-line With Rhino
-> Each less.js release contains also rhino-compatible version.
+# Dòng lệnh với Rhino
+> Mỗi phiên bản less.js đều chứa một phiên bản tương thích với rhino.
 
-Command line rhino version requires two files:
-* less-rhino-<version>.js - compiler implementation,
-* lessc-rhino-<version>.js - command line support.
+Để sử dụng dòng lệnh với Rhino, yêu cầu phải có 2 tệp tin sau:
+* less-rhino-<version>.js - tệp tin thực thi trình biên dịch,
+* lessc-rhino-<version>.js - tệp tin hỗ trợ trình biên dịch.
 
-Command to run the compiler:
+Dòng lệnh để chạy trình biên dịch:
 ````
 java -jar js.jar -f less-rhino-<version>.js lessc-rhino-<version>.js styles.less styles.css
 ````
 
-This will compile styles.less file and save the result to styles.css file. The output file parameter is optional. If it is missing, less will output the result to `stdout`.
+Dòng lệnh này sẽ biên dịch tệp tin styles.less và lưu kết quả vào tệp tin styles.css. Bạn có thể tùy ý lựa chọn tệp tin đầu ra. Nếu như không được cung cấp, less sẽ đưa kết quả ra `stdout`.
 
-# Client-side usage
+# Cách sử dụng ở phía Client
 
-> Using less.js in the browser is great for development, but it's not recommended for production
+> Sử dụng less.js trong trình duyệt được khuyến khích khi phát triển, tuy nhiên không nên sử dụng khi phát hành
 
-Client-side is the easiest way to get started and good for developing with Less, but in production, when performance and reliability is important, _we recommend pre-compiling using node.js or one of the many third party tools available_.
+Sử dụng Less ở phía Client là cách đơn giản nhất để làm quen với việc phát triển bằng Less, nhung khi phát hành, thời điểm mà hiệu năng và độ tin cậy được đặt lên hàng đầu, _bạn nên sử dụng phiên bản được biên dịch trước (pre-compiling) bởi node.js hoặc sử dụng một trong các công cụ sẵn có của bên thứ 3_ .
 
-To start off, link your `.less` stylesheets with the `rel` attribute set to "`stylesheet/less`":
+Để bắt đầu, hãy liên kết stylesheet `.less` vào dự án của bạn với thuộc tính `rel` được thiết lập "`stylesheet/less`":
 
 ```html
 <link rel="stylesheet/less" type="text/css" href="styles.less" />
 ```
 
-Next, [download less.js](https://github.com/less/less.js/archive/master.zip) and include it in a `<script></script>` tag in the `<head>` element of your page:
+Tiếp theo, [tải về less.js](https://github.com/less/less.js/archive/master.zip) và thêm nó vào thẻ `<script></script>` nằm trong thành phần `<head>` trong trang của bạn:
 
 ```html
 <script src="less.js" type="text/javascript"></script>
 ```
 
-### Tips
+### Lưu ý
 
-* Make sure you include your stylesheets **before** the script.
-* When you link more than one `.less` stylesheet each of them is compiled independently. So any variables, mixins or namespaces you define in a stylesheet are not accessible in any other.
+* Hãy chắc chắn rằng bạn đã thêm stylesheet của bạn **vào trước** script.
+* Khi bạn sử dụng nhiều stylesheet `.less` thì các tệp tin đó phải được biên dịch một cách độc lập. Khi đó các biến số, mixins hoặc namespaces mà bạn định nghĩa trong các stylesheet cũng sẽ độc lập với nhau.
 
-## Browser Options
+## Các tùy chọn của trình duyệt
 
-Options are defined by setting them on a global `less` object **before** the `<script src="less.js"></script>`:
+Các tùy chọn trên đối tượng `less` phải được thiết lập **trước** thẻ `<script src="less.js"></script>`:
 
 ``` html
 <!-- set options before less.js script -->
@@ -135,11 +134,11 @@ Options are defined by setting them on a global `less` object **before** the `<s
 <script src="less.js"></script>
 ```
 
-Or for brevity they can be set as attributes on the script and link tags (requires JSON.parse browser support or polyfill).
+Hoặc ngắn gọn, chúng có thể được thiết lập như các thuộc tính trong script và các thẻ link (yêu cầu trình duyệt hỗ trợ JSON.parse hoặc polyfill).
 
 ``` html
 <script src="less.js" data-poll="1000" data-relative-urls="false"></script>
 <link data-dump-line-numbers="all" data-global-vars='{ myvar: "#ddffee", mystr: "\"quoted\"" }' rel="stylesheet/less" type="text/css" href="less/styles.less">
 ```
 
-Learn more about [Browser Options](usage/#using-less-in-the-browser-setting-options)
+Hãy xem phần [Các tùy chọn của trình duyệt](usage/#using-less-in-the-browser-setting-options) để biết thêm chi tiết.

@@ -1,6 +1,6 @@
-> Extend is a Less pseudo-class which merges the selector it is put on with ones that match what it references.
+> Extend là một pseudo-class của Less cho phép sử dụng kết hợp selector (nơi mà nó được sử dụng) và selector tương ứng với giá trị tham chiếu được truyền vào.
 
-Released [v1.4.0]({{ less.master }}CHANGELOG.md)
+Phiên bản [v1.4.0]({{ less.master }}CHANGELOG.md)
 
 ```less
 nav ul {
@@ -9,9 +9,9 @@ nav ul {
 }
 ```
 
-In the rule set above, the `:extend` selector will apply the "extending selector" (`nav ul`) onto the `.inline` class _wherever the `.inline` class appears_. The declaration block will be kept as-is, but without any reference to the extend (because extend isn't css).
+Trong ví dụ trên, selector `:extend` sẽ áp dụng "extending selector" (`nav ul`) vào class `.inline` _bất kỳ nơi nào mà class `.inline` xuất hiện_. Block khai báo sẽ được giữ nguyên mà không có bất kỳ tham chiếu nào tới extend (vì extend không phải là CSS).
 
-So the following:
+Vì thế đoạn mã sau đây:
 
 ```less
 nav ul {
@@ -23,7 +23,7 @@ nav ul {
 }
 ```
 
-Outputs
+Sẽ được dịch thành:
 
 ```css
 nav ul {
@@ -35,12 +35,12 @@ nav ul {
 }
 ```
 
-Notice how the `nav ul:extend(.inline)` selector gets output as `nav ul` - the extend gets removed before output and the selector block left as-is. If no properties are put in that block then it gets removed from the output (but the extend still may affect other selectors).
+Hãy lưu ý cái cách mà selector `nav ul:extend(.inline)` được biên dịch thành `nav ul` - extend đã bị xóa đi trước khi dịch ra và selector block nằm phía bên trái dấu ":" được giữ nguyên (nav ul). Nếu như không có bất kỳ thuộc tính nào được sử dụng bên trong block đó thì nó sẽ bị xóa bỏ (mặc dù extend vẫn ảnh hưởng đến các selector khác).
 
-## Extend syntax
-The extend is either attached to a selector or placed into a ruleset. It looks like a pseudo-class with selector parameter optionally followed by the keyword `all`:
+## Cú pháp của extend
+Extend có thể được sử dụng gắn với 1 selector cụ thể hoặc được đặt trong một ruleset (Giống như một pseudo-class với một tham số selector tùy ý được theo sau bởi từ khóa `all`):
 
-Example:
+Ví dụ:
 
 ```less
 .a:extend(.b) {}
@@ -60,9 +60,9 @@ Example:
 }
 ```
 
-It can contain one or more classes to extend, separated by commas.
+Bạn có thể truyền vào nhiều class để thực hiện extend, các class được phân cách với nhau bằng dấu phẩy.
 
-Example:
+Ví dụ:
 
 ```less
 .e:extend(.f) {}
@@ -72,15 +72,15 @@ Example:
 .e:extend(.f, .g) {}
 ```
 
-### Extend attached to selector
-Extend attached to a selector looks like an ordinary pseudo-class with selector as a parameter. A selector can contain multiple extend clauses, but all extends must be at the end of the selector.
+### Extend gắn với selector
+Extend gắn với selector giống như một pseudo-class thông thường với tham số truyền vào là một selector. Một selector có thể có nhiều class extend và toàn bộ các class này phải nằm ở vị trí cuối cùng của selector.
 
-* Extend after the selector: `pre:hover:extend(div pre)`.
-* Space between selector and extend is allowed: `pre:hover :extend(div pre)`.
-* Multiple extends are allowed: `pre:hover:extend(div pre):extend(.bucket tr)` - Note this is the same as `pre:hover:extend(div pre, .bucket tr)`
-* This is NOT allowed: `pre:hover:extend(div pre).nth-child(odd)`. Extend must be last.
+* Extend theo sau selector: `pre:hover:extend(div pre)`.
+* Cho phép sử dụng dấu cách giữa selector và extend: `pre:hover :extend(div pre)`.
+* Cho phép sử dụng nhiều extend đồng thời: `pre:hover:extend(div pre):extend(.bucket tr)` (Tương tự như `pre:hover:extend(div pre, .bucket tr)`)
+* Không cho phép: `pre:hover:extend(div pre).nth-child(odd)`. Extend phải nằm ở vị trí cuối cùng.
 
-If a ruleset contains multiple selectors, any of them can have the extend keyword. Multiple selectors with extend in one ruleset:
+Nếu như một ruleset chứa nhiều selector thì mỗi selector đều có thể có riêng một extend. Các selector cùng với extend phải nằm trong cùng một ruleset:
 
 ```less
 .big-division,
@@ -90,11 +90,11 @@ If a ruleset contains multiple selectors, any of them can have the extend keywor
 }
 ```
 
-### Extend inside ruleset
-Extend can be placed into a ruleset's body using `&:extend(selector)` syntax. Placing extend into a body is a shortcut for placing it into every single selector of that ruleset.
+### Extend nằm trong ruleset
+Extend có thể được đặt trong phần nội dụng của ruleset bằng cách sử dụng cú pháp `&:extend(selector)`. Việc đặt extend bên trong nội dung của ruleset giống cho một cách viết ngắn gọn cho việc áp dụng nó vào từng selector của ruleset.
 
 
-Extend inside a body:
+Ví dụ:
 
 ```less
 pre:hover,
@@ -103,17 +103,17 @@ pre:hover,
 }
 ```
 
-is exactly the same as adding an extend after each selector:
+sẽ tương tự như:
 
 ```less
 pre:hover:extend(div pre),
 .some-class:extend(div pre) {}
 ```
 
-### Extending nested Selectors
-Extend is able to match nested selectors. Following less:
+### Sử dụng selector dạng lồng nhau khi extend
+Có thể sử dụng selector dạng lồng nhau với extend như ví dụ sau đây:
 
-Example:
+Ví dụ:
 
 ```less
 .bucket {
@@ -123,7 +123,7 @@ Example:
 }
 .some-class:extend(.bucket tr) {} // nested ruleset is recognized
 ```
-Outputs
+sẽ được dịch thành:
 
 ```css
 .bucket tr,
@@ -132,9 +132,9 @@ Outputs
 }
 ```
 
-Essentially the extend looks at the compiled css, not the original less.
+Hơn nữa, extend nhận diện được selector dạng lồng nhau trong mã CSS đã biên dịch chứ không phải trong mã Less gốc. Hãy xem ví dụ sau đây:
 
-Example:
+Ví dụ:
 
 ```less
 .bucket {
@@ -145,7 +145,7 @@ Example:
 .some-class:extend(tr .bucket) {} // nested ruleset is recognized
 ```
 
-Outputs
+sẽ được dịch thành:
 
 ```css
 tr .bucket,
@@ -155,10 +155,10 @@ tr .bucket,
 ```
 
 
-### Exact Matching with Extend
-Extend by default looks for exact match between selectors. It does matter whether selector uses leading star or not. It does not matter that two nth-expressions have the same meaning, they need to have to same form in order to be matched. The only exception are quotes in attribute selector, less knows they have the same meaning and matches them.
+### Tìm kiếm chính xác với Extend
+Theo mặc định Extend sẽ tìm kiếm selector chính xác nhất trong số các selector, phụ thuộc vào việc selector có sử dụng ký tự "*" phía trước hay không. Việc tìm kiếm cũng không phụ thuộc vào việc 2 biểu thức dạng nth- có cùng ý nghĩa, chỉ cần chùng có cùng định dạng khi tìm kiếm. Ngoại trừ dấu ngoặc(", ') nằm bên trong thuộc tính của selector (ví dụ: input[type="text"]), less hiểu được rằng chúng có cùng ý nghĩa và chọn chúng.
 
-Example:
+Ví dụ:
 
 ```less
 .a.class,
@@ -169,7 +169,7 @@ Example:
 .test:extend(.class) {} // this will NOT match the any selectors above
 ```
 
-Leading star does matter. Selectors `*.class` and `.class` are equivalent, but extend will not match them:
+Phụ thuộc vào ký tự "*". Selector `*.class` và `.class` là tương đương, tuy nhiên extend hiểu chúng khác nhau:
 
 ```less
 *.class {
@@ -178,7 +178,7 @@ Leading star does matter. Selectors `*.class` and `.class` are equivalent, but e
 .noStar:extend(.class) {} // this will NOT match the *.class selector
 ```
 
-Outputs
+sẽ được dịch thành:
 
 ```css
 *.class {
@@ -186,7 +186,7 @@ Outputs
 }
 ```
 
-Order of pseudo-classes does matter. Selectors `link:hover:visited` and `link:visited:hover` match the same set of elements, but extend treats them as different:
+Phụ thuộc vào thứ tự của các pseudo-class. Selector `link:hover:visited` và `link:visited:hover` đều tương ứng với một tập hợp các phần tử, tuy nhiên extend hiểu chúng khác nhau:
 
 ```less
 link:hover:visited {
@@ -194,7 +194,7 @@ link:hover:visited {
 }
 .selector:extend(link:visited:hover) {}
 ```
-Outputs
+sẽ được dịch thành:
 
 ```css
 link:hover:visited {
@@ -202,9 +202,9 @@ link:hover:visited {
 }
 ```
 
-### nth expression
+### biểu thức dạng nth
 
-Nth expression form does matter. Nth-expressions `1n+3` and `n+3` are equivalent, but extend will not match them:
+Không phụ thuộc vào biểu thức dạng Nth. Biểu thức `1n+3` và `n+3` là tương đương, tuy nhiên extend hiểu chúng khác nhau:
 
 ```less
 :nth-child(1n+3) {
@@ -212,7 +212,7 @@ Nth expression form does matter. Nth-expressions `1n+3` and `n+3` are equivalent
 }
 .child:extend(:nth-child(n+3)) {}
 ```
-Outputs
+sẽ được dịch thành:
 
 ```css
 :nth-child(1n+3) {
@@ -220,7 +220,7 @@ Outputs
 }
 ```
 
-Quote type in attribute selector does not matter. All of the following are equivalent.
+Không phụ thuộc vào dấu quote (",') trong selector. Các trường hợp sau đây là tương đương.
 
 ```less
 [title=identifier] {
@@ -237,7 +237,7 @@ Quote type in attribute selector does not matter. All of the following are equiv
 .singleQuote:extend([title='identifier']) {}
 .doubleQuote:extend([title="identifier"]) {}
 ```
-Outputs
+sẽ được dịch thành:
 
 ```css
 [title=identifier],
@@ -262,11 +262,11 @@ Outputs
 }
 ```
 
-## Extend "all"
+## Extend "toàn bộ"
 
-When you specify the all keyword last in an extend argument it tells Less to match that selector as part of another selector. The selector will be copied and the matched part of the selector only will then be replaced with the extend, making a new selector.
+Khi bạn sử dụng từ khóa "all" vào cuối cùng trong danh sách các tham số truyền vào extend, thì khi đó Less sẽ hiểu selector đó như một phần của một selector khác. Selector đó sẽ được copy và phần tương ứng với selector sẽ được thay thế bằng selector được extend để tạo ra một selector mới.
 
-Example:
+Ví dụ:
 
 ```less
 .a.b.test,
@@ -282,7 +282,7 @@ Example:
 .replacement:extend(.test all) {}
 ```
 
-Outputs
+sẽ được dịch ra thành:
 
 ```css
 .a.b.test,
@@ -297,15 +297,15 @@ Outputs
 }
 ```
 
-_You can think of this mode of operation as essentially doing a non-destructive search and replace._
+_Bạn có thể nghĩ cơ chế này giống như việc tìm kiếm và thay thế không hoàn toàn_
 
 
-### Selector Interpolation with Extend
-> Extend is NOT able to match selectors with variables. If selector contains variable, extend will ignore it.
+### Selector dạng nội suy và Extend
+> Selector với các biến số không thể sử dụng với extend. Nếu một selector chứa biến số, extend sẽ bỏ qua nó.
 
-There is a pending feature request for this but it is not an easy change.  However, extend can be attached to interpolated selector.
+Đã có một yêu cầu về vấn đề này nhưng việc thay đổi là không hề dễ dàng. Tuy nhiên, extend lại có thể sử dụng với selector dạng nội suy
 
-Selector with variable will not be matched:
+Selector chứa biến số sẽ bị bỏ qua:
 
 ```less
 @variable: .bucket;
@@ -315,7 +315,7 @@ Selector with variable will not be matched:
 .some-class:extend(.bucket) {} // does nothing, no match is found
 ```
 
-and extend with variable in target selector matches nothing:
+và extend với tham số được truyền vào là biến số sẽ không thể sử dụng:
 
 ```less
 .bucket {
@@ -325,7 +325,7 @@ and extend with variable in target selector matches nothing:
 @variable: .bucket;
 ```
 
-Both of the previous examples compile into:
+Cả hai ví dụ trên được dịch thành:
 
 ```less
 .bucket {
@@ -333,7 +333,7 @@ Both of the previous examples compile into:
 }
 ```
 
-However, `:extend` attached to an interpolated selector works:
+Tuy nhiên, `:extend` sử dụng với selector dạng nội suy lại được chấp nhận:
 
 ```less
 .bucket {
@@ -343,7 +343,7 @@ However, `:extend` attached to an interpolated selector works:
 @variable: .selector;
 ```
 
-previous less compiles into:
+đoạn mã less trên được dịch thành:
 
 ```less
 .bucket, .selector {
@@ -351,9 +351,9 @@ previous less compiles into:
 }
 ```
 
-## Scoping / Extend Inside @media
+## Scoping / Extend bên trong @media
 
-Extend written inside a media declaration should match only selectors inside the same media declaration:
+Extend được viết bên trong phần khai báo của media sẽ chỉ có thể sử dụng với các selector nằm trong phần khai báo của media đó:
 
 ```less
 @media print {
@@ -372,7 +372,7 @@ Extend written inside a media declaration should match only selectors inside the
 }
 ```
 
-compiles into:
+sẽ được dịch thành:
 
 ```css
 @media print {
@@ -391,7 +391,7 @@ compiles into:
 }
 ```
 
-Extend written inside a media declaration does not match selectors inside nested declaration:
+Extend được viết bên trong phần khai báo của media sẽ không thể sử dụng với các selector của các media lồng bên trong:
 
 ```less
 @media screen {
@@ -404,7 +404,7 @@ Extend written inside a media declaration does not match selectors inside nested
 }
 ```
 
-compiles into:
+được dịch thành:
 
 ```css
 @media screen and (min-width: 1023px) {
@@ -414,7 +414,7 @@ compiles into:
 }
 ```
 
-Top level extend matches everything including selectors inside nested media:
+Extend sẽ kết hợp với toàn bộ các selector tìm kiếm được bao gồm cả các selector nằm bên trong media lồng bên trong:
 
 ```less
 @media screen {
@@ -431,7 +431,7 @@ Top level extend matches everything including selectors inside nested media:
 .topLevel:extend(.selector) {} /* top level extend matches everything */
 ```
 
-compiles into:
+sẽ được dịch thành:
 
 ```css
 @media screen {
@@ -448,11 +448,11 @@ compiles into:
 }
 ```
 
-### Duplication Detection
+### Phát hiện kép
 
-Currently there is no duplication detection.
+Thực tế thì không có tồn tại phát hiện kép.
 
-Example:
+Ví dụ:
 
 ```less
 .alert-info,
@@ -462,7 +462,7 @@ Example:
 
 .alert:extend(.alert-info, .widget) {}
 ```
-Outputs
+sẽ được dịch thành:
 
 ```css
 .alert-info,
@@ -473,11 +473,11 @@ Outputs
 }
 ```
 
-## Use Cases for Extend
+## Các Use Case cho Extend
 
-### Classic Use Case
+### Use Case cổ điển
 
-The classic use case is to avoid adding a base class. For example, if you have
+Use case dạng cổ điển được sử dụng để tránh việc thêm class cơ sở. Ví dụ, nếu như bạn có:
 
 ```css
 .animal {
@@ -486,7 +486,7 @@ The classic use case is to avoid adding a base class. For example, if you have
 }
 ```
 
-and you want to have a subtype of animal which overrides the background color then you have two options, firstly change your HTML
+và bạn muốn có một biến thể của animal được tạo ra bằng cách ghi đè background color thì bạn có 2 lựa chọn, đầu tiên hãy thay đổi mã HTML của bạn:
 
 ```html
 <a class="animal bear">Bear</a>
@@ -501,7 +501,7 @@ and you want to have a subtype of animal which overrides the background color th
 }
 ```
 
-or have simplified html and use extend in your less. e.g.
+hoặc đơn giản hóa mã html và sử dụng extend trong mã less của bạn. Ví dụ:
 
 ```html
 <a class="bear">Bear</a>
@@ -518,11 +518,11 @@ or have simplified html and use extend in your less. e.g.
 }
 ```
 
-### Reducing CSS Size
+### Giảm thiểu kích thước của mã CSS
 
-Mixins copy all of the properties into a selector, which can lead to unnecessary duplication. Therefore you can use extends instead of mixins to move the selector up to the properties you wish to use, which leads to less css being generated.
+Mixin copy toàn bộ các thuộc tính vào bên trong một selector, điều đó có thể sẽ dẫn đến việc lặp lại một cách không cần thiết. Vì thế bạn có thể sử dụng extend thay vì mixin để di chuyển selector lên phía trên. Xem ví dụ bên dưới:
 
-Example - with mixin:
+Ví dụ - sử dụng mixin:
 
 ```less
 .my-inline-block() {
@@ -537,7 +537,7 @@ Example - with mixin:
 }
 ```
 
-Outputs
+sẽ được dịch thành:
 
 ```css
 .thing1 {
@@ -550,7 +550,7 @@ Outputs
 }
 ```
 
-Example (with extends):
+Ví dụ - sử dụng extend:
 
 ```less
 .my-inline-block {
@@ -565,7 +565,7 @@ Example (with extends):
 }
 ```
 
-Outputs
+sẽ được dịch thành:
 
 ```css
 .my-inline-block,
@@ -576,11 +576,11 @@ Outputs
 }
 ```
 
-### Combining Styles / a more advanced mixin
+### Style kết hợp / mixin dạng nâng cao
 
-Another use-case is as an alternative for a mixin - because mixins can only be used with simple selectors, if you have two different blocks of html, but need to apply the same styles to both you can use extends to relate two areas.
+Một use-case khác cũng được sử dụng để thay thế cho mixin khi cần thiết - vì mixin chỉ có thể sử dụng với các selector đơn giản, nếu như bạn có 2 block html khác nhau, nhưng cần phải áp dụng cùng một style vào cả 2 block đó, khi đó bạn có thể sử dụng extend để liên kết 2 block này.
 
-Example:
+Ví dụ:
 
 ```less
 li.list > a {

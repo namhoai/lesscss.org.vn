@@ -1,12 +1,12 @@
 ---
-title: Getting Started
+title: Mở đầu
 ---
 
-Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
+Less là một bộ tiền xử lý CSS, mở rộng ngôn ngữ CSS sẵn có bằng cách thêm các tính năng như cho phép đặt biến, mixins, các chức năng và nhiều kỹ thuật giúp bạn tạo ra được mã CSS có cấu trúc tốt hơn, ổn định hơn và dễ mở rộng hơn.
 
-Less runs inside Node, in the browser and inside Rhino. There are also many 3rd party tools that allow you to compile your files and watch for changes.
+Less chạy bên trong Node, trong trình duyệt và bên trong Rhino. Ngoài ra có rất nhiều công cụ của bên thứ 3 cho phép bạn biên dịch các tệp tin và theo dõi các thay đổi của bạn.
 
-For example:
+Ví dụ:
 
 ```less
 @base: #f938ab;
@@ -25,7 +25,7 @@ For example:
 }
 ```
 
-compiles to
+được biên dịch thành:
 
 ```css
 .box {

@@ -1,13 +1,13 @@
 ---
-title: Features Overview
+title: Tổng quan về các tính năng
 ---
 
-> As an extension to CSS, Less is not only backwards compatible with CSS, but the extra features it adds use existing CSS syntax. This makes learning Less a breeze, and if in doubt, lets you fall back to vanilla CSS.
+> Giống như một phần mở rộng của CSS, Less không chỉ tương thích ngược với CSS mà các tính năng của Less cũng đều sử dụng cú pháp sẵn có của CSS. Điều này giúp cho việc học Less trở nên dễ dàng hơn bao giờ hết.
 
 
-### Variables
+### Biến số
 
-These are pretty self-explanatory:
+Hãy xem ví dụ đơn giản sau đây:
 
 ```less
 @nice-blue: #5B83AD;
@@ -18,7 +18,7 @@ These are pretty self-explanatory:
 }
 ```
 
-Outputs:
+Sau khi biên dịch:
 
 ```css
 #header {
@@ -26,12 +26,12 @@ Outputs:
 }
 ```
 
-Note that variables are actually "constants" in that they can only be defined once.
+Hãy chú ý rằng các biến số thực sự là "hằng số" bởi chúng chỉ có thể được định nghĩa một lần duy nhất.
 
 
 ### Mixins
 
-Mixins are a way of including ("mixing in") a bunch of properties from one rule-set into another rule-set. So say we have the following class:
+Mixins thực chất là việc tích hợp ("mixing in") một tập hợp các thuộc tính từ một rule-set vào một rule-set khác. Giả sử chúng ta có class sau đây:
 
 ```css
 .bordered {
@@ -40,7 +40,7 @@ Mixins are a way of including ("mixing in") a bunch of properties from one rule-
 }
 ```
 
-And we want to use these properties inside other rule-sets. Well, we just have to drop in the name of the class where we want the properties, like so:
+Và chúng ta muốn sử dụng những thuộc tính này vào bên trong các rule-set khác. Để thực hiện điều đó, chúng ta chỉ việc thêm tên của class đó và nơi mà ta muốn sử dụng các thuộc tính của nó, như sau:
 
 ```less
 #menu a {
@@ -54,17 +54,17 @@ And we want to use these properties inside other rule-sets. Well, we just have t
 }
 ```
 
-The properties of the `.bordered` class will now appear in both `#menu a` and `.post a`. (Note that you can also use `#ids` as mixins.)
+Các thuộc tính của class `.bordered` lúc này sẽ xuất hiện trong cả `#menu a` và `.post a`. (Lưu ý rằng bạn cũng có thể sử dụng `#ids` như là mixins.)
 
-**Learn more**
+**Tham khảo**
 
-* [More about mixins](#mixins-feature)
-* [Parametric Mixins](#mixins-parametric-feature)
+* [Tham khảo về mixins](#mixins-feature)
+* [Mixins dạng tham số](#mixins-parametric-feature)
 
 
-### Nested rules
+### Các quy tắc lồng nhau
 
-Less gives you the ability to use nesting instead of, or in combination with cascading. Let's say we have the following CSS:
+Less cho phép bạn sử dụng quy tắc lồng nhau thay vì hoặc kết hợp với phân tầng (cascading). Giả sử chúng ta có đoạn mã CSS sau:
 
 ```css
 #header {
@@ -78,7 +78,7 @@ Less gives you the ability to use nesting instead of, or in combination with cas
 }
 ```
 
-In Less, we can also write it this way:
+Trong Less, chúng ta có thể viết như sau:
 
 ```less
 #header {
@@ -92,9 +92,9 @@ In Less, we can also write it this way:
 }
 ```
 
-The resulting code is more concise, and mimics the structure of your HTML.
+Kết quả của 2 đoạn code trên là như nhau, và đều mô phỏng cấu trúc HTML của bạn.
 
-You can also bundle pseudo-selectors with your mixins using this method. Here's the classic clearfix hack, rewritten as a mixin (`&` represents the current selector parent):
+Bạn cũng có thể kết hợp pseudo-selectors với các mixin của bạn bằng cách sử dụng phương pháp này. Sau đây là đoạn mã hack clearfix cổ điển, được viết lại bằng cách sử dụng mixin (`&` đại diện cho selector cha hiện tại):
 
 ```less
 .clearfix {
@@ -112,13 +112,13 @@ You can also bundle pseudo-selectors with your mixins using this method. Here's 
 }
 ```
 
-**See also**
+**Tham khảo**
 
-* [Parent Selectors](#parent-selectors-feature)
+* [Selector cha](#parent-selectors-feature)
 
-### Media query bubbling and nested media queries
+### Bong bóng media query và các media query lồng nhau
 
-Media queries can be nested in the same way as selectors. Selectors are copied into the body of the media query:
+Các media query có thể lồng nhau giống như các selector. Các selector được copy sang phần nội dung của media query:
 
 ```less
 .screencolor {
@@ -134,7 +134,7 @@ Media queries can be nested in the same way as selectors. Selectors are copied i
 }
 
 ```
-outputs:
+được dịch ra:
 
 ```css
 @media screen {
@@ -154,9 +154,9 @@ outputs:
 }
 ```
 
-### Operations
+### Các phép toán
 
-Any number, color or variable can be operated on. Here are a couple of examples:
+Các con số, màu sắc hoặc biến số đều có thể sử dụng để tính toán. Hãy xem các ví dụ sau đây:
 
 ```less
 @base: 5%;
@@ -168,19 +168,19 @@ background-color: @base-color + #111;
 height: 100% / 2 + @filler;
 ```
 
-The output is pretty much what you expect—Less understands the difference between colors and units. If a unit is used in an operation, like in:
+Kết quả được dịch ra sẽ giống như những gì bạn mong đợi - Less hiểu được sự khác nhau giữa màu sắc và đơn vị. Nếu một đơn vị được sử dụng trong phép toán, giống như:
 
 ```less
 @var: 1px + 5;
 ```
 
-Less will use that unit for the final output—`6px` in this case.
+Less sẽ sử dụng đơn vị đó cho kết quả cuối cùng—`6px` trong trường hợp này.
 
 ### Functions
 
-Less provides a variety of functions which transform colors, manipulate strings and do maths. They are documented fully in the function reference.
+Less cung cấp một số lượng lớn các function hỗ trợ biến đổi màu sắc, xử lý chuỗi và thực hiện tính toán. Chúng được viết chi tiết và đầy đủ trong phần tham khảo của function.
 
-Using them is pretty straightforward. The following example uses percentage to convert 0.5 to 50%, increases the saturation of a base color by 5% and then sets the background color to one that is lightened by 25% and spun by 8 degrees:
+Cách sử dụng function khá rõ ràng. Ví dụ sau đây sử dụng phần trăm để chuyển đổi 0.5 thành 50%, tăng độ bão hòa của màu cơ sở lên 5% và sau đó tăng độ sáng của màu background lên 25% và xoay đi 8 độ:
 
 ```less
 @base: #f04615;
@@ -196,9 +196,9 @@ Using them is pretty straightforward. The following example uses percentage to c
 
 ### Namespaces and Accessors
 
-(Not to be confused with [CSS `@namespace`](http://www.w3.org/TR/css3-namespace/) or [namespace selectors](http://www.w3.org/TR/css3-selectors/#typenmsp)).
+(Đừng nhầm lẫn với [CSS `@namespace`](http://www.w3.org/TR/css3-namespace/) hoặc [namespace selectors](http://www.w3.org/TR/css3-selectors/#typenmsp)).
 
-Sometimes, you may want to group your mixins, for organizational purposes, or just to offer some encapsulation. You can do this pretty intuitively in Less, say you want to bundle some mixins and variables under `#bundle`, for later reuse or distributing:
+Đôi khi, bạn có thể muốn nhóm các mixin lại với nhau để tổ chức được tốt hơn , hoặc để việc đóng gói dễ dàng hơn. Khi đó, bạn có thể thực hiện được điều này một cách trực quan với Less, giả sử bạn muốn nhóm một số các mixin và biến số cho `#bundle`, để tái sử dụng sau này hoặc đem phân phối:
 
 ```less
 #bundle {
@@ -215,7 +215,7 @@ Sometimes, you may want to group your mixins, for organizational purposes, or ju
 }
 ```
 
-Now if we want to mixin the `.button` class in our `#header a`, we can do:
+Lúc này, nếu bạn muốn mixin class `.button` vào `#header a`, ta có thể làm như sau:
 
 ```less
 #header a {
@@ -224,11 +224,11 @@ Now if we want to mixin the `.button` class in our `#header a`, we can do:
 }
 ```
 
-Note that variables declared within a namespace will be scoped to that namespace only and will not be available outside of the scope via the same syntax that you would use to reference a mixin (`#Namespace > .mixin-name`). So, for example, you can't do the following: (`#Namespace > @this-will-not-work`).
+Lưu ý rằng các biến số được khai báo bên trong một namespace sẽ bị cô lập và không thể sử dụng bên ngoài phạm vi đó thông qua cú pháp tương tự mà bạn sử dụng để tham chiếu tới một mixin (`#Namespace > .mixin-name`). Vì thế, bạn không thể thực hiện việc giống như sau: (`#Namespace > @this-will-not-work`).
 
-### Scope
+### Phạm vi
 
-Scope in Less is very similar to that of programming languages. Variables and mixins are first looked for locally, and if they aren't found, the compiler will look in the parent scope, and so on.
+Khái niệm phạm vi trong Less khá giống với các ngôn ngữ lập trình khác. Đầu tiên, các biến số và mixin sẽ được tìm kiếm ở cục bộ, và nếu không tìm thấy, trình biên dịch sẽ tìm trong phạm vi cha, và cứ tiếp tục như vậy.
 
 ```less
 @var: red;
@@ -241,7 +241,7 @@ Scope in Less is very similar to that of programming languages. Variables and mi
 }
 ```
 
-Variables and mixins do not have to be declared before being used so the following Less code is identical to the previous example:
+Các biến số và mixin không nhất thiết phải được khai báo trước khi sử dụng. Vì vậy đoạn mã Less sau đây sẽ tương tự với ví dụ phía trên:
 
 ```less
 @var: red;
@@ -254,14 +254,14 @@ Variables and mixins do not have to be declared before being used so the followi
 }
 ```
 
-**See also**
+**Tham khảo**
 
 * [Lazy Loading](#variables-feature-lazy-loading)
 
 
-### Comments
+### Chú thích
 
-Both block-style and inline comments may be used:
+Cả chú thích dạng block và dạng inline đều được sử dụng:
 
 ```less
 /* One hell of a block
@@ -272,9 +272,9 @@ style comment! */
 @var: white;
 ```
 
-### Importing
+### Import
 
-Importing works pretty much as expected. You can import a `.less` file, and all the variables in it will be available. The extension is optionally specified for `.less` files.
+Import hoạt động khá hiệu quả. Bạn có thể import một tệp tin `.less`, và toàn bộ các biến số trong đó sẽ đều được import vào. Phần mở rộng được chỉ định một cách tùy ý cho các tệp tin `.less`.
 
 ```css
 @import "library"; // library.less

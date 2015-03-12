@@ -12,16 +12,16 @@ base: content/features
 # Published documenation
 published:
   features-overview:
-    title: Overview
-    lead:  Simple overview of the basic features
+    title: Tổng quan
+    lead:  Tổng quan về các tính năng cơ bản
     files: content/features-overview.md
 
   variables:
-    title: Variables
+    title: Biến số
     files: <%= features.base %>/variables.md
 
   extend:
-    title: Extend
+    title: Mở rộng
     files: <%= features.base %>/extend.md
 
   mixins:
@@ -29,15 +29,15 @@ published:
     files: <%= features.base %>/mixins.md
 
   mixins-parametric:
-    title: Parametric Mixins
+    title: Mixins dạng tham số
     files: <%= features.base %>/mixins-parametric.md
 
   mixins-as-functions:
-    title: Mixins as Functions
+    title: Mixins dạng function
     files: <%= features.base %>/mixins-as-functions.md
 
   detached-rulesets:
-    title: Passing Rulesets to Mixins
+    title: Truyền Rulesets vào Mixins
     files: <%= features.base %>/detached-rulesets.md
 
   import-directives:
@@ -53,7 +53,7 @@ published:
     files: <%= features.base %>/css-guards.md
 
   loops:
-    title: Loops
+    title: Vòng lặp
     files: <%= features.base %>/loops.md
 
   merge:
@@ -72,7 +72,7 @@ published:
 unpublished:
   scope:
     published: false
-    title: Scope
+    title: Phạm vi
     files: <%= features.base %>/scope.md
 
   strict-math:
