@@ -107,9 +107,8 @@ cdn:
 # to use and add the templates.
 
 analytics:
-  alexa:           lpTeh1awA400OE
-  google:          false
-  google_site_id:  false
+  alexa: lpTeh1awA400OE
+  google: UA-59799793-3
 
 
 
