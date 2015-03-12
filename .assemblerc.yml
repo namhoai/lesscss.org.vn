@@ -109,6 +109,7 @@ cdn:
 analytics:
   alexa: lpTeh1awA400OE
   google: UA-59799793-3
+  heatmap: true
 
 
 
