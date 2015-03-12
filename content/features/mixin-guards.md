@@ -1,10 +1,10 @@
-> Conditional mixins
+> Mixin có điều kiện
 
-Guards are useful when you want to match on _expressions_, as opposed to simple values or arity. If you are familiar with functional programming, you have probably encountered them already.
+Chắn thường được sử dụng khi bạn muốn so khớp _biểu thức_ thay vì so khớp những giá trị đơn giản hay số lượng tham số. Nếu bạn đã quen với lập trình hàm thì có thể bạn cũng từng gặp chắn.
 
-In trying to stay as close as possible to the declarative nature of CSS, Less has opted to implement conditional execution via **guarded mixins** instead of `if`/`else` statements, in the vein of `@media` query feature specifications.
+Với cố gắng giữ cú pháp gần gũi với CSS chuẩn, Less đã chọn cú pháp điều kiện dạng **mixin có chắn** thay vì các lệnh `if`/`else`, bắt chước theo cú pháp của `@media` query trong chuẩn CSS.
 
-Let's start with an example:
+Hãy cùng bắt đầu với ví dụ sau:
 
 ```less
 .mixin (@a) when (lightness(@a) >= 50%) {
@@ -18,14 +18,14 @@ Let's start with an example:
 }
 ```
 
-The key is the `when` keyword, which introduces a guard sequence (here with only one guard). Now if we run the following code:
+Điểm mấu chốt ở đây là từ khóa `when`, theo sau là một chuỗi điều kiện chắn (ở đây chỉ có một chắn). Nếu ta viết như sau:
 
 ```less
 .class1 { .mixin(#ddd) }
 .class2 { .mixin(#555) }
 ```
 
-Here's what we'll get:
+Sẽ được kết quả:
 
 ```css
 .class1 {
@@ -38,16 +38,16 @@ Here's what we'll get:
 }
 ```
 
-### Guard comparison operators
+### Toán tử so sánh chắn
 
-The full list of comparison operators usable in guards are: `>`, `>=`, `=`, `=<`, `<`. Additionally, the keyword `true` is the only truthy value, making these two mixins equivalent:
+Các toán tử so sánh dùng được trong điều kiện chắn gồm có `>`, `>=`, `=`, `=<`, `<`. Ngoài ra, từ khóa `true` là giá trị đúng duy nhất, và như vậy hai mixin sau giống hệt nhau:
 
 ```less
 .truth (@a) when (@a) { ... }
 .truth (@a) when (@a = true) { ... }
 ```
 
-Any value other than the keyword `true` is falsy:
+Các giá trị khác ngoài `true` đều là phủ định:
 
 ```less
 .class {
@@ -55,7 +55,7 @@ Any value other than the keyword `true` is falsy:
 }
 ```
 
-Note that you can also compare arguments with each other, or with non-arguments:
+Lưu ý rằng bạn cũng có thể so sánh các tham số với nhau, hoặc với một giá trị:
 
 ```less
 @media: mobile;
@@ -67,38 +67,39 @@ Note that you can also compare arguments with each other, or with non-arguments:
 .max (@a; @b) when (@a < @b) { width: @b }
 ```
 
-### Guard logical operators
+### Toán tử logic trong điều kiện chắn
 
-You can use logical operators with guards. The syntax is based on CSS media queries.
+Bạn có thể sử dụng toán tử logic trong điều kiện chắn với cú pháp giống như media query của CSS.
 
-Use the `and` keyword to combine guards:
+Sử dụng từ khóa `and` để kết hợp các điều kiện chắn:
 
 ```less
 .mixin (@a) when (isnumber(@a)) and (@a > 0) { ... }
 ```
 
-You can emulate the *or* operator by separating guards with a comma `,`. If any of the guards evaluate to true, it's considered a match:
+Bạn có thể dùng `,` phân cách các điều kiện chắn thay cho toán tử *or*. Chỉ một điều kiện chắn đúng sẽ dẫn đến đúng toàn bộ:
 
 ```less
 .mixin (@a) when (@a > 10), (@a < -10) { ... }
 ```
 
 Use the `not` keyword to negate conditions:
+Sử dụng từ khóa `not` để phủ định điều kiện:
 
 ```less
 .mixin (@b) when not (@b > 0) { ... }
 ```
 
-### Type checking functions
+### Hàm kiểm tra kiểu
 
-Lastly, if you want to match mixins based on value type, you can use the `is` functions:
+Cuối cùng, nếu bạn muốn khớp mixin dựa trên kiểu dữ lieeuj, bạn có thể sử dụng hàm `is`:
 
 ```less
 .mixin (@a; @b: 0) when (isnumber(@b)) { ... }
 .mixin (@a; @b: black) when (iscolor(@b)) { ... }
 ```
 
-Here are the basic type checking functions:
+Dưới đây là những hàm kiểm tra kiểu cơ bản:
 
 * `iscolor`
 * `isnumber`
@@ -106,14 +107,14 @@ Here are the basic type checking functions:
 * `iskeyword`
 * `isurl`
 
-If you want to check if a value is in a specific unit in addition to being a number, you may use one of:
+Các hàm dưới đây kiểm tra đơn vị của giá trị:
 
 * `ispixel`
 * `ispercentage`
 * `isem`
 * `isunit`
 
-### Conditional mixins
+### Mixin có điều kiện
 
 _(**FIXME**)_ Additionally, the `default` function may be used to make a mixin match depending on other mixing matches, and you may use it to create "conditional mixins" similar to `else` or `default` statements (of `if` and `case` structures respectively):
 
