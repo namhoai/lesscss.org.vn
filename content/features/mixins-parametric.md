@@ -1,8 +1,8 @@
-> How to pass arguments to mixins
+> Cách truyền tham số vào mixin
 
-Mixins can also take arguments, which are variables passed to the block of selectors when it is mixed in.
+Mixin có thể nhận tham số là các biến.
 
-For example:
+Ví dụ:
 
 ```less
 .border-radius(@radius) {
@@ -12,7 +12,8 @@ For example:
 }
 ```
 
-And here's how we can mix it into various rulesets:
+Và sau đó ta có thể sử dụng nó trong các ruleset:
+
 
 ```less
 #header {
@@ -23,7 +24,7 @@ And here's how we can mix it into various rulesets:
 }
 ```
 
-Parametric mixins can also have default values for their parameters:
+Các tham số cũng có thể có giá trị mặc định:
 
 ```less
 .border-radius(@radius: 5px) {
@@ -33,7 +34,7 @@ Parametric mixins can also have default values for their parameters:
 }
 ```
 
-We can invoke it like this now:
+Ta có thể gọi nó như sau:
 
 ```less
 #header {
@@ -41,9 +42,9 @@ We can invoke it like this now:
 }
 ```
 
-And it will include a 5px border-radius.
+Và #header sẽ có border-radius 5px
 
-You can also use parametric mixins which don't take parameters. This is useful if you want to hide the ruleset from the CSS output, but want to include its properties in other rulesets:
+Ta cũng có thể sử dụng mixin tham số nhưng không đặt tham số nào. Cách này hữu dụng khi ta không muốn in mixin đó ra CSS, nhưng lại muốn sử dụng các thuộc tính của nó ở trong các ruleset khác:
 
 ```less
 .wrap() {
@@ -56,7 +57,7 @@ You can also use parametric mixins which don't take parameters. This is useful i
 pre { .wrap }
 ```
 
-Which would output:
+Kết quả:
 
 ```css
 pre {
@@ -67,17 +68,17 @@ pre {
 }
 ```
 
-### Mixins With Multiple Parameters
-Parameters are either *semicolon* or *comma* separated. It is recommended to use *semicolon*. The symbol comma has double meaning: it can be interpreted either as a mixin parameters separator or css list separator.
+### Mixins nhiều tham số
+Các tham số truyền vào mixin cách nhau bằng *chấm phẩy (;)* hoặc *phẩy (,)*, tuy nhiên nên sử dụng *chấm phẩy*. Dấu phẩy có khi mang hai nghĩa: vừa là ký tự phân cách tham số mixin, cũng đồng thời là ký tự phân cách của một danh sách trong CSS chuẩn.
 
-Using comma as mixin separator makes it impossible to create comma separated lists as an argument. On the other hand, if the compiler sees at least one semicolon inside mixin call or declaration, it assumes that arguments are separated by semicolons and all commas belong to css lists:
+Bởi vậy, khi sử dụng dấu phẩy để phân cách tham số mixin, ta sẽ không có cách nào truyền vào một danh sách CSS. Hơn nữa, nếu trình dịch nhìn thấy ít nhất một ký tự chấm phẩy trong lời gọi mixin, nó sẽ ngầm hiểu rằng các tham số được phân cách bằng chấm phẩy, và vì vậy các dấu phẩy là của danh sách CSS:
 
-* two arguments and each contains comma separated list: `.name(1, 2, 3; something, else)`,
-* three arguments and each contains one number: `.name(1, 2, 3)`,
-* use dummy semicolon to create mixin call with one argument containing comma separated css list: `.name(1, 2, 3;)`,
-* comma separated default value: `.name(@param1: red, blue;)`.
+* hai tham số đều là danh sách: `.name(1, 2, 3; something, else)`,
+* ba tham số đều là số: `.name(1, 2, 3)`,
+* sử dụng dấu chấm phẩy bù nhìn để gọi một mixin với tham số là danh sách css có chứa dấu phẩy: `.name(1, 2, 3;)`,
+* giá trị mặc định của tham số là danh sách
 
-It is legal to define multiple mixins with the same name and number of parameters. Less will use properties of all that can apply. If you used the mixin with one parameter e.g. `.mixin(green);`, then properties of all mixins with exactly one mandatory parameter will be used:
+Less cho phép khai báo nhiều mixin cùng tên và số lượng tham số. Trong số các mixin cùng tên đó, Less sẽ sử dụng các thuộc tính của tất cả các mixin có thể. Nếu bạn gọi mixin với một tham số, ví dụ `.mixin(green);`, thì tất cả thuộc tính của các mixin với chính xác một tham số thiết yếu sẽ được sử dụng:
 
 ```less
 .mixin(@color) {
@@ -97,7 +98,7 @@ It is legal to define multiple mixins with the same name and number of parameter
 }
 ```
 
-compiles into:
+Kết quả:
 
 ```css
 .some .selector div {
@@ -107,9 +108,9 @@ compiles into:
 }
 ```
 
-### Named Parameters
+### Truyền tham số bằng tên
 
-A mixin reference can supply parameters values by their names instead of just positions. Any parameter can be referenced by its name and they do not have to be in any special order:
+Khi truyền tham số vào lệnh gọi mixin, ta có thể sử dụng tên thay vì vị trí. Bất kỳ tham số nào cũng có thể được tham chiếu bằng tên, và không bắt buộc phải ở trong vị trí đặc biệt nào:
 
 ```less
 .mixin(@color: black; @margin: 10px; @padding: 20px) {
@@ -124,7 +125,7 @@ A mixin reference can supply parameters values by their names instead of just po
   .mixin(#efca44; @padding: 40px);
 }
 ```
-compiles into:
+kết quả:
 
 ```css
 .class1 {
@@ -139,9 +140,9 @@ compiles into:
 }
 ```
 
-### The `@arguments` variable
+### Biến `@arguments`
 
-`@arguments` has a special meaning inside mixins, it contains all the arguments passed, when the mixin was called. This is useful if you don't want to deal with individual parameters:
+`@arguments` là biến đặc biệt trong mixin, có giá trị là tất cả các tham số truyền vào khi mixin được gọi. `@arguments` sẽ hữu ích cho bạn khi bạn không muốn xử lý các tham số rời:
 
 ```less
 .box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
@@ -154,7 +155,7 @@ compiles into:
 }
 ```
 
-Which results in:
+Kết quả:
 
 ```css
 .big-block {
@@ -164,9 +165,9 @@ Which results in:
 }
 ```
 
-### Advanced arguments and the `@rest` variable
+### Tham số nâng cao và biến `@rest`
 
-You can use `...` if you want your mixin to take a variable number of arguments. Using this after a variable name will assign those arguments to the variable.
+Bạn có thể sử dụng `...` nếu bạn muốn mixin của bạn nhận một số lượng tham số bất kỳ. Sử dunjg `...` sau một tên biến sẽ gán các tham số truyền vào vào biến đó.
 
 ```less
 .mixin(...) {        // matches 0-N arguments
@@ -176,7 +177,7 @@ You can use `...` if you want your mixin to take a variable number of arguments.
 .mixin(@a; ...) {    // matches 1-N arguments
 ```
 
-Furthermore:
+Ngoài ra:
 
 ```less
 .mixin(@a; @rest...) {
@@ -185,9 +186,9 @@ Furthermore:
 }
 ```
 
-## Pattern-matching
+## So khớp mẫu
 
-Sometimes, you may want to change the behavior of a mixin, based on the parameters you pass to it. Let's start with something basic:
+Đôi khi bạn sẽ muốn thay đổi hành vi của mixin dựa vào tham số truyền vào. Hãy xem với ví dụ cơ bản sau:
 
 ```less
 .mixin(@s; @color) { ... }
@@ -197,7 +198,7 @@ Sometimes, you may want to change the behavior of a mixin, based on the paramete
 }
 ```
 
-Now let's say we want `.mixin` to behave differently, based on the value of `@switch`, we could define `.mixin` as such:
+Giả dụ bạn muốn `.mixin` đưa ra các xử lý khác nhau dựa trên giá trị của `@switch`, ta có thể khai báo `.mixin` như sau:
 
 ```less
 .mixin(dark; @color) {
@@ -211,7 +212,7 @@ Now let's say we want `.mixin` to behave differently, based on the value of `@sw
 }
 ```
 
-Now, if we run:
+Và ta gọi mixin như sau:
 
 ```less
 @switch: light;
@@ -221,7 +222,7 @@ Now, if we run:
 }
 ```
 
-We will get the following CSS:
+Kết quả:
 
 ```css
 .class {
@@ -230,19 +231,19 @@ We will get the following CSS:
 }
 ```
 
-Where the color passed to `.mixin` was lightened. If the value of `@switch` was `dark`,
-the result would be a darker color.
+Trong đó, màu được truyền vào `.mixin` đã được làm sáng lên. Nếu giá trị `@switch` là `dark`,
+màu truyền vào sẽ được làm tối đi.
 
-Here's what happened:
+Cụ thể như sau:
 
-* The first mixin definition didn't match because it expected `dark` as the first argument.
-* The second mixin definition matched, because it expected `light`.
-* The third mixin definition matched because it expected any value.
+* Mixin đầu tiên không khớp vì tham số đầu tiên nó nhận phải là `dark`
+* Mixin thứ hai khớp, vì tham số đầu tiên nó nhận là `light`.
+* Mixin thứ ba khớp vì nó nhận giá trị bất kỳ.
 
-Only mixin definitions which matched were used. Variables match and bind to any value.
+Less sẽ chỉ sử dụng các mixin khớp. Các biến được so khớp và gán vào giá trị bất kỳ.
 Anything other than a variable matches only with a value equal to itself.
 
-We can also match on arity, here's an example:
+Ta cũng có thể so khớp dựa trên số lượng tham số, ví dụ:
 
 ```less
 .mixin(@a) {
@@ -253,5 +254,5 @@ We can also match on arity, here's an example:
 }
 ```
 
-Now if we call `.mixin` with a single argument, we will get the output of the first definition,
-but if we call it with *two* arguments, we will get the second definition, namely `@a` faded to `@b`.
+Nếu ta gọi `.mixin` với một tham số, ta sẽ gọi đến khai báo đầu tiên, nhưng nếu ta gọi mixin với
+*hai* tham số, ta sẽ gọi đến khai báo thứ hai.
