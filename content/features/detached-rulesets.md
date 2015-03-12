@@ -2,7 +2,7 @@
 
 Có từ phiên bản [v1.7.0]({{ less.master }}CHANGELOG.md)
 
-Tập luật tách rời là một nhóm các thuộc tính css, các tập luật lồng, các khai báo media hoặc bất cứ thứ gì khác lưu trong một biến. Bạn có thể thêm nó vào một tập luật khác hoặc một cấu trúc khác, và tất cả các thuộc tính của nó sẽ được sao chép sang đó. Bạn cũng có thể sử dụng nó như một tham số gọi mixin hay sử dụng nó như một biến bình thường.
+Ruleset tách rời là một nhóm các thuộc tính css, các ruleset lồng, các khai báo media hoặc bất cứ thứ gì khác lưu trong một biến. Bạn có thể thêm nó vào một ruleset khác hoặc một cấu trúc khác, và tất cả các thuộc tính của nó sẽ được sao chép sang đó. Bạn cũng có thể sử dụng nó như một tham số gọi mixin hay sử dụng nó như một biến bình thường.
 
 Ví dụ đơn giản:
 ````less
@@ -22,9 +22,9 @@ Kết quả:
 }
 ````
 
-Cặp dấu ngoặc ở sau lời gọi tập luật là bắt buộc. Câu lệnh `@detached-ruleset;` sẽ KHÔNG hoạt động.
+Cặp dấu ngoặc ở sau lời gọi ruleset là bắt buộc. Câu lệnh `@detached-ruleset;` sẽ KHÔNG hoạt động.
 
-Có thể ứng dụng tập luât tách rời để tạo ra một mixin làm nhiệm vụ bọc một đoạn code trong một câu media query hoặc trong một class dành riêng cho trình duyệt không được hỗ trợ. Các tập luật có thể được ném vào trong mixin và sau đó được mixin bọc lại, ví dụ:
+Có thể ứng dụng tập luât tách rời để tạo ra một mixin làm nhiệm vụ bọc một đoạn code trong một câu media query hoặc trong một class dành riêng cho trình duyệt không được hỗ trợ. Các ruleset có thể được ném vào trong mixin và sau đó được mixin bọc lại, ví dụ:
 
 ```less
 .desktop-and-old-ie(@rules) {
@@ -57,7 +57,7 @@ html.lt-ie9 header {
 }
 ```
 
-Tập luật có thế được gán vào một biến và có thể sử dụng khi gọi mixin, và cũng có thể chứa tất cả các tính năng của less, ví dụ:
+Ruleset có thế được gán vào một biến và có thể sử dụng khi gọi mixin, và cũng có thể chứa tất cả các tính năng của less, ví dụ:
 
 ```less
 @my-ruleset: {
@@ -92,7 +92,7 @@ kết quả:
 }
 ```
 
-Lệnh gọi tập luật tách rời có thể mở (trả về) tất cả các mixin vào trong selector gọi, tương tự như khi sử dụng mixin. Tuy nhiên, nó KHÔNG trả về biến.
+Lệnh gọi ruleset tách rời có thể mở (trả về) tất cả các mixin vào trong selector gọi, tương tự như khi sử dụng mixin. Tuy nhiên, nó KHÔNG trả về biến.
 
 Mixin trả về:
 ````less
@@ -127,14 +127,14 @@ detached-ruleset: {
 ````
 
 ## Phạm vị
-Một tập luật tách rời có thể sử dụng tất cả các biến và mixin trong phạm vi ở nơi nó được *khai báo* và ở nơi nó được *gọi*. Nói cách khác, nó có quyền truy cập trong phạm vi khai báo và phạm vi gọi của nó. Nếu cả hai phạm vi đều có cùng một biến hay mixin, phạm vi khai báo sẽ được ưu tiên.
+Một ruleset tách rời có thể sử dụng tất cả các biến và mixin trong phạm vi ở nơi nó được *khai báo* và ở nơi nó được *gọi*. Nói cách khác, nó có quyền truy cập trong phạm vi khai báo và phạm vi gọi của nó. Nếu cả hai phạm vi đều có cùng một biến hay mixin, phạm vi khai báo sẽ được ưu tiên.
 
-*Phạm vi khai báo* là nơi phần thân tập luật tách rời được khai báo. Copy một luật tách rời từ một biến này vào một biến khác không thể thay đổi phạm vi của nó. Tập luật không có quyền truy cập đến phạm vi mới khi chỉđược tham chiếu ở đó.
+*Phạm vi khai báo* là nơi phần thân ruleset tách rời được khai báo. Copy một luật tách rời từ một biến này vào một biến khác không thể thay đổi phạm vi của nó. ruleset không có quyền truy cập đến phạm vi mới khi chỉđược tham chiếu ở đó.
 
-Cuối cùng, một tập luật tách rời có thể truy cập đến phạm vi bằng cách được mở (được nhập) vào nó.
+Cuối cùng, một ruleset tách rời có thể truy cập đến phạm vi bằng cách được mở (được nhập) vào nó.
 
 #### Tầm nhìn của phạm vi khai báo và phạm vi gọi
-Tập luật tách rồi nhìn thấy các biến và mixin của selector gọi nó:
+Ruleset tách rồi nhìn thấy các biến và mixin của selector gọi nó:
 
 ````less
 @detached-ruleset: {
@@ -184,7 +184,7 @@ selector {
 }
 ````
 
-#### Việc Tham Chiếu *Không* Thay Đổi Phạm Vi Của Tập Luật Tách Rời
+#### Việc Tham Chiếu *Không* Thay Đổi Phạm Vi Của Ruleset Tách Rời
 Một tập luận không có quyền truy cập tại phạm vi khi chỉ được tham chiếu ở đó:
 ````less
 @detached-1: { scope-detached: @one @two; };
@@ -207,8 +207,8 @@ Sẽ sinh ra lỗi:
 ERROR 1:32 The variable "@one" was not declared.
 ````
 
-#### Mở Khóa *Có* Thay Đổi Phạm Vi Của Tập Luật Tách Rời
-Một tập luật tách rời sẽ được thêm quyền truy cập khi được mở khóa (được nhập) ở trong một phạm vi:
+#### Mở Khóa *Có* Thay Đổi Phạm Vi Của Ruleset Tách Rời
+Một ruleset tách rời sẽ được thêm quyền truy cập khi được mở khóa (được nhập) ở trong một phạm vi:
 ````less
 #space {
   .importer1() {
