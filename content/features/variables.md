@@ -1,12 +1,12 @@
 ---
-title: Variables
+title: Biến số
 ---
 
-> Control commonly used values in a single location.
+> Bộ điều khiển sử dụng chung các giá trị trong cùng một địa điểm.
 
-## Overview
+## Tổng quan
 
-It's not uncommon to see the same value repeated dozens _if not hundreds of times_ across your stylesheets:
+Chúng ta có thể nhiều lần trông thấy các giá trị được lặp đi lặp lại trong stylesheet:
 
 ```css
 a,
@@ -19,7 +19,7 @@ a,
 }
 ```
 
-Variables make your code easier to maintain by giving you a way to control those values from a single location:
+Biến số giúp bạn dễ dàng kiểm soát các giá trị này, từ đó giúp cho mã nguồn của bạn dễ bảo trì hơn:
 
 ```less
 // Variables
@@ -40,14 +40,14 @@ a:hover {
 }
 ```
 
-## Variable Interpolation
+## Biến số nội suy
 
-The examples above focused on using variables to control _values in CSS rules_, but they can also be used in other places as well, such as selector names, property names, URLs and `@import` statements.
+Ví dụ bên trên chú trọng vào việc sử dụng biến số để kiểm soát _các giá trị trong các quy tắc CSS_, nhưng ngoài ra, chúng cũng có thể được sử dụng ở những nơi khác nữa, chẳng hạn như tên của các selector, tên của các thuộc tính, URL và các câu lệnh `@import`.
 
 
-### Selectors
+### Selector
 
-Version: 1.4.0
+Phiên bản: 1.4.0
 
 ```less
 // Variables
@@ -60,7 +60,7 @@ Version: 1.4.0
   margin: 0 auto;
 }
 ```
-Compiles to:
+Được dịch thành:
 
 ```css
 .banner {
@@ -70,7 +70,7 @@ Compiles to:
 }
 ```
 
-### URLs
+### URL
 
 ```less
 // Variables
@@ -83,15 +83,15 @@ body {
 }
 ```
 
-### Import statements
+### Các câu lệnh Import
 
-Version: 1.4.0
+Phiên bản: 1.4.0
 
-Syntax: `@import "@{themes}/tidal-wave.less";`
+Cú pháp: `@import "@{themes}/tidal-wave.less";`
 
-Note that before v2.0.0, only variables which have been declared in the root or current scope were considered and that only the current file and calling files were considered when looking for a variable.
+Lưu ý rằng trong các phiên bản cũ hơn phiên bản v2.0.0, chỉ có các biến số được khai báo trong root hoặc trong phạm vi hiện tại mới có thể sử dụng và chỉ có tệp tin hiện tại và các tệp tin được gọi đến mới được sử dụng để tìm kiếm biến số.
 
-Example:
+Ví dụ:
 
 ```less
 // Variables
@@ -101,9 +101,9 @@ Example:
 @import "@{themes}/tidal-wave.less";
 ```
 
-### Properties
+### Các thuộc tính
 
-Version: 1.6.0
+Phiên bản: 1.6.0
 
 ```less
 @property: color;
@@ -114,7 +114,7 @@ Version: 1.6.0
 }
 ```
 
-Compiles to:
+Được dịch thành:
 
 ```css
 .widget {
@@ -123,9 +123,9 @@ Compiles to:
 }
 ```
 
-## Variable Names
+## Tên của biến số
 
-It is also possible to define variables with a variable name:
+Hoàn toàn có thể định nghĩa biến số với một cái tên:
 
 ```less
 @fnord:  "I am fnord.";
@@ -133,7 +133,7 @@ It is also possible to define variables with a variable name:
 content: @@var;
 ```
 
-Which compiles to:
+Sẽ được dịch thành:
 
 ```
 content: "I am fnord.";
@@ -141,9 +141,9 @@ content: "I am fnord.";
 
 ## Lazy Loading
 
-> Variables are lazy loaded and do not have to be declared before being used.
+> Các biến số có thể lazy load và không nhất thiết phải được khai báo trước khi sử dụng.
 
-Valid Less snippet:
+Hãy xem đoạn mã Less hợp lệ sau đây:
 
 ```less
 .lazy-eval {
@@ -153,7 +153,7 @@ Valid Less snippet:
 @var: @a;
 @a: 9%;
 ```
-this is valid Less too:
+Và đây cũng là một đoạn mã Less hợp lệ khác:
 
 ```less
 .lazy-eval-scope {
@@ -164,7 +164,7 @@ this is valid Less too:
 @var: @a;
 @a: 100%;
 ```
-both compile into:
+Và cả hai đều sẽ được dịch thành:
 
 ```css
 .lazy-eval-scope {
@@ -172,9 +172,9 @@ both compile into:
 }
 ```
 
-When defining a variable twice, the last definition of the variable is used, searching from the current scope upwards. This is similar to css itself where the last property inside a definition is used to determine the value.
+Khi bạn định nghĩa một biến số nhiều lần thì biến số trong lần định nghĩa cuối cùng sẽ được sử dụng (biến số được tìm kiếm trong phạm vi hiện tại theo hướng từ dưới lên). Điều này rất giống với CSS nơi mà thuộc tính cuối cùng trong một lần định nghĩa được sử dụng để xác định giá trị.
 
-For instance:
+Ví dụ:
 
 ```less
 @var: 0;
@@ -188,7 +188,7 @@ For instance:
   one: @var;
 }
 ```
-Compiles to:
+Sẽ được dịch thành:
 
 ```css
 .class {
@@ -199,11 +199,11 @@ Compiles to:
 }
 ```
 
-## default variables
+## biến số mặc định
 
-We sometimes get requests for default variables - an ability to set a variable only if it is not already set. This feature is not required because you can easily override a variable by putting the definition afterwards.
+Đôi khi chúng ta có nhu cầu sử dụng các biến số mặc định - một khái niệm cho phép thiết lập giá trị của biến số nếu như nó chưa được tạo ra trước đó. Tính năng này không nhất thiết phải sử dụng vì lý do bạn có thể dễ dàng ghi đè một biến số bằng cách định nghĩa về sau đó.
 
-For instance:
+Ví dụ:
 
 ```less
 // library
@@ -215,4 +215,4 @@ For instance:
 @base-color: red;
 ```
 
-This works fine because of [Lazy Loading](#variables-feature-lazy-loading) - base-color is overidden and dark-color is a dark red.
+Ví dụ này vẫn sẽ hoạt động bởi [Lazy Loading](#variables-feature-lazy-loading) - base-color đã được ghi đè và dark-color sẽ là màu đỏ tối.
