@@ -1,21 +1,22 @@
 ### length
 
-> Returns the number of elements in a value list.
+> Trả về số lượng phần tử trong danh sách giá trị.
 
 Parameters: `list` - a comma or space separated list of values.
-Returns: an integer number of elements in a list
+Tham số: `list` - danh sách (ngăn cách bởi dấu phẩy hay dấu cách)
+Trả về: số nguyên (số lượng phần tử trong danh sách)
 
-Example: `length(1px solid #0080ff);`
-Output: `3`
+Ví dụ: `length(1px solid #0080ff);`
+Kết quả: `3`
 
-Example:
+Ví dụ:
 
 ```less
 @list: "banana", "tomato", "potato", "peach";
 n: length(@list);
 ```
 
-Output:
+Kết quả:
 
 ```
 n: 4;
@@ -23,24 +24,24 @@ n: 4;
 
 ### extract
 
-> Returns the value at a specified position in a list.
+> Trả về giá trị ở một vị trí xác định trong danh sách
 
-Parameters:
-`list` - a comma or space separated list of values.
-`index` - an integer that specifies a position of a list element to return.
-Returns: a value at the specified position in a list.
+Tham số:
+`list` - danh sách (ngăn cách bởi dấu phẩy hay dấu cách)
+`index` - số nguyên (vị trí của phần tử cần lấy về trong danh sách)
+Trả về: giá trị ở vị trí xác định trong danh sách
 
-Example: `extract(8px dotted red, 2);`
-Output: `dotted`
+Ví dụ: `extract(8px dotted red, 2);`
+Kết quả: `dotted`
 
-Example:
+Ví dụ:
 
 ```less
 @list: apple, pear, coconut, orange;
 value: extract(@list, 3);
 ```
 
-Output:
+Kết quả:
 
 ```
 value: coconut;
