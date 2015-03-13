@@ -1,84 +1,84 @@
 ### color
 
-> Parses a color, so a string representing a color becomes a color.
+> Phân tách một màu sắc, từ đó một chuỗi đại diện cho một màu sắc sẽ được chuyển thành màu sắc.
 
-Parameters: `string`: a string of the specified color.
+Tham số: `string`: Một chuỗi đại diện cho một màu sắc cụ thể.
 
-Returns: `color`
+Kết quả trả về: `color`
 
-Example: `color("#aaa");`
+Ví dụ: `color("#aaa");`
 
-Output: `#aaa`
+Kết quả: `#aaa`
 
 ### image-size
 
-> Gets the image dimensions from a file.
+> Lấy kích thước ảnh từ một tệp tin.
 
-Parameters: `string`: the file to get the dimensions for.
+Tham số: `string`: Tệp tin dùng để lấy kích thước.
 
-Returns: `dimension`
+Kết quả trả về: `dimension`
 
-Example: `image-size("file.png");`
+Ví dụ: `image-size("file.png");`
 
-Output: `10px 10px`
+Kết quả: `10px 10px`
 
-Note: this function needs to be implemented by each environment. It is currently only available in the node environment.
+Lưu ý: Function này cần phải được thực thi trong từng môi trường. Hiện tại function này chỉ có thể sử dụng trong môi trường node.
 
-Added in: v2.2.0
+Được cập nhật vào phiên bản: v2.2.0
 
 ### image-width
 
-> Gets the image width from a file.
+> Lấy chiều rộng của ảnh từ một tệp tin.
 
-Parameters: `string`: the file to get the dimensions for.
+Tham số: `string`: Tệp tin dùng để lấy kích thước.
 
-Returns: `dimension`
+Kết quả trả về: `dimension`
 
-Example: `image-width("file.png");`
+Ví dụ: `image-width("file.png");`
 
-Output: `10px`
+Kết quả: `10px`
 
-Note: this function needs to be implemented by each environment. It is currently only available in the node environment.
+Lưu ý: Function này cần phải được thực thi trong từng môi trường. Hiện tại function này chỉ có thể sử dụng trong môi trường node.
 
-Added in: v2.2.0
+Được cập nhật vào phiên bản: v2.2.0
 
 ### image-height
 
-> Gets the image height from a file.
+> Lấy chiều cao của ảnh từ một tệp tin.
 
-Parameters: `string`: the file to get the dimensions for.
+Tham số: `string`: Tệp tin dùng để lấy kích thước.
 
-Returns: `dimension`
+Kết quả trả về: `dimension`
 
-Example: `image-height("file.png");`
+Ví dụ: `image-height("file.png");`
 
-Output: `10px`
+Kết quả: `10px`
 
-Note: this function needs to be implemented by each environment. It is currently only available in the node environment.
+Lưu ý: Function này cần phải được thực thi trong từng môi trường. Hiện tại function này chỉ có thể sử dụng trong môi trường node.
 
-Added in: v2.2.0
+Được cập nhật vào phiên bản: v2.2.0
 
 ### convert
 
-> Convert a number from one unit into another.
+> Chuyển một số từ đơn vị này sang đơn vị khác.
 
-The first argument contains a number with units and second argument contains units. If the units are compatible, the number is converted. If they are not compatible, the first argument is returned unmodified.
+Tham số đầu tiên là một số đi kèm với đơn vị cần chuyển đổi, tham số thứ 2 là đơn vị sẽ chuyển đổi sang. Nếu như các đơn vị là tương đồng, việc chuyển đổi sẽ diễn ra, ngược lại tham số đầu tiên sẽ được trả về.
 
-See [unit](#misc-functions-unit) for changing the unit without conversion.
+Hãy tham khảo phần [unit](#misc-functions-unit) để thay đổi đơn vị mà không cần chuyển đổi.
 
-_Compatible unit groups_:
+_Các nhóm đơn vị tương đồng_:
 
 * lengths: `m`, `cm`, `mm`, `in`, `pt` and `pc`,
 * time: `s` and `ms`,
 * angle: `rad`, `deg`, `grad` and `turn`.
 
-Parameters:
-* `number`: a floating point number with units.
-* `identifier`, `string` or `escaped value`: units
+Tham số:
+* `number`: Một số thực đi kèm với đơn vị.
+* `identifier`, `string` or `escaped value`: đơn vị sẽ chuyển đổi sang
 
-Returns: `number`
+Kết quả trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 convert(9s, "ms")
@@ -86,7 +86,7 @@ convert(14cm, mm)
 convert(8, mm) // incompatible unit types
 ```
 
-Output:
+Kết quả:
 
 ```
 9000ms
@@ -97,31 +97,31 @@ Output:
 
 ### data-uri
 
-> Inlines a resource and falls back to `url()` if the ieCompat option is on and the resource is too large, or if you use the function in the browser. If the MIME type is not given then node uses the mime package to determine the correct mime type.
+> Sử dụng cú pháp dạng inline và `url()` nếu như tùy chọn ieCompat được kích hoạt và kích thước tài nguyên quá lớn, hoặc nếu như bạn sử dụng function trên trình duyệt. Nếu như kiểu MIME không được cung cấp, node sẽ sử dụng gói mime để xác định kiểu mime đúng.
 
-Parameters:
-* `mimetype`: (Optional) A MIME type string.
-* `url`: The URL of the file to inline.
+Tham số:
+* `mimetype`: (Tùy ý) Một chuỗi kiểu MIME.
+* `url`: Đường dẫn tương đối của tệp tin
 
-Example: `data-uri('../data/image.jpg');`
+Ví dụ: `data-uri('../data/image.jpg');`
 
-Output: `url('data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==');`
+Kết quả: `url('data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==');`
 
-Output in browser: `url('../data/image.jpg');`
+Kết quả hiển thị trên trình duyệt: `url('../data/image.jpg');`
 
-Example: `data-uri('image/jpeg;base64', '../data/image.jpg');`
+Ví dụ: `data-uri('image/jpeg;base64', '../data/image.jpg');`
 
-Output: `url('data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==');`
+Kết quả: `url('data:image/jpeg;base64,bm90IGFjdHVhbGx5IGEganBlZyBmaWxlCg==');`
 
-Example: `data-uri('image/svg+xml;charset=UTF-8', 'image.svg');`
+Ví dụ: `data-uri('image/svg+xml;charset=UTF-8', 'image.svg');`
 
-Output: `url("data:image/svg+xml;charset=UTF-8,%3Csvg%3E%3Ccircle%20r%3D%229%22%2F%3E%3C%2Fsvg%3E");`
+Kết quả: `url("data:image/svg+xml;charset=UTF-8,%3Csvg%3E%3Ccircle%20r%3D%229%22%2F%3E%3C%2Fsvg%3E");`
 
 ### default
 
-> Available only inside guard conditions and returns `true` only if no other mixin matches, `false` otherwise.
+> Chỉ sẵn có trong các điều kiện gaurd và trả về `true` chỉ khi nào không có bất kỳ mixin nào tương ứng, ngược lại trả về `false`.
 
-Example:
+Ví dụ:
 
 ```less
 .mixin(1)                   {x: 11}
@@ -136,7 +136,7 @@ div.special {
   .mixin(1);
 }
 ```
-Output:
+Kết quả:
 
 ```css
 div {
@@ -147,7 +147,7 @@ div.special {
 }
 ```
 
-It is possible to use the value returned by `default` with guard operators. For example `.mixin() when not(default()) {}` will match only if there's at least one more mixin definition that matches`.mixin()` call:
+Bạn cũng có thể sử dụng giá trị được trả về bởi `default` bằng cách sử dụng các phép toán gaurd. Chẳng hạn `.mixin() when not(default()) {}` sẽ chỉ có tác dụng khi mà một mixin được định nghĩa khác đã được ghép với lời gọi `.mixin()`:
 
 ```less
 .mixin(@value) when (ispixel(@value)) {width: @value}
@@ -162,7 +162,7 @@ div-2 {
   .mixin(100%);
 }
 ```
-result:
+Kết quả:
 
 ```css
 div-1 {
@@ -174,7 +174,7 @@ div-2 {
 }
 ```
 
-It is allowed to make multiple `default()` calls in the same guard condition or in a different conditions of a mixins with the same name:
+Less cho phép tạo nhiều lời gọi `default()` trong cùng một điều kiện gaurd hoặc trong các điều kiện khác nhau của mixin có cùng tên:
 
 ```less
 div {
@@ -184,7 +184,7 @@ div {
   .m(1); // OK
 }
 ```
-However Less will throw a error if it detects a *potential* conflict between multiple mixin definitions using `default()`:
+Tuy nhiên Less sẽ báo lỗi nếu như nó phát hiện ra mâu thuẫn *tiềm ẩn* giữa các mixin được định nghĩa sử dụng `default()`:
 
 ```less
 div {
@@ -194,9 +194,9 @@ div {
   .m(1); // Error
 }
 ```
-In above example it is impossible to determine what value each `default()` call should return since they recursively depend on each other.
+Trong ví dụ trên, ta hoàn toàn có thể xác định giá trị mà mỗi lời gọi `default()` trả về vì chúng phụ thuộc vào nhau một cách đệ quy.
 
-Advanced multiple `default()` usage:
+Cách sử dụng nhiều `default()` nâng cao:
 
 ```less
 .x {
@@ -213,7 +213,7 @@ Advanced multiple `default()` usage:
   &-baz   {.m('baz')}
 }
 ```
-Result:
+Kết quả:
 
 ```css
 .x-blue {
@@ -230,9 +230,9 @@ Result:
 }
 ```
 
-The `default` function is available as a Less built-in function _only inside guard expressions_. If used outside of a mixin guard condition it is interpreted as a regular CSS value:
+Function `default` sẽ có thể sử dụng như một function được tích hợp sẵn _chỉ khi nó nằm trong các biểu thức gaurd_. Nếu như nó được sử dụng bên ngoài mixin trong điều kiện gaurd, thì nó sẽ được biên dịch giống như một giá trị CSS thông thường:
 
-Example:
+Ví dụ:
 
 ```less
 div {
@@ -240,7 +240,7 @@ div {
   bar: default(42);
 }
 ```
-Result:
+Kết quả:
 
 ```css
 div {
@@ -252,77 +252,77 @@ div {
 
 ### unit
 
-> Remove or change the unit of a dimension
+> Được sử dụng để xóa bỏ hoặc thay đổi đơn vị của kích thước
 
-Parameters:
-* `dimension`: A number, with or without a dimension.
-* `unit`: (Optional) the unit to change to, or if omitted it will remove the unit.
+Tham số:
+* `dimension`: Một con số, có thể đi kèm hoặc không đi kèm đơn vị.
+* `unit`: (Tùy ý) đơn vị sẽ chuyển đổi thành, nếu như không được truyền vào, function sẽ xóa bỏ phần đơn vị.
 
-See [convert](#misc-functions-convert) for changing the unit without conversion.
+Hãy tham khảo phần [convert](#misc-functions-convert) để biết cách thay đổi đơn vị mà không cần chuyển đổi.
 
-Example: `unit(5, px)`
+Ví dụ: `unit(5, px)`
 
-Output: `5px`
+Kết quả: `5px`
 
-Example: `unit(5em)`
+Ví dụ: `unit(5em)`
 
-Output: `5`
+Kết quả: `5`
 
 
 
 ### get-unit
 
-> Returns units of a number.
+> Trả về các đơn vị của một số.
 
-If the argument contains a number with units, the function returns its units. The argument without units results in an empty return value.
+Nếu như tham số đầu vào là một con số đi kèm với đơn vị, thì function sẽ trả về đơn vị của nó. Ngược lại, sẽ trả về giá trị rỗng.
 
-Parameters:
-* `number`: a number with or without units.
+Tham số:
+* `number`: Một số có thể đi kèm hoặc không đi kèm đơn vị
 
-Example: `get-unit(5px)`
+Ví dụ: `get-unit(5px)`
 
-Output: `px`
+Kết quả: `px`
 
-Example: `get-unit(5)`
+Ví dụ: `get-unit(5)`
 
-Output: ` //nothing` 
+Kết quả: ` //nothing` 
 
 
 
 ### svg-gradient
 
-> Generates multi-stop svg gradients.
+> Sử dụng để tạo ra multi-stop svg gradient.
 
-Svg-gradient function generates multi-stop svg gradients. It must have at least three parameters. First parameter specifies gradient type and direction and remaining parameters list colors and their positions. The position of first and last specified color are optional, remaining colors must have positions specified.
+Function svg-gradient tạo ra multi-stop svg gradient, yêu cầu phải có ít nhất 3 tham số được truyền vào. Tham số đầu tiên chỉ loại gradient và hướng và các tham số còn lại chỉ các màu sắc và vị trí tương ứng. Vị trí của màu đầu tiên và màu cuối cùng là tùy ý, các màu sắc còn lại phải có các vị trí tương ứng.
 
-The direction must be one of `to bottom`, `to right`, `to bottom right`, `to top right`, `ellipse` or `ellipse at center`. The direction can be specified as both escaped value and space separated list of words.
+Tham số "hướng" phải là một trong số `to bottom`, `to right`, `to bottom right`, `to top right`, `ellipse` hoặc `ellipse at center`. Tham số này có thể được truyền vào dưới dạng giá trị escaped hoặc chuỗi các từ phân tách nhau bởi dấu cách.
 
-Parameters:
-* `escaped value` or `list of identifiers`: direction
-* `color [percentage]` pair: first color and its relative position (position is optional)
-* `color percent` pair: (optional) second color and its relative position
+Tham số:
+* `escaped value` hoặc `list of identifiers`: hướng
+* `color [percentage]`: màu sắc đầu tiên và vị trí tương đối của nó (ví trị có thể có hoặc không)
+* `color percent`: (tùy ý) màu sắc thứ 2 và vị trí tương đối của nó
 * ...
-* `color percent` pair: (optional) n-th color and its relative position
-* `color [percentage]` pair: last color and its relative position (position is optional)
+* `color percent`: (tùy ý) màu sắc thứ n và vị trí tương đối của nó
+* `color [percentage]`: màu sắc cuối cùng và vị trí tương đối của nó (vị trí có thể có hoặc không)
 
-Returns: `url` with "URI-Encoded" svg gradient.
+Kết quả trả về: `url` cùng với "URI-Encoded" svg gradient.
 
-Example:
+Ví dụ:
 ````
 div {
   background-image: svg-gradient(to right, red, green 30%, blue);
 }
 ````
 
-results in:
+sẽ được dịch thành:
 ````
 div {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff0000%22%2F%3E%3Cstop%20offset%3D%2230%25%22%20stop-color%3D%22%23008000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230000ff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
 }
 ````
-Note: in versions before 2.2.0 the result is `base64` encoded .
+Lưu ý: Đối với các phiên bản cũ hơn 2.2.0 thì kết quả trả về sẽ được mã hóa theo thuật toán `base64`.
 
-Generated background image has red color on the left, green at 30% of its width and ends with a blue color. Base64 encoded part contains following svg-gradient:
+Ảnh background được sinh ra sẽ có màu đỏ ở phía bên trái, màu xanh tại vị trí 30% chiều rộng của nó và kết thúc bằng màu xanh. Phần mã hóa theo thuật toán base64 chứa svg-gradient sau:
 ````xml
 <?xml version="1.0" ?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">
