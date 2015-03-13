@@ -1,75 +1,75 @@
 ### escape
 
-> Applies [URL-encoding](http://en.wikipedia.org/wiki/Percent-encoding) to special characters found in the input string.
+> Áp dụng [phép mã hóa URL](http://en.wikipedia.org/wiki/Percent-encoding) đối với các ký tự đặc biệt trong một chuỗi.
 
-* These characters are not encoded: `,`, `/`, `?`, `@`, `&`, `+`, `'`, `~`, `!` and `$`.
-* Most common encoded characters are: `\<space\>`, `#`, `^`, `(`, `)`, `{`, `}`, `|`, `:`, `>`, `<`, `;`, `]`, `[` and `=`.
+* Những ký tự sau đây sẽ không bị mã hóa: `,`, `/`, `?`, `@`, `&`, `+`, `'`, `~`, `!` và `$`.
+* Các ký tự được mã hóa phổ biến bao gồm: `\<space\>`, `#`, `^`, `(`, `)`, `{`, `}`, `|`, `:`, `>`, `<`, `;`, `]`, `[` và `=`.
 
-Parameters: `string`: a string to escape.
+Tham số: `string` - Chuỗi ký tự cần escape.
 
-Returns: escaped `string` content without quotes.
+Kết quả trả về: `string` - Chuỗi ký tự đã được escape không chứa dấu quote.
 
-Example:
+Ví dụ:
 
 ```less
 escape('a=1')
 ```
 
-Output:
+Kết quả:
 
 ```css
 a%3D1
 ```
 
-Note: if the parameter is not a string, output is not defined. The current implementation returns `undefined` on color and unchanged input on any other kind of argument. This behavior should not be relied on and may change in the future.
+Lưu ý: Nếu tham số truyền vào không phải dạng chuỗi, kết quả sẽ không được xác định. Function sẽ trả về `undefined` và tham số đầu vào trong trường hợp này. Tuy nhiên cách xử lý này có thể thay đổi trong tương lai.
 
 
 ### e
 
-> CSS escaping, replaced with `~"value"` syntax.
+> Escape CSS, thay thế cú pháp `~"value"`.
 
-It expects string as a parameter and return its content as is, but without quotes. It can be used to output CSS value which is either not valid CSS syntax, or uses proprietary syntax which Less doesn't recognize.
+Function này yêu cầu đầu vào là một chuỗi và trả về kết quả là một chuỗi không chứa quote. Nó có thể được sử dụng để in ra các giá trị CSS không đúng cú pháp, hoặc sử dụng các cú pháp đặc biệt mà Less không thể nhận ra.
 
-Parameters: `string` - a string to escape.
+Tham số: `string` - Chuỗi cần escape.
 
-Returns: `string` - the escaped string, without quotes.
+Kết quả trả về: `string` - : Chuỗi ký tự đã được escape không chứa dấu quote.
 
-Example:
+Ví dụ:
 
 ```less
 filter: e("ms:alwaysHasItsOwnSyntax.For.Stuff()");
 ```
 
-Output:
+Kết quả:
 
 ```css
 filter: ms:alwaysHasItsOwnSyntax.For.Stuff();
 ```
 
-Note: The function accepts also `~""` escaped values and numbers as parameters. Anything else returns an error.
+Lưu ý: Function này chấp nhận đầu vào là cả các giá trị escape `~""` và các con số. Nếu tham số đầu vào không hợp lệ, function sẽ báo lỗi trả về.
 
 
 ### % format
 
-> The function `%(string, arguments ...)` formats a string.
+> Function `%(string, arguments ...)` có tác dụng format một chuỗi.
 
-The first argument is string with placeholders. All placeholders start with percentage symbol `%` followed by letter `s`,`S`,`d`,`D`,`a`, or `A`. Remaining arguments contain expressions to replace placeholders. If you need to print the percentage symbol, escape it by another percentage `%%`.
+Tham số đầu tiên là một chuỗi đi kèm với placeholder. Toàn bộ các placeholder đều bắt đầu bằng ký tự `%` và theo sau bởi một trong các chữ cái `s`,`S`,`d`,`D`,`a`, or `A`. Các tham số còn lại là các biểu thức để thay thế cho các placeholder. Nếu bạn muốn in ra một ký tự `%`, hãy sử dụng một ký tự `%` khác đi kèm `%%`.
 
-Use uppercase placeholders if you need to escape special characters into their utf-8 escape codes.
-The function escapes all special characters except `()'~!`. Space is encoded as `%20`. Lowercase placeholders leave special characters as they are.
+Hãy sử dụng placeholder dạng in hoa nếu như bạn muốn escape các ký tự đặc biệt thành mã escape dạng utf-8.
+Function này sẽ escape toàn bộ các ký tự ngoại trừ `()'~!`. Dấu cách sẽ được escape thành `%20`. Các placeholder dạng viết thường sẽ được giữ nguyên các ký tự đặc biệt.
 
-Placeholders:
-* `d`, `D`, `a`, `A` - can be replaced by any kind of argument (color, number, escaped value, expression, ...). If you use them in combination with string, the whole string will be used - including its quotes. However, the quotes are placed into the string as they are, they are not escaped by "/" nor anything similar.
-* `s`, `S` - can be replaced by any kind of argument except color. If you use them in combination with string, only the string value will be used - string quotes are omitted.
+Placeholder:
+* `d`, `D`, `a`, `A` - có thể được thay thế bằng một loại tham số bất kỳ (màu sắc, số, giá trị đã escape, biểu thức, ...). Nếu như bạn sử dụng chúng kết hợp với chuỗi, thì toàn bộ chuỗi sẽ được sử dụng - bao gồm cả các quote của nó. Tuy nhiên, quote sẽ được giữ nguyên vị trí trong chuỗi và không bị escape bởi ký tự "/" hoặc cái gì đó tương tự.
+* `s`, `S` - có thể được thay thế bằng một loại tham số bất kỳ ngoại trừ màu sắc. Nếu bạn sử dụng chúng kết hợp với chuỗi, thì chỉ có giá trị của chuỗi được sử dụng - quote của string sẽ bị loại bỏ.
 
-Parameters:
+Tham số:
 
-* `string`: format string with placeholders,
-* `anything`* : values to replace placeholders.
+* `string`: format chuỗi với placeholder,
+* `anything`* : các giá trị để thay thế cho các placeholder.
 
-Returns: formatted `string`.
+Kết quả trả về: `string` - chuỗi đã được format.
 
-Example:
+Ví dụ:
 
 ```less
 format-a-d: %("repetitions: %a file: %d", 1 + 2, "directory/file.less");
@@ -77,7 +77,7 @@ format-a-d-upper: %('repetitions: %A file: %D', 1 + 2, "directory/file.less");
 format-s: %("repetitions: %s file: %s", 1 + 2, "directory/file.less");
 format-s-upper: %('repetitions: %S file: %S', 1 + 2, "directory/file.less");
 ```
-Output:
+Kết quả:
 
 ```css
 format-a-d: "repetitions: 3 file: "directory/file.less"";
@@ -89,20 +89,20 @@ format-s-upper: "repetitions: 3 file: directory%2Ffile.less";
 
 ### replace
 
-> Replaces a text within a string.
+> Thay thế một đoạn văn bản trong chuỗi.
 
-Released [v1.7.0]({{ less.master }}CHANGELOG.md)
+Được phát hành trong version [v1.7.0]({{ less.master }}CHANGELOG.md)
 
-Parameters:
+Tham số:
 
-* `string`: The string to search and replace in.
-* `pattern`: A string or regular expression pattern to search for.
-* `replacement`: The string to replace the matched pattern with.
-* `flags`: (Optional) regular expression flags.
+* `string`: Chuỗi để tìm kiếm và thay thế.
+* `pattern`: Một chuỗi hoặc một mẫu biểu thức chính quy dùng để tìm kiếm.
+* `replacement`: Chuỗi dùng để thay thế kết quả tìm kiếm được.
+* `flags`: (Tùy ý) cờ biểu thức chính quy.
 
-Returns: a string with the replaced values.
+Kết quả trả về: Chuỗi với các giá trị đã được thay thế.
 
-Example:
+Ví dụ:
 
 ```less
 replace("Hello, Mars?", "Mars\?", "Earth!");
@@ -110,7 +110,7 @@ replace("One + one = 4", "one", "2", "gi");
 replace('This is a string.', "(string)\.$", "new $1.");
 replace(~"bar-1", '1', '2');
 ```
-Result:
+Kết quả:
 
 ```css
 "Hello, Earth!";
