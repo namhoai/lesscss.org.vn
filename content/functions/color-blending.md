@@ -1,17 +1,17 @@
-> These operations are _similar_ (though not necessarily identical) to the blend modes found in image editors like Photoshop, Fireworks or GIMP, so you can use them to make your CSS colors match your images.
+> Các phép toán sau _tương tự_ (có thể không hẳn là y hệt) với các chế độ hòa trộn trong các phần mềm sửa ảnh như Photoshop, Fireworks hay GIMP. Bạn có thể sử dụng chúng để tạo ra các màu CSS phù hơpj với ảnh của bạn.
 
 ### multiply
 
-> Multiply two colors. Corresponding RGB channels from each of the two colors are multiplied together then divided by 255. The result is a darker color.
+> `Multiply` hai màu. Giá trị màu ở các kênh RGB tương ứng được nhân lại với nhau, sau đó chia cho 255, cho ra một màu tối hơn hai màu gốc.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object.
-* `color2`: A color object.
+* `color1`: đối tượng màu.
+* `color2`: đối tượng màu.
 
-Returns: `color`
+Trả về: `color`
 
-**Examples**:
+**Ví dụ**:
 
 ```less
 multiply(#ff6600, #000000);
@@ -87,16 +87,16 @@ multiply(#ff6600, #0000ff);
 
 ### screen
 
-> Do the opposite of `multiply`. The result is a brighter color.
+> Ngược lại với `multiply`. Cho ra màu sáng hơn hai màu gốc.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object.
-* `color2`: A color object.
+* `color1`: đối tượng màu.
+* `color2`: đối tượng màu.
 
-Returns: `color`
+Trả về: `color`
 
-Example:
+Ví dụ:
 
 ```less
 screen(#ff6600, #000000);
@@ -173,16 +173,16 @@ screen(#ff6600, #0000ff);
 
 ### overlay
 
-> Combines the effects of both `multiply` and `screen`. Conditionally make light channels lighter and dark channels darker. **Note**: The results of the conditions are determined by the first color parameter.
+> Kết hợp `multiply` và `screen`, làm sáng lên kênh màu sáng và làm tối đi kênh màu tối. **Lưu ý**: Kênh màu sáng hay tối là phụ thuộc vào màu thứ nhất
 
-Parameters:
+Tham số:
 
-* `color1`: A base color object. Also the determinant color to make the result lighter or darker.
-* `color2`: A color object to _overlay_.
+* `color1`: Màu gốc, cũng là màu được dùng để xác định kênh màu sáng hay tối.
+* `color2`: Đối tượng màu để _overlay_
 
-Returns: `color`
+Trả về: `color`
 
-Example:
+Ví dụ:
 
 ```less
 overlay(#ff6600, #000000);
@@ -259,16 +259,16 @@ overlay(#ff6600, #0000ff);
 
 ### softlight
 
-> Similar to `overlay` but avoids pure black resulting in pure black, and pure white resulting in pure white.
+> Tương tự như `overlay` nhưng tránh làm cho màu thành đen tuyền hoặc trắng toát
 
-Parameters:
+Tham số:
 
-* `color1`: A color object to _soft light_ another.
-* `color2`: A color object to be _soft lighten_.
+* `color1`: Đối tượng màu để _soft light_ màu còn lại.
+* `color2`: Đối tượng màu để được _soft light_.
 
-Returns: `color`
+Trả về: `color`
 
-Example:
+Ví dụ:
 
 ```less
 softlight(#ff6600, #000000);
@@ -345,16 +345,16 @@ softlight(#ff6600, #0000ff);
 
 ### hardlight
 
-> The same as `overlay` but with the color roles reversed.
+> Tương tự như `overlay` nhưng đảo ngược thứ tự tham số.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object to _overlay_.
-* `color2`: A base color object. Also the determinant color to make the result lighter or darker.
+* `color1`: Đối tượng màu để _overlay_
+* `color2`: Màu gốc, cũng là màu được dùng để xác định kênh màu sáng hay tối.
 
-Returns: `color`
+Trả về: `color`
 
-Example:
+Ví dụ:
 
 ```less
 hardlight(#ff6600, #000000);
@@ -431,16 +431,16 @@ hardlight(#ff6600, #0000ff);
 
 ### difference
 
-> Subtracts the second color from the first color on a channel-by-channel basis. Negative values are inverted. Subtracting black results in no change; subtracting white results in color inversion.
+> Trừ giá trị màu thứ nhất đi giá trị màu thứ hai trong các kênh màu tương ứng. Giá trị âm được đảo ngược. Trừ giá trị màu đen tuyền sẽ không gây ra thay đổi nào; Trừ giá trị màu trắng sẽ tạo nên hiệu ứng đảo ngược màu.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object to act as the minuend.
-* `color2`: A color object to act as the subtrahend.
+* `color1`: Màu bị trừ.
+* `color2`: Màu trừ.
 
-Returns: `color`
+Trả về: `color`
 
-Example:
+Ví dụ:
 
 ```less
 difference(#ff6600, #000000);
@@ -517,16 +517,16 @@ difference(#ff6600, #0000ff);
 
 ### exclusion
 
-> A similar effect to `difference` with lower contrast.
+> Hiệu ứng tương tự như `difference` nhưng với độ tương phản thấp hơn.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object to act as the minuend.
-* `color2`: A color object to act as the subtrahend.
+* `color1`: Màu bị trừ.
+* `color2`: Màu trừ.
 
-Returns: `color`
+Kết quả: `color`
 
-Example:
+Ví dụ:
 
 ```less
 exclusion(#ff6600, #000000);
@@ -603,16 +603,16 @@ exclusion(#ff6600, #0000ff);
 
 ### average
 
-> Compute the average of two colors on a per-channel (RGB) basis.
+> Tính giá trị màu trung bình của hai màu trên các kênh RGB tương ứng.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object.
-* `color2`: A color object.
+* `color1`: Đối tượng màu.
+* `color2`: Đối tượng màu.
 
-Returns: `color`
+Kết quả: `color`
 
-Example:
+Ví dụ:
 
 ```less
 average(#ff6600, #000000);
@@ -688,18 +688,18 @@ average(#ff6600, #0000ff);
 
 ### negation
 
-> Do the opposite effect to `difference`.
+> Tạo ra hiệu ứng ngược lại với `difference`
 
-The result is a brighter color. **Note**: The _opposite_ effect doesn't mean the _inverted_ effect as resulting from an _addition_ operation.
+Tạo ra màu sáng hơn màu gốc. **Lưu ý**: Hiệu ứng _ngược lại_ không có nghĩa là _đảo ngược_ hiêu ứng bằng cách thay phép trừ bằng _phép cộng_.
 
-Parameters:
+Tham số:
 
-* `color1`: A color object to act as the minuend.
-* `color2`: A color object to act as the subtrahend.
+* `color1`: Màu bị trừ.
+* `color2`: Màu trừ.
 
-Returns: `color`
+Kết quả: `color`
 
-Example:
+Ví dụ:
 
 ```less
 negation(#ff6600, #000000);
