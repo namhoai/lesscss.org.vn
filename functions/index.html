@@ -536,62 +536,62 @@
 <h3 class="docs-heading">escape<span class="anchor-target" id="string-functions-escape"></span>
 <a href="#string-functions-escape" name="string-functions-escape" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Applies <a href="http://en.wikipedia.org/wiki/Percent-encoding">URL-encoding</a> to special characters found in the input string.</p>
+<p>&#xC1;p d&#x1EE5;ng <a href="http://en.wikipedia.org/wiki/Percent-encoding">ph&#xE9;p m&#xE3; h&#xF3;a URL</a> &#x111;&#x1ED1;i v&#x1EDB;i c&#xE1;c k&#xFD; t&#x1EF1; &#x111;&#x1EB7;c bi&#x1EC7;t trong m&#x1ED9;t chu&#x1ED7;i.</p>
 </blockquote>
 <ul>
-<li>These characters are not encoded: <code>,</code>, <code>/</code>, <code>?</code>, <code>@</code>, <code>&amp;</code>, <code>+</code>, <code>&apos;</code>, <code>~</code>, <code>!</code> and <code>$</code>.</li>
-<li>Most common encoded characters are: <code>\&lt;space\&gt;</code>, <code>#</code>, <code>^</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>|</code>, <code>:</code>, <code>&gt;</code>, <code>&lt;</code>, <code>;</code>, <code>]</code>, <code>[</code> and <code>=</code>.</li>
+<li>Nh&#x1EEF;ng k&#xFD; t&#x1EF1; sau &#x111;&#xE2;y s&#x1EBD; kh&#xF4;ng b&#x1ECB; m&#xE3; h&#xF3;a: <code>,</code>, <code>/</code>, <code>?</code>, <code>@</code>, <code>&amp;</code>, <code>+</code>, <code>&apos;</code>, <code>~</code>, <code>!</code> v&#xE0; <code>$</code>.</li>
+<li>C&#xE1;c k&#xFD; t&#x1EF1; &#x111;&#x1B0;&#x1EE3;c m&#xE3; h&#xF3;a ph&#x1ED5; bi&#x1EBF;n bao g&#x1ED3;m: <code>\&lt;space\&gt;</code>, <code>#</code>, <code>^</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>|</code>, <code>:</code>, <code>&gt;</code>, <code>&lt;</code>, <code>;</code>, <code>]</code>, <code>[</code> v&#xE0; <code>=</code>.</li>
 </ul>
-<p>Parameters: <code>string</code>: a string to escape.</p>
-<p>Returns: escaped <code>string</code> content without quotes.</p>
-<p>Example:</p>
+<p>Tham s&#x1ED1;: <code>string</code> - Chu&#x1ED7;i k&#xFD; t&#x1EF1; c&#x1EA7;n escape.</p>
+<p>K&#x1EBF;t qu&#x1EA3; tr&#x1EA3; v&#x1EC1;: <code>string</code> - Chu&#x1ED7;i k&#xFD; t&#x1EF1; &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c escape kh&#xF4;ng ch&#x1EE9;a d&#x1EA5;u quote.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">escape</span>(<span class="hljs-string">&apos;a=1&apos;</span>)
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-attribute">a</span>%<span class="hljs-number">3</span>D1
 </code></pre>
-<p>Note: if the parameter is not a string, output is not defined. The current implementation returns <code>undefined</code> on color and unchanged input on any other kind of argument. This behavior should not be relied on and may change in the future.</p>
+<p>L&#x1B0;u &#xFD;: N&#x1EBF;u tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o kh&#xF4;ng ph&#x1EA3;i d&#x1EA1;ng chu&#x1ED7;i, k&#x1EBF;t qu&#x1EA3; s&#x1EBD; kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c x&#xE1;c &#x111;&#x1ECB;nh. Function s&#x1EBD; tr&#x1EA3; v&#x1EC1; <code>undefined</code> v&#xE0; tham s&#x1ED1; &#x111;&#x1EA7;u v&#xE0;o trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p n&#xE0;y. Tuy nhi&#xEA;n c&#xE1;ch x&#x1EED; l&#xFD; n&#xE0;y c&#xF3; th&#x1EC3; thay &#x111;&#x1ED5;i trong t&#x1B0;&#x1A1;ng lai.</p>
 <h3 class="docs-heading">e<span class="anchor-target" id="string-functions-e"></span>
 <a href="#string-functions-e" name="string-functions-e" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>CSS escaping, replaced with <code>~&quot;value&quot;</code> syntax.</p>
+<p>Escape CSS, thay th&#x1EBF; c&#xFA; ph&#xE1;p <code>~&quot;value&quot;</code>.</p>
 </blockquote>
-<p>It expects string as a parameter and return its content as is, but without quotes. It can be used to output CSS value which is either not valid CSS syntax, or uses proprietary syntax which Less doesn&apos;t recognize.</p>
-<p>Parameters: <code>string</code> - a string to escape.</p>
-<p>Returns: <code>string</code> - the escaped string, without quotes.</p>
-<p>Example:</p>
+<p>Function n&#xE0;y y&#xEA;u c&#x1EA7;u &#x111;&#x1EA7;u v&#xE0;o l&#xE0; m&#x1ED9;t chu&#x1ED7;i v&#xE0; tr&#x1EA3; v&#x1EC1; k&#x1EBF;t qu&#x1EA3; l&#xE0; m&#x1ED9;t chu&#x1ED7;i kh&#xF4;ng ch&#x1EE9;a quote. N&#xF3; c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; in ra c&#xE1;c gi&#xE1; tr&#x1ECB; CSS kh&#xF4;ng &#x111;&#xFA;ng c&#xFA; ph&#xE1;p, ho&#x1EB7;c s&#x1EED; d&#x1EE5;ng c&#xE1;c c&#xFA; ph&#xE1;p &#x111;&#x1EB7;c bi&#x1EC7;t m&#xE0; Less kh&#xF4;ng th&#x1EC3; nh&#x1EAD;n ra.</p>
+<p>Tham s&#x1ED1;: <code>string</code> - Chu&#x1ED7;i c&#x1EA7;n escape.</p>
+<p>K&#x1EBF;t qu&#x1EA3; tr&#x1EA3; v&#x1EC1;: <code>string</code> - : Chu&#x1ED7;i k&#xFD; t&#x1EF1; &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c escape kh&#xF4;ng ch&#x1EE9;a d&#x1EA5;u quote.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">filter</span>: <span class="hljs-function">e</span>(<span class="hljs-string">&quot;ms:alwaysHasItsOwnSyntax.For.Stuff()&quot;</span>);
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-attribute">filter</span>: ms:alwaysHasItsOwnSyntax.For.<span class="hljs-function">Stuff</span>();
 </code></pre>
-<p>Note: The function accepts also <code>~&quot;&quot;</code> escaped values and numbers as parameters. Anything else returns an error.</p>
+<p>L&#x1B0;u &#xFD;: Function n&#xE0;y ch&#x1EA5;p nh&#x1EAD;n &#x111;&#x1EA7;u v&#xE0;o l&#xE0; c&#x1EA3; c&#xE1;c gi&#xE1; tr&#x1ECB; escape <code>~&quot;&quot;</code> v&#xE0; c&#xE1;c con s&#x1ED1;. N&#x1EBF;u tham s&#x1ED1; &#x111;&#x1EA7;u v&#xE0;o kh&#xF4;ng h&#x1EE3;p l&#x1EC7;, function s&#x1EBD; b&#xE1;o l&#x1ED7;i tr&#x1EA3; v&#x1EC1;.</p>
 <h3 class="docs-heading">% format<span class="anchor-target" id="string-functions--format"></span>
 <a href="#string-functions--format" name="string-functions--format" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>The function <code>%(string, arguments ...)</code> formats a string.</p>
+<p>Function <code>%(string, arguments ...)</code> c&#xF3; t&#xE1;c d&#x1EE5;ng format m&#x1ED9;t chu&#x1ED7;i.</p>
 </blockquote>
-<p>The first argument is string with placeholders. All placeholders start with percentage symbol <code>%</code> followed by letter <code>s</code>,<code>S</code>,<code>d</code>,<code>D</code>,<code>a</code>, or <code>A</code>. Remaining arguments contain expressions to replace placeholders. If you need to print the percentage symbol, escape it by another percentage <code>%%</code>.</p>
-<p>Use uppercase placeholders if you need to escape special characters into their utf-8 escape codes.
-The function escapes all special characters except <code>()&apos;~!</code>. Space is encoded as <code>%20</code>. Lowercase placeholders leave special characters as they are.</p>
-<p>Placeholders:</p>
+<p>Tham s&#x1ED1; &#x111;&#x1EA7;u ti&#xEA;n l&#xE0; m&#x1ED9;t chu&#x1ED7;i &#x111;i k&#xE8;m v&#x1EDB;i placeholder. To&#xE0;n b&#x1ED9; c&#xE1;c placeholder &#x111;&#x1EC1;u b&#x1EAF;t &#x111;&#x1EA7;u b&#x1EB1;ng k&#xFD; t&#x1EF1; <code>%</code> v&#xE0; theo sau b&#x1EDF;i m&#x1ED9;t trong c&#xE1;c ch&#x1EEF; c&#xE1;i <code>s</code>,<code>S</code>,<code>d</code>,<code>D</code>,<code>a</code>, or <code>A</code>. C&#xE1;c tham s&#x1ED1; c&#xF2;n l&#x1EA1;i l&#xE0; c&#xE1;c bi&#x1EC3;u th&#x1EE9;c &#x111;&#x1EC3; thay th&#x1EBF; cho c&#xE1;c placeholder. N&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n in ra m&#x1ED9;t k&#xFD; t&#x1EF1; <code>%</code>, h&#xE3;y s&#x1EED; d&#x1EE5;ng m&#x1ED9;t k&#xFD; t&#x1EF1; <code>%</code> kh&#xE1;c &#x111;i k&#xE8;m <code>%%</code>.</p>
+<p>H&#xE3;y s&#x1EED; d&#x1EE5;ng placeholder d&#x1EA1;ng in hoa n&#x1EBF;u nh&#x1B0; b&#x1EA1;n mu&#x1ED1;n escape c&#xE1;c k&#xFD; t&#x1EF1; &#x111;&#x1EB7;c bi&#x1EC7;t th&#xE0;nh m&#xE3; escape d&#x1EA1;ng utf-8.
+Function n&#xE0;y s&#x1EBD; escape to&#xE0;n b&#x1ED9; c&#xE1;c k&#xFD; t&#x1EF1; ngo&#x1EA1;i tr&#x1EEB; <code>()&apos;~!</code>. D&#x1EA5;u c&#xE1;ch s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c escape th&#xE0;nh <code>%20</code>. C&#xE1;c placeholder d&#x1EA1;ng vi&#x1EBF;t th&#x1B0;&#x1EDD;ng s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF; nguy&#xEA;n c&#xE1;c k&#xFD; t&#x1EF1; &#x111;&#x1EB7;c bi&#x1EC7;t.</p>
+<p>Placeholder:</p>
 <ul>
-<li><code>d</code>, <code>D</code>, <code>a</code>, <code>A</code> - can be replaced by any kind of argument (color, number, escaped value, expression, ...). If you use them in combination with string, the whole string will be used - including its quotes. However, the quotes are placed into the string as they are, they are not escaped by &quot;/&quot; nor anything similar.</li>
-<li><code>s</code>, <code>S</code> - can be replaced by any kind of argument except color. If you use them in combination with string, only the string value will be used - string quotes are omitted.</li>
+<li><code>d</code>, <code>D</code>, <code>a</code>, <code>A</code> - c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c thay th&#x1EBF; b&#x1EB1;ng m&#x1ED9;t lo&#x1EA1;i tham s&#x1ED1; b&#x1EA5;t k&#x1EF3; (m&#xE0;u s&#x1EAF;c, s&#x1ED1;, gi&#xE1; tr&#x1ECB; &#x111;&#xE3; escape, bi&#x1EC3;u th&#x1EE9;c, ...). N&#x1EBF;u nh&#x1B0; b&#x1EA1;n s&#x1EED; d&#x1EE5;ng ch&#xFA;ng k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i chu&#x1ED7;i, th&#xEC; to&#xE0;n b&#x1ED9; chu&#x1ED7;i s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng - bao g&#x1ED3;m c&#x1EA3; c&#xE1;c quote c&#x1EE7;a n&#xF3;. Tuy nhi&#xEA;n, quote s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF; nguy&#xEA;n v&#x1ECB; tr&#xED; trong chu&#x1ED7;i v&#xE0; kh&#xF4;ng b&#x1ECB; escape b&#x1EDF;i k&#xFD; t&#x1EF1; &quot;/&quot; ho&#x1EB7;c c&#xE1;i g&#xEC; &#x111;&#xF3; t&#x1B0;&#x1A1;ng t&#x1EF1;.</li>
+<li><code>s</code>, <code>S</code> - c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c thay th&#x1EBF; b&#x1EB1;ng m&#x1ED9;t lo&#x1EA1;i tham s&#x1ED1; b&#x1EA5;t k&#x1EF3; ngo&#x1EA1;i tr&#x1EEB; m&#xE0;u s&#x1EAF;c. N&#x1EBF;u b&#x1EA1;n s&#x1EED; d&#x1EE5;ng ch&#xFA;ng k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i chu&#x1ED7;i, th&#xEC; ch&#x1EC9; c&#xF3; gi&#xE1; tr&#x1ECB; c&#x1EE7;a chu&#x1ED7;i &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng - quote c&#x1EE7;a string s&#x1EBD; b&#x1ECB; lo&#x1EA1;i b&#x1ECF;.</li>
 </ul>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>string</code>: format string with placeholders,</li>
-<li><code>anything</code>* : values to replace placeholders.</li>
+<li><code>string</code>: format chu&#x1ED7;i v&#x1EDB;i placeholder,</li>
+<li><code>anything</code>* : c&#xE1;c gi&#xE1; tr&#x1ECB; &#x111;&#x1EC3; thay th&#x1EBF; cho c&#xE1;c placeholder.</li>
 </ul>
-<p>Returns: formatted <code>string</code>.</p>
-<p>Example:</p>
+<p>K&#x1EBF;t qu&#x1EA3; tr&#x1EA3; v&#x1EC1;: <code>string</code> - chu&#x1ED7;i &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c format.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">format-a-d</span>: %(<span class="hljs-string">&quot;repetitions: %a file: %d&quot;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>, <span class="hljs-string">&quot;directory/file.less&quot;</span>);
 <span class="hljs-attribute">format-a-d-upper</span>: %(<span class="hljs-string">&apos;repetitions: %A file: %D&apos;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>, <span class="hljs-string">&quot;directory/file.less&quot;</span>);
 <span class="hljs-attribute">format-s</span>: %(<span class="hljs-string">&quot;repetitions: %s file: %s&quot;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>, <span class="hljs-string">&quot;directory/file.less&quot;</span>);
 <span class="hljs-attribute">format-s-upper</span>: %(<span class="hljs-string">&apos;repetitions: %S file: %S&apos;</span>, <span class="hljs-number">1</span> + <span class="hljs-number">2</span>, <span class="hljs-string">&quot;directory/file.less&quot;</span>);
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-attribute">format-a-d</span>: <span class="hljs-string">&quot;repetitions: 3 file: &quot;</span>directory/file.less<span class="hljs-string">&quot;&quot;</span>;
 <span class="hljs-attribute">format-a-d-upper</span>: <span class="hljs-string">&quot;repetitions: 3 file: %22directory%2Ffile.less%22&quot;</span>;
 <span class="hljs-attribute">format-s</span>: <span class="hljs-string">&quot;repetitions: 3 file: directory/file.less&quot;</span>;
@@ -600,24 +600,24 @@ The function escapes all special characters except <code>()&apos;~!</code>. Spac
 <h3 class="docs-heading">replace<span class="anchor-target" id="string-functions-replace"></span>
 <a href="#string-functions-replace" name="string-functions-replace" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Replaces a text within a string.</p>
+<p>Thay th&#x1EBF; m&#x1ED9;t &#x111;o&#x1EA1;n v&#x103;n b&#x1EA3;n trong chu&#x1ED7;i.</p>
 </blockquote>
-<p>Released <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
-<p>Parameters:</p>
+<p>&#x110;&#x1B0;&#x1EE3;c ph&#xE1;t h&#xE0;nh trong version <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>string</code>: The string to search and replace in.</li>
-<li><code>pattern</code>: A string or regular expression pattern to search for.</li>
-<li><code>replacement</code>: The string to replace the matched pattern with.</li>
-<li><code>flags</code>: (Optional) regular expression flags.</li>
+<li><code>string</code>: Chu&#x1ED7;i &#x111;&#x1EC3; t&#xEC;m ki&#x1EBF;m v&#xE0; thay th&#x1EBF;.</li>
+<li><code>pattern</code>: M&#x1ED9;t chu&#x1ED7;i ho&#x1EB7;c m&#x1ED9;t m&#x1EAB;u bi&#x1EC3;u th&#x1EE9;c ch&#xED;nh quy d&#xF9;ng &#x111;&#x1EC3; t&#xEC;m ki&#x1EBF;m.</li>
+<li><code>replacement</code>: Chu&#x1ED7;i d&#xF9;ng &#x111;&#x1EC3; thay th&#x1EBF; k&#x1EBF;t qu&#x1EA3; t&#xEC;m ki&#x1EBF;m &#x111;&#x1B0;&#x1EE3;c.</li>
+<li><code>flags</code>: (T&#xF9;y &#xFD;) c&#x1EDD; bi&#x1EC3;u th&#x1EE9;c ch&#xED;nh quy.</li>
 </ul>
-<p>Returns: a string with the replaced values.</p>
-<p>Example:</p>
+<p>K&#x1EBF;t qu&#x1EA3; tr&#x1EA3; v&#x1EC1;: Chu&#x1ED7;i v&#x1EDB;i c&#xE1;c gi&#xE1; tr&#x1ECB; &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c thay th&#x1EBF;.</p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">replace</span>(<span class="hljs-string">&quot;Hello, Mars?&quot;</span>, <span class="hljs-string">&quot;Mars\?&quot;</span>, <span class="hljs-string">&quot;Earth!&quot;</span>);
 <span class="hljs-attribute">replace</span>(<span class="hljs-string">&quot;One + one = 4&quot;</span>, <span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;gi&quot;</span>);
 <span class="hljs-attribute">replace</span>(<span class="hljs-string">&apos;This is a string.&apos;</span>, <span class="hljs-string">&quot;(string)\.$&quot;</span>, <span class="hljs-string">&quot;new $1.&quot;</span>);
 <span class="hljs-attribute">replace</span>(<span class="hljs-string">~&quot;bar-1&quot;</span>, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>);
 </code></pre>
-<p>Result:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css">&quot;Hello, Earth!&quot;;
 &quot;2 + 2 = 4&quot;;
 &apos;This is a new string.&apos;;
@@ -657,34 +657,35 @@ bar-2;
 <h3 class="docs-heading">length<span class="anchor-target" id="list-functions-length"></span>
 <a href="#list-functions-length" name="list-functions-length" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Returns the number of elements in a value list.</p>
+<p>Tr&#x1EA3; v&#x1EC1; s&#x1ED1; l&#x1B0;&#x1EE3;ng ph&#x1EA7;n t&#x1EED; trong danh s&#xE1;ch gi&#xE1; tr&#x1ECB;.</p>
 </blockquote>
 <p>Parameters: <code>list</code> - a comma or space separated list of values.
-Returns: an integer number of elements in a list</p>
-<p>Example: <code>length(1px solid #0080ff);</code>
-Output: <code>3</code></p>
-<p>Example:</p>
+Tham s&#x1ED1;: <code>list</code> - danh s&#xE1;ch (ng&#x103;n c&#xE1;ch b&#x1EDF;i d&#x1EA5;u ph&#x1EA9;y hay d&#x1EA5;u c&#xE1;ch)
+Tr&#x1EA3; v&#x1EC1;: s&#x1ED1; nguy&#xEA;n (s&#x1ED1; l&#x1B0;&#x1EE3;ng ph&#x1EA7;n t&#x1EED; trong danh s&#xE1;ch)</p>
+<p>V&#xED; d&#x1EE5;: <code>length(1px solid #0080ff);</code>
+K&#x1EBF;t qu&#x1EA3;: <code>3</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@list:</span> <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;tomato&quot;</span>, <span class="hljs-string">&quot;potato&quot;</span>, <span class="hljs-string">&quot;peach&quot;</span>;
 <span class="hljs-attribute">n</span>: <span class="hljs-function">length</span>(<span class="hljs-variable">@list</span>);
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code>n: 4;
 </code></pre><h3 class="docs-heading">extract<span class="anchor-target" id="list-functions-extract"></span>
 <a href="#list-functions-extract" name="list-functions-extract" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Returns the value at a specified position in a list.</p>
+<p>Tr&#x1EA3; v&#x1EC1; gi&#xE1; tr&#x1ECB; &#x1EDF; m&#x1ED9;t v&#x1ECB; tr&#xED; x&#xE1;c &#x111;&#x1ECB;nh trong danh s&#xE1;ch</p>
 </blockquote>
-<p>Parameters:
-<code>list</code> - a comma or space separated list of values.
-<code>index</code> - an integer that specifies a position of a list element to return.
-Returns: a value at the specified position in a list.</p>
-<p>Example: <code>extract(8px dotted red, 2);</code>
-Output: <code>dotted</code></p>
-<p>Example:</p>
+<p>Tham s&#x1ED1;:
+<code>list</code> - danh s&#xE1;ch (ng&#x103;n c&#xE1;ch b&#x1EDF;i d&#x1EA5;u ph&#x1EA9;y hay d&#x1EA5;u c&#xE1;ch)
+<code>index</code> - s&#x1ED1; nguy&#xEA;n (v&#x1ECB; tr&#xED; c&#x1EE7;a ph&#x1EA7;n t&#x1EED; c&#x1EA7;n l&#x1EA5;y v&#x1EC1; trong danh s&#xE1;ch)
+Tr&#x1EA3; v&#x1EC1;: gi&#xE1; tr&#x1ECB; &#x1EDF; v&#x1ECB; tr&#xED; x&#xE1;c &#x111;&#x1ECB;nh trong danh s&#xE1;ch</p>
+<p>V&#xED; d&#x1EE5;: <code>extract(8px dotted red, 2);</code>
+K&#x1EBF;t qu&#x1EA3;: <code>dotted</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@list:</span> apple, pear, coconut, orange;
 <span class="hljs-attribute">value</span>: <span class="hljs-function">extract</span>(<span class="hljs-variable">@list</span>, <span class="hljs-number">3</span>);
 </code></pre>
-<p>Output:</p>
+<p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code>value: coconut;
 </code></pre>
 
@@ -1725,20 +1726,20 @@ Parameters:</p>
 
 
 <blockquote>
-<p>These operations are <em>similar</em> (though not necessarily identical) to the blend modes found in image editors like Photoshop, Fireworks or GIMP, so you can use them to make your CSS colors match your images.</p>
+<p>C&#xE1;c ph&#xE9;p to&#xE1;n sau <em>t&#x1B0;&#x1A1;ng t&#x1EF1;</em> (c&#xF3; th&#x1EC3; kh&#xF4;ng h&#x1EB3;n l&#xE0; y h&#x1EC7;t) v&#x1EDB;i c&#xE1;c ch&#x1EBF; &#x111;&#x1ED9; h&#xF2;a tr&#x1ED9;n trong c&#xE1;c ph&#x1EA7;n m&#x1EC1;m s&#x1EED;a &#x1EA3;nh nh&#x1B0; Photoshop, Fireworks hay GIMP. B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng ch&#xFA;ng &#x111;&#x1EC3; t&#x1EA1;o ra c&#xE1;c m&#xE0;u CSS ph&#xF9; h&#x1A1;pj v&#x1EDB;i &#x1EA3;nh c&#x1EE7;a b&#x1EA1;n.</p>
 </blockquote>
 <h3 class="docs-heading">multiply<span class="anchor-target" id="color-blending-multiply"></span>
 <a href="#color-blending-multiply" name="color-blending-multiply" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Multiply two colors. Corresponding RGB channels from each of the two colors are multiplied together then divided by 255. The result is a darker color.</p>
+<p><code>Multiply</code> hai m&#xE0;u. Gi&#xE1; tr&#x1ECB; m&#xE0;u &#x1EDF; c&#xE1;c k&#xEA;nh RGB t&#x1B0;&#x1A1;ng &#x1EE9;ng &#x111;&#x1B0;&#x1EE3;c nh&#xE2;n l&#x1EA1;i v&#x1EDB;i nhau, sau &#x111;&#xF3; chia cho 255, cho ra m&#x1ED9;t m&#xE0;u t&#x1ED1;i h&#x1A1;n hai m&#xE0;u g&#x1ED1;c.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object.</li>
-<li><code>color2</code>: A color object.</li>
+<li><code>color1</code>: &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
+<li><code>color2</code>: &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p><strong>Examples</strong>:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p><strong>V&#xED; d&#x1EE5;</strong>:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">multiply</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -1787,15 +1788,15 @@ Parameters:</p>
 <h3 class="docs-heading">screen<span class="anchor-target" id="color-blending-screen"></span>
 <a href="#color-blending-screen" name="color-blending-screen" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Do the opposite of <code>multiply</code>. The result is a brighter color.</p>
+<p>Ng&#x1B0;&#x1EE3;c l&#x1EA1;i v&#x1EDB;i <code>multiply</code>. Cho ra m&#xE0;u s&#xE1;ng h&#x1A1;n hai m&#xE0;u g&#x1ED1;c.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object.</li>
-<li><code>color2</code>: A color object.</li>
+<li><code>color1</code>: &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
+<li><code>color2</code>: &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">screen</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -1844,15 +1845,15 @@ Parameters:</p>
 <h3 class="docs-heading">overlay<span class="anchor-target" id="color-blending-overlay"></span>
 <a href="#color-blending-overlay" name="color-blending-overlay" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Combines the effects of both <code>multiply</code> and <code>screen</code>. Conditionally make light channels lighter and dark channels darker. <strong>Note</strong>: The results of the conditions are determined by the first color parameter.</p>
+<p>K&#x1EBF;t h&#x1EE3;p <code>multiply</code> v&#xE0; <code>screen</code>, l&#xE0;m s&#xE1;ng l&#xEA;n k&#xEA;nh m&#xE0;u s&#xE1;ng v&#xE0; l&#xE0;m t&#x1ED1;i &#x111;i k&#xEA;nh m&#xE0;u t&#x1ED1;i. <strong>L&#x1B0;u &#xFD;</strong>: K&#xEA;nh m&#xE0;u s&#xE1;ng hay t&#x1ED1;i l&#xE0; ph&#x1EE5; thu&#x1ED9;c v&#xE0;o m&#xE0;u th&#x1EE9; nh&#x1EA5;t</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A base color object. Also the determinant color to make the result lighter or darker.</li>
-<li><code>color2</code>: A color object to <em>overlay</em>.</li>
+<li><code>color1</code>: M&#xE0;u g&#x1ED1;c, c&#x169;ng l&#xE0; m&#xE0;u &#x111;&#x1B0;&#x1EE3;c d&#xF9;ng &#x111;&#x1EC3; x&#xE1;c &#x111;&#x1ECB;nh k&#xEA;nh m&#xE0;u s&#xE1;ng hay t&#x1ED1;i.</li>
+<li><code>color2</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u &#x111;&#x1EC3; <em>overlay</em></li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">overlay</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -1901,15 +1902,15 @@ Parameters:</p>
 <h3 class="docs-heading">softlight<span class="anchor-target" id="color-blending-softlight"></span>
 <a href="#color-blending-softlight" name="color-blending-softlight" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Similar to <code>overlay</code> but avoids pure black resulting in pure black, and pure white resulting in pure white.</p>
+<p>T&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; <code>overlay</code> nh&#x1B0;ng tr&#xE1;nh l&#xE0;m cho m&#xE0;u th&#xE0;nh &#x111;en tuy&#x1EC1;n ho&#x1EB7;c tr&#x1EAF;ng to&#xE1;t</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object to <em>soft light</em> another.</li>
-<li><code>color2</code>: A color object to be <em>soft lighten</em>.</li>
+<li><code>color1</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u &#x111;&#x1EC3; <em>soft light</em> m&#xE0;u c&#xF2;n l&#x1EA1;i.</li>
+<li><code>color2</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u &#x111;&#x1EC3; &#x111;&#x1B0;&#x1EE3;c <em>soft light</em>.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">softlight</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -1958,15 +1959,15 @@ Parameters:</p>
 <h3 class="docs-heading">hardlight<span class="anchor-target" id="color-blending-hardlight"></span>
 <a href="#color-blending-hardlight" name="color-blending-hardlight" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>The same as <code>overlay</code> but with the color roles reversed.</p>
+<p>T&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; <code>overlay</code> nh&#x1B0;ng &#x111;&#x1EA3;o ng&#x1B0;&#x1EE3;c th&#x1EE9; t&#x1EF1; tham s&#x1ED1;.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object to <em>overlay</em>.</li>
-<li><code>color2</code>: A base color object. Also the determinant color to make the result lighter or darker.</li>
+<li><code>color1</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u &#x111;&#x1EC3; <em>overlay</em></li>
+<li><code>color2</code>: M&#xE0;u g&#x1ED1;c, c&#x169;ng l&#xE0; m&#xE0;u &#x111;&#x1B0;&#x1EE3;c d&#xF9;ng &#x111;&#x1EC3; x&#xE1;c &#x111;&#x1ECB;nh k&#xEA;nh m&#xE0;u s&#xE1;ng hay t&#x1ED1;i.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">hardlight</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -2015,15 +2016,15 @@ Parameters:</p>
 <h3 class="docs-heading">difference<span class="anchor-target" id="color-blending-difference"></span>
 <a href="#color-blending-difference" name="color-blending-difference" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Subtracts the second color from the first color on a channel-by-channel basis. Negative values are inverted. Subtracting black results in no change; subtracting white results in color inversion.</p>
+<p>Tr&#x1EEB; gi&#xE1; tr&#x1ECB; m&#xE0;u th&#x1EE9; nh&#x1EA5;t &#x111;i gi&#xE1; tr&#x1ECB; m&#xE0;u th&#x1EE9; hai trong c&#xE1;c k&#xEA;nh m&#xE0;u t&#x1B0;&#x1A1;ng &#x1EE9;ng. Gi&#xE1; tr&#x1ECB; &#xE2;m &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EA3;o ng&#x1B0;&#x1EE3;c. Tr&#x1EEB; gi&#xE1; tr&#x1ECB; m&#xE0;u &#x111;en tuy&#x1EC1;n s&#x1EBD; kh&#xF4;ng g&#xE2;y ra thay &#x111;&#x1ED5;i n&#xE0;o; Tr&#x1EEB; gi&#xE1; tr&#x1ECB; m&#xE0;u tr&#x1EAF;ng s&#x1EBD; t&#x1EA1;o n&#xEA;n hi&#x1EC7;u &#x1EE9;ng &#x111;&#x1EA3;o ng&#x1B0;&#x1EE3;c m&#xE0;u.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object to act as the minuend.</li>
-<li><code>color2</code>: A color object to act as the subtrahend.</li>
+<li><code>color1</code>: M&#xE0;u b&#x1ECB; tr&#x1EEB;.</li>
+<li><code>color2</code>: M&#xE0;u tr&#x1EEB;.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>Tr&#x1EA3; v&#x1EC1;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">difference</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -2072,15 +2073,15 @@ Parameters:</p>
 <h3 class="docs-heading">exclusion<span class="anchor-target" id="color-blending-exclusion"></span>
 <a href="#color-blending-exclusion" name="color-blending-exclusion" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>A similar effect to <code>difference</code> with lower contrast.</p>
+<p>Hi&#x1EC7;u &#x1EE9;ng t&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; <code>difference</code> nh&#x1B0;ng v&#x1EDB;i &#x111;&#x1ED9; t&#x1B0;&#x1A1;ng ph&#x1EA3;n th&#x1EA5;p h&#x1A1;n.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object to act as the minuend.</li>
-<li><code>color2</code>: A color object to act as the subtrahend.</li>
+<li><code>color1</code>: M&#xE0;u b&#x1ECB; tr&#x1EEB;.</li>
+<li><code>color2</code>: M&#xE0;u tr&#x1EEB;.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>K&#x1EBF;t qu&#x1EA3;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">exclusion</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -2129,15 +2130,15 @@ Parameters:</p>
 <h3 class="docs-heading">average<span class="anchor-target" id="color-blending-average"></span>
 <a href="#color-blending-average" name="color-blending-average" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Compute the average of two colors on a per-channel (RGB) basis.</p>
+<p>T&#xED;nh gi&#xE1; tr&#x1ECB; m&#xE0;u trung b&#xEC;nh c&#x1EE7;a hai m&#xE0;u tr&#xEA;n c&#xE1;c k&#xEA;nh RGB t&#x1B0;&#x1A1;ng &#x1EE9;ng.</p>
 </blockquote>
-<p>Parameters:</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object.</li>
-<li><code>color2</code>: A color object.</li>
+<li><code>color1</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
+<li><code>color2</code>: &#x110;&#x1ED1;i t&#x1B0;&#x1EE3;ng m&#xE0;u.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>K&#x1EBF;t qu&#x1EA3;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">average</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
@@ -2186,16 +2187,16 @@ Parameters:</p>
 <h3 class="docs-heading">negation<span class="anchor-target" id="color-blending-negation"></span>
 <a href="#color-blending-negation" name="color-blending-negation" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Do the opposite effect to <code>difference</code>.</p>
+<p>T&#x1EA1;o ra hi&#x1EC7;u &#x1EE9;ng ng&#x1B0;&#x1EE3;c l&#x1EA1;i v&#x1EDB;i <code>difference</code></p>
 </blockquote>
-<p>The result is a brighter color. <strong>Note</strong>: The <em>opposite</em> effect doesn&apos;t mean the <em>inverted</em> effect as resulting from an <em>addition</em> operation.</p>
-<p>Parameters:</p>
+<p>T&#x1EA1;o ra m&#xE0;u s&#xE1;ng h&#x1A1;n m&#xE0;u g&#x1ED1;c. <strong>L&#x1B0;u &#xFD;</strong>: Hi&#x1EC7;u &#x1EE9;ng <em>ng&#x1B0;&#x1EE3;c l&#x1EA1;i</em> kh&#xF4;ng c&#xF3; ngh&#x129;a l&#xE0; <em>&#x111;&#x1EA3;o ng&#x1B0;&#x1EE3;c</em> hi&#xEA;u &#x1EE9;ng b&#x1EB1;ng c&#xE1;ch thay ph&#xE9;p tr&#x1EEB; b&#x1EB1;ng <em>ph&#xE9;p c&#x1ED9;ng</em>.</p>
+<p>Tham s&#x1ED1;:</p>
 <ul>
-<li><code>color1</code>: A color object to act as the minuend.</li>
-<li><code>color2</code>: A color object to act as the subtrahend.</li>
+<li><code>color1</code>: M&#xE0;u b&#x1ECB; tr&#x1EEB;.</li>
+<li><code>color2</code>: M&#xE0;u tr&#x1EEB;.</li>
 </ul>
-<p>Returns: <code>color</code></p>
-<p>Example:</p>
+<p>K&#x1EBF;t qu&#x1EA3;: <code>color</code></p>
+<p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-attribute">negation</span>(<span class="hljs-hexcolor">#ff6600</span>, <span class="hljs-hexcolor">#000000</span>);
 </code></pre>
 <p><img alt="Color 1" data-src="holder.js/100x40/#ff6600:#ffffff/text:ff6600">
