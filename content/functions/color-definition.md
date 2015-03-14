@@ -1,122 +1,122 @@
 ### rgb
 
-> Creates an opaque color object from decimal red, green and blue (RGB) values.
+> Tạo đối tượng màu từ các giá trị red, green và blue (RGB).
 
-Literal color values in standard HTML/CSS formats may also be used to define colors, for example `#ff0000`.
+Giá trị màu chuẩn theo định dạng HTML/CSS cũng có thể được dùng tạo màu, ví dụ `#ff0000`.
 
-Parameters:
-* `red`: An integer 0-255 or percentage 0-100%.
-* `green`: An integer 0-255 or percentage 0-100%.
-* `blue`: An integer 0-255 or percentage 0-100%.
+Tham số:
+* `red`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
+* `green`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
+* `blue`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `rgb(90, 129, 32)`
+Ví dụ: `rgb(90, 129, 32)`
 
-Output: `#5a8120`
+Kết quả: `#5a8120`
 
 
 ### rgba
 
-> Creates a transparent color object from decimal red, green, blue and alpha (RGBA) values.
-Parameters:
+> Tạo đối tượng màu trong suốt từ các giá trị red, green, blue và alpha (RGBA).
 
-* `red`: An integer 0-255 or percentage 0-100%.
-* `green`: An integer 0-255 or percentage 0-100%.
-* `blue`: An integer 0-255 or percentage 0-100%.
-* `alpha`: A number 0-1 or percentage 0-100%.
+Tham số:
+* `red`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
+* `green`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
+* `blue`: Số nguyên (trong khoảng 0-255) hoặc phần trăm (trong khoảng 0-100%).
+* `alpha`: Số thập phân (trong khoảng 0-1) hoặc phần trăm (trong khoảng 0-100%).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `rgba(90, 129, 32, 0.5)`
+Ví dụ: `rgba(90, 129, 32, 0.5)`
 
-Output: `rgba(90, 129, 32, 0.5)`
+Kết quả: `rgba(90, 129, 32, 0.5)`
 
 
 ### argb
 
-> Creates a hex representation of a color in `#AARRGGBB` format (**NOT** `#RRGGBBAA`!).
+> Định dạng màu theo dạng `#AARRGGBB` (**KHÔNG PHẢI** `#RRGGBBAA`!).
 
-This format is used in Internet Explorer, and .NET and Android development.
+Định dạng này được sử dụng trong Internet Explorer, và trong .NET, Android.
 
-Parameters: `color`, color object.
+Tham số: `color`, đối tượng màu.
 
-Returns: `string`
+Trả về: `string`
 
-Example: `argb(rgba(90, 23, 148, 0.5));`
+Ví dụ: `argb(rgba(90, 23, 148, 0.5));`
 
-Output: `#805a1794`
+Kết quả: `#805a1794`
 
 
 ### hsl
 
-> Creates an opaque color object from hue, saturation and lightness (HSL) values.
-Parameters:
+> Tạo đối tượng màu từ các giá trị hue, saturation và lightness (HSL).
 
-* `hue`: An integer 0-360 representing degrees.
-* `saturation`: A percentage 0-100% or number 0-1.
-* `lightness`: A percentage 0-100% or number 0-1.
+Tham số:
+* `hue`: Số nguyên (trong khoảng 0-360, tương ứng với số đo góc).
+* `saturation`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `lightness`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `hsl(90, 100%, 50%)`
+Ví dụ: `hsl(90, 100%, 50%)`
 
-Output: `#80ff00`
+Kết quả: `#80ff00`
 
-This is useful if you want to create a new color based on another color's channel, forExample: `@new: hsl(hue(@old), 45%, 90%);`
+Hàm này đặc biệt hữu dụng khi bạn muốn tạo màu dựa trên các kênh của một màu khacs, ví dụ: `@new: hsl(hue(@old), 45%, 90%);`
 
-`@new` will have `@old`'s *hue*, and its own saturation and lightness.
+`@new` sẽ có giả trị hue giống với `@old`, nhưng khác giá trị saturation và lightness.
 
 
 ### hsla
 
-> Creates a transparent color object from hue, saturation, lightness and alpha (HSLA) values.
+> Tạo đối tượng màu trong suốt từ các giá trị hue, saturation, lightness và alpha (HSLA).
 
-Parameters:
-* `hue`: An integer 0-360 representing degrees.
-* `saturation`: A percentage 0-100% or number 0-1.
-* `lightness`: A percentage 0-100% or number 0-1.
-* `alpha`: A percentage 0-100% or number 0-1.
+Tham số:
+* `hue`: Số nguyên (trong khoảng 0-360, tương ứng với số đo góc).
+* `saturation`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `lightness`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `alpha`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `hsl(90, 100%, 50%, 0.5)`
+Ví dụ: `hsl(90, 100%, 50%, 0.5)`
 
-Output: `rgba(128, 255, 0, 0.5)`
+Kết quả: `rgba(128, 255, 0, 0.5)`
 
 
 ### hsv
 
-> Creates an opaque color object from hue, saturation and value (HSV) values.
+> Tạo đối tượng màu từ các giá trị hue, saturation và value (HSV).
 
-Note that this is a color space available in Photoshop, and is not the same as `hsl`.
+Đây là không gian màu dùng trong Photoshop, khác với không gian màu `hsl`.
 
-Parameters:
-* `hue`: An integer 0-360 representing degrees.
-* `saturation`: A percentage 0-100% or number 0-1.
-* `value`: A percentage 0-100% or number 0-1.
+Tham số:
+* `hue`: Số nguyên (trong khoảng 0-360, tương ứng với số đo góc).
+* `saturation`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `value`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `hsv(90, 100%, 50%)`
+Ví dụ: `hsv(90, 100%, 50%)`
 
-Output: `#408000`
+Kết quả: `#408000`
 
 
 ### hsva
 
-> Creates a transparent color object from hue, saturation, value and alpha (HSVA) values.
+> Tạo đối tượng màu trong suốt từ các giá trị hue, saturation, value và alpha (HSVA).
 
-Note that this is not the same as `hsla`, and is a color space available in Photoshop.
+Đây là không gian màu dùng trong Photoshop, khác với không gian màu `hsla`.
 
-Parameters:
-* `hue`: An integer 0-360 representing degrees.
-* `saturation`: A percentage 0-100% or number 0-1.
-* `value`: A percentage 0-100% or number 0-1.
-* `alpha`: A percentage 0-100% or number 0-1.
+Tham số:
+* `hue`: Số nguyên (trong khoảng 0-360, tương ứng với số đo góc).
+* `saturation`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `value`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
+* `alpha`: Phần trăm (trong khoảng 0-100%) hoặc số thập phân (trong khoảng 0-1).
 
-Returns: `color`
+Trả về: `color`
 
-Example: `hsva(90, 100%, 50%, 0.5)`
+Ví dụ: `hsva(90, 100%, 50%, 0.5)`
 
-Output: `rgba(64, 128, 0, 0.5)`
+Kết quả: `rgba(64, 128, 0, 0.5)`
