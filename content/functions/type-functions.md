@@ -1,12 +1,12 @@
 ### isnumber
 
-> Returns `true` if a value is a number, `false` otherwise.
+> Trả về `true` nếu là một số, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a number, `false` otherwise.
+Trả về: `true` nếu `value` là một số, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 isnumber(#ff0);     // false
@@ -22,13 +22,13 @@ isnumber(url(...)); // false
 
 ### isstring
 
-> Returns `true` if a value is a string, `false` otherwise.
+> Trả về `true` nếu là một chuỗi ký tự, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a string, `false` otherwise.
+Trả về: `true` nếu `value` là một chuỗi ký tự, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 isstring(#ff0);     // false
@@ -44,13 +44,13 @@ isstring(url(...)); // false
 
 ### iscolor
 
-> Returns `true` if a value is a color, `false` otherwise.
+> Trả về `true` nếu là một màu, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a color, `false` otherwise.
+Trả về: `true` nếu `value` là một màu, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 iscolor(#ff0);     // true
@@ -66,13 +66,13 @@ iscolor(url(...)); // false
 
 ### iskeyword
 
-> Returns `true` if a value is a keyword, `false` otherwise.
+> Trả về `true` nếu là một từ khóa, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a keyword, `false` otherwise.
+Trả về: `true` nếu `value` là một từ khóa, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 iskeyword(#ff0);     // false
@@ -88,13 +88,13 @@ iskeyword(url(...)); // false
 
 ### isurl
 
-> Returns `true` if a value is a url, `false` otherwise.
+> Trả về `true` nếu là một url, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a url, `false` otherwise.
+Trả về: `true` nếu `value` là một url, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 isurl(#ff0);     // false
@@ -110,13 +110,13 @@ isurl(url(...)); // true
 
 ### ispixel
 
-> Returns `true` if a value is a number in pixels, `false` otherwise.
+> Trả về `true` nếu là một số có đơn vị pixel, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a pixel, `false` otherwise.
+Trả về: `true` nếu `value` có đơn vị pixel, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 ispixel(#ff0);     // false
@@ -132,13 +132,13 @@ ispixel(url(...)); // false
 
 ### isem
 
-> Returns `true` if a value is an em value, `false` otherwise.
+> Trả về `true` nếu là một số có đơn vị em, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is an em value, `false` otherwise.
+Trả về: `true` nếu `value` có đơn vị em, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 isem(#ff0);     // false
@@ -154,13 +154,13 @@ isem(url(...)); // false
 
 ### ispercentage
 
-> Returns `true` if a value is a percentage value, `false` otherwise.
+> Trả về `true` nếu là phần trăm, `false` trong các trường hợp còn lại.
 
-Parameters: `value` - a value or variable being evaluated.
+Tham số: `value` - giá trị hoặc biến cần đánh giá.
 
-Returns: `true` if value is a percentage value, `false` otherwise.
+Trả về: `true` nếu `value` là phần trăm, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 ispercentage(#ff0);     // false
@@ -176,15 +176,15 @@ ispercentage(url(...)); // false
 
 ### isunit
 
-> Returns `true` if a value is a number in specified units, `false` otherwise.
+> Trả về `true` nếu là một số có đơn vị nhất định, `false` trong các trường hợp còn lại.
 
-Parameters:
-* `value` - a value or variable being evaluated.
-* `unit` - a unit identifier (optionaly quoted) to test for.
+Tham số:
+* `value` - giá trị hoặc biến cần đánh giá.
+* `unit` - đơn vị đối chiếu (có thể có hoặc không có ngoặc)
 
-Returns: `true` if value is a number in specified units, `false` otherwise.
+Trả về: `true` nếu `value` là số có đơn vị đối chiếu, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 isunit(11px, px);  // true
@@ -201,14 +201,14 @@ isunit("mm", mm);  // false
 
 ### isruleset
 
-> Returns `true` if a value is a ruleset, `false` otherwise.
+> Trả về `true` nếu là một ruleset, `false` trong các trường hợp còn lại.
 
-Parameters:
+Tham số:
 * `value` - a variable being evaluated.
 
-Returns: `true` if value is a ruleset, `false` otherwise.
+Trả về: `true` nếu `value` là một ruleset, `false` trong các trường hợp còn lại.
 
-Example:
+Ví dụ:
 
 ```less
 @rules: {
