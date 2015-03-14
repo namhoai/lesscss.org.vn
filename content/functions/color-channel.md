@@ -1,158 +1,159 @@
 ### hue
 
-> Extracts the hue channel of a color object in the HSL color space.
+> Lấy giá trị kênh hue của đối tượng màu trong không gian màu HSL.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `integer` `0-360`
+Trả về: `integer` `0-360`
 
-Example: `hue(hsl(90, 100%, 50%))`
+Ví dụ: `hue(hsl(90, 100%, 50%))`
 
-Output: `90`
+Kết quả: `90`
 
 
 ### saturation
 
-> Extracts the saturation channel of a color object in the HSL color space.
+> Lấy giá trị kênh saturation của đối tượng màu trong không gian màu HSL.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` `0-100`
+Trả về: `percentage` `0-100`
 
-Example: `saturation(hsl(90, 100%, 50%))`
+Ví dụ: `saturation(hsl(90, 100%, 50%))`
 
-Output: `100%`
+Kết quả: `100%`
 
 
 ### lightness
 
-> Extracts the lightness channel of a color object in the HSL color space.
+> Lấy giá trị kênh lightness của đối tượng màu trong không gian màu HSL.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` `0-100`
+Trả về: `percentage` `0-100`
 
-Example: `lightness(hsl(90, 100%, 50%))`
+Ví dụ: `lightness(hsl(90, 100%, 50%))`
 
-Output: `50%`
+Kết quả: `50%`
 
 
 ### hsvhue
 
-> Extracts the hue channel of a color object in the HSV color space.
+> Lấy giá trị kênh hue của đối tượng màu trong không gian màu HSV.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `integer` `0-360`
+Trả về: `integer` `0-360`
 
-Example: `hsvhue(hsv(90, 100%, 50%))`
+Ví dụ: `hsvhue(hsv(90, 100%, 50%))`
 
-Output: `90`
+Kết quả: `90`
 
 
 ### hsvsaturation
 
-> Extracts the saturation channel of a color object in the HSV color space.
+> Lấy giá trị kênh saturation của đối tượng màu trong không gian màu HSV.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` 0-100
+Trả về: `percentage` 0-100
 
-Example: `hsvsaturation(hsv(90, 100%, 50%))`
+Ví dụ: `hsvsaturation(hsv(90, 100%, 50%))`
 
-Output: `100%`
+Kết quả: `100%`
 
 
 ### hsvvalue
 
-> Extracts the value channel of a color object in the HSV color space.
+> Lấy giá trị kênh value của đối tượng màu trong không gian màu HSV.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` 0-100
+Trả về: `percentage` 0-100
 
-Example: `hsvvalue(hsv(90, 100%, 50%))`
+Ví dụ: `hsvvalue(hsv(90, 100%, 50%))`
 
-Output: `50%`
+Kết quả: `50%`
 
 
 ### red
 
-> Extracts the red channel of a color object.
+> Lấy giá trị kênh red của đối tượng màu.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `integer` `0-255`
 
-Example: `red(rgb(10, 20, 30))`
+Ví dụ: `red(rgb(10, 20, 30))`
 
-Output: `10`
+Kết quả: `10`
 
 
 ### green
 
-> Extracts the green channel of a color object.
+> Lấy giá trị kênh green của đối tượng màu.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `integer` 0-255
+Trả về: `integer` 0-255
 
-Example: `green(rgb(10, 20, 30))`
+Ví dụ: `green(rgb(10, 20, 30))`
 
-Output: `20`
+Kết quả: `20`
 
 
 ### blue
 
-> Extracts the blue channel of a color object.
+> Lấy giá trị kênh blue của đối tượng màu.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `integer` 0-255
+Trả về: `integer` 0-255
 
-Example: `blue(rgb(10, 20, 30))`
+Ví dụ: `blue(rgb(10, 20, 30))`
 
-Output: `30`
+Kết quả: `30`
 
 
 ### alpha
 
-> Extracts the alpha channel of a color object.
+> Lấy giá trị kênh alpha của đối tượng màu.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `float` `0-1`
+Trả về: `float` `0-1`
 
-Example: `alpha(rgba(10, 20, 30, 0.5))`
+Ví dụ: `alpha(rgba(10, 20, 30, 0.5))`
 
-Output: `0.5`
+Kết quả: `0.5`
 
 
 ### luma
 
-> Calculates the [luma](http://en.wikipedia.org/wiki/Luma_%28video%29) (perceptual brightness) of a color object.
+> Tính [luma](http://en.wikipedia.org/wiki/Luma_%28video%29) (độ sáng cảm quang) của đối tượng màu.
 
-Uses **SMPTE C / Rec. 709** coefficients, as recommended in [WCAG 2.0](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef). This calculation is also used in the contrast function.
+Uses 
+ coefficients, as recommended in 
+Sử dụng hệ số **SMPTE C / Rec. 709** theo như [WCAG 2.0](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef). Phép tính này cũng được sử dụng trong hàm contrast.
 
-Before v1.7.0 the luma was calculated without gamma correction, use the luminance function to calculate these "old" values.
+Trước phiên bản v1.7.0, hàm tính luma không có bước hiệu chỉnh gamma. Từ phiên bản v1.7.0, hàm này được đổi tên thành `luminance`.
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` 0-100%
+Trả về: `percentage` 0-100%
 
-Example: `luma(rgb(100, 200, 30))`
+Ví dụ: `luma(rgb(100, 200, 30))`
 
-Output: `44%`
+Kết quả: `44%`
 
 
 ### luminance
 
-> Calculates the value of the luma without gamma correction (this function was named `luma` before v1.7.0)
+> Tính giá trị luma khi bỏ qua bước hiệu chỉnh gamma (trước phiên bản v1.7.0, hàm này tên là `luma`)
 
-Parameters: `color` - a color object.
+Tham số: `color` - đối tượng màu.
 
-Returns: `percentage` 0-100%
+Trả về: `percentage` 0-100%
 
-Example: `luminance(rgb(100, 200, 30))`
+Ví dụ: `luminance(rgb(100, 200, 30))`
 
-Output: `65%`
+Kết quả: `65%`
