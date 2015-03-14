@@ -11,19 +11,19 @@ base: content/usage
 
 published:
   v2-upgrade-guide:
-    title: V2 Upgrade Guide
+    title: Nâng cấp lên phiên bản v2
     files: <%= usage.base %>/v2-upgrade.md
 
   command-line-usage:
-    title: Command Line Usage
+    title: Less qua command line
     files: <%= usage.base %>/command-line-usage.md
 
   using-less-in-the-browser:
-    title: Using Less in the Browser
+    title: Less trong trình duyệt
     files: <%= usage.base %>/using-less-in-the-browser.md
 
   browser-support:
-    title: Browser Support
+    title: Các trình duyệt được hỗ trợ
     files: <%= usage.base %>/browser-support.md
 
   plugins:
@@ -31,31 +31,31 @@ published:
     files: <%= usage.base %>/plugins.md
 
   programmatic-usage:
-    title: Programmatic Usage
+    title: Sử dụng Less trong code
     files: <%= usage.base %>/programmatic-usage.md
 
   online-less-compilers:
-    title: Online Less Compilers
+    title: Trình dịch Less online
     files: <%= usage.base %>/online-less-compilers.md
 
   guis-for-less:
-    title: GUIs for Less
+    title: Các công cụ GUI cho Less
     files: <%= usage.base %>/guis-for-less.md
 
   editors-and-plugins:
-    title: Editors and Plugins
+    title: Editor và plugins
     files: <%= usage.base %>/editors-and-plugins.md
 
   third-party-compilers:
-    title: Third Party Compilers
+    title: Trình dịch Less từ các bên thứ ba
     files: <%= usage.base %>/third-party-compilers.md
 
   frameworks-using-less:
-    title: Frameworks Using Less
+    title: Các frameworks sử dụng Less
     files: <%= usage.base %>/frameworks-using-less.md
 
   developing-less:
-    title: Developing Less
+    title: Phát triển Less
     files: <%= usage.base %>/developing-less.md
 
 
