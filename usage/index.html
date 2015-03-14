@@ -9,7 +9,7 @@
 <meta name="author" content="The Core Less Team">
 
 <title>
-  Usage | Less.js
+  C&#xE1;ch s&#x1EED; d&#x1EE5;ng | Less.js
 </title>
 
 <!-- Main styles -->
@@ -39,7 +39,7 @@
 <link rel="shortcut icon" href="../public/ico/favicon.ico">
 
   </head>
-  <body class="usage">
+  <body class="c&#xE1;ch s&#x1EED; d&#x1EE5;ng">
     
     <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
   <div class="container">
@@ -63,7 +63,7 @@
         <li>
           <a href="../functions/">Function Reference</a>
         </li>
-        <li class="active">
+        <li>
           <a href="./">Usage</a>
         </li>
         
@@ -92,8 +92,8 @@
     
 <div class="docs-header" id="content">
   <div class="container">
-    <h1>Usage</h1>
-    <p>How to use less server-side, client-side and with third parties.</p>
+    <h1>C&#xE1;ch s&#x1EED; d&#x1EE5;ng</h1>
+    <p>C&#xE1;ch s&#x1EED; d&#x1EE5;ng less &#x1EDF; server, client v&#xE0; v&#x1EDB;i c&#xE1;c &#x1EE9;ng d&#x1EE5;ng b&#xEA;n th&#x1EE9; ba.</p>
     
   </div>
 </div>
@@ -116,32 +116,32 @@
           <div class="sidebar hidden-print" role="complementary">
             <div id="navigation">
   
-<ul class="nav sidenav"><li><a href="#using-less-environments">Using Less</a></li>
-<li><a href="#v2-upgrade-guide">V2 Upgrade Guide</a><ul class="nav"><li><a href="#v2-upgrade-guide-language-changes">Language Changes</a></li>
+<ul class="nav sidenav"><li><a href="#using-less-environments">S&#x1EED; d&#x1EE5;ng Less</a></li>
+<li><a href="#v2-upgrade-guide">N&#xE2;ng c&#x1EA5;p l&#xEA;n phi&#xEA;n b&#x1EA3;n v2</a><ul class="nav"><li><a href="#v2-upgrade-guide-language-changes">Language Changes</a></li>
 <li><a href="#v2-upgrade-guide-command-line-usage">Command line usage</a></li>
 <li><a href="#v2-upgrade-guide-clean-css">Clean CSS</a></li>
 <li><a href="#v2-upgrade-guide-sourcemaps">Sourcemaps</a></li>
 <li><a href="#v2-upgrade-guide-programmatic-usage">Programmatic Usage</a></li>
 <li><a href="#v2-upgrade-guide-browser-usage">Browser usage</a></li></ul></li>
-<li><a href="#command-line-usage">Command Line Usage</a><ul class="nav"><li><a href="#command-line-usage-installing-lessc-for-use-globally">Installing lessc for use globally</a></li>
+<li><a href="#command-line-usage">Less qua command line</a><ul class="nav"><li><a href="#command-line-usage-installing-lessc-for-use-globally">Installing lessc for use globally</a></li>
 <li><a href="#command-line-usage-installing-for-node-development">Installing for node development</a></li>
 <li><a href="#command-line-usage-server-side-and-command-line-usage">Server-Side and Command Line Usage</a></li>
 <li><a href="#command-line-usage-command-line-usage">Command line usage</a></li>
 <li><a href="#command-line-usage-options">Options</a></li></ul></li>
-<li><a href="#using-less-in-the-browser">Using Less in the Browser</a><ul class="nav"><li><a href="#using-less-in-the-browser-setting-options">Setting options</a></li>
+<li><a href="#using-less-in-the-browser">Less trong tr&#xEC;nh duy&#x1EC7;t</a><ul class="nav"><li><a href="#using-less-in-the-browser-setting-options">Setting options</a></li>
 <li><a href="#using-less-in-the-browser-watch-mode">Watch mode</a></li>
 <li><a href="#using-less-in-the-browser-modify-variables">Modify variables</a></li>
 <li><a href="#using-less-in-the-browser-debugging">Debugging</a></li>
 <li><a href="#using-less-in-the-browser-options">Options</a></li>
 <li><a href="#using-less-in-the-browser-relativeurls">relativeUrls</a></li></ul></li>
-<li><a href="#browser-support">Browser Support</a></li>
+<li><a href="#browser-support">C&#xE1;c tr&#xEC;nh duy&#x1EC7;t &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3;</a></li>
 <li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#plugins-how-do-i-use-a-plugin-command-line">How do I use a plugin ? - command line</a></li>
 <li><a href="#plugins-using-a-plugin-in-code">Using a plugin in code</a></li>
 <li><a href="#plugins-in-the-browser">In the browser</a></li>
 <li><a href="#plugins-list-of-less-plugins">List of less plugins</a></li>
 <li><a href="#plugins-for-plugin-authors">For plugin authors</a></li></ul></li>
-<li><a href="#programmatic-usage">Programmatic Usage</a><ul class="nav"><li><a href="#programmatic-usage-getting-access-to-the-log">Getting access to the log</a></li></ul></li>
-<li><a href="#online-less-compilers">Online Less Compilers</a><ul class="nav"><li><a href="#online-less-compilers--less2css-org-http-less2css-org-">less2css.org</a></li>
+<li><a href="#programmatic-usage">S&#x1EED; d&#x1EE5;ng Less trong code</a><ul class="nav"><li><a href="#programmatic-usage-getting-access-to-the-log">Getting access to the log</a></li></ul></li>
+<li><a href="#online-less-compilers">Tr&#xEC;nh d&#x1ECB;ch Less online</a><ul class="nav"><li><a href="#online-less-compilers--less2css-org-http-less2css-org-">less2css.org</a></li>
 <li><a href="#online-less-compilers--winless-org-online-less-compiler-http-winless-org-online-less-compiler-">winless.org/online-less-compiler</a></li>
 <li><a href="#online-less-compilers--lesstester-com-http-lesstester-com-">lesstester.com</a></li>
 <li><a href="#online-less-compilers--dopefly-com-less-converter-http-www-dopefly-com-less-converter-less-converter-html-">dopefly.com/less-converter</a></li>
@@ -154,7 +154,7 @@
 <li><a href="#online-less-compilers--fiddle-salad-http-fiddlesalad-com-less-">Fiddle Salad</a></li>
 <li><a href="#online-less-compilers--js-bin-http-jsbin-com-">JS Bin</a></li>
 <li><a href="#online-less-compilers--jsfiddle-http-jsfiddle-net-hb2rsm2x-">jsFiddle</a></li></ul></li>
-<li><a href="#guis-for-less">GUIs for Less</a><ul class="nav"><li><a href="#guis-for-less-cross-platform">Cross platform</a></li>
+<li><a href="#guis-for-less">C&#xE1;c c&#xF4;ng c&#x1EE5; GUI cho Less</a><ul class="nav"><li><a href="#guis-for-less-cross-platform">Cross platform</a></li>
 <li><a href="#guis-for-less--crunch-http-crunchapp-net-">Crunch!</a></li>
 <li><a href="#guis-for-less--mixture-http-mixture-io-">Mixture</a></li>
 <li><a href="#guis-for-less--simpless-http-wearekiss-com-simpless-">SimpLESS</a></li>
@@ -163,18 +163,18 @@
 <li><a href="#guis-for-less-windows">Windows</a></li>
 <li><a href="#guis-for-less-osx">OSx</a></li>
 <li><a href="#guis-for-less-linux">Linux</a></li></ul></li>
-<li><a href="#editors-and-plugins">Editors and Plugins</a><ul class="nav"><li><a href="#editors-and-plugins-editors-and-ides">Editors and IDEs</a></li>
+<li><a href="#editors-and-plugins">Editor v&#xE0; plugins</a><ul class="nav"><li><a href="#editors-and-plugins-editors-and-ides">Editors and IDEs</a></li>
 <li><a href="#editors-and-plugins--sublime-text-2-3-http-sublimetext-com-">Sublime Text 2 &amp; 3</a></li>
 <li><a href="#editors-and-plugins--eclipse-http-www-eclipse-org-">Eclipse</a></li>
 <li><a href="#editors-and-plugins--visual-studio-http-www-visualstudio-com-">Visual Studio</a></li>
 <li><a href="#editors-and-plugins--dreamweaver-http-www-adobe-com-products-dreamweaver-html-">Dreamweaver</a></li>
 <li><a href="#editors-and-plugins--notepad-6-x-npp-">Notepad++ 6.x</a></li></ul></li>
-<li><a href="#third-party-compilers">Third Party Compilers</a><ul class="nav"><li><a href="#third-party-compilers-node-js-compilers">Node.js compilers</a></li>
+<li><a href="#third-party-compilers">Tr&#xEC;nh d&#x1ECB;ch Less t&#x1EEB; c&#xE1;c b&#xEA;n th&#x1EE9; ba</a><ul class="nav"><li><a href="#third-party-compilers-node-js-compilers">Node.js compilers</a></li>
 <li><a href="#third-party-compilers-other-technologies">Other technologies</a></li></ul></li>
-<li><a href="#frameworks-using-less">Frameworks Using Less</a><ul class="nav"><li><a href="#frameworks-using-less-ui-theme-frameworks-and-components">UI/Theme Frameworks and Components</a></li>
+<li><a href="#frameworks-using-less">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less</a><ul class="nav"><li><a href="#frameworks-using-less-ui-theme-frameworks-and-components">UI/Theme Frameworks and Components</a></li>
 <li><a href="#frameworks-using-less-grid-systems">Grid Systems</a></li>
 <li><a href="#frameworks-using-less-mixin-libraries">Mixin Libraries</a></li></ul></li>
-<li><a href="#developing-less">Developing Less</a><ul class="nav"><li><a href="#developing-less-install-these-tools">Install these tools</a></li>
+<li><a href="#developing-less">Ph&#xE1;t tri&#x1EC3;n Less</a><ul class="nav"><li><a href="#developing-less-install-these-tools">Install these tools</a></li>
 <li><a href="#developing-less-usage">Usage</a></li>
 <li><a href="#developing-less-how-to-run-less-in-other-environments">How to run less in other environments</a></li>
 <li><a href="#developing-less-guide">Guide</a></li>
@@ -189,17 +189,17 @@
 <!-- Usage
 =================================== -->
 <div class="docs-section">
-  <h1 class="docs-heading">Using Less<span class="anchor-target" id="using-less-environments"></span>
+  <h1 class="docs-heading">S&#x1EED; d&#x1EE5;ng Less<span class="anchor-target" id="using-less-environments"></span>
 <a href="#using-less-environments" name="using-less-environments" class="anchor glyphicon glyphicon-link"></a></h1>
-  <p class="lead">Using less in node, browser and third party. For general installation instructions and an overview, please read the <a href="/#using-less">Using Less</a> section on our front page.</p>
+  <p class="lead">C&#xE1;ch s&#x1EED; d&#x1EE5;ng less v&#x1EDB;i node, tr&#xEC;nh duy&#x1EC7;t v&#xE0; &#x1EE9;ng d&#x1EE5;ng b&#xEA;n th&#x1EE9; ba. H&#x1B0;&#x1EDB;ng d&#x1EAB;n c&#xE0;i &#x111;&#x1EB7;t v&#xE0; t&#x1ED5;ng quan v&#x1EC1; Less xem t&#x1EA1;i m&#x1EE5;c <a href="/#using-less">Using Less</a> &#x1EDF; trang ch&#x1EE7;.</p>
 </div>
 
 
 
-  <!-- V2 Upgrade Guide -->
+  <!-- Nâng cấp lên phiên bản v2 -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">V2 Upgrade Guide<span class="anchor-target" id="v2-upgrade-guide"></span>
+      <h1 class="docs-heading">N&#xE2;ng c&#x1EA5;p l&#xEA;n phi&#xEA;n b&#x1EA3;n v2<span class="anchor-target" id="v2-upgrade-guide"></span>
 <a href="#v2-upgrade-guide" name="v2-upgrade-guide" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -256,10 +256,10 @@ See <a href="#programmatic-usage">Programmatic Usage</a> for more information.</
 
   </div>
 
-  <!-- Command Line Usage -->
+  <!-- Less qua command line -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Command Line Usage<span class="anchor-target" id="command-line-usage"></span>
+      <h1 class="docs-heading">Less qua command line<span class="anchor-target" id="command-line-usage"></span>
 <a href="#command-line-usage" name="command-line-usage" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -540,10 +540,10 @@ or --clean-css=&quot;advanced&quot;</p>
 
   </div>
 
-  <!-- Using Less in the Browser -->
+  <!-- Less trong trình duyệt -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Using Less in the Browser<span class="anchor-target" id="using-less-in-the-browser"></span>
+      <h1 class="docs-heading">Less trong tr&#xEC;nh duy&#x1EC7;t<span class="anchor-target" id="using-less-in-the-browser"></span>
 <a href="#using-less-in-the-browser" name="using-less-in-the-browser" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -752,10 +752,10 @@ If you use the watcher or call refresh with reload set to true, then the cache w
 
   </div>
 
-  <!-- Browser Support -->
+  <!-- Các trình duyệt được hỗ trợ -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Browser Support<span class="anchor-target" id="browser-support"></span>
+      <h1 class="docs-heading">C&#xE1;c tr&#xEC;nh duy&#x1EC7;t &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3;<span class="anchor-target" id="browser-support"></span>
 <a href="#browser-support" name="browser-support" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -902,10 +902,10 @@ file-manager: <a href="https://github.com/less/less-plugin-npm-import">https://g
 
   </div>
 
-  <!-- Programmatic Usage -->
+  <!-- Sử dụng Less trong code -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Programmatic Usage<span class="anchor-target" id="programmatic-usage"></span>
+      <h1 class="docs-heading">S&#x1EED; d&#x1EE5;ng Less trong code<span class="anchor-target" id="programmatic-usage"></span>
 <a href="#programmatic-usage" name="programmatic-usage" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -983,10 +983,10 @@ less.render(lessInput, {sourceMap: {sourceMapFileInline: true}})
 
   </div>
 
-  <!-- Online Less Compilers -->
+  <!-- Trình dịch Less online -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Online Less Compilers<span class="anchor-target" id="online-less-compilers"></span>
+      <h1 class="docs-heading">Tr&#xEC;nh d&#x1ECB;ch Less online<span class="anchor-target" id="online-less-compilers"></span>
 <a href="#online-less-compilers" name="online-less-compilers" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1076,10 +1076,10 @@ less.render(lessInput, {sourceMap: {sourceMapFileInline: true}})
 
   </div>
 
-  <!-- GUIs for Less -->
+  <!-- Các công cụ GUI cho Less -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">GUIs for Less<span class="anchor-target" id="guis-for-less"></span>
+      <h1 class="docs-heading">C&#xE1;c c&#xF4;ng c&#x1EE5; GUI cho Less<span class="anchor-target" id="guis-for-less"></span>
 <a href="#guis-for-less" name="guis-for-less" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1191,10 +1191,10 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
 
   </div>
 
-  <!-- Editors and Plugins -->
+  <!-- Editor và plugins -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Editors and Plugins<span class="anchor-target" id="editors-and-plugins"></span>
+      <h1 class="docs-heading">Editor v&#xE0; plugins<span class="anchor-target" id="editors-and-plugins"></span>
 <a href="#editors-and-plugins" name="editors-and-plugins" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1273,10 +1273,10 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
 
   </div>
 
-  <!-- Third Party Compilers -->
+  <!-- Trình dịch Less từ các bên thứ ba -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Third Party Compilers<span class="anchor-target" id="third-party-compilers"></span>
+      <h1 class="docs-heading">Tr&#xEC;nh d&#x1ECB;ch Less t&#x1EEB; c&#xE1;c b&#xEA;n th&#x1EE9; ba<span class="anchor-target" id="third-party-compilers"></span>
 <a href="#third-party-compilers" name="third-party-compilers" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1341,10 +1341,10 @@ Download the <a href="http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-w
 
   </div>
 
-  <!-- Frameworks Using Less -->
+  <!-- Các frameworks sử dụng Less -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Frameworks Using Less<span class="anchor-target" id="frameworks-using-less"></span>
+      <h1 class="docs-heading">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less<span class="anchor-target" id="frameworks-using-less"></span>
 <a href="#frameworks-using-less" name="frameworks-using-less" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
@@ -1623,10 +1623,10 @@ Download the <a href="http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-w
 
   </div>
 
-  <!-- Developing Less -->
+  <!-- Phát triển Less -->
   <div class="docs-section">
     <div class="page-header">
-      <h1 class="docs-heading">Developing Less<span class="anchor-target" id="developing-less"></span>
+      <h1 class="docs-heading">Ph&#xE1;t tri&#x1EC3;n Less<span class="anchor-target" id="developing-less"></span>
 <a href="#developing-less" name="developing-less" class="anchor glyphicon glyphicon-link"></a></h1>
     </div>
 
