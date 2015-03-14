@@ -1,156 +1,149 @@
-Color operations generally take parameters in the same units as the values they are changing, and percentages are handled as absolutes, so increasing a 10% value by 10% results in 20%, not 11%, and values are clamped to their allowed ranges; they do not wrap around. Where return values are shown, we've used formats that make it clear what each function has done, in addition to the hex versions that you will usually be be working with.
+Các phép toán màu sắc thường nhận tham số có cùng đơn vị với màu đối chiếu, và phần trăm với giá trị tuyệt đối, vì vậy tăng 10% của 10% giá trị sẽ là 20% chứ không phải 11%, và các giá trị được giới hạn trong phạm vi cho phép. Với những phép toán trả về giá trị, bên cạnh giá trị màu hex quen thuộc, Less sử dụng các định dạng phù hợp giúp bạn dễ dàng hiểu chức năng của từng phép toán.
 
 ### saturate
 
-> Increase the saturation of a color in the HSL color space by an absolute amount.
+> Tăng giá trị saturation trong không gian màu HSL lên một lượng xác định
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `saturate(hsl(90, 80%, 50%), 20%)`
 
-Example: `saturate(hsl(90, 80%, 50%), 20%)`
-
-Output: `#80ff00 // hsl(90, 100%, 50%)`
+Kết quả: `#80ff00 // hsl(90, 100%, 50%)`
 
 ![Color 1](holder.js/100x40/#80e619:#000000/text:80e619) ➜ ![Color 2](holder.js/100x40/#80ff00:#000000/text:80ff00)
 
 ### desaturate
 
-> Decrease the saturation of a color in the HSL color space by an absolute amount.
+> Giảm giá trị saturation trong không gian màu HSL đi một lượng xác định
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `desaturate(hsl(90, 80%, 50%), 20%)`
 
-Example: `desaturate(hsl(90, 80%, 50%), 20%)`
-
-Output: `#80cc33 // hsl(90, 60%, 50%)`
+Kết quả: `#80cc33 // hsl(90, 60%, 50%)`
 
 ![Color 1](holder.js/100x40/#80e619:#000000/text:80e619) ➜ ![Color 2](holder.js/100x40/#80cc33:#000000/text:80cc33)
 
 ### lighten
 
-> Increase the lightness of a color in the HSL color space by an absolute amount.
+> Tăng giá trị lightness trong không gian màu HSL lên một lượng nhất định.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `lighten(hsl(90, 80%, 50%), 20%)`
 
-Example: `lighten(hsl(90, 80%, 50%), 20%)`
-
-Output: `#b3f075 // hsl(90, 80%, 70%)`
+Kết quả: `#b3f075 // hsl(90, 80%, 70%)`
 
 ![Color 1](holder.js/100x40/#80e619:#000000/text:80e619) ➜ ![Color 2](holder.js/100x40/#b3f075:#000000/text:b3f075)
 
 ### darken
 
-> Decrease the lightness of a color in the HSL color space by an absolute amount.
+> Giảm giá trị lightness trong không gian màu HSL đi một lượng nhất định.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `darken(hsl(90, 80%, 50%), 20%)`
 
-Example: `darken(hsl(90, 80%, 50%), 20%)`
-
-Output: `#4d8a0f // hsl(90, 80%, 30%)`
+Kết quả: `#4d8a0f // hsl(90, 80%, 30%)`
 
 ![Color 1](holder.js/100x40/#80e619:#000000/text:80e619) ➜ ![Color 2](holder.js/100x40/#4d8a0f:#000000/text:4d8a0f)
 
 ### fadein
 
-> Decrease the transparency (or increase the opacity) of a color, making it more opaque.
+> Giảm độ trong suốt (tăng độ đục) của màu, làm nó thêm đục.
 
-Has no effect on opaque colors. To fade in the other direction use `fadeout`.
+Không có tác dụng trên màu đục. Dùng `fadeout` để fade theo hướng ngược lại.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `fadein(hsla(90, 90%, 50%, 0.5), 10%)`
 
-Example: `fadein(hsla(90, 90%, 50%, 0.5), 10%)`
-
-Output: `rgba(128, 242, 13, 0.6) // hsla(90, 90%, 50%, 0.6)`
+Kết quả: `rgba(128, 242, 13, 0.6) // hsla(90, 90%, 50%, 0.6)`
 
 
 ### fadeout
 
-> Increase the transparency (or decrease the opacity) of a color, making it less opaque. To fade in the other direction use `fadein`.
+> Tăng độ trong suốt (giảm độ đục) của màu, làm nó thêm trong suốt.
+Dùng `fadein` để fade theo hướng ngược lại.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `fadeout(hsla(90, 90%, 50%, 0.5), 10%)`
 
-Example: `fadeout(hsla(90, 90%, 50%, 0.5), 10%)`
-
-Output: `rgba(128, 242, 13, 0.4) // hsla(90, 90%, 50%, 0.4)`
+Kết quả: `rgba(128, 242, 13, 0.4) // hsla(90, 90%, 50%, 0.4)`
 
 
 ### fade
 
-> Set the absolute transparency of a color. Can be applied to colors whether they already have an opacity value or not.
+> Chỉnh độ trong suốt của một màu đến một độ nhất định. Có thể áp dụng với màu đã sẵn trong suốt và cả màu đục.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `amount`: Phần trăm (trong khoảng 0-100%).
 
-* `color`: A color object.
-* `amount`: A percentage 0-100%.
+Trả về: `color`
 
-Returns: `color`
+Ví dụ: `fade(hsl(90, 90%, 50%), 10%)`
 
-Example: `fade(hsl(90, 90%, 50%), 10%)`
-
-Output: `rgba(128, 242, 13, 0.1) //hsla(90, 90%, 50%, 0.1)`
+Kết quả: `rgba(128, 242, 13, 0.1) //hsla(90, 90%, 50%, 0.1)`
 
 
 ### spin
 
-> Rotate the hue angle of a color in either direction.
+> Quay góc hue đi một góc.
 
-While the angle range is 0-360, it applies a mod 360 operation, so you can pass in much larger (or negative) values and they will wrap around e.g. angles of 360 and 720 will produce the same result. Note that colors are passed through an RGB conversion, which doesn't retain hue value for greys (because hue has no meaning when there is no saturation), so make sure you apply functions in a way that preserves hue, for example don't do this:
+Bạn có thể sử dụng một số bất kỳ, less sẽ xử lý và trả về số đo góc tương đương. Ví dụ: 360 và 720 sẽ cho ra cùng một kết quả. Lưu ý rằng màu được truyền qua hàm chuyển đổi RGB, và hàm này không giữ giá trị hue của các màu xám (vì hue không có ý nghĩa gì khi không có saturation), vì vậy hãy đảm bảo rằng bạn sử dụng các function đúng cách để giữ lại hue, đừng làm như ví dụ sau:
 
 ```less
 @c: saturate(spin(#aaaaaa, 10), 10%);
 ```
 
-Do this instead:
+Thay vào đó, hãy làm như thế này:
 
 ```less
 @c: spin(saturate(#aaaaaa, 10%), 10);
 ```
 
-Colors are always returned as RGB values, so applying `spin` to a grey value will do nothing.
+Giá trị màu trả về luôn là RGB, vì vậy dùng `spin` vào một màu xám sẽ là vô nghĩa.
 
-Parameters:
+Tham số:
+* `color`: Đối tượng màu.
+* `angle`: Góc quay.
 
-* `color`: A color object.
-* `angle`: A number of degrees to rotate (+ or -).
+Trả về: `color`
 
-Returns: `color`
-
-Example:
+Ví dụ:
 
 ```less
 spin(hsl(10, 90%, 50%), 30)
 spin(hsl(10, 90%, 50%), -30)
 ```
 
-Output:
+Kết quả:
 
 ```css
 #f2a60d // hsl(40, 90%, 50%)
@@ -163,24 +156,23 @@ Output:
 
 ### mix
 
-> Mix two colors together in variable proportion. Opacity is included in the calculations.
+> Trộn hai màu vào nhau theo tỷ lệ biến (bao gồm cả độ đục).
 
-Parameters:
+Tham số:
+* `color1`: Đối tượng màu.
+* `color2`: Đối tượng màu.
+* `weight`: không bắt buộc, phần trăm (điểm cân bằng giữa hai màu), mặc định là 50%, defaults to 50%.
 
-* `color1`: A color object.
-* `color2`: A color object.
-* `weight`: Optional, a percentage balance point between the two colors, defaults to 50%.
+Trả về: `color`
 
-Returns: `color`
-
-Example:
+Ví dụ:
 
 ```less
 mix(#ff0000, #0000ff, 50%)
 mix(rgba(100,0,0,1.0), rgba(0,100,0,0.5), 50%)
 ```
 
-Output:
+Kết quả:
 
 ```css
 #800080
@@ -191,53 +183,52 @@ rgba(75, 25, 0, 0.75)
 
 ### greyscale
 
-> Remove all saturation from a color in the HSL color space; the same as calling `desaturate(@color, 100%)`.
+> Loại bỏ tất cả saturation khỏi màu trong không gian màu HSL; tương đương với `desaturate(@color, 100%)`.
 
-Because the saturation is not affected by hue, the resulting color mapping may be somewhat dull or muddy; [`luma`](#color-channel-luma) may provide a better result as it extracts perceptual rather than linear brightness, for example `greyscale('#0000ff')` will return the same value as `greyscale('#00ff00')`, though they appear quite different in brightness to the human eye.
+Do hue không tác động lên saturation nên phép ánh xạ màu có thể mờ hoặc lộn xộn; [`luma`](#color-channel-luma) có thể đem lại kết quả tốt hơn vì nó trích xuất theo độ sáng cảm quan thay vì độ sáng tuyến tính, ví dụ `greyscale('#0000ff')` sẽ trả về kết quả giống với `greyscale('#00ff00')`, mặc dù hai màu này khác nhau khá nhiều về độ sáng đối với mắt người.
 
-Parameters: `color`: A color object.
+Tham số: `color`: Đối tượng màu.
 
-Returns: `color`
+Trả về: `color`
 
-Example: `greyscale(hsl(90, 90%, 50%))`
+Ví dụ: `greyscale(hsl(90, 90%, 50%))`
 
-Output: `#808080 // hsl(90, 0%, 50%)`
+Kết quả: `#808080 // hsl(90, 0%, 50%)`
 
 ![Color 1](holder.js/100x40/#80f20d:#000000/text:80f20d) ➜ ![Color 2](holder.js/100x40/#808080:#000000/text:808080)
 
-Notice that the generated grey looks darker than the original green, even though its lightness value is the same.
+Lưu ý rằng màu xám được tạo ra trông sẽ tối hơn màu xanh gốc, dù giá trị lightness là như nhau.
 
-Compare with using `luma` (usage is different because `luma` returns a single value, not a color):
+So sánh việc sử dụng `luma` (cách dùng sẽ khác nhau vì `luma` trả về một giá trị đơn, không phải một màu):
 
 ```less
 @c: luma(hsl(90, 90%, 50%));
 color: rgb(@c, @c, @c);
 ```
 
-Output: `#cacaca`
+Kết quả: `#cacaca`
 
 ![Color 1](holder.js/100x40/#80f20d:#000000/text:80f20d) ➜ ![Color 2](holder.js/100x40/#cacaca:#000000/text:cacaca)
 
-This time the grey's lightness looks about the same as the green, though its value is actually higher.
+Trong trường hợp này, giá trị lightness của màu xám trông sẽ giống với màu xanh, mặc dù giá trị của nó lớn hơn.
 
 ### contrast
 
-> Choose which of two colors provides the greatest contrast with another.
+> Chọn màu có độ tương phản cao hơn trong hai màu.so vỚi màu đối chiếu.
 
-This is useful for ensuring that a color is readable against a background, which is also useful for accessibility compliance. This function works the same way as the [contrast function in Compass for SASS](http://compass-style.org/reference/compass/utilities/color/contrast/). In accordance with [WCAG 2.0](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef), colors are compared using their gamma-corrected [luma](#color-channel-luma) value, not their lightness.
+Hàm này khá hữu ích khi bạn cần đảm bảo rằng màu chữ đủ nổi bật và dễ đọc so với màu nền, tuân theo chuẩn khả năng truy nhập. Hàm này hoạt động giống như [hàm contrast trong framework Compass của ngôn ngữ SASS](http://compass-style.org/reference/compass/utilities/color/contrast/). Theo [WCAG 2.0](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef), các màu được so sánh dựa trên [luma đã hiệu chính gamma](#color-channel-luma) chứ không dựa trên lightness.
 
-The light and dark parameters can be supplied in either order - the function will calculate their luma values and assign light and dark automatically, which means you can't use this function to select the *least* contrasting color by reversing the order.
+Các tham số sáng và tối có thể đảo cho nhau trong thứ tự tham số truyền vào - Less sẽ tính giá trị luma của các màu và chọn ra trong hai màu một màu sáng một màu tối một cách tự động, cũng có nghĩa là bạn không thể sử dụng hàm này để chọn ra màu có mức tương phản *thấp nhất* bằng cách đảo thứ tự tham số.
 
-Parameters:
+Tham số:
+* `color`: Màu đối chiếu
+* `dark`: không bắt buộc - Màu tối (mặc định là màu đen).
+* `light`: không bắt buộc - Màu sáng (mặc định là màu trắng).
+* `threshold`: không bắt buộc - Phần trăm (trong khoảng 0-100%) xác định điểm chuyển đổi giữa "tối" và "sáng" (mặc định là 43%, giống với SASS). Tham số này được sử dụng để chuyển dịch độ tương phản nghiêng về một bên, chẳng hạn như khi bạn muốn quyết định tương phản so với nền xám 50% nên là chữ đen hay chữ trắng. Thông thường,, giá trị này với bảng màu sáng sẽ thấp hơn, và sẽ cao hơn ở bảng màu tối.
 
-* `color`: A color object to compare against.
-* `dark`: optional - A designated dark color (defaults to black).
-* `light`: optional - A designated light color (defaults to white).
-* `threshold`: optional - A percentage 0-100% specifying where the transition from "dark" to "light" is (defaults to 43%, matching SASS). This is used to bias the contrast one way or another, for example to allow you to decide whether a 50% grey background should result in black or white text. You would generally set this lower for 'lighter' palettes, higher for 'darker' ones.
+Trả về: `color`
 
-Returns: `color`
-
-Example:
+Ví dụ:
 
 ```less
 p {
@@ -249,7 +240,7 @@ p {
 }
 ```
 
-Output:
+Kết quả:
 
 ```
 p {
@@ -260,7 +251,7 @@ p {
     e: #ffffff // white
 }
 ```
-These examples use the above calculated colors for background and foreground; you can see that you never end up with white-on-white, nor black-on-black, though it's possible to use the threshold to permit lower-contrast outcomes, as in the last example:
+Những ví dụ dưới đây sử dụng các màu từ phép tính bên trên làm màu nền và màu chữ; bạn có thể thấy rằng kết quả không bao giờ là nền trắng chữ trắng hay nền đen chữ đen, dù rằng bạn có thể sử dụng giá trị threshold để cho ra một kết quả có độ tương phản thấp hơn, như ở ví dụ cuối cùng:
 
 ![Color 1](holder.js/100x40/#bbbbbb:#000000/text:000000)
 ![Color 1](holder.js/100x40/#222222:#ffffff/text:ffffff)
