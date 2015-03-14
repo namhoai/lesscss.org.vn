@@ -1,88 +1,88 @@
 ### ceil
 
-> Rounds up to the next highest integer.
+> Làm tròn lên số nguyên gần nhất.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `integer`
+Trả về: `integer`
 
-Example: `ceil(2.4)`
+Ví dụ: `ceil(2.4)`
 
-Output: `3`
+Kết quả: `3`
 
 
 ### floor
 
-> Rounds down to the next lowest integer.
+> Làm trong xuống số nguyên gần nhất.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `integer`
+Trả về: `integer`
 
-Example: `floor(2.6)`
+Ví dụ: `floor(2.6)`
 
-Output: `2`
+Kết quả: `2`
 
 
 ### percentage
 
-> Converts a floating point number into a percentage string.
+> Chuyển đổi số thực sang dạng phần trăm
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `string`
+Trả về: `string`
 
-Example: `percentage(0.5)`
+Ví dụ: `percentage(0.5)`
 
-Output: `50%`
+Kết quả: `50%`
 
 
 ### round
 
-> Applies rounding.
+> Làm tròn.
 
-Parameters:
-* `number`: A floating point number.
-* `decimalPlaces`: Optional: The number of decimal places to round to. Defaults to 0.
+Tham số:
+* `number`: số thực.
+* `decimalPlaces`: không bắt buộc - số chữ số thập phân (sau dấy phẩy) của kết quả làm tròn. Mặc định là 0.
 
-Returns: `number`
+Trả về: `number`
 
-Example: `round(1.67)`
+Ví dụ: `round(1.67)`
 
-Output: `2`
+Kết quả: `2`
 
-Example: `round(1.67, 1)`
+Ví dụ: `round(1.67, 1)`
 
-Output: `1.7`
+Kết quả: `1.7`
 
 
 ### sqrt
 
-> Calculates square root of a number. Keeps units as they are.
+> Tính căn hai của một số, giữ nguyên đơn vị.
 
-Parameters: `number` - floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 sqrt(25cm)
 ```
 
-Output:
+Kết quả:
 
 ```css
 5cm
 ```
 
-Example:
+Ví dụ:
 
 ```less
 sqrt(18.6%)
 ```
 
-Output:
+Kết quả:
 
 ```js
 4.312771730569565%;
@@ -91,32 +91,32 @@ Output:
 
 ### abs
 
-> Calculates absolute value of a number. Keeps units as they are.
+> Tính giá trị tuyệt đối của một số, giữ nguyên đơn vị.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example #1: `abs(25cm)`
+Ví dụ #1: `abs(25cm)`
 
-Output: `25cm`
+Kết quả: `25cm`
 
-Example #2: `abs(-18.6%)`
+Ví dụ #2: `abs(-18.6%)`
 
-Output: `18.6%;`
+Kết quả: `18.6%;`
 
 
 ### sin
 
-> Calculates sine function.
+> Tính sin.
 
-Assumes radians on numbers without units.
+Với tham số truyền vào không có đơn vị, Less sẽ ngầm hiểu là radian.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 sin(1); // sine of 1 radian
@@ -124,7 +124,7 @@ sin(1deg); // sine of 1 degree
 sin(1grad); // sine of 1 gradian
 ```
 
-Output:
+Kết quả:
 
 ```
 0.8414709848078965; // sine of 1 radian
@@ -135,15 +135,15 @@ Output:
 
 ### asin
 
-> Calculates arcsine (inverse of sine) function.
+> Tính arcsine (đảo ngược của sin).
 
-Returns number in radians e.g. a number between `-π/2` and `π/2`.
+Trả về số đo góc (đơn vị radian), là một số trong khoảng từ `-π/2` đến `π/2`.
 
-Parameters: `number` - floating point number from `[-1, 1]` interval.
+Tham số: `number` - số thực trong khoảng `[-1, 1]`.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 asin(-0.8414709848078965)
@@ -151,7 +151,7 @@ asin(0)
 asin(2)
 ```
 
-Output:
+Kết quả:
 
 ```
 -1rad
@@ -162,15 +162,15 @@ NaNrad
 
 ### cos
 
-> Calculates cosine function.
+> Tính cosine.
 
-Assumes radians on numbers without units.
+Với tham số truyền vào không có đơn vị, Less sẽ ngầm hiểu là radian.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 cos(1) // cosine of 1 radian
@@ -178,7 +178,7 @@ cos(1deg) // cosine of 1 degree
 cos(1grad) // cosine of 1 gradian
 ```
 
-Output:
+Kết quả:
 
 ```
 0.5403023058681398 // cosine of 1 radian
@@ -189,15 +189,15 @@ Output:
 
 ### acos
 
-> Calculates arccosine (inverse of cosine) function.
+> Tính arccos (đảo ngược của cos).
 
-Returns number in radians e.g. a number between 0 and π.
+Trả về số đo góc (đơn vị radian), là một số trong khoảng từ 0 đến π.
 
-Parameters: `number` - a floating point number from [-1, 1] interval.
+Tham số: `number` - số thực trong khoảng [-1, 1].
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 acos(0.5403023058681398)
@@ -205,7 +205,7 @@ acos(1)
 acos(2)
 ```
 
-Output:
+Kết quả:
 
 ```
 1rad
@@ -216,15 +216,15 @@ NaNrad
 
 ### tan
 
-> Calculates tangent function.
+> Tính tan.
 
-Assumes radians on numbers without units.
+Với tham số truyền vào không có đơn vị, Less sẽ ngầm hiểu là radian.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 tan(1) // tangent of 1 radian
@@ -232,7 +232,7 @@ tan(1deg) // tangent of 1 degree
 tan(1grad) // tangent of 1 gradian
 ```
 
-Output:
+Kết quả:
 
 ```
 1.5574077246549023   // tangent of 1 radian
@@ -243,15 +243,15 @@ Output:
 
 ### atan
 
-> Calculates arctangent (inverse of tangent) function.
+> Tính arctan (đảo ngược của tan).
 
-Returns number in radians e.g. a number between `-π/2` and `π/2`.
+Trả về số đo góc (đơn vị radian), là một số trong khoảng từ `-π/2` đến `π/2`.
 
-Parameters: `number` - a floating point number.
+Tham số: `number` - số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 atan(-1.5574077246549023)
@@ -259,7 +259,7 @@ atan(0)
 round(atan(22), 6) // arctangent of 22 rounded to 6 decimal places
 ```
 
-Output:
+Kết quả:
 
 ```
 -1rad
@@ -270,19 +270,19 @@ Output:
 
 ### pi
 
-> Returns &pi; (pi);
+> Trả về &pi; (pi);
 
-Parameters: `none`
+Tham số: `none`
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 pi()
 ```
 
-Output:
+Kết quả:
 
 ```
 3.141592653589793
@@ -291,17 +291,18 @@ Output:
 
 ### pow
 
-> Returns the value of the first argument raised to the power of the second argument.
+> Trả về lũy thừa của tham số thứ nhất với số mũ là tham số thứ hai.
 
-Returned value has the same dimension as the first parameter and the dimension of the second parameter is ignored.
+Giá trị trả về có cùng đơn vị với tham số thứ nhất, Less bỏ qua đơn vị của tham số thứ hai.
 
-Parameters:
-* `number`: base -a floating point number.
-* `number`: exponent - a floating point number.
 
-Returns: `number`
+Tham số:
+* `number`: cơ số -số thực.
+* `number`: số mũ - số thực.
 
-Example:
+Trả về: `number`
+
+Ví dụ:
 
 ```less
 pow(0cm, 0px)
@@ -311,7 +312,7 @@ pow(-25, 0.5)
 pow(-25%, -0.5)
 ```
 
-Output:
+Kết quả:
 
 ```
 1cm
@@ -324,17 +325,17 @@ NaN%
 
 ### mod
 
-> Returns the value of the first argument modulus second argument.
+> Trả về số dư của phép chia tham số thứ nhất cho tham số thứ hai.
 
-Returned value has the same dimension as the first parameter, the dimension of the second parameter is ignored. The function is able to handle also negative and floating point numbers.
+Giá trị trả về có cùng đơn vị với tham số thứ nhất, Less bỏ qua đơn vị của tham số thứ hai. Hàm này làm việc với cả số âm và số thực.
 
-Parameters:
-* `number`: a floating point number.
-* `number`: a floating point number.
+Tham số:
+* `number`: số thực.
+* `number`: số thực.
 
-Returns: `number`
+Trả về: `number`
 
-Example:
+Ví dụ:
 
 ```less
 mod(0cm, 0px)
@@ -342,7 +343,7 @@ mod(11cm, 6px);
 mod(-26%, -5);
 ```
 
-Output:
+Kết quả:
 
 ```
 NaNcm;
@@ -353,33 +354,33 @@ NaNcm;
 
 ### min
 
-> Returns the lowest of one or more values.
+> Trả về giá trị nhỏ nhất trong các giá trị truyền vào.
 
-Parameters: `value1, ..., valueN` - one or more values to compare.
+Tham số: `value1, ..., valueN` - một hoặc nhiều giá trị
 
-Returns: the lowest value.
+Trả về: giá trị nhỏ nhất.
 
-Example: `min(5, 10);`
+Ví dụ: `min(5, 10);`
 
-Output: `5`
+Kết quả: `5`
 
-Example: `min(3px, 42px, 1px, 16px);`
+Ví dụ: `min(3px, 42px, 1px, 16px);`
 
-Output: `1px`
+Kết quả: `1px`
 
 
 ### max
 
-> Returns the highest of one or more values.
+> Trả về giá trị lớn nhất trong các giá trị truyền vào.
 
-Parameters: `value1, ..., valueN` - one or more values to compare.
+Tham số: `value1, ..., valueN` - một hoặc nhiều giá trị
 
-Returns: the highest value.
+Trả về: giá trị lớn nhất.
 
-Example: `max(5, 10);`
+Ví dụ: `max(5, 10);`
 
-Output: `10`
+Kết quả: `10`
 
-Example: `max(3%, 42%, 1%, 16%);`
+Ví dụ: `max(3%, 42%, 1%, 16%);`
 
-Output: `42%`
+Kết quả: `42%`
