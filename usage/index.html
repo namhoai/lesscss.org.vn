@@ -123,11 +123,11 @@
 <li><a href="#v2-upgrade-guide-sourcemaps">Sourcemaps</a></li>
 <li><a href="#v2-upgrade-guide-programmatic-usage">Programmatic Usage</a></li>
 <li><a href="#v2-upgrade-guide-browser-usage">Browser usage</a></li></ul></li>
-<li><a href="#command-line-usage">Less qua command line</a><ul class="nav"><li><a href="#command-line-usage-installing-lessc-for-use-globally">Installing lessc for use globally</a></li>
-<li><a href="#command-line-usage-installing-for-node-development">Installing for node development</a></li>
-<li><a href="#command-line-usage-server-side-and-command-line-usage">Server-Side and Command Line Usage</a></li>
-<li><a href="#command-line-usage-command-line-usage">Command line usage</a></li>
-<li><a href="#command-line-usage-options">Options</a></li></ul></li>
+<li><a href="#command-line-usage">Less qua command line</a><ul class="nav"><li><a href="#command-line-usage-c-i-t-lessc-s-d-ng-to-n-c-c">C&#xE0;i &#x111;&#x1EB7;t lessc &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng to&#xE0;n c&#x1EE5;c</a></li>
+<li><a href="#command-line-usage-c-i-t-cho-vi-c-ph-t-tri-n-node">C&#xE0;i &#x111;&#x1EB7;t cho vi&#x1EC7;c ph&#xE1;t tri&#x1EC3;n node</a></li>
+<li><a href="#command-line-usage-c-ch-s-d-ng-d-ng-l-nh-ph-a-server">C&#xE1;ch s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh ph&#xED;a server</a></li>
+<li><a href="#command-line-usage-s-d-ng-d-ng-l-nh">S&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh</a></li>
+<li><a href="#command-line-usage-c-c-t-y-ch-n">C&#xE1;c t&#xF9;y ch&#x1ECD;n</a></li></ul></li>
 <li><a href="#using-less-in-the-browser">Less trong tr&#xEC;nh duy&#x1EC7;t</a><ul class="nav"><li><a href="#using-less-in-the-browser-setting-options">Setting options</a></li>
 <li><a href="#using-less-in-the-browser-watch-mode">Watch mode</a></li>
 <li><a href="#using-less-in-the-browser-modify-variables">Modify variables</a></li>
@@ -163,7 +163,7 @@
 <li><a href="#guis-for-less-windows">Windows</a></li>
 <li><a href="#guis-for-less-osx">OSx</a></li>
 <li><a href="#guis-for-less-linux">Linux</a></li></ul></li>
-<li><a href="#editors-and-plugins">Editor v&#xE0; plugins</a><ul class="nav"><li><a href="#editors-and-plugins-editors-and-ides">Editors and IDEs</a></li>
+<li><a href="#editors-and-plugins">Editor v&#xE0; plugins</a><ul class="nav"><li><a href="#editors-and-plugins-c-c-tr-nh-bi-n-t-p-v-ide">C&#xE1;c tr&#xEC;nh bi&#xEA;n t&#x1EAD;p v&#xE0; IDE</a></li>
 <li><a href="#editors-and-plugins--sublime-text-2-3-http-sublimetext-com-">Sublime Text 2 &amp; 3</a></li>
 <li><a href="#editors-and-plugins--eclipse-http-www-eclipse-org-">Eclipse</a></li>
 <li><a href="#editors-and-plugins--visual-studio-http-www-visualstudio-com-">Visual Studio</a></li>
@@ -171,9 +171,9 @@
 <li><a href="#editors-and-plugins--notepad-6-x-npp-">Notepad++ 6.x</a></li></ul></li>
 <li><a href="#third-party-compilers">Tr&#xEC;nh d&#x1ECB;ch Less t&#x1EEB; c&#xE1;c b&#xEA;n th&#x1EE9; ba</a><ul class="nav"><li><a href="#third-party-compilers-c-c-tr-nh-d-ch-node-js">C&#xE1;c tr&#xEC;nh d&#x1ECB;ch Node.js</a></li>
 <li><a href="#third-party-compilers-c-c-c-ng-ngh-kh-c">C&#xE1;c c&#xF4;ng ngh&#x1EC7; kh&#xE1;c</a></li></ul></li>
-<li><a href="#frameworks-using-less">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less</a><ul class="nav"><li><a href="#frameworks-using-less-ui-theme-frameworks-and-components">UI/Theme Frameworks and Components</a></li>
-<li><a href="#frameworks-using-less-grid-systems">Grid Systems</a></li>
-<li><a href="#frameworks-using-less-mixin-libraries">Mixin Libraries</a></li></ul></li>
+<li><a href="#frameworks-using-less">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less</a><ul class="nav"><li><a href="#frameworks-using-less-c-c-framework-v-th-nh-ph-n-ui-theme">C&#xE1;c Framework v&#xE0; th&#xE0;nh ph&#x1EA7;n UI/Theme</a></li>
+<li><a href="#frameworks-using-less-c-c-h-th-ng-l-i">C&#xE1;c h&#x1EC7; th&#x1ED1;ng l&#x1B0;&#x1EDB;i</a></li>
+<li><a href="#frameworks-using-less-c-c-th-vi-n-kh-c">C&#xE1;c th&#x1B0; vi&#x1EC7;n kh&#xE1;c</a></li></ul></li>
 <li><a href="#developing-less">Ph&#xE1;t tri&#x1EC3;n Less</a><ul class="nav"><li><a href="#developing-less-install-these-tools">Install these tools</a></li>
 <li><a href="#developing-less-usage">Usage</a></li>
 <li><a href="#developing-less-how-to-run-less-in-other-environments">How to run less in other environments</a></li>
@@ -280,80 +280,80 @@ See <a href="#programmatic-usage">Programmatic Usage</a> for more information.</
 
 
 <blockquote>
-<p>Compile <code>.less</code> files to <code>.css</code> using the command line</p>
+<p>D&#x1ECB;ch c&#xE1;c t&#x1EC7;p tin <code>.less</code> th&#xE0;nh <code>.css</code> s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh</p>
 </blockquote>
-<p><span class="warning">Heads up! If the command line isn&apos;t your thing, learn more about <a href="#guis-for-less">GUIs for Less</a>.</span></p>
-<h3 class="docs-heading">Installing lessc for use globally<span class="anchor-target" id="command-line-usage-installing-lessc-for-use-globally"></span>
-<a href="#command-line-usage-installing-lessc-for-use-globally" name="command-line-usage-installing-lessc-for-use-globally" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Install with <a href="https://www.npmjs.org/">npm</a></p>
+<p><span class="warning">L&#x1B0;u &#xFD;, n&#x1EBF;u nh&#x1B0; b&#x1EA1;n kh&#xF4;ng th&#xE0;nh th&#x1EA1;o s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh, h&#xE3;y s&#x1EED; d&#x1EE5;ng <a href="#guis-for-less">GUIs cho Less</a>.</span></p>
+<h3 class="docs-heading">C&#xE0;i &#x111;&#x1EB7;t lessc &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng to&#xE0;n c&#x1EE5;c<span class="anchor-target" id="command-line-usage-c-i-t-lessc-s-d-ng-to-n-c-c"></span>
+<a href="#command-line-usage-c-i-t-lessc-s-d-ng-to-n-c-c" name="command-line-usage-c-i-t-lessc-s-d-ng-to-n-c-c" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>C&#xE0;i &#x111;&#x1EB7;t b&#x1EB1;ng <a href="https://www.npmjs.org/">npm</a></p>
 <pre><code class="lang-bash">npm install less -g
 </code></pre>
-<p>and then you will have the <code>lessc</code> command available globally. For a specific version (or tag) you can add <code>@VERSION</code> after our package name, e.g. <code>npm install less@1.6.2 -g</code>.</p>
-<h3 class="docs-heading">Installing for node development<span class="anchor-target" id="command-line-usage-installing-for-node-development"></span>
-<a href="#command-line-usage-installing-for-node-development" name="command-line-usage-installing-for-node-development" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>Alternatively if you don&apos;t use the compiler globally, you may be after</p>
+<p>v&#xE0; sau &#x111;&#xF3; b&#x1EA1;n s&#x1EBD; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng l&#x1EC7;nh <code>lessc</code> &#x1EDF; b&#x1EA5;t k&#x1EF3; n&#x1A1;i &#x111;&#xE2;u b&#x1EA1;n mu&#x1ED1;n. &#x110;&#x1ED1;i v&#x1EDB;i m&#x1ED9;t phi&#xEA;n b&#x1EA3;n c&#x1EE5; th&#x1EC3; (ho&#x1EB7;c th&#x1EBB;) b&#x1EA1;n c&#xF3; th&#x1EC3; th&#xEA;m <code>@VERSION</code> v&#xE0;o sau t&#xEA;n g&#xF3;i c&#x1EE7;a ch&#xFA;ng t&#xF4;i, V&#xED; d&#x1EE5;: <code>npm install less@1.6.2 -g</code>.</p>
+<h3 class="docs-heading">C&#xE0;i &#x111;&#x1EB7;t cho vi&#x1EC7;c ph&#xE1;t tri&#x1EC3;n node<span class="anchor-target" id="command-line-usage-c-i-t-cho-vi-c-ph-t-tri-n-node"></span>
+<a href="#command-line-usage-c-i-t-cho-vi-c-ph-t-tri-n-node" name="command-line-usage-c-i-t-cho-vi-c-ph-t-tri-n-node" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>Ngo&#xE0;i ra, n&#x1EBF;u nh&#x1B0; b&#x1EA1;n kh&#xF4;ng s&#x1EED; d&#x1EE5;ng tr&#xEC;nh d&#x1ECB;ch m&#x1ED9;t c&#xE1;ch to&#xE0;n c&#x1EE5;c, b&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng:</p>
 <pre><code class="lang-bash">npm i less --save-dev
 </code></pre>
-<p>This will install the latest official version of lessc in your project folder, also adding it to the <code>devDependencies</code> in your project&apos;s <code>package.json</code>.</p>
-<p>Note that a <a href="https://www.npmjs.org/doc/misc/semver.html#Ranges">tilde version range</a> will be automatically specified in <code>package.json</code>. This is good, as new patch releases of the latest version will be installable by npm.</p>
-<h4 class="docs-heading">Beta releases of lessc<span class="anchor-target" id="command-line-usage-beta-releases-of-lessc"></span>
-<a href="#command-line-usage-beta-releases-of-lessc" name="command-line-usage-beta-releases-of-lessc" class="anchor glyphicon glyphicon-link"></a></h4>
-<p>Periodically, as new functionality is being developed, lessc builds will be published to npm, tagged as beta. These builds will <em>not</em> be published as a <code>@latest</code> official release, and will typically have beta in the version (use <code>lessc -v</code> to get current version).</p>
-<p>Since patch releases are non-breaking we will publish patch releases immediately and alpha/beta/candidate versions will be published as minor or major version upgrades (we endeavour since 1.4.0 to follow <a href="http://semver.org/">semantic versioning</a>).</p>
-<h4 class="docs-heading">Installing an unpublished development version of lessc<span class="anchor-target" id="command-line-usage-installing-an-unpublished-development-version-of-lessc"></span>
-<a href="#command-line-usage-installing-an-unpublished-development-version-of-lessc" name="command-line-usage-installing-an-unpublished-development-version-of-lessc" class="anchor glyphicon glyphicon-link"></a></h4>
-<p>If you want to install a bleeding-edge, unpublished version of lessc, follow the instructions for specifying a <a href="https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies">git URL as a dependency</a> and be sure to specify an actual commit SHA (not a branch name) as the <code>commit-ish</code>. This will guarantee that your project always uses that exact version of lessc.</p>
-<p>The specified git URL may be that of the official lessc repo or a fork.</p>
-<h3 class="docs-heading">Server-Side and Command Line Usage<span class="anchor-target" id="command-line-usage-server-side-and-command-line-usage"></span>
-<a href="#command-line-usage-server-side-and-command-line-usage" name="command-line-usage-server-side-and-command-line-usage" class="anchor glyphicon glyphicon-link"></a></h3>
-<p>The binary included in this repository, <code>bin/lessc</code> works with <a href="http://nodejs.org/">Node.js</a> on *nix, OSX and Windows.</p>
-<p><strong>Usage</strong>: <code>lessc [option option=parameter ...] &lt;source&gt; [destination]</code></p>
-<h3 class="docs-heading">Command line usage<span class="anchor-target" id="command-line-usage-command-line-usage"></span>
-<a href="#command-line-usage-command-line-usage" name="command-line-usage-command-line-usage" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>D&#xF2;ng l&#x1EC7;nh n&#xE0;y s&#x1EBD; c&#xE0;i &#x111;&#x1EB7;t phi&#xEA;n b&#x1EA3;n ch&#xED;nh th&#x1EE9;c m&#x1EDB;i nh&#x1EA5;t c&#x1EE7;a lessc trong th&#x1B0; m&#x1EE5;c ch&#x1EE9;a d&#x1EF1; &#xE1;n c&#x1EE7;a b&#x1EA1;n, c&#x169;ng nh&#x1B0; l&#xE0; th&#xEA;m n&#xF3; v&#xE0;o <code>devDependencies</code> trong n&#x1ED9;i dung t&#x1EC7;p tin <code>package.json</code> trong d&#x1EF1; &#xE1;n c&#x1EE7;a b&#x1EA1;n.</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng m&#x1ED9;t [kho&#x1EA3;ng phi&#xEA;n b&#x1EA3;n ch&#x1EE9;a d&#x1EA5;u ng&#xE3;][] s&#x1EBD; t&#x1EF1; &#x111;&#x1ED9;ng &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; r&#xF5; trong <code>package.json</code>. Vi&#x1EC7;c n&#xE0;y s&#x1EBD; r&#x1EA5;t c&#xF3; &#xED;ch v&#xEC; nh&#x1EEF;ng b&#x1EA3;n v&#xE1; l&#x1ED7;i c&#x1EE7;a phi&#xEA;n b&#x1EA3;n m&#x1EDB;i nh&#x1EA5;t s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c t&#x1EF1; &#x111;&#x1ED9;ng c&#xE0;i &#x111;&#x1EB7;t b&#x1EDF;i npm.</p>
+<h4 class="docs-heading">C&#xE1;c phi&#xEA;n b&#x1EA3;n Beta c&#x1EE7;a lessc<span class="anchor-target" id="command-line-usage-c-c-phi-n-b-n-beta-c-a-lessc"></span>
+<a href="#command-line-usage-c-c-phi-n-b-n-beta-c-a-lessc" name="command-line-usage-c-c-phi-n-b-n-beta-c-a-lessc" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Theo &#x111;&#x1ECB;nh k&#x1EF3;, khi m&#x1ED9;t t&#xED;nh n&#x103;ng m&#x1EDB;i &#x111;&#x1B0;&#x1EE3;c ph&#xE1;t tri&#x1EC3;n, lessc s&#x1EBD; c&#xF4;ng b&#x1ED1; tr&#xEA;n npm, v&#xE0; &#x111;&#x1B0;&#x1EE3;c &#x111;&#xE1;nh d&#x1EA5;u l&#xE0; phi&#xEA;n b&#x1EA3;n beta. Tuy nhi&#xEA;n phi&#xEA;n b&#x1EA3;n n&#xE0;y <em>kh&#xF4;ng</em> kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c c&#xF4;ng b&#x1ED1; nh&#x1B0; l&#xE0; b&#x1EA3;n ph&#xE1;t h&#xE0;nh ch&#xED;nh th&#x1EE9;c <code>@latest</code>, v&#xE0; s&#x1EBD; v&#x1EAB;n c&#xF3; &quot;beta&quot; trong t&#xEA;n phi&#xEA;n b&#x1EA3;n (h&#xE3;y s&#x1EED; d&#x1EE5;ng <code>lessc -v</code> &#x111;&#x1EC3; bi&#x1EBF;t phi&#xEA;n b&#x1EA3;n hi&#x1EC7;n t&#x1EA1;i).</p>
+<p>V&#xEC; c&#xE1;c b&#x1EA3;n v&#xE1; l&#x1ED7;i l&#xE0; kh&#xF4;ng th&#x1EC3; ph&#xE1; v&#x1EE1; n&#xEA;n ch&#xFA;ng t&#xF4;i s&#x1EBD; c&#xF4;ng b&#x1ED1; c&#xE1;c b&#x1EA3;n v&#xE1; l&#x1ED7;i ngay t&#x1EE9;c th&#xF2; v&#xE0; c&#xE1;c phi&#xEA;n b&#x1EA3;n alpha/beta/candidate s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c c&#xF4;ng b&#x1ED1; nh&#x1B0; l&#xE0; phi&#xEA;n b&#x1EA3;n c&#x1EAD;p nh&#x1EAD;t tr&#x1EF1;c ti&#x1EBF;p (minor) ho&#x1EB7;c ch&#x1EE7; y&#x1EBF;u (major) (Ch&#xFA;ng t&#xF4;i &#x111;&#xE3; c&#x1ED1; g&#x1EB1;ng t&#x1EEB; phi&#xEA;n b&#x1EA3;n 1.4.0 &#x111;&#x1EC3; l&#xE0;m theo vi&#x1EC7;c <a href="http://semver.org/">&#x111;&#xE1;nh d&#x1EA5;u phi&#xEA;n b&#x1EA3;n d&#x1EA1;ng ng&#x1EEF; ngh&#x129;a</a>).</p>
+<h4 class="docs-heading">C&#xE0;i &#x111;&#x1EB7;t m&#x1ED9;t phi&#xEA;n b&#x1EA3;n &#x111;ang ph&#xE1;t tri&#x1EC3;n ch&#x1B0;a &#x111;&#x1B0;&#x1EE3;c c&#xF4;ng b&#x1ED1; c&#x1EE7;a lessc<span class="anchor-target" id="command-line-usage-c-i-t-m-t-phi-n-b-n-ang-ph-t-tri-n-ch-a-c-c-ng-b-c-a-lessc"></span>
+<a href="#command-line-usage-c-i-t-m-t-phi-n-b-n-ang-ph-t-tri-n-ch-a-c-c-ng-b-c-a-lessc" name="command-line-usage-c-i-t-m-t-phi-n-b-n-ang-ph-t-tri-n-ch-a-c-c-ng-b-c-a-lessc" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>N&#x1EBF;u nh&#x1B0; b&#x1EA1;n mu&#x1ED1;n c&#xE0;i &#x111;&#x1EB7;t m&#x1ED9;t phi&#xEA;n b&#x1EA3;n &#x111;ang ph&#xE1;t tri&#x1EC3;n, ch&#x1B0;a &#x111;&#x1B0;&#x1EE3;c c&#xF4;ng b&#x1ED1; c&#x1EE7;a lessc, h&#xE3;y l&#xE0;m theo nh&#x1EEF;ng ch&#x1EC9; d&#x1EAB;n sau &#x111;&#x1EC3; ch&#x1EC9; r&#xF5; m&#x1ED9;t <a href="https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies">URL git nh&#x1B0; m&#x1ED9;t s&#x1EF1; ph&#x1EE5; thu&#x1ED9;c</a> v&#xE0; ph&#x1EA3;i ch&#x1EAF;c ch&#x1EAF;n ch&#x1EC9; r&#xF5; m&#x1ED9;t commit SHA th&#x1EF1;c s&#x1EF1; (kh&#xF4;ng ph&#x1EA3;i m&#x1ED9;t t&#xEA;n c&#x1EE7;a nh&#xE1;nh) theo d&#x1EA1;ng <code>commit-ish</code>. Vi&#x1EC7;c n&#xE0;y &#x111;&#x1EA3;m b&#x1EA3;o cho d&#x1EF1; &#xE1;n c&#x1EE7;a b&#x1EA1;n lu&#xF4;n s&#x1EED; d&#x1EE5;ng phi&#xEA;n b&#x1EA3;n ch&#xED;nh x&#xE1;c c&#x1EE7;a lessc.</p>
+<p>URL git c&#xF3; th&#x1EC3; tr&#x1EF1;c ti&#x1EBF;p d&#x1EAB;n &#x111;&#x1EBF;n repo ch&#xED;nh th&#x1EE9;c c&#x1EE7;a lessc ho&#x1EB7;c m&#x1ED9;t fork.</p>
+<h3 class="docs-heading">C&#xE1;ch s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh ph&#xED;a server<span class="anchor-target" id="command-line-usage-c-ch-s-d-ng-d-ng-l-nh-ph-a-server"></span>
+<a href="#command-line-usage-c-ch-s-d-ng-d-ng-l-nh-ph-a-server" name="command-line-usage-c-ch-s-d-ng-d-ng-l-nh-ph-a-server" class="anchor glyphicon glyphicon-link"></a></h3>
+<p>M&#xE3; nh&#x1ECB; ph&#xE2;n &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c bao g&#x1ED3;m trong repository n&#xE0;y, <code>bin/lessc</code> ho&#x1EA1;t &#x111;&#x1ED9;ng v&#x1EDB;i <a href="http://nodejs.org/">Node.js</a> tr&#xEA;n *nix, OSX v&#xE0; Windows.</p>
+<p><strong>C&#xE1;ch s&#x1EED; d&#x1EE5;ng</strong>: <code>lessc [option option=parameter ...] &lt;source&gt; [destination]</code></p>
+<h3 class="docs-heading">S&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh<span class="anchor-target" id="command-line-usage-s-d-ng-d-ng-l-nh"></span>
+<a href="#command-line-usage-s-d-ng-d-ng-l-nh" name="command-line-usage-s-d-ng-d-ng-l-nh" class="anchor glyphicon glyphicon-link"></a></h3>
 <pre><code class="lang-bash">lessc [option option=parameter ...] &lt;<span class="hljs-built_in">source</span>&gt; [destination]
 </code></pre>
-<p>If source is set to `-&apos; (dash or hyphen-minus), input is read from stdin.</p>
-<h4 class="docs-heading">Examples<span class="anchor-target" id="command-line-usage-examples"></span>
-<a href="#command-line-usage-examples" name="command-line-usage-examples" class="anchor glyphicon glyphicon-link"></a></h4>
-<pre><code class="lang-bash"><span class="hljs-comment"># compile bootstrap.less to bootstrap.css</span>
+<p>N&#x1EBF;u nh&#x1B0; source l&#xE0; `-&apos; (d&#x1EA5;u g&#x1EA1;ch ngang), th&#xEC; &#x111;&#x1EA7;u v&#xE0;o s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1ECD;c t&#x1EEB; stdin.</p>
+<h4 class="docs-heading">C&#xE1;c v&#xED; d&#x1EE5;<span class="anchor-target" id="command-line-usage-c-c-v-d-"></span>
+<a href="#command-line-usage-c-c-v-d-" name="command-line-usage-c-c-v-d-" class="anchor glyphicon glyphicon-link"></a></h4>
+<pre><code class="lang-bash"><span class="hljs-comment"># d&#x1ECB;ch bootstrap.less th&#xE0;nh bootstrap.css</span>
 $ lessc bootstrap.less bootstrap.css
 
-<span class="hljs-comment"># compile bootstrap.less to bootstrap.css and minify (compress) the result</span>
+<span class="hljs-comment"># d&#x1ECB;ch bootstrap.less th&#xE0;nh bootstrap.css v&#xE0; sau &#x111;&#xF3; n&#xE9;n k&#x1EBF;t qu&#x1EA3;</span>
 $ lessc -x bootstrap.less bootstrap.css
 </code></pre>
-<h3 class="docs-heading">Options<span class="anchor-target" id="command-line-usage-options"></span>
-<a href="#command-line-usage-options" name="command-line-usage-options" class="anchor glyphicon glyphicon-link"></a></h3>
-<h4 class="docs-heading">Help<span class="anchor-target" id="command-line-usage-help"></span>
-<a href="#command-line-usage-help" name="command-line-usage-help" class="anchor glyphicon glyphicon-link"></a></h4>
+<h3 class="docs-heading">C&#xE1;c t&#xF9;y ch&#x1ECD;n<span class="anchor-target" id="command-line-usage-c-c-t-y-ch-n"></span>
+<a href="#command-line-usage-c-c-t-y-ch-n" name="command-line-usage-c-c-t-y-ch-n" class="anchor glyphicon glyphicon-link"></a></h3>
+<h4 class="docs-heading">Tr&#x1EE3; gi&#xFA;p<span class="anchor-target" id="command-line-usage-tr-gi-p"></span>
+<a href="#command-line-usage-tr-gi-p" name="command-line-usage-tr-gi-p" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --help
 lessc --h
 </code></pre>
-<p>Prints a help message with available options and exits.</p>
-<h4 class="docs-heading">Include paths<span class="anchor-target" id="command-line-usage-include-paths"></span>
-<a href="#command-line-usage-include-paths" name="command-line-usage-include-paths" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Hi&#x1EC3;n th&#x1ECB; tin nh&#x1EAF;n tr&#x1EE3; gi&#xFA;p v&#x1EDB;i c&#xE1;c t&#xF9;y ch&#x1ECD;n s&#x1EB5;n c&#xF3; v&#xE0; tho&#xE1;t.</p>
+<h4 class="docs-heading">C&#xE1;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n<span class="anchor-target" id="command-line-usage-c-c-ng-d-n"></span>
+<a href="#command-line-usage-c-c-ng-d-n" name="command-line-usage-c-c-ng-d-n" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --include-path=PATH1;PATH2
 </code></pre>
-<p>Sets available include paths. Separated by &apos;:&apos; or &apos;;&apos; on Windows.</p>
-<p>Use this to configure a list of paths which less will use to find imports in. You might use this for instance to specify a path to a library which you want to be referenced simply and relatively in the less files.</p>
-<p>In node, set a paths option</p>
+<p>Thi&#x1EBF;t l&#x1EAD;p c&#xE1;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#xF3; s&#x1EB5;n &#x111;&#x1B0;&#x1EE3;c ph&#xE2;n t&#xE1;ch b&#x1EDF;i d&#x1EA5;u &apos;:&apos; ho&#x1EB7;c &apos;;&apos; tr&#xEA;n Windows.</p>
+<p>S&#x1EED; d&#x1EE5;ng l&#x1EC7;nh n&#xE0;y &#x111;&#x1EC3; c&#x1EA5;u h&#xEC;nh danh s&#xE1;ch c&#xE1;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n m&#xE0; less s&#x1EBD; s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#xEC;m ki&#x1EBF;m c&#xE1;c import trong &#x111;&#xF3;. B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng l&#x1EC7;nh n&#xE0;y &#x111;&#x1EC3; ch&#x1EC9; r&#xF5; m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i m&#x1ED9;t th&#x1B0; vi&#x1EC7;n m&#xE0; b&#x1EA1;n mu&#x1ED1;n tham chi&#x1EBF;u m&#x1ED9;t c&#xE1;ch &#x111;&#x1A1;n gi&#x1EA3;n v&#xE0; t&#x1B0;&#x1A1;ng &#x111;&#x1ED1;i trong c&#xE1;c t&#x1EC7;p tin less.</p>
+<p>Trong node, thi&#x1EBF;t l&#x1EAD;p m&#x1ED9;t t&#xF9;y ch&#x1ECD;n &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n nh&#x1B0; sau:</p>
 <pre><code class="lang-js">{ paths: [<span class="hljs-string">&apos;PATH1&apos;</span>, <span class="hljs-string">&apos;PATH2&apos;</span>]  }
 </code></pre>
-<h4 class="docs-heading">Makefile<span class="anchor-target" id="command-line-usage-makefile"></span>
-<a href="#command-line-usage-makefile" name="command-line-usage-makefile" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">T&#x1EA1;o t&#x1EC7;p tin<span class="anchor-target" id="command-line-usage-t-o-t-p-tin"></span>
+<a href="#command-line-usage-t-o-t-p-tin" name="command-line-usage-t-o-t-p-tin" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -M
 lessc --depends
 </code></pre>
-<h4 class="docs-heading">No Color<span class="anchor-target" id="command-line-usage-no-color"></span>
-<a href="#command-line-usage-no-color" name="command-line-usage-no-color" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">Kh&#xF4;ng m&#xE0;u s&#x1EAF;c<span class="anchor-target" id="command-line-usage-kh-ng-m-u-s-c"></span>
+<a href="#command-line-usage-kh-ng-m-u-s-c" name="command-line-usage-kh-ng-m-u-s-c" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --no-color
 </code></pre>
-<h4 class="docs-heading">No IE Compatability<span class="anchor-target" id="command-line-usage-no-ie-compatability"></span>
-<a href="#command-line-usage-no-ie-compatability" name="command-line-usage-no-ie-compatability" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">Kh&#xF4;ng t&#x1B0;&#x1A1;ng th&#xED;ch v&#x1EDB;i IE<span class="anchor-target" id="command-line-usage-kh-ng-t-ng-th-ch-v-i-ie"></span>
+<a href="#command-line-usage-kh-ng-t-ng-th-ch-v-i-ie" name="command-line-usage-kh-ng-t-ng-th-ch-v-i-ie" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --no-ie-compat
 </code></pre>
-<p>Currently only used for the data-uri function to ensure that images aren&apos;t created that are too large for the browser to handle.</p>
-<h4 class="docs-heading">Disable JavaScript<span class="anchor-target" id="command-line-usage-disable-javascript"></span>
-<a href="#command-line-usage-disable-javascript" name="command-line-usage-disable-javascript" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Hi&#x1EC7;n t&#x1EA1;i ch&#x1EC9; s&#x1EED; d&#x1EE5;ng cho ch&#x1EE9;c n&#x103;ng data-uri &#x111;&#x1EC3; &#x111;&#x1EA3;m b&#x1EA3;o c&#xE1;c h&#xEC;nh &#x1EA3;nh kh&#xF4;ng b&#x1ECB; t&#x1EA1;o ra v&#x1EDB;i dung l&#x1B0;&#x1EE3;ng qu&#xE1; l&#x1EDB;n so v&#x1EDB;i m&#x1EE9;c m&#xE0; tr&#xEC;nh duy&#x1EC7;t c&#xF3; th&#x1EC3; x&#x1EED; l&#xFD; &#x111;&#x1B0;&#x1EE3;c.</p>
+<h4 class="docs-heading">V&#xF4; hi&#x1EC7;u h&#xF3;a JavaScript<span class="anchor-target" id="command-line-usage-v-hi-u-h-a-javascript"></span>
+<a href="#command-line-usage-v-hi-u-h-a-javascript" name="command-line-usage-v-hi-u-h-a-javascript" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --no-js
 </code></pre>
 <h4 class="docs-heading">Lint<span class="anchor-target" id="command-line-usage-lint"></span>
@@ -361,87 +361,87 @@ lessc --depends
 <pre><code class="lang-bash">lessc --lint
 lessc -<span class="hljs-operator">-l</span>
 </code></pre>
-<p>Runs the less parser and just reports errors without any output.</p>
-<h4 class="docs-heading">Silent<span class="anchor-target" id="command-line-usage-silent"></span>
-<a href="#command-line-usage-silent" name="command-line-usage-silent" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Ch&#x1EA1;y b&#x1ED9; ph&#xE2;n t&#xE1;ch less v&#xE0; ch&#x1EC9; th&#xF4;ng b&#xE1;o l&#x1ED7;i khi kh&#xF4;ng c&#xF3; &#x111;&#x1EA7;u ra.</p>
+<h4 class="docs-heading">Im l&#x1EB7;ng<span class="anchor-target" id="command-line-usage-im-l-ng"></span>
+<a href="#command-line-usage-im-l-ng" name="command-line-usage-im-l-ng" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc <span class="hljs-operator">-s</span>
 lessc --silent
 </code></pre>
-<p>Stops any warnings from being shown.</p>
-<h4 class="docs-heading">Strict Imports<span class="anchor-target" id="command-line-usage-strict-imports"></span>
-<a href="#command-line-usage-strict-imports" name="command-line-usage-strict-imports" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>V&#xF4; hi&#x1EC7;u h&#xF3;a vi&#x1EC7;c hi&#x1EC3;n th&#x1ECB; c&#xE1;c c&#x1EA3;nh b&#xE1;o.</p>
+<h4 class="docs-heading">Import ch&#x1EB7;t ch&#x1EBD;<span class="anchor-target" id="command-line-usage-import-ch-t-ch-"></span>
+<a href="#command-line-usage-import-ch-t-ch-" name="command-line-usage-import-ch-t-ch-" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --strict-imports
 </code></pre>
-<h4 class="docs-heading">Allow imports from insecure https hosts<span class="anchor-target" id="command-line-usage-allow-imports-from-insecure-https-hosts"></span>
-<a href="#command-line-usage-allow-imports-from-insecure-https-hosts" name="command-line-usage-allow-imports-from-insecure-https-hosts" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">Cho ph&#xE9;p c&#xE1;c import t&#x1EEB; c&#xE1;c host https kh&#xF4;ng an to&#xE0;n<span class="anchor-target" id="command-line-usage-cho-ph-p-c-c-import-t-c-c-host-https-kh-ng-an-to-n"></span>
+<a href="#command-line-usage-cho-ph-p-c-c-import-t-c-c-host-https-kh-ng-an-to-n" name="command-line-usage-cho-ph-p-c-c-import-t-c-c-host-https-kh-ng-an-to-n" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --insecure
 </code></pre>
-<h4 class="docs-heading">Version<span class="anchor-target" id="command-line-usage-version"></span>
-<a href="#command-line-usage-version" name="command-line-usage-version" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">Phi&#xEA;n b&#x1EA3;n<span class="anchor-target" id="command-line-usage-phi-n-b-n"></span>
+<a href="#command-line-usage-phi-n-b-n" name="command-line-usage-phi-n-b-n" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -v
 lessc --version
 </code></pre>
-<h4 class="docs-heading">Compress<span class="anchor-target" id="command-line-usage-compress"></span>
-<a href="#command-line-usage-compress" name="command-line-usage-compress" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">N&#xE9;n<span class="anchor-target" id="command-line-usage-n-n"></span>
+<a href="#command-line-usage-n-n" name="command-line-usage-n-n" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -x
 lessc --compress
 </code></pre>
-<p>Compress using less built-in compression. This does an okay job but does not utilise all the tricks of dedicated css compression. Please feel free to improve our compressed output with a pull request.</p>
-<h4 class="docs-heading">Clean CSS<span class="anchor-target" id="command-line-usage-clean-css"></span>
-<a href="#command-line-usage-clean-css" name="command-line-usage-clean-css" class="anchor glyphicon glyphicon-link"></a></h4>
-<p>In v2 of less, Clean CSS is no longer included as a direct dependency. To use clean css with lessc, use the <a href="https://github.com/less/less-plugin-clean-css">clean css plugin</a>.</p>
-<h4 class="docs-heading">Source Map Output Filename<span class="anchor-target" id="command-line-usage-source-map-output-filename"></span>
-<a href="#command-line-usage-source-map-output-filename" name="command-line-usage-source-map-output-filename" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>N&#xE9;n s&#x1EED; d&#x1EE5;ng ph&#x1B0;&#x1A1;ng ph&#xE1;p n&#xE9;n &#x111;&#x1B0;&#x1EE3;c t&#xED;ch h&#x1EE3;p s&#x1EB5;n c&#x1EE7;a Less. Ph&#x1B0;&#x1A1;ng ph&#xE1;p n&#xE0;y ho&#x1EA1;t &#x111;&#x1ED9;ng t&#x1ED1;t, nh&#x1B0;ng ch&#x1B0;a t&#x1EAD;n d&#x1EE5;ng h&#x1EBF;t c&#xE1;c th&#x1EE7; thu&#x1EAD;t n&#xE9;n CSS. H&#xE3;y t&#xF9;y &#xFD; c&#x1EA3;i ti&#x1EBF;n ph&#x1B0;&#x1A1;ng ph&#xE1;p n&#xE9;n c&#x1EE7;a ch&#xFA;ng t&#xF4;i b&#x1EB1;ng m&#x1ED9;t request pull.</p>
+<h4 class="docs-heading">D&#x1ECD;n d&#x1EB9;p r&#xE1;c CSS<span class="anchor-target" id="command-line-usage-d-n-d-p-r-c-css"></span>
+<a href="#command-line-usage-d-n-d-p-r-c-css" name="command-line-usage-d-n-d-p-r-c-css" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Trong c&#xE1;c phi&#xEA;n b&#x1EA3;n v2 c&#x1EE7;a less, Clean CSS kh&#xF4;ng c&#xF2;n &#x111;&#x1B0;&#x1EE3;c t&#xED;ch h&#x1EE3;p nh&#x1B0; l&#xE0; m&#x1ED9;t dependency tr&#x1EF1;c ti&#x1EBF;p. &#x110;&#x1EC3; s&#x1EED; d&#x1EE5;ng clean css v&#x1EDB;i lessc, h&#xE3;y tham kh&#x1EA3;o <a href="https://github.com/less/less-plugin-clean-css">plugin d&#x1ECD;n d&#x1EB9;p css</a>.</p>
+<h4 class="docs-heading">T&#xEA;n t&#x1EC7;p tin trong &#x111;&#x1EA7;u ra c&#x1EE7;a Source Map<span class="anchor-target" id="command-line-usage-t-n-t-p-tin-trong-u-ra-c-a-source-map"></span>
+<a href="#command-line-usage-t-n-t-p-tin-trong-u-ra-c-a-source-map" name="command-line-usage-t-n-t-p-tin-trong-u-ra-c-a-source-map" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map
 lessc --source-map=file.map
 </code></pre>
-<p>Tells less to generate a sourcemap. If you have the sourcemap option without a filename it will use the source less file name but with the extension map.</p>
-<h4 class="docs-heading">Source Map Rootpath<span class="anchor-target" id="command-line-usage-source-map-rootpath"></span>
-<a href="#command-line-usage-source-map-rootpath" name="command-line-usage-source-map-rootpath" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Y&#xEA;u c&#x1EA7;u less t&#x1EA1;o ra sourcemap. N&#x1EBF;u b&#x1EA1;n s&#x1EED; d&#x1EE5;ng t&#xF9;y ch&#x1ECD;n sourcemap m&#xE0; kh&#xF4;ng cung c&#x1EA5;p t&#xEA;n t&#x1EC7;p tin, d&#xF2;ng l&#x1EC7;nh s&#x1EBD; s&#x1EED; d&#x1EE5;ng t&#xEA;n t&#x1EC7;p tin less ngu&#x1ED3;n nh&#x1B0;ng v&#x1EDB;i ph&#x1EA7;n m&#x1EDF; r&#x1ED9;ng map.</p>
+<h4 class="docs-heading">&#x110;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c c&#x1EE7;a Source Map<span class="anchor-target" id="command-line-usage--ng-d-n-g-c-c-a-source-map"></span>
+<a href="#command-line-usage--ng-d-n-g-c-c-a-source-map" name="command-line-usage--ng-d-n-g-c-c-a-source-map" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map-rootpath=dev-files/
 </code></pre>
-<p>Specifies a rootpath that should be prepended to each of the less file paths inside the sourcemap and also to the path to the map file specified in your output css.</p>
-<p>Because the basepath defaults to the directory of the input less file, the rootpath defaults to the path from the sourcemap output file to the base directory of the input less file.</p>
-<p>Use this option if for instance you have a css file generated in the root on your web server but have your source less/css/map files in a different folder. So for the option above you might have</p>
+<p>Ch&#x1EC9; r&#xF5; m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c (th&#x1B0;&#x1EDD;ng l&#xE0; &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n li&#x1EC1;n tr&#x1B0;&#x1EDB;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#x1EE7;a m&#x1ED7;i t&#x1EC7;p tin less trong sourcemap v&#xE0; c&#x169;ng c&#xF3; th&#x1EC3; li&#x1EC1;n tr&#x1B0;&#x1EDB;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i t&#x1EC7;p tin map &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; r&#xF5; trong CSS &#x111;&#x1EA7;u ra).</p>
+<p>V&#xEC; &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#x1A1; s&#x1EDF; m&#x1EB7;c &#x111;&#x1ECB;nh &#x111;&#x1B0;&#x1EE3;c d&#x1EAB;n &#x111;&#x1EBF;n th&#x1B0; m&#x1EE5;c ch&#x1EE9;a t&#x1EC7;p tin less &#x111;&#x1EA7;u v&#xE0;o, n&#xEA;n &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c m&#x1EB7;c &#x111;&#x1ECB;nh s&#x1EBD; l&#xE0; &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EEB; t&#x1EC7;p tin &#x111;&#x1EA7;u ra c&#x1EE7;a sourcemap t&#x1EDB;i th&#x1B0; m&#x1EE5;c c&#x1A1; s&#x1EDF; ch&#x1EE9;a t&#x1EC7;p tin less &#x111;&#x1EA7;u v&#xE0;o.</p>
+<p>S&#x1EED; d&#x1EE5;ng t&#xF9;y ch&#x1ECD;n n&#xE0;y n&#x1EBF;u nh&#x1B0; b&#x1EA1;n c&#xF3; m&#x1ED9;t t&#x1EC7;p tin CSS &#x111;&#x1B0;&#x1EE3;c sinh ra b&#x1EDF;i root tr&#xEA;n web server c&#x1EE7;a b&#x1EA1;n nh&#x1B0;ng kh&#xF4;ng c&#xF3; c&#xE1;c t&#x1EC7;p tin less/css/map ngu&#x1ED3;n trong m&#x1ED9;t th&#x1B0; m&#x1EE5;c kh&#xE1;c. V&#xEC; v&#x1EAD;y &#x111;&#x1ED1;i v&#x1EDB;i t&#xF9;y ch&#x1ECD;n b&#xEA;n tr&#xEA;n, c&#xF3; th&#x1EC3; b&#x1EA1;n c&#x1EA7;n:</p>
 <pre><code class="lang-bash">output.css
 dev-files/output.map
 dev-files/main.less
 </code></pre>
-<h4 class="docs-heading">Source Map Basepath<span class="anchor-target" id="command-line-usage-source-map-basepath"></span>
-<a href="#command-line-usage-source-map-basepath" name="command-line-usage-source-map-basepath" class="anchor glyphicon glyphicon-link"></a></h4>
+<h4 class="docs-heading">&#x110;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#x1A1; s&#x1EDF; Source Map<span class="anchor-target" id="command-line-usage--ng-d-n-c-s-source-map"></span>
+<a href="#command-line-usage--ng-d-n-c-s-source-map" name="command-line-usage--ng-d-n-c-s-source-map" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map-basepath=less-files/
 </code></pre>
-<p>This is the opposite of the rootpath option, it specifies a path which should be removed from the output paths. For instance if you are compiling a file in the less-files directory but the source files will be available on your web server in the root or current directory, you can specify this to remove the additional <code>less-files</code> part of the path.</p>
-<p>It defaults to the path to the input less file.</p>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y ng&#x1B0;&#x1EE3;c l&#x1EA1;i v&#x1EDB;i t&#xF9;y ch&#x1ECD;n &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c (rootpath), n&#xF3; ch&#x1EC9; r&#xF5; m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c x&#xF3;a b&#x1ECF; kh&#x1ECF;i c&#xE1;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n &#x111;&#x1EA7;u ra. Ch&#x1EB3;ng h&#x1EA1;n n&#x1EBF;u nh&#x1B0; b&#x1EA1;n &#x111;ang d&#x1ECB;ch m&#x1ED9;t t&#x1EC7;p tin trong th&#x1B0; m&#x1EE5;c ch&#x1B0;a c&#xE1;c t&#x1EC7;p tin less nh&#x1B0;ng c&#xE1;c t&#x1EC7;p tin ngu&#x1ED3;n &#x111;&#xE3; c&#xF3; s&#x1EB5;n tr&#xEA;n web server c&#x1EE7;a b&#x1EA1;n trong th&#x1B0; m&#x1EE5;c g&#x1ED1;c ho&#x1EB7;c th&#x1B0; m&#x1EE5;c hi&#x1EC7;n t&#x1EA1;i c&#x1EE7;a b&#x1EA1;n, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EC9; r&#xF5; &#x111;i&#x1EC1;u n&#xE0;y b&#x1EB1;ng c&#xE1;ch x&#xF3;a b&#x1ECF; ph&#x1EA7;n <code>less-files</code> trong &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n.</p>
+<p>N&#xF3; m&#x1EB7;c &#x111;&#x1ECB;nh l&#xE0; &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i t&#x1EC7;p tin less &#x111;&#x1EA7;u v&#xE0;o.</p>
 <h4 class="docs-heading">Source Map Less Inline<span class="anchor-target" id="command-line-usage-source-map-less-inline"></span>
 <a href="#command-line-usage-source-map-less-inline" name="command-line-usage-source-map-less-inline" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map-less-inline
 </code></pre>
-<p>This option specifies that we should include all of the Less files in to the sourcemap. This means that you only need your map file to get to your original source.</p>
-<p>This can be used in conjunction with the map inline option so that you do not need to have any additional external files at all.</p>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y ch&#x1EC9; r&#xF5; r&#x1EB1;ng ch&#xFA;ng ta n&#xEA;n th&#xEA;m to&#xE0;n b&#x1ED9; c&#xE1;c t&#x1EC7;p tin Less v&#xE0;o sourcemap. &#x110;i&#x1EC1;u &#x111;&#xF3; c&#xF3; ngh&#x129;a l&#xE0;, b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n t&#x1EC7;p tin map c&#x1EE7;a b&#x1EA1;n &#x111;&#x1EC3; truy xu&#x1EA5;t t&#x1EDB;i t&#x1EC7;p tin ngu&#x1ED3;n c&#x1EE7;a b&#x1EA1;n.</p>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng c&#xF9;ng v&#x1EDB;i t&#xF9;y ch&#x1ECD;n map inline &#x111;&#x1EC3; b&#x1EA1;n kh&#xF4;ng c&#x1EA7;n c&#xF3; b&#x1EA5;t k&#x1EF3; t&#x1EC7;p tin b&#xEA;n ngo&#xE0;i n&#xE0;o c&#x1EA3;.</p>
 <h4 class="docs-heading">Source Map Map Inline<span class="anchor-target" id="command-line-usage-source-map-map-inline"></span>
 <a href="#command-line-usage-source-map-map-inline" name="command-line-usage-source-map-map-inline" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map-map-inline
 </code></pre>
-<p>This option specifies that the map file should be inline in the output CSS. This is not recommended for production, but for development it allows the compiler to produce a single output file which in browsers that support it, use the compiled css but show you the non-compiled less source.</p>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y ch&#x1EC9; r&#xF5; r&#x1EB1;ng t&#x1EC7;p tin map n&#xEA;n &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t tr&#xEA;n c&#xF9;ng m&#x1ED9;t d&#xF2;ng trong CSS &#x111;&#x1EA7;u ra. Vi&#x1EC7;c n&#xE0;y kh&#xF4;ng khuy&#x1EBF;n kh&#xED;ch &#x111;&#x1ED1;i v&#x1EDB;i khi ph&#xE1;t h&#xE0;nh, nh&#x1B0;ng &#x111;&#x1ED1;i v&#x1EDB;i giai &#x111;o&#x1EA1;n ph&#xE1;t tri&#x1EC3;n n&#xF3; cho ph&#xE9;p tr&#xEC;nh d&#x1ECB;ch t&#x1EA1;o ra m&#x1ED9;t t&#x1EC7;p tin &#x111;&#x1EA7;u ra ri&#xEA;ng l&#x1EBB; m&#xE0; tr&#xEC;nh duy&#x1EC7;t h&#x1ED7; tr&#x1EE3;, s&#x1EED; d&#x1EE5;ng m&#xE3; CSS &#x111;&#xE3; &#x111;&#x1B0;&#x1A1;c d&#x1ECB;ch nh&#x1B0;ng hi&#x1EC3;n th&#x1ECB; m&#xE3; ngu&#x1ED3;n less ch&#x1B0;a &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch.</p>
 <h4 class="docs-heading">Source Map URL<span class="anchor-target" id="command-line-usage-source-map-url"></span>
 <a href="#command-line-usage-source-map-url" name="command-line-usage-source-map-url" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --source-map-url=../my-map.json
 </code></pre>
-<p>Allows you to override the URL in the css that points at the map file. This is for cases when the rootpath and basepath options are not producing exactly what you need.</p>
-<h4 class="docs-heading">Rootpath<span class="anchor-target" id="command-line-usage-rootpath"></span>
-<a href="#command-line-usage-rootpath" name="command-line-usage-rootpath" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Cho ph&#xE9;p b&#x1EA1;n ghi &#x111;&#xE8; URL trong CSS tr&#x1ECF; &#x111;&#x1EBF;n t&#x1EC7;p tin map. T&#xF9;y ch&#x1ECD;n n&#xE0;y th&#x1B0;&#x1EDD;ng &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p t&#xF9;y ch&#x1ECD;n &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c (rootpath) v&#xE0; &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#x1A1; s&#x1EDF; (basepath) kh&#xF4;ng t&#x1EA1;o ra ch&#xED;nh x&#xE1;c nh&#x1B0;ng g&#xEC; b&#x1EA1;n c&#x1EA7;n.</p>
+<h4 class="docs-heading">&#x110;&#x1B0;&#x1EDD;ng d&#x1EAB;n g&#x1ED1;c<span class="anchor-target" id="command-line-usage--ng-d-n-g-c"></span>
+<a href="#command-line-usage--ng-d-n-g-c" name="command-line-usage--ng-d-n-g-c" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -rp=resources/
 lessc --rootpath=resources/
 </code></pre>
-<p>Allows you to add a path to every generated import and url in your css. This does not affect less import statements that are processed, just ones that are left in the output css.</p>
-<p>For instance, if all the images the css use are in a folder called resources, you can use this option to add this on to the URL&apos;s and then have the name of that folder configurable.</p>
-<h4 class="docs-heading">Relative URLs<span class="anchor-target" id="command-line-usage-relative-urls"></span>
-<a href="#command-line-usage-relative-urls" name="command-line-usage-relative-urls" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Cho ph&#xE9;p b&#x1EA1;n th&#xEA;m m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n v&#xE0;o t&#x1EA5;t c&#x1EA3; c&#xE1;c import &#x111;&#x1B0;&#x1EE3;c sinh ra c&#x169;ng nh&#x1B0; l&#xE0; url trong CSS c&#x1EE7;a b&#x1EA1;n. N&#xF3; kh&#xF4;ng &#x1EA3;nh h&#x1B0;&#x1EDF;ng t&#x1EDB;i c&#xE1;c c&#xE2;u l&#x1EC7;nh import trong less &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c x&#x1EED; l&#xFD; m&#xE0; ch&#x1EC9; &#x1EA3;nh h&#x1B0;&#x1EDF;ng t&#x1EDB;i c&#xE1;c c&#xE2;u l&#x1EC7;nh import trong t&#x1EC7;p tin CSS &#x111;&#x1EA7;u ra.</p>
+<p>Ch&#x1EB3;ng h&#x1EA1;n, n&#x1EBF;u nh&#x1B0; to&#xE0;n b&#x1ED9; h&#xEC;nh &#x1EA3;nh m&#xE0; CSS s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC1;u &#x1EDF; trong m&#x1ED9;t th&#x1B0; m&#x1EE5;c &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i l&#xE0; t&#xE0;i nguy&#xEA;n (resources), b&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1EC3; c&#xF3; &#x111;&#x1B0;&#x1EE3;c t&#xEA;n c&#x1EE7;a th&#x1B0; m&#x1EE5;c &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;u h&#xEC;nh.</p>
+<h4 class="docs-heading">C&#xE1;c URL t&#x1B0;&#x1A1;ng &#x111;&#x1ED1;i<span class="anchor-target" id="command-line-usage-c-c-url-t-ng-i"></span>
+<a href="#command-line-usage-c-c-url-t-ng-i" name="command-line-usage-c-c-url-t-ng-i" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -ru
 lessc --relative-urls
 </code></pre>
-<p>By default URLs are kept as-is, so if you import a file in a sub-directory that references an image, exactly the same URL will be output in the css. This option allows you to re-write URL&apos;s in imported files so that the URL is always relative to the base imported file. E.g.</p>
+<p>M&#x1EB7;c &#x111;&#x1ECB;nh, c&#xE1;c URL &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF; nguy&#xEA;n, v&#xEC; th&#x1EBF; n&#x1EBF;u nh&#x1B0; b&#x1EA1;n import m&#x1ED9;t t&#x1EC7;p tin trong m&#x1ED9;t th&#x1B0; m&#x1EE5;c con tham chi&#x1EBF;u &#x111;&#x1EBF;n m&#x1ED9;t h&#xEC;nh &#x1EA3;nh th&#xEC; URL &#x111;&#xF3; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF; nguy&#xEA;n trong CSS &#x111;&#x1EA7;u ra. T&#xF9;y ch&#x1ECD;n n&#xE0;y cho ph&#xE9;p b&#x1EA1;n thay &#x111;&#x1ED5;i URL trong t&#x1EC7;p tin &#x111;&#x1B0;&#x1EE3;c import &#x111;&#x1EC3; URL lu&#xF4;n lu&#xF4;n &#x1EDF; d&#x1EA1;ng t&#x1B0;&#x1A1;ng &#x111;&#x1ED1;i v&#x1EDB;i t&#x1EC7;p tin &#x111;&#x1B0;&#x1EE3;c import. V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"># main.less
 @import &quot;files/backgrounds.less&quot;;
 # files/backgrounds.less
@@ -449,30 +449,30 @@ lessc --relative-urls
   background-image: url(&apos;images/lamp-post.png&apos;);
 }
 </code></pre>
-<p>this will output the following normally</p>
+<p>V&#xED; d&#x1EE5; tr&#xEA;n s&#x1EBD; cho k&#x1EBF;t qu&#x1EA3; &#x111;&#x1EA7;u ra nh&#x1B0; sau:</p>
 <pre><code class="lang-css"><span class="hljs-class">.icon-1</span> {
   <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&apos;images/lamp-post.png&apos;</span>);
 }
 </code></pre>
-<p>but with this option on it will instead output</p>
+<p>Nh&#x1B0;ng v&#x1EDB;i t&#xF9;y ch&#x1ECD;n n&#xE0;y, k&#x1EBF;t qu&#x1EA3; &#x111;&#x1EA7;u ra s&#x1EBD; l&#xE0;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.icon-1</span> {
   <span class="hljs-attribute">background-image</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&apos;files/images/lamp-post.png&apos;</span>);
 }
 </code></pre>
-<p>You may also want to consider using the data-uri function instead of this option, which will embed images into the css.</p>
+<p>B&#x1EA1;n c&#xF3; th&#x1EC3; c&#xE2;n nh&#x1EAF;c s&#x1EED; d&#x1EE5;ng ch&#x1EE9;c n&#x103;ng data-uri thay v&#xEC; t&#xF9;y ch&#x1ECD;n n&#xE0;y (ch&#x1EE9;c n&#x103;ng cho ph&#xE9;p nh&#xFA;ng h&#xEC;nh &#x1EA3;nh v&#xE0;o CSS)</p>
 <h4 class="docs-heading">Strict Math<span class="anchor-target" id="command-line-usage-strict-math"></span>
 <a href="#command-line-usage-strict-math" name="command-line-usage-strict-math" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -sm=on
 lessc --strict-math=on
 </code></pre>
-<p>Defaults to Off.</p>
-<p>Without this option on Less will try and process all maths in your css e.g.</p>
+<p>M&#x1EB7;c &#x111;&#x1ECB;nh, t&#xF9;y ch&#x1ECD;n n&#xE0;y kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t.</p>
+<p>N&#x1EBF;u nh&#x1B0; t&#xF9;y ch&#x1ECD;n n&#xE0;y kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t, Less s&#x1EBD; c&#x1ED1; g&#x1EAF;ng v&#xE0; x&#x1EED; l&#xFD; to&#xE0;n b&#x1ED9; c&#xE1;c ph&#xE9;p to&#xE1;n trong CSS c&#x1EE7;a b&#x1EA1;n. V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-function">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">10px</span>);
 }
 </code></pre>
-<p>will be processed currently.</p>
-<p>With strict math on, only maths that is inside un-necessary parenthesis will be processed. For instance.</p>
+<p>S&#x1EBD; &#x111;&#x1B0;&#x1EE3;c x&#x1EED; l&#xFD; nh&#x1B0; b&#xEC;nh th&#x1B0;&#x1EDD;ng.</p>
+<p>N&#x1EBF;u nh&#x1B0; t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t, ch&#x1EC9; c&#xF3; nh&#x1EEF;ng ph&#xE9;p to&#xE1;n m&#xE0; c&#xE1;c d&#x1EA5;u ngo&#x1EB7;c kh&#xF4;ng c&#x1EA7;n thi&#x1EBF;t n&#x1EB1;m b&#xEA;n trong m&#x1EDB;i &#x111;&#x1B0;&#x1EE3;c x&#x1EED; l&#xFD;. V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-function">calc</span>(<span class="hljs-number">100%</span> - (<span class="hljs-number">10px</span>  - <span class="hljs-number">5px</span>));
   <span class="hljs-attribute">height</span>: (<span class="hljs-number">100px</span> / <span class="hljs-number">4px</span>);
@@ -485,52 +485,52 @@ lessc --strict-math=on
   <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1</span> / <span class="hljs-number">4</span>;
 }
 </code></pre>
-<p>We originally planned to default this to true in the future, but it has been a contraversial option and we are considering whether we have solved the problem in the right way, or whether less should just have exceptions for instances where <code>/</code> is valid or calc is used.</p>
-<h4 class="docs-heading">Strict Units<span class="anchor-target" id="command-line-usage-strict-units"></span>
-<a href="#command-line-usage-strict-units" name="command-line-usage-strict-units" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>L&#xFA;c &#x111;&#x1EA7;u ch&#xFA;ng t&#xF4;i d&#x1EF1; ki&#x1EBF;n &#x111;&#x1EC3; m&#x1EB7;c &#x111;&#x1ECB;nh l&#xE0; t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t s&#x1EB5;n, nh&#x1B0;ng n&#xF3; l&#xE0; m&#x1ED9;t t&#xF9;y ch&#x1ECD;n g&#xE2;y tranh c&#xE3;i v&#xE0; ch&#xFA;ng t&#xF4;i &#x111;ang c&#xE2;n nh&#x1EAF;c c&#xF3; x&#x1EED; l&#xFD; v&#x1EA5;n &#x111;&#x1EC1; n&#xE0;y theo h&#x1B0;&#x1EDB;ng ph&#xF9; h&#x1EE3;p, ho&#x1EB7;c less s&#x1EBD; c&#xF3; c&#xE1;c exception cho c&#xE1;c tr&#x1B0;&#x1EDD;ng h&#x1EE3;p ki&#x1EC3;u nh&#x1B0; <code>/</code> l&#xE0; &#x111;&#xFA;ng ho&#x1EB7;c calc &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng.</p>
+<h4 class="docs-heading">C&#xE1;c &#x111;&#x1A1;n v&#x1ECB; ch&#x1EB7;t ch&#x1EBD;<span class="anchor-target" id="command-line-usage-c-c-n-v-ch-t-ch-"></span>
+<a href="#command-line-usage-c-c-n-v-ch-t-ch-" name="command-line-usage-c-c-n-v-ch-t-ch-" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc -su=on
 lessc --strict-units=on
 </code></pre>
-<p>Defaults to off.</p>
-<p>Without this option, less attempts to guess at the output unit when it does maths. For instance</p>
+<p>M&#x1EB7;c &#x111;inh, t&#xF9;y ch&#x1ECD;n n&#xE0;y kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t.</p>
+<p>N&#x1EBF;u t&#xF9;y ch&#x1ECD;n n&#xE0;y kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t, less s&#x1EBD; c&#x1ED1; g&#x1EAF;ng &#x111;&#x1EC3; &#x111;o&#xE1;n &#x111;&#x1A1;n v&#x1ECB; &#x111;&#x1EA7;u ra khi th&#x1EF1;c hi&#x1EC7;n ph&#xE9;p to&#xE1;n. V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class</span> {
   <span class="hljs-attribute">property</span>: <span class="hljs-number">1px</span> * <span class="hljs-number">2px</span>;
 }
 </code></pre>
-<p>In this case, things are clearly not right - a length multiplied by a length gives an area, but css does not support specifying areas. So we assume that the user meant for one of the values to be a value, not a unit of length and we output <code>2px</code>.</p>
-<p>With strict units on, we assume this is a bug in the calculation and throw an error.</p>
-<h4 class="docs-heading">Global Variable<span class="anchor-target" id="command-line-usage-global-variable"></span>
-<a href="#command-line-usage-global-variable" name="command-line-usage-global-variable" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p n&#xE0;y, m&#x1ECD;i th&#x1EE9; r&#xF5; r&#xE0;ng l&#xE0; kh&#xF4;ng &#x111;&#xFA;ng - chi&#x1EC1;u d&#xE0;i nh&#xE2;n chi&#x1EC1;u r&#x1ED9;ng th&#xEC; b&#x1EB1;ng di&#x1EC7;n t&#xED;ch, nh&#x1B0;ng CSS kh&#xF4;ng h&#x1ED7; tr&#x1EE3; vi&#x1EC7;c ch&#x1EC9; r&#xF5; di&#x1EC7;n t&#xED;ch. V&#xEC; th&#x1EBF; ch&#xFA;ng t&#xF4;i gi&#x1EA3; &#x111;&#x1ECB;nh m&#x1ED9;t trong c&#xE1;c gi&#xE1; tr&#x1ECB; l&#xE0; gi&#xE1; tr&#x1ECB; th&#x1EF1;c s&#x1EF1;, kh&#xF4;ng ph&#x1EA3;i l&#xE0; m&#x1ED9;t &#x111;&#x1A1;n v&#x1ECB; c&#x1EE7;a chi&#x1EC1;u d&#xE0;i v&#xE0; ch&#xFA;ng t&#xF4;i cho ra k&#x1EBF;t qu&#x1EA3; l&#xE0; <code>2px</code>.</p>
+<p>N&#x1EBF;u t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1B0;&#x1EE3;c k&#xED;ch ho&#x1EA1;t, ch&#xFA;ng t&#xF4;i gi&#x1EA3; &#x111;&#x1ECB;nh &#x111;&#xE2;y l&#xE0; l&#x1ED7;i trong khi t&#xED;nh to&#xE1;n v&#xE0; s&#x1EBD; b&#xE1;o l&#x1ED7;i &#x1EDF; k&#x1EBF;t qu&#x1EA3; &#x111;&#x1EA7;u ra.</p>
+<h4 class="docs-heading">Bi&#x1EBF;n s&#x1ED1; to&#xE0;n c&#x1EE5;c<span class="anchor-target" id="command-line-usage-bi-n-s-to-n-c-c"></span>
+<a href="#command-line-usage-bi-n-s-to-n-c-c" name="command-line-usage-bi-n-s-to-n-c-c" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --global-var=<span class="hljs-string">&quot;my-background=red&quot;</span>
 </code></pre>
-<p>This option defines a variable that can be referenced by the file. Effectively the declaration is put at the top of your base Less file, meaning it can be used but it also can be overridden if this variable is defined in the file.</p>
-<h4 class="docs-heading">Modify Variable<span class="anchor-target" id="command-line-usage-modify-variable"></span>
-<a href="#command-line-usage-modify-variable" name="command-line-usage-modify-variable" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y cho ph&#xE9;p &#x111;&#x1ECB;nh ngh&#x129;a m&#x1ED9;t bi&#x1EBF;n s&#x1ED1; v&#xE0; bi&#x1EBF;n s&#x1ED1; n&#xE0;y c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c tham chi&#x1EBF;u t&#x1EDB;i b&#x1EDD;i m&#x1ED9;t t&#x1EC7;p tin. T&#x1ED1;t h&#x1A1;n h&#x1EBF;t, vi&#x1EC7;c khai b&#xE1;o n&#xEA;n &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t &#x1EDF; ph&#xED;a tr&#xEA;n c&#xF9;ng c&#x1EE7;a t&#x1EC7;p tin Less c&#x1A1; s&#x1EDF; &#x111;&#x1EC3; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; ho&#x1EB7;c ghi &#x111;&#xE8; n&#x1EBF;u nh&#x1B0; bi&#x1EBF;n s&#x1ED1; n&#xE0;y &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1ECB;nh ngh&#x129;a b&#xEA;n trong t&#x1EC7;p tin.</p>
+<h4 class="docs-heading">Thay &#x111;&#x1ED5;i bi&#x1EBF;n s&#x1ED1;<span class="anchor-target" id="command-line-usage-thay-i-bi-n-s-"></span>
+<a href="#command-line-usage-thay-i-bi-n-s-" name="command-line-usage-thay-i-bi-n-s-" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --modify-var=<span class="hljs-string">&quot;my-background=red&quot;</span>
 </code></pre>
-<p>As opposed to the global variable option, this puts the declaration at the end of your base file, meaning it will override anything defined in your Less file.</p>
-<h4 class="docs-heading">URL Arguments<span class="anchor-target" id="command-line-usage-url-arguments"></span>
-<a href="#command-line-usage-url-arguments" name="command-line-usage-url-arguments" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>Tr&#xE1;i ng&#x1B0;&#x1EE3;c v&#x1EDB;i t&#xF9;y ch&#x1ECD;n bi&#x1EBF;n s&#x1ED1; to&#xE0;n c&#x1EE5;c, t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x111;&#x1EB7;t vi&#x1EC7;c khai b&#xE1;o &#x1EDF; ph&#xED;a d&#x1B0;&#x1EDB;i c&#xF9;ng c&#x1EE7;a t&#x1EC7;p tin c&#x1A1; s&#x1EDF; c&#x1EE7;a b&#x1EA1;n, c&#xF3; ngh&#x129;a l&#xE0; n&#xF3; s&#x1EBD; ghi &#x111;&#xE8; to&#xE0;n b&#x1ED9; nh&#x1EEF;ng l&#x1EA7;n &#x111;&#x1ECB;nh ngh&#x129;a tr&#x1B0;&#x1EDB;c &#x111;&#xF3; c&#x1EE7;a bi&#x1EBF;n s&#x1ED1; &#x111;&#xF3; trong t&#x1EC7;p tin.</p>
+<h4 class="docs-heading">C&#xE1;c tham s&#x1ED1; c&#x1EE7;a URL<span class="anchor-target" id="command-line-usage-c-c-tham-s-c-a-url"></span>
+<a href="#command-line-usage-c-c-tham-s-c-a-url" name="command-line-usage-c-c-tham-s-c-a-url" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --url-args=<span class="hljs-string">&quot;cache726357&quot;</span>
 </code></pre>
-<p>This option allows you to specify a argument to go on to every URL. This may be used for cache-busting for instance.</p>
-<h4 class="docs-heading">Line Numbers<span class="anchor-target" id="command-line-usage-line-numbers"></span>
-<a href="#command-line-usage-line-numbers" name="command-line-usage-line-numbers" class="anchor glyphicon glyphicon-link"></a></h4>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y cho ph&#xE9;p b&#x1EA1;n ch&#x1EC9; r&#xF5; m&#x1ED9;t tham s&#x1ED1; tr&#xEA;n c&#xE1;c URL. Ch&#x1EB3;ng h&#x1EA1;n, n&#xF3; c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#x103;ng t&#x1ED1;c &#x111;&#x1ED9; cache.</p>
+<h4 class="docs-heading">S&#x1ED1; l&#x1B0;&#x1EE3;ng d&#xF2;ng<span class="anchor-target" id="command-line-usage-s-l-ng-d-ng"></span>
+<a href="#command-line-usage-s-l-ng-d-ng" name="command-line-usage-s-l-ng-d-ng" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --line-numbers=comments
 lessc --line-numbers=mediaquery
 lessc --line-numbers=all
 </code></pre>
-<p>Generates inline source-mapping. This was the only option before browsers started supporting sourcemaps. We are consider deprecating, so please get in touch if you want this option to stick around.</p>
+<p>T&#xF9;y ch&#x1ECD;n n&#xE0;y sinh ra source-mapping d&#x1EA1;ng inline. &#x110;&#xE2;y l&#xE0; t&#xF9;y ch&#x1ECD;n duy nh&#x1EA5;t m&#xE0; tr&#x1B0;&#x1EDB;c khi tr&#xEC;nh duy&#x1EC7;t b&#x1EAF;t &#x111;&#x1EA7;u h&#x1ED7; tr&#x1EE3; sourcemap. Ch&#xFA;ng t&#xF4;i &#x111;ang c&#xE2;n nh&#x1EAF;c lo&#x1EA1;i b&#x1ECF; n&#xF3;, v&#xEC; v&#x1EAD;y h&#xE3;y li&#xEA;n h&#x1EC7; v&#x1EDB;i ch&#xFA;ng t&#xF4;i n&#x1EBF;u nh&#x1B0; b&#x1EA1;n th&#x1EF1;c s&#x1EF1; mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng t&#xF9;y ch&#x1ECD;n n&#xE0;y &#x1EDF; &#x111;&#xE2;u &#x111;&#xF3;.</p>
 <h4 class="docs-heading">Plugin<span class="anchor-target" id="command-line-usage-plugin"></span>
 <a href="#command-line-usage-plugin" name="command-line-usage-plugin" class="anchor glyphicon glyphicon-link"></a></h4>
 <pre><code class="lang-bash">lessc --clean-css
 lessc --plugin=clean-css=<span class="hljs-string">&quot;advanced&quot;</span>
 </code></pre>
-<p>--plugin Loads a plugin. You can also omit the --plugin= if the plugin begins
-less-plugin. E.g. the clean css plugin is called less-plugin-clean-css
-once installed (npm install less-plugin-clean-css), use either with
---plugin=less-plugin-clean-css or just --clean-css
-specify options afterwards e.g. --plugin=less-plugin-clean-css=&quot;advanced&quot;
+<p>--plugin Load m&#x1ED9;t plugin. B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; kh&#xF4;ng s&#x1EED; d&#x1EE5;ng --plugin= n&#x1EBF;u nh&#x1B0; plugin b&#x1EAF;t &#x111;&#x1EA7;u 
+less-plugin. V&#xED; d&#x1EE5;: Plugin d&#x1ECD;n d&#x1EB9;p CSS &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i l&#xE0; less-plugin-clean-css
+khi n&#xF3; &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c c&#xE0;i &#x111;&#x1EB7;t (npm install less-plugin-clean-css), s&#x1EED; d&#x1EE5;ng v&#x1EDB;i
+--plugin=less-plugin-clean-css ho&#x1EB7;c just --clean-css
+&#x111;&#x1EC3; ch&#x1EC9; r&#xF5; c&#xE1;c t&#xF9;y ch&#x1ECD;n theo sau. V&#xED; d&#x1EE5;: --plugin=less-plugin-clean-css=&quot;advanced&quot;
 or --clean-css=&quot;advanced&quot;</p>
 
 
@@ -1214,21 +1214,21 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
        
 
 
-<p>Also see: <a href="#guis-for-less">GUIs for Less.js</a></p>
-<h2 class="docs-heading">Editors and IDEs<span class="anchor-target" id="editors-and-plugins-editors-and-ides"></span>
-<a href="#editors-and-plugins-editors-and-ides" name="editors-and-plugins-editors-and-ides" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>Tham kh&#x1EA3;o: <a href="#guis-for-less">GUIs for Less.js</a></p>
+<h2 class="docs-heading">C&#xE1;c tr&#xEC;nh bi&#xEA;n t&#x1EAD;p v&#xE0; IDE<span class="anchor-target" id="editors-and-plugins-c-c-tr-nh-bi-n-t-p-v-ide"></span>
+<a href="#editors-and-plugins-c-c-tr-nh-bi-n-t-p-v-ide" name="editors-and-plugins-c-c-tr-nh-bi-n-t-p-v-ide" class="anchor glyphicon glyphicon-link"></a></h2>
 <ul>
-<li><a href="http://crunchapp.net/">Crunch!</a> (built-in support)</li>
-<li><a href="http://visualstudiogallery.msdn.microsoft.com/2b96d16a-c986-4501-8f97-8008f9db141a">Mindscape Web Workbench</a> (built-in support)</li>
-<li><a href="https://netbeans.org/downloads/">NetBeans</a> (built-in <a href="http://wiki.netbeans.org/NetBeans_74_NewAndNoteworthy#CSS_Preprocessors">syntax highlighting</a>)</li>
+<li><a href="http://crunchapp.net/">Crunch!</a> (h&#x1ED7; tr&#x1EE3; s&#x1EB5;n)</li>
+<li><a href="http://visualstudiogallery.msdn.microsoft.com/2b96d16a-c986-4501-8f97-8008f9db141a">Mindscape Web Workbench</a> (h&#x1ED7; tr&#x1EE3; s&#x1EB5;n)</li>
+<li><a href="https://netbeans.org/downloads/">NetBeans</a> (t&#xED;ch h&#x1EE3;p <a href="http://wiki.netbeans.org/NetBeans_74_NewAndNoteworthy#CSS_Preprocessors">c&#xF4;ng c&#x1EE5; l&#xE0;m n&#x1ED5;i b&#x1EAD;t c&#xFA; ph&#xE1;p</a>)</li>
 <li><a href="https://github.com/appden/less.tmbundle">TextMate</a></li>
 <li><a href="https://github.com/groenewege/vim-less">Vim</a></li>
 <li><a href="https://github.com/purcell/less-css-mode">Emacs</a></li>
-<li><a href="http://www.jetbrains.com/webstorm/">jetBrains WebStorm</a> and <a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a> (built-in support)</li>
-<li><a href="http://brackets.io/">Brackets</a> (built-in syntax highlighting, <a href="https://github.com/adobe/brackets/wiki/Brackets-Extensions">several extensions</a> for compilation)</li>
-<li><a href="http://www.codelobster.com/">CodeLobster</a> (built-in <a href="http://www.codelobster.com/sass_less.html">syntax highlighting</a>)</li>
-<li><a href="http://kineticwing.com/download">KineticWing IDE</a> (built-in <a href="http://kineticwing.com//assets/img/screenshots/LessEditor.png">support</a>)</li>
-<li><a href="https://www.npmjs.org/package/node-mirror">nodeMirror</a> (built-in support, built-in HTML/CSS/Less preview)</li>
+<li><a href="http://www.jetbrains.com/webstorm/">jetBrains WebStorm</a> v&#xE0; <a href="http://www.jetbrains.com/phpstorm/">PhpStorm</a> (h&#x1ED7; tr&#x1EE3; s&#x1EB5;n)</li>
+<li><a href="http://brackets.io/">Brackets</a> (t&#xED;ch h&#x1EE3;p c&#xF4;ng c&#x1EE5; l&#xE0;m n&#x1ED5;i b&#x1EAD;t c&#xFA; ph&#xE1;p, <a href="https://github.com/adobe/brackets/wiki/Brackets-Extensions">v&#xE0; m&#x1ED9;t s&#x1ED1; ph&#x1EA7;n m&#x1EDF; r&#x1ED9;ng kh&#xE1;c</a> s&#x1EED; d&#x1EE5;ng cho vi&#x1EC7;c d&#x1ECB;ch)</li>
+<li><a href="http://www.codelobster.com/">CodeLobster</a> (t&#xED;ch h&#x1EE3;p <a href="http://www.codelobster.com/sass_less.html">c&#xF4;ng c&#x1EE5; l&#xE0;m n&#x1ED5;i b&#x1EAD;t c&#xFA; ph&#xE1;p</a>)</li>
+<li><a href="http://kineticwing.com/download">KineticWing IDE</a> (<a href="http://kineticwing.com//assets/img/screenshots/LessEditor.png">h&#x1ED7; tr&#x1EE3; s&#x1EB5;n</a>)</li>
+<li><a href="https://www.npmjs.org/package/node-mirror">nodeMirror</a> (h&#x1ED7; tr&#x1EE3; s&#x1EB5;n, t&#xED;ch h&#x1EE3;p ch&#x1EE9;c n&#x103;ng preview HTML/CSS/Less)</li>
 </ul>
 <h3 class="docs-heading"><a href="http://sublimetext.com/">Sublime Text 2 &amp; 3</a><span class="anchor-target" id="editors-and-plugins--sublime-text-2-3-http-sublimetext-com-"></span>
 <a href="#editors-and-plugins--sublime-text-2-3-http-sublimetext-com-" name="editors-and-plugins--sublime-text-2-3-http-sublimetext-com-" class="anchor glyphicon glyphicon-link"></a></h3>
@@ -1241,8 +1241,8 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
 <h3 class="docs-heading"><a href="http://www.eclipse.org/">Eclipse</a><span class="anchor-target" id="editors-and-plugins--eclipse-http-www-eclipse-org-"></span>
 <a href="#editors-and-plugins--eclipse-http-www-eclipse-org-" name="editors-and-plugins--eclipse-http-www-eclipse-org-" class="anchor glyphicon glyphicon-link"></a></h3>
 <ul>
-<li><a href="http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html">Eclipse Less Plugin</a> by Vincent Simonet</li>
-<li><a href="https://github.com/gossi/eclipse-transpiler-plugin">Transpiler Plugin</a> by Thomas Gossmann</li>
+<li><a href="http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html">Plugin Less cho Eclipse</a> &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#x1EDF;i Vincent Simonet</li>
+<li><a href="https://github.com/gossi/eclipse-transpiler-plugin">Plugin Transpiler</a> &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#x1EDF;i Thomas Gossmann</li>
 </ul>
 <h3 class="docs-heading"><a href="http://www.visualstudio.com/">Visual Studio</a><span class="anchor-target" id="editors-and-plugins--visual-studio-http-www-visualstudio-com-"></span>
 <a href="#editors-and-plugins--visual-studio-http-www-visualstudio-com-" name="editors-and-plugins--visual-studio-http-www-visualstudio-com-" class="anchor glyphicon glyphicon-link"></a></h3>
@@ -1260,9 +1260,9 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
 <h3 class="docs-heading"><a href="http://notepad-plus-plus.org/">Notepad++ 6.x</a><span class="anchor-target" id="editors-and-plugins--notepad-6-x-npp-"></span>
 <a href="#editors-and-plugins--notepad-6-x-npp-" name="editors-and-plugins--notepad-6-x-npp-" class="anchor glyphicon glyphicon-link"></a></h3>
 <ul>
-<li><a href="http://sourceforge.net/apps/mediawiki/notepad-plus/?title=User_Defined_Language_Files#L">Less.js Syntax Highlighting</a> User Defined Language by Ra&#xFA;l Salitrero</li>
-<li><a href="https://github.com/azrafe7/LESS-for-Notepad-plusplus">Less.js Syntax Highlighting</a> User Defined Language by azrafe7</li>
-<li><a href="http://sourceforge.net/apps/mediawiki/notepad-plus/?title=User_Defined_Language_Files#How_to_install_user_defined_language_files" title="how to install User Defined Language files">How to Install</a></li>
+<li><a href="http://sourceforge.net/apps/mediawiki/notepad-plus/?title=User_Defined_Language_Files#L">Less.js Syntax Highlighting</a> Ng&#xF4;n ng&#x1EEF; ng&#x1B0;&#x1EDD;i d&#xF9;ng &#x111;&#x1ECB;nh ngh&#x129;a &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#x1EDF;i Ra&#xFA;l Salitrero</li>
+<li><a href="https://github.com/azrafe7/LESS-for-Notepad-plusplus">Less.js Syntax Highlighting</a> Ng&#xF4;n ng&#x1EEF; ng&#x1B0;&#x1EDD;i d&#xF9;ng &#x111;&#x1ECB;nh ngh&#x129;a &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#x1EDF;i azrafe7</li>
+<li><a href="http://sourceforge.net/apps/mediawiki/notepad-plus/?title=User_Defined_Language_Files#How_to_install_user_defined_language_files" title="how to install User Defined Language files">C&#xE1;ch c&#xE0;i &#x111;&#x1EB7;t</a></li>
 </ul>
 <!-- invisible links -->
 
@@ -1364,8 +1364,8 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
        
 
 
-<h2 class="docs-heading">UI/Theme Frameworks and Components<span class="anchor-target" id="frameworks-using-less-ui-theme-frameworks-and-components"></span>
-<a href="#frameworks-using-less-ui-theme-frameworks-and-components" name="frameworks-using-less-ui-theme-frameworks-and-components" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c Framework v&#xE0; th&#xE0;nh ph&#x1EA7;n UI/Theme<span class="anchor-target" id="frameworks-using-less-c-c-framework-v-th-nh-ph-n-ui-theme"></span>
+<a href="#frameworks-using-less-c-c-framework-v-th-nh-ph-n-ui-theme" name="frameworks-using-less-c-c-framework-v-th-nh-ph-n-ui-theme" class="anchor glyphicon glyphicon-link"></a></h2>
 <table>
 <thead>
 <tr>
@@ -1376,92 +1376,92 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 <tbody>
 <tr>
 <td><a href="http://rriepe.github.io/1pxdeep/">1pxdeep</a></td>
-<td>Brings designing by relative visual weight, or designing with color schemes, to Bootstrap</td>
+<td>Mang thi&#x1EBF;t k&#x1EBF; b&#x1EDF;i tr&#x1ECD;ng l&#x1B0;&#x1EE3;ng h&#xEC;nh &#x1EA3;nh t&#x1B0;&#x1A1;ng &#x111;&#x1ED1;i (relative visual weight), ho&#x1EB7;c thi&#x1EBF;t k&#x1EBF; b&#x1EDF;i s&#x1EF1; ph&#x1ED1;i h&#x1EE3;p m&#xE0;u s&#x1EAF;c (color scheme), v&#xE0;o Bootstrap</td>
 </tr>
 <tr>
 <td><a href="http://www.flathemes.com/">Bootflat</a></td>
-<td>Open source Flat UI KIT based on Bootstrap</td>
+<td>B&#x1ED9; c&#xF4;ng c&#x1EE5; UI d&#x1EA1;ng ph&#x1EB3;ng m&#xE3; ngu&#x1ED3;n m&#x1EDF; &#x111;&#x1B0;&#x1EE3;c x&#xE2;y d&#x1EF1;ng d&#x1EF1;a tr&#xEA;n Bootstrap</td>
 </tr>
 <tr>
 <td><a href="http://getbootstrap.com/">Bootstrap</a></td>
-<td>Front-end framework for developing responsive, mobile first projects on the web</td>
+<td>Framework &#x111;&#x1EC3; ph&#xE1;t tri&#x1EC3;n responsive cho Front-end v&#xE0; c&#xE1;c d&#x1EF1; &#xE1;n &#x1B0;u ti&#xEA;n thi&#x1EBF;t b&#x1ECB; di &#x111;&#x1ED9;ng (mobile first) tr&#xEA;n n&#x1EC1;n web</td>
 </tr>
 <tr>
 <td><a href="https://github.com/bassjobsen/bootstrap-a11y-theme">Bootstrap a11y theme</a></td>
-<td>Makes web accessibility easier for Bootstrap developers</td>
+<td>H&#x1ED7; tr&#x1EE3; t&#x1EA1;o ra kh&#x1EA3; n&#x103;ng ti&#x1EBF;p c&#x1EAD;n Web d&#x1EC5; d&#xE0;ng h&#x1A1;n cho nh&#xE0; ph&#xE1;t tri&#x1EC3;n</td>
 </tr>
 <tr>
 <td><a href="http://bootswatch.com/">Bootswatch</a></td>
-<td>Collection of free themes for Bootstrap</td>
+<td>M&#x1ED9;t kho c&#xE1;c theme mi&#x1EC5;n ph&#xED; s&#x1EED; d&#x1EE5;ng cho Bootstrap</td>
 </tr>
 <tr>
 <td><a href="http://cardinalcss.com/">Cardinal</a></td>
-<td>Small &quot;mobile first&quot; CSS framework for front-end developers who build responsive web applications</td>
+<td>M&#x1ED9;t framework CSS &quot;&#x1B0;u ti&#xEA;n thi&#x1EBF;t b&#x1ECB; di &#x111;&#x1ED9;ng&quot; cho c&#xE1;c nh&#xE0; ph&#xE1;t tri&#x1EC3;n front-end &#x111;&#x1EC3; t&#x1EA1;o ra c&#xE1;c &#x1EE9;ng d&#x1EE5;ng web d&#x1EA1;ng responsive</td>
 </tr>
 <tr>
 <td><a href="https://github.com/firminoweb/csshorus">CSSH&#xF3;rus</a></td>
-<td>Library for development of responsive and mobile websites</td>
+<td>Th&#x1B0; vi&#x1EC7;n &#x111;&#x1EC3; ph&#xE1;t tri&#x1EC3;n c&#xE1;c website responsive ho&#x1EB7;c cho di &#x111;&#x1ED9;ng</td>
 </tr>
 <tr>
 <td><a href="http://designmodo.com/flat-free/">Flat UI Free</a></td>
-<td>Theme and framework for Bootstrap</td>
+<td>Theme v&#xE0; framework cho Bootstrap</td>
 </tr>
 <tr>
 <td><a href="https://github.com/vitto/frontsize-less">frontsize</a></td>
-<td>CSS front end framework</td>
+<td>Framework CSS cho front end</td>
 </tr>
 <tr>
 <td><a href="http://brunodsgn.github.io/InContent/">InContent</a></td>
-<td>Image content with description created with CSS</td>
+<td>N&#x1ED9;i dung &#x1EA3;nh v&#xE0; m&#xF4; t&#x1EA3; &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o b&#x1EDF;i CSS</td>
 </tr>
 <tr>
 <td><a href="http://ink.sapo.pt/">Ink</a></td>
-<td>set of tools for quick development of web interfaces</td>
+<td>M&#x1ED9;t b&#x1ED9; c&#xE1;c c&#xF4;ng c&#x1EE5; h&#x1ED7; tr&#x1EE3; vi&#x1EC7;c ph&#xE1;t tri&#x1EC3;n nhanh c&#xE1;c giao di&#x1EC7;n web</td>
 </tr>
 <tr>
 <td><a href="http://jbst.eu/">JBST</a></td>
-<td>Theme framework that can be used as a standalone website builder or to create WordPress themes</td>
+<td>M&#x1ED9;t framework &#x111;&#x1EC3; t&#x1EA1;o theme, c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nh&#x1B0; m&#x1ED9;t c&#xF4;ng c&#x1EE5; ph&#xE1;t tri&#x1EC3;n website &#x111;&#x1ED9;c l&#x1EAD;p ho&#x1EB7;c &#x111;&#x1EC3; t&#x1EA1;o n&#xEA;n c&#xE1;c theme cho Wordpress</td>
 </tr>
 <tr>
 <td><a href="http://www.knacss.com/">KNACSS</a></td>
-<td>Minimalist, responsive and extensible style sheet to kick-start your HTML / CSS projects</td>
+<td>Style sheet d&#x1EA1;ng m&#x1EDF; r&#x1ED9;ng, responsive v&#xE0; t&#x1ED1;i gi&#x1EA3;n h&#xF3;a &#x111;&#x1EC3; b&#x1B0;&#x1EDB;c &#x111;&#x1EA7;u ph&#xE1;t tri&#x1EC3;n c&#xE1;c d&#x1EF1; &#xE1;n HTML / CSS c&#x1EE7;a b&#x1EA1;n</td>
 </tr>
 <tr>
 <td><a href="http://imperavi.com/kube/">Kube</a></td>
-<td>Minimalistic CSS-framework for developers and designers</td>
+<td>Framework CSS d&#x1EA1;ng t&#x1ED1;i gi&#x1EA3;n cho c&#xE1;c nh&#xE0; ph&#xE1;t tri&#x1EC3;n v&#xE0; nh&#xE0; thi&#x1EBF;t k&#x1EBF;</td>
 </tr>
 <tr>
 <td><a href="http://metroui.org.ua/">Metro UI CSS</a></td>
-<td>Set of styles to create a site with an interface similar to Windows 8</td>
+<td>T&#x1EAD;p h&#x1EE3;p c&#xE1;c style &#x111;&#x1EC3; t&#x1EA1;o ra m&#x1ED9;t site v&#x1EDB;i giao di&#x1EC7;n g&#x1EA7;n gi&#x1ED1;ng v&#x1EDB;i giao di&#x1EC7;n c&#x1EE7;a Windows 8</td>
 </tr>
 <tr>
 <td><a href="http://madscript.com/pre/">Pre</a></td>
-<td>CSS framework</td>
+<td>Framework CSS</td>
 </tr>
 <tr>
 <td><a href="https://github.com/amazingSurge/prelude">prelude</a></td>
-<td>Lightweight, responsive and extensible front-end framework</td>
+<td>Framework m&#x1EDF; r&#x1ED9;ng c&#xF3; dung l&#x1B0;&#x1EE3;ng nh&#x1ECF;, responsive &#x111;&#x1EC3; ph&#xE1;t tri&#x1EC3;n frontend</td>
 </tr>
 <tr>
 <td><a href="http://danmalarkey.github.io/schema/">Schema</a></td>
-<td>Light, responsive, and lean frontend UI framework</td>
+<td>Framework UI c&#xF3; dung l&#x1B0;&#x1EE3;ng nh&#x1ECF;, c&#x1EA5;u tr&#xFA;c r&#xF5; r&#xE0;ng v&#xE0; responsive &#x111;&#x1EC3; ph&#xE1;t tri&#x1EC3;n frontend</td>
 </tr>
 <tr>
 <td><a href="http://getuikit.com/">UIkit</a></td>
-<td>Lightweight and modular front-end framework for developing web interfaces</td>
+<td>Framework c&#xF3; dung l&#x1B0;&#x1EE3;ng nh&#x1ECF;, &#x111;&#x1B0;&#x1EE3;c module h&#xF3;a &#x111;&#x1EC3; ph&#xE1;t tri&#x1EC3;n giao di&#x1EC7;n website</td>
 </tr>
 <tr>
 <td><a href="http://bit.ly/ngBoilerplate">ngBoilerplate</a></td>
-<td>An opinionated kickstarter for AngularJS projects</td>
+<td>M&#x1ED9;t c&#x1EA5;u tr&#xFA;c &#x111;&#x1B0;&#x1EE3;c x&#xE2;y d&#x1EF1;ng &#x111;&#x1EC3; b&#x1EAF;t &#x111;&#x1EA7;u ph&#xE1;t tri&#x1EC3;n c&#xE1;c d&#x1EF1; &#xE1;n AngularJS</td>
 </tr>
 <tr>
 <td><a href="http://github.com/metaskills/less-rails">less-rail</a></td>
-<td>Less.js for Rails</td>
+<td>Less.js cho Rails</td>
 </tr>
 </tbody>
 </table>
-<h2 class="docs-heading">Grid Systems<span class="anchor-target" id="frameworks-using-less-grid-systems"></span>
-<a href="#frameworks-using-less-grid-systems" name="frameworks-using-less-grid-systems" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c h&#x1EC7; th&#x1ED1;ng l&#x1B0;&#x1EDB;i<span class="anchor-target" id="frameworks-using-less-c-c-h-th-ng-l-i"></span>
+<a href="#frameworks-using-less-c-c-h-th-ng-l-i" name="frameworks-using-less-c-c-h-th-ng-l-i" class="anchor glyphicon glyphicon-link"></a></h2>
 <table>
 <thead>
 <tr>
@@ -1471,7 +1471,7 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 </thead>
 <tbody>
 <tr>
-<td><a href="http://flexible.gs">Flexible Grid System</a></td>
+<td><a href="http://flexible.gs">H&#x1EC7; th&#x1ED1;ng l&#x1B0;&#x1EDB;i linh ho&#x1EA1;t</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1483,7 +1483,7 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 <td></td>
 </tr>
 <tr>
-<td><a href="http://goldengridsystem.com/">Golden Grid System</a></td>
+<td><a href="http://goldengridsystem.com/">H&#x1EC7; th&#x1ED1;ng l&#x1B0;&#x1EDB;i v&#xE0;ng</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1499,7 +1499,7 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 <td></td>
 </tr>
 <tr>
-<td><a href="http://responsiveboilerplate.com/">Responsive Boilerplate</a></td>
+<td><a href="http://responsiveboilerplate.com/">Boilerplate d&#x1EA1;ng responsive</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1507,8 +1507,8 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 </tr>
 </tbody>
 </table>
-<h2 class="docs-heading">Mixin Libraries<span class="anchor-target" id="frameworks-using-less-mixin-libraries"></span>
-<a href="#frameworks-using-less-mixin-libraries" name="frameworks-using-less-mixin-libraries" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c th&#x1B0; vi&#x1EC7;n kh&#xE1;c<span class="anchor-target" id="frameworks-using-less-c-c-th-vi-n-kh-c"></span>
+<a href="#frameworks-using-less-c-c-th-vi-n-kh-c" name="frameworks-using-less-c-c-th-vi-n-kh-c" class="anchor glyphicon glyphicon-link"></a></h2>
 <table>
 <thead>
 <tr>
@@ -1519,99 +1519,99 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
 <tbody>
 <tr>
 <td><a href="http://mateuszkocz.github.io/3l/">3L</a></td>
-<td>Mixins library</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin</td>
 </tr>
 <tr>
 <td><a href="https://github.com/joshuapekera/animate">animate</a></td>
-<td>Library of CSS3 keyframe animations</td>
+<td>Th&#x1B0; vi&#x1EC7;n v&#x1EC1; c&#xE1;c hi&#x1EC7;u &#x1EE9;ng chuy&#x1EC3;n &#x111;&#x1ED9;ng (animation) d&#xF9;ng keyframe trong CSS3</td>
 </tr>
 <tr>
 <td><a href="http://clearleft.github.io/clearless/">Clearless</a></td>
-<td>Collection of mixins</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c mixin</td>
 </tr>
 <tr>
 <td><a href="http://chrsr.com/css3lessplease/">Css3LessPlease</a></td>
-<td>Conversion of css3please.com to LESS mixins</td>
+<td>Phi&#xEA;n b&#x1EA3;n chuy&#x1EC3;n &#x111;&#x1ED5;i c&#x1EE7;a css3please.com th&#xE0;nh mixin c&#x1EE7;a Less</td>
 </tr>
 <tr>
 <td><a href="http://adodson.com/css-effects/">CssEffects</a></td>
-<td>Collection of CSS style effects</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c hi&#x1EC7;u &#x1EE9;ng CSS</td>
 </tr>
 <tr>
 <td><a href="http://cssowl.owl-stars.com/">Cssowl</a></td>
-<td>Mixin library</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin</td>
 </tr>
 <tr>
 <td><a href="https://github.com/sparanoid/cube.less">cube.less</a></td>
-<td>Animated 3D cube using only CSS</td>
+<td>Kh&#x1ED1;i chuy&#x1EC3;n &#x111;&#x1ED9;ng d&#x1EA1;ng 3D ch&#x1EC9; v&#x1EDB;i CSS</td>
 </tr>
 <tr>
 <td><a href="https://github.com/ecomfe/est/">est</a></td>
-<td>Mixin library</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin</td>
 </tr>
 <tr>
 <td><a href="http://db0company.github.io/css-hexagon/">Hexagon</a></td>
-<td>Generate CSS hexagons with custom size and color</td>
+<td>Cho ph&#xE9;p t&#x1EA1;o ra m&#xE3; CSS d&#x1EA1;ng hexa v&#x1EDB;i k&#xED;ch th&#x1B0;&#x1EDB;c v&#xE0; m&#xE0;u s&#x1EAF;c t&#xF9;y &#xFD;</td>
 </tr>
 <tr>
 <td><a href="http://lesselements.com/">LESS Elements</a></td>
-<td>Set of mixins</td>
+<td>T&#x1EAD;p h&#x1EE3;p c&#xE1;c mixin</td>
 </tr>
 <tr>
 <td><a href="http://lesshat.com/">LESS Hat</a></td>
-<td>Mixins library</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin</td>
 </tr>
 <tr>
 <td><a href="https://github.com/pixelass/lessley">lessley</a></td>
-<td>A jasmine like testing suite written in pure less</td>
+<td>M&#x1ED9;t b&#x1ED9; c&#xF4;ng c&#x1EE5; test &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t ho&#xE0;n to&#xE0;n b&#x1EB1;ng Less</td>
 </tr>
 <tr>
 <td><a href="https://github.com/danielkatz/less-bidi">LESS-bidi</a></td>
-<td>Set of mixins for creating bi-directional styling</td>
+<td>T&#x1EAD;p h&#x1EE3;p c&#xE1;c mixin &#x111;&#x1EC3; t&#x1EA1;o ra style h&#x1B0;&#x1EDB;ng k&#xE9;p</td>
 </tr>
 <tr>
 <td><a href="http://denysdovhan.github.io/LESS-Mix/">LESS-Mix</a></td>
-<td>Mixins library</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin</td>
 </tr>
 <tr>
 <td><a href="https://github.com/himedlooff/media-query-to-type">media-query-to-type</a></td>
-<td>Media Queries to Media Types with Less</td>
+<td>Chuy&#x1EC3;n &#x111;&#x1ED5;i Media Queries th&#xE0;nh Media Types v&#x1EDB;i Less</td>
 </tr>
 <tr>
 <td><a href="http://jasonrobb.github.io/More-Colors.less/">More-Colors.less</a></td>
-<td>Variables for easier color manipulation while you design in the browser</td>
+<td>T&#x1EAD;p h&#x1EE3;p c&#xE1;c bi&#x1EBF;n s&#x1ED1; h&#x1ED7; tr&#x1EE3; vi&#x1EC7;c x&#x1EED; l&#xFD; m&#xE0;u s&#x1EAF;c khi b&#x1EA1;n thi&#x1EBF;t k&#x1EBF; tr&#xEA;n tr&#xEC;nh duy&#x1EC7;t</td>
 </tr>
 <tr>
 <td><a href="https://github.com/roelvanhintum/More-Less">more-less</a></td>
-<td>Mixin lib supporting LESS 1.7</td>
+<td>Th&#x1B0; vi&#x1EC7;n mixin h&#x1ED7; tr&#x1EE3; LESS 1.7</td>
 </tr>
 <tr>
 <td><a href="https://github.com/weinitz/More.less">More.less</a></td>
-<td>Mixins, animations, shapes and more</td>
+<td>Mixin, animation, shape v&#xE0; h&#x1A1;n th&#x1EBF; n&#x1EEF;a</td>
 </tr>
 <tr>
 <td><a href="https://github.com/pixelass/more-or-less">more-or-less</a></td>
-<td>for-loops and other functions + css3 mixins</td>
+<td>Function d&#x1EA1;ng v&#xF2;ng l&#x1EB7;p for v&#xE0; c&#xE1;c function kh&#xE1;c + mixin cho CSS3</td>
 </tr>
 <tr>
 <td><a href="http://oban.io/">Oban</a></td>
-<td>Collection of mixins</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c mixin</td>
 </tr>
 <tr>
 <td><a href="http://getpreboot.com/">Preboot</a></td>
-<td>Collection of variables and mixins. The precursor to Bootstrap</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c bi&#x1EBF;n s&#x1ED1; v&#xE0; mixin. Ti&#x1EC1;n th&#xE2;n c&#x1EE7;a Bootstrap</td>
 </tr>
 <tr>
 <td><a href="https://github.com/amazingSurge/prelude-mixins">prelude-mixins</a></td>
-<td>Collection of mixins</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c mixin</td>
 </tr>
 <tr>
 <td><a href="https://github.com/fahad19/shape.less">Shape.LESS</a></td>
-<td>Collection of mixins for various shapes</td>
+<td>B&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c mixin cho c&#xE1;c h&#xEC;nh d&#x1EA1;ng kh&#xE1;c nhau</td>
 </tr>
 <tr>
 <td><a href="https://github.com/therebelrobot/tRRtoolbelt.less">tRRtoolbelt.less</a></td>
-<td>Mixins and functions for common actions</td>
+<td>Mixin v&#xE0; c&#xE1;c function &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng cho c&#xE1;c thao t&#xE1;c ph&#x1ED5; bi&#x1EBF;n</td>
 </tr>
 </tbody>
 </table>
