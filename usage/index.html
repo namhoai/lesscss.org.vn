@@ -169,8 +169,8 @@
 <li><a href="#editors-and-plugins--visual-studio-http-www-visualstudio-com-">Visual Studio</a></li>
 <li><a href="#editors-and-plugins--dreamweaver-http-www-adobe-com-products-dreamweaver-html-">Dreamweaver</a></li>
 <li><a href="#editors-and-plugins--notepad-6-x-npp-">Notepad++ 6.x</a></li></ul></li>
-<li><a href="#third-party-compilers">Tr&#xEC;nh d&#x1ECB;ch Less t&#x1EEB; c&#xE1;c b&#xEA;n th&#x1EE9; ba</a><ul class="nav"><li><a href="#third-party-compilers-node-js-compilers">Node.js compilers</a></li>
-<li><a href="#third-party-compilers-other-technologies">Other technologies</a></li></ul></li>
+<li><a href="#third-party-compilers">Tr&#xEC;nh d&#x1ECB;ch Less t&#x1EEB; c&#xE1;c b&#xEA;n th&#x1EE9; ba</a><ul class="nav"><li><a href="#third-party-compilers-c-c-tr-nh-d-ch-node-js">C&#xE1;c tr&#xEC;nh d&#x1ECB;ch Node.js</a></li>
+<li><a href="#third-party-compilers-c-c-c-ng-ngh-kh-c">C&#xE1;c c&#xF4;ng ngh&#x1EC7; kh&#xE1;c</a></li></ul></li>
 <li><a href="#frameworks-using-less">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less</a><ul class="nav"><li><a href="#frameworks-using-less-ui-theme-frameworks-and-components">UI/Theme Frameworks and Components</a></li>
 <li><a href="#frameworks-using-less-grid-systems">Grid Systems</a></li>
 <li><a href="#frameworks-using-less-mixin-libraries">Mixin Libraries</a></li></ul></li>
@@ -1296,42 +1296,42 @@ Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte9
        
 
 
-<h2 class="docs-heading">Node.js compilers<span class="anchor-target" id="third-party-compilers-node-js-compilers"></span>
-<a href="#third-party-compilers-node-js-compilers" name="third-party-compilers-node-js-compilers" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c tr&#xEC;nh d&#x1ECB;ch Node.js<span class="anchor-target" id="third-party-compilers-c-c-tr-nh-d-ch-node-js"></span>
+<a href="#third-party-compilers-c-c-tr-nh-d-ch-node-js" name="third-party-compilers-c-c-tr-nh-d-ch-node-js" class="anchor glyphicon glyphicon-link"></a></h2>
 <ul>
 <li><strong><a href="https://github.com/gruntjs/grunt-contrib-less">grunt-contrib-less</a></strong></li>
-<li><strong><a href="https://github.com/assemble/assemble-less">assemble-less</a></strong>: Full-featured Grunt.js plugin for compiling Less files to CSS, with additional options for maintaining libraries of Less components and themes. For advanced users, this plugin allows you to define and manage Less &quot;packages&quot; or &quot;bundles&quot; using JSON, <a href="https://github.com/bestiejs/lodash">Lo-dash</a>(underscore) templates (e.g. <code>&lt;%= bootstrap.less %&gt;</code>), and <a href="https://github.com/isaacs/node-glob">node-glob</a> / <a href="https://github.com/isaacs/minimatch">minimatch</a> (e.g. <code>&apos;../src/**/*.less&quot;</code>). <em>assemble-less</em> also has a number of options including minifying CSS</li>
-<li><strong><a href="https://github.com/plus3network/gulp-less">gulp-less</a></strong>: Please note that this plugin discards <code>source-map</code> options, opting to instead using the <a href="https://github.com/floridoo/gulp-sourcemaps">gulp-sourcemaps</a> library.</li>
-<li><strong><a href="https://github.com/twitter/recess">RECESS</a></strong>: Twitter&apos;s code quality tool for CSS built on top of Less. RECESS has options for compiling Less to CSS, as well as linting, formatting and minifying CSS.</li>
-<li><strong><a href="https://github.com/jgonera/autoless">autoless</a></strong>: A Less files watcher, with dependency tracking (changes to imported files cause other files to be updated too) and growl notifications.</li>
-<li><strong><a href="https://github.com/emberfeather/less.js-middleware">Connect Middleware for Less.js</a></strong>: Connect Middleware for Less.js compiling</li>
+<li><strong><a href="https://github.com/assemble/assemble-less">assemble-less</a></strong>: Plugin Grunt.js cung c&#x1EA5;p &#x111;&#x1EA7;y &#x111;&#x1EE7; t&#xED;nh n&#x103;ng &#x111;&#x1EC3; d&#x1ECB;ch t&#x1EC7;p tin Less th&#xE0;nh CSS, v&#x1EDB;i c&#xE1;c t&#xF9;y ch&#x1ECD;n b&#x1ED5; sung cho vi&#x1EC7;c duy tr&#xEC; c&#xE1;c th&#x1B0; vi&#x1EC7;n c&#x1EE7;a c&#xE1;c th&#xE0;nh ph&#x1EA7;n v&#xE0; theme Less. N&#x1EBF;u b&#x1EA1;n l&#xE0; ng&#x1B0;&#x1EDD;i s&#x1EED; d&#x1EE5;ng n&#xE2;ng cao, plugin n&#xE0;y cho ph&#xE9;p b&#x1EA1;n &#x111;&#x1ECB;nh ngh&#x129;a v&#xE0; qu&#x1EA3;n l&#xFD; &quot;c&#xE1;c g&#xF3;i&quot; ho&#x1EB7;c &quot;c&#xE1;c nh&#xF3;m&quot; Less b&#x1EB1;ng c&#xE1;ch s&#x1EED; d&#x1EE5;ng JSON, c&#xE1;c template <a href="https://github.com/bestiejs/lodash">Lo-dash</a>(g&#x1EA1;ch d&#x1B0;&#x1EDB;i)(V&#xED; d&#x1EE5;: <code>&lt;%= bootstrap.less %&gt;</code>), v&#xE0; <a href="https://github.com/isaacs/node-glob">node-glob</a> / <a href="https://github.com/isaacs/minimatch">minimatch</a> (V&#xED; d&#x1EE5;: <code>&apos;../src/**/*.less&quot;</code>). <em>assemble-less</em> c&#x169;ng cung c&#x1EA5;p m&#x1ED9;t s&#x1ED1; c&#xE1;c t&#xF9;y ch&#x1ECD;n bao g&#x1ED3;m c&#x1EA3; vi&#x1EC7;c n&#xE9;n c&#xE1;c t&#x1EAD;p tin CSS</li>
+<li><strong><a href="https://github.com/plus3network/gulp-less">gulp-less</a></strong>: H&#xE3;y l&#x1B0;u &#xFD; r&#x1EB1;ng plugin n&#xE0;y &#x111;&#xE3; lo&#x1EA1;i b&#x1ECF; c&#xE1;c t&#xF9;y ch&#x1ECD;n <code>source-map</code> v&#xE0; thay th&#x1EBF; b&#x1EB1;ng th&#x1B0; vi&#x1EC7;n <a href="https://github.com/floridoo/gulp-sourcemaps">gulp-sourcemaps</a>.</li>
+<li><strong><a href="https://github.com/twitter/recess">RECESS</a></strong>: M&#x1ED9;t c&#xF4;ng c&#x1EE5; &#x111;&#xE1;nh gi&#xE1; ch&#x1EA5;t l&#x1B0;&#x1EE3;ng m&#xE3; ngu&#x1ED3;n c&#x1EE7;a Twitter d&#xE0;nh cho c&#xE1;c t&#x1EC7;p tin CSS &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch t&#x1EEB; Less. RECESS c&#xF3; c&#xE1;c t&#xF9;y ch&#x1ECD;n &#x111;&#x1EC3; d&#x1ECB;ch t&#x1EC7;p tin Less th&#xE0;nh CSS, c&#x169;ng nh&#x1B0; l&#xE0; linting, formatting v&#xE0; n&#xE9;n c&#xE1;c t&#x1EC7;p tin CSS.</li>
+<li><strong><a href="https://github.com/jgonera/autoless">autoless</a></strong>: M&#x1ED9;t c&#xF4;ng c&#x1EE5; theo d&#xF5;i c&#xE1;c t&#x1EC7;p tin Less, c&#xF3; ch&#x1EE9;c n&#x103;ng truy v&#x1EBF;t ph&#x1EE5; thu&#x1ED9;c (bao g&#x1ED3;m c&#x1EA3; nh&#x1EEF;ng thay &#x111;&#x1ED5;i c&#x1EE7;a c&#xE1;c t&#x1EC7;p tin &#x111;&#x1B0;&#x1EE3;c import do c&#x1EAD;p nh&#x1EAD;t) v&#xE0; c&#xE1;c th&#xF4;ng b&#xE1;o.</li>
+<li><strong><a href="https://github.com/emberfeather/less.js-middleware">Connect Middleware for Less.js</a></strong>: K&#x1EBF;t n&#x1ED1;i Middleware &#x111;&#x1EC3; bi&#xEA;n d&#x1ECB;ch Less</li>
 </ul>
-<h2 class="docs-heading">Other technologies<span class="anchor-target" id="third-party-compilers-other-technologies"></span>
-<a href="#third-party-compilers-other-technologies" name="third-party-compilers-other-technologies" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c c&#xF4;ng ngh&#x1EC7; kh&#xE1;c<span class="anchor-target" id="third-party-compilers-c-c-c-ng-ngh-kh-c"></span>
+<a href="#third-party-compilers-c-c-c-ng-ngh-kh-c" name="third-party-compilers-c-c-c-ng-ngh-kh-c" class="anchor glyphicon glyphicon-link"></a></h2>
 <p><strong>Wro4j Runner CLI</strong>
-Download the <a href="http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-with-dependencies.jar">wro4j-runner.jar</a> file and run the following command:</p>
+T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-with-dependencies.jar">wro4j-runner.jar</a> v&#xE0; ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh sau:</p>
 <pre><code class="lang-bash">java -jar wro4j-runner-<span class="hljs-number">1.5</span>.<span class="hljs-number">0</span>-jar-with-dependencies.jar --preProcessors lessCss
 </code></pre>
-<p>More details can be found here: <a href="http://code.google.com/p/wro4j/wiki/wro4jRunner">Wro4j Runner CLI</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://code.google.com/p/wro4j/wiki/wro4jRunner">Wro4j Runner CLI</a></p>
 <p><strong>CSS::LESSp</strong></p>
 <p><a href="http://search.cpan.org/~drinchev/CSS-LESSp/">http://search.cpan.org/~drinchev/CSS-LESSp/</a></p>
 <pre><code class="lang-bash">lessp.pl styles.less &gt; styles.css
 </code></pre>
 <p><strong>Windows Script Host</strong></p>
-<p>Note - the official Less node runs on windows, so we are not sure why you would use this.</p>
-<p><a href="https://github.com/duncansmart/less.js-windows">Less.js for Windows</a> with this usage:</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng Less node phi&#xEA;n b&#x1EA3;n ch&#xED;nh th&#x1EE9;c ch&#x1EA1;y tr&#xEA;n Windows, v&#xEC; th&#x1EBF; c&#xF4;ng ngh&#x1EC7; n&#xE0;y c&#xF3; th&#x1EC3; th&#x1EF1;c s&#x1EF1; kh&#xF4;ng c&#x1EA7;n thi&#x1EBF;t.</p>
+<p><a href="https://github.com/duncansmart/less.js-windows">Less.js cho Windows</a> &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nh&#x1B0; sau:</p>
 <pre><code class="lang-bash">cscript //nologo lessc.wsf input.less [output.css] [-compress]
 </code></pre>
-<p>or</p>
+<p>ho&#x1EB7;c</p>
 <pre><code class="lang-bash">lessc input.less [output.css] [-compress]
 </code></pre>
 <p><strong>dotless</strong></p>
-<p><a href="http://www.dotlesscss.org/">dotless for Windows</a> can be run like this:</p>
+<p><a href="http://www.dotlesscss.org/">dotless cho Windows</a> &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng nh&#x1B0; sau:</p>
 <pre><code class="lang-bash">dotless.Compiler.exe [-switches] &lt;inputfile&gt; [outputfile]
 </code></pre>
-<p><strong>Also see:</strong> </p>
+<p><strong>B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; tham kh&#x1EA3;o:</strong> </p>
 <ul>
-<li><a href="/about/#ports">Ports of Less</a></li>
+<li><a href="/about/#ports">C&#xE1;c c&#x1ED5;ng c&#x1EE7;a Less</a></li>
 </ul>
 
 
