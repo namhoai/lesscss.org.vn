@@ -1,27 +1,21 @@
----
-title: Plugins
----
+## Làm thế nào để sử dụng plugin? - command line
 
-How do I use a plugin ? - command line
---------------------------------------
+Nếu bạn sử dụng lessc, điều đầu tiên cần làm là cài plugin đó. Less khuyên dùng các plugin có tên bắt đầu bằng "less-plugin", tuy nhiên không bắt buộc. Ví dụ, để cài plugin clean css, bạn cần gõ lệnh này vào command line `npm install less-plugin-clean-css`.
 
-If you are using lessc, the first thing you need to do is install that plugin. We reccommend the plugin starts "less-plugin" though that isn't required. For the clean css plugin you would install `npm install less-plugin-clean-css`.
-
-To use the plugin, if you specify a unrecognised option, we attempt to load that, for example
+Để sử dụng plugin, nếu bạn truyền vào một tùy chọn được hỗ trợ trong chuẩn lessc, lessc sẽ thử load plugin với tên tương ứng, ví dụ:
 ```
 lessc --clean-css="advanced"
 ```
 
-Will use the plugin you just installed. You can also be more direct, for example
+Với lệnh trên, less sẽ load và sử dụng plugin clean css vừa được cài đặt bên trên. Bạn cũng có thể gọi plugin một cách cụ thể hơn, ví dụ:
 
 ```
 lessc --plugin=path_to_plugin=options
 ```
 
-Using a plugin in code
-----------------------
+## Sử dụng plugin trong code
 
-In Node, require the plugin and pass it to less in an array as an option plugins. E.g.
+Để sử dụngl một plugin trong Node, bạn cần truyền plugin đó vào làm một phần tử trong mảng plugins, ví dụ:
 
 ```
 var myPlugin = require("my-plugin");
@@ -32,10 +26,9 @@ less.render(myCSS, { plugins: [myPlugin] })
     });
 ```
 
-In the browser
--------------------
+## Trong trình duyệt
 
-Plugin authors should provide a javascript file, just include that in the page *before* the less.js script.
+Các plugin thường đi cùng một file javascript, để sử dụng nó bạn chỉ cần thêm file javascript này vào *trước* file less.js.
 
 ```
 <script src="plugin.js"></script>
@@ -47,42 +40,40 @@ less = {
 <script src="less.min.js"></script>
 ```
 
-List of less plugins
---------------------
+## Danh sách plugin
 
- Feature Plugins (postprocess)
- - [Clean CSS plugin to compress less](https://github.com/less/less-plugin-clean-css)
- - [Autoprefixer plugin to add backwards compatibility to your css](https://github.com/less/less-plugin-autoprefix)
- - [Inline urls - converts `url()` to a call to `data-uri()`](https://github.com/less/less-plugin-inline-urls)
- - [Group CSS Media Queries - group CSS media queries](https://github.com/bassjobsen/less-plugin-group-css-media-queries)
- - [Compresses the css output from Less using csswring](https://github.com/bassjobsen/less-plugin-csswring)
- - [Generate left-to-right (LTR) or right-to-left (RTL) CSS from Less using css-flip](https://github.com/bassjobsen/less-plugin-css-flip)
- - [Reverses Less code from ltr to rtl](https://github.com/less/less-plugin-rtl)
- - [Postprocess Less using pleeease](https://github.com/bassjobsen/less-plugin-pleeease)
- - [CSScomb plugin for less.js](https://github.com/bassjobsen/less-plugin-csscomb/)
+Các plugin nổi bật
+ - [Clean CSS - nén css](https://github.com/less/less-plugin-clean-css)
+ - [Autoprefixer - thêm các tiền tố trình duyệt, nâng cao tính tương thích ngược cho css của bạn](https://github.com/less/less-plugin-autoprefix)
+ - [Inline urls - thay các url ảnh dạng `url()` thành `data-uri()`](https://github.com/less/less-plugin-inline-urls)
+ - [Group CSS Media Queries - gom nhóm các media query](https://github.com/bassjobsen/less-plugin-group-css-media-queries)
+ - [CSS Wiring - nén css](https://github.com/bassjobsen/less-plugin-csswring)
+ - [CSS Flip - tạo CSS cho ngôn ngữ trái-sang-phải (LTR) hoặc phải-sang-trái (RTL)](https://github.com/bassjobsen/less-plugin-css-flip)
+ - [RTL - đảo ngược Less từ LTR thành RTL](https://github.com/less/less-plugin-rtl)
+ - [Pleeease - bộ xử lý Less](https://github.com/bassjobsen/less-plugin-pleeease)
+ - [CSScomb](https://github.com/bassjobsen/less-plugin-csscomb/)
  
-Framework/Library Wrappers (preprocess):
- - [Npm Import - import from a sub npm repository](https://github.com/less/less-plugin-npm-import)
- - [Bower Resolve - import from a Bower package](https://github.com/Mercateo/less-plugin-bower-resolve)
- - [Bootstrap for less.js](https://github.com/bassjobsen/less-plugin-bootstrap/)
- - [Lesshat for less.js](https://github.com/bassjobsen/less-plugin-lesshat/)
- - [Flexbox grid from flexboxgrid.com for less.js](https://github.com/bassjobsen/less-plugin-flexboxgrid) 
- - [Flexible Grid System (flexible.gs) for less.js ](https://github.com/bassjobsen/less-plugin-flexiblegs)
- - [Cardinal CSS for less.js](https://github.com/bassjobsen/less-plugin-cardinal)
- - [Ionic for less.js](https://github.com/bassjobsen/less-plugin-ionic)
- - [Skeleton for less.js](https://github.com/bassjobsen/less-plugin-skeleton)
+Các thư viện/framework tiền xử lý:
+ - [Npm Import - nhập một repo npm con](https://github.com/less/less-plugin-npm-import)
+ - [Bower Resolve - nhập từ gói bower](https://github.com/Mercateo/less-plugin-bower-resolve)
+ - [Bootstrap cho less.js](https://github.com/bassjobsen/less-plugin-bootstrap/)
+ - [Lesshat cho less.js](https://github.com/bassjobsen/less-plugin-lesshat/)
+ - [Flexbox grid từ flexboxgrid.com cho less.js](https://github.com/bassjobsen/less-plugin-flexboxgrid) 
+ - [Flexible Grid System (flexible.gs) cho less.js ](https://github.com/bassjobsen/less-plugin-flexiblegs)
+ - [Cardinal CSS cho less.js](https://github.com/bassjobsen/less-plugin-cardinal)
+ - [Ionic cho less.js](https://github.com/bassjobsen/less-plugin-ionic)
+ - [Skeleton cho less.js](https://github.com/bassjobsen/less-plugin-skeleton)
 
-Plugins which adds functions:
- - [Adds some advanced colour functions that helps in finding more contrasting colors](https://github.com/less/less-plugin-advanced-color-functions/)
- - [The cubehelix(y,a,b,t) function returns a color between the two colors a and b, using a gamma correction value of 1](https://github.com/bassjobsen/less-plugin-cubehelix). (Based on [Dave Green's `cubehelix' colour scheme](https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/))
+Plugin thêm function cho Less:
+ - [Thêm các function xử lý ảnh nâng cao giúp tìm các màu tương phản](https://github.com/less/less-plugin-advanced-color-functions/)
+ - [Function cubehelix(y,a,b,t) trả về màu giữa hai màu a và b, sử dụng giá trị hiệu chỉnh gamma băng 1](https://github.com/bassjobsen/less-plugin-cubehelix). (Dựa trên [bảng phối màu `cubehelix` của Dave Green](https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/))
 
 
-For plugin authors
---------------------------
+## Dành cho người viết plugin
 
-Less supports some entry points that allow an author to integrate with less. We may add some more in the future.
+Less hỗ trợ vài điểm mở cho phép các plugin gắn kết với less. Less sẽ hỗ trợ thêm một số điểm mở trong thời gian tới.
 
-The plugin itself has a very simple signtaure, like this
+Một plugin cơ bản chỉ cần một cấu trúc đơn giản như sau:
 ```
 {
     install: function(less, pluginManager) {
@@ -90,13 +81,13 @@ The plugin itself has a very simple signtaure, like this
     minVersion: [2, 0, 0] /* optional */
 }
 ```
-So, the plugin gets the less object, which in v2 has more classes on it (making it easy to extend), a plugin manager which provides some hooks to add visitors, file managers and post processors.
+Như trên, plugin có thể sử dụng đối tưởng less (Less v2 có thêm nhiều class, thuận tiện cho việc kế thừa và mở rộng) và trình quản lý plugin (cung cấp một số hook để thêm visitor, trình quản lý file và bộ xử lý).
 
-If your plugin supports lessc, there are a few more details and the signature looks like this
+Nếu plugin của bạn hỗ trợ lessc, dưới đây là cấu trúc chi tiết hơn để gắn kết với lessc
 
 ```
 {
-    install: function(less, pluginManager) {
+    install: function(less, pluginManager) { 
     },
     setOptions: function(argumentString) { /* optional */
     },
@@ -105,11 +96,11 @@ If your plugin supports lessc, there are a few more details and the signature lo
     minVersion: [2, 0, 0] /* optional */
 }
 ```
-The additions are the setOptions function which passes the string the user enters when specifying your plugin and also the printUsage function which you should use to explain your options and how the plugin works.
+Ở đây có thêm hàm setOptions (nhận vào chuỗi người dùng nhập khi gọi plugin của bạn), và hàm printUsage sử dụng để in ra hướng dẫn về các tùy chọn và chi tiết về plugin của bạn.
 
-Here are some example repos showing the different plugin types
-post-processor: https://github.com/less/less-plugin-clean-css
+Đây là một vài ví dụ về các kiểu plugin khác nhau:
+bộ xử lý: https://github.com/less/less-plugin-clean-css
 visitor: https://github.com/less/less-plugin-inline-urls
-file-manager: https://github.com/less/less-plugin-npm-import
+trình quản lý file: https://github.com/less/less-plugin-npm-import
 
 Note: Plugins are different from creating a version of less for a different environment but they do have similarities, for example node provides 2 file managers by default and browser provides one and that is the main step in getting less to run within a specific environment. The plugin allows you to add file managers.
