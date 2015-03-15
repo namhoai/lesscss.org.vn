@@ -1,93 +1,93 @@
 ---
-title: GUIs for Less.js
+title: Các công cụ GUI cho Less.js
 ---
 
-<span class="warning">**Tip**: try out the different Less tools available for your platform to see which one meets your needs.</span>
+<span class="warning">**Chú ý**: Hãy thử các công cụ Less khác nhau hỗ trợ nền tảng của bạn để xem công cụ nào là phù hợp với bạn nhất.</span>
 
-_This page focuses on GUI compilers. For command line usage and tools see [Command Line Usage](#command-line-usage)._
+_Trang này chủ yếu đề cập tới các trình dịch GUI. Đối với trường hợp sử dụng dòng lệnh hoặc công cụ, hãy tham khảo [Sử dụng dòng lệnh](#command-line-usage)._
 
-## Cross platform
+## Đa nền tảng
 
 ### [Crunch!](http://crunchapp.net/)
 
-> Crunch is not just a Less compiler, it is also a Less editor for Windows and Mac.
+> Crunch không chỉ là một trình dịch Less mà nó còn là trình biên tập Less cho Windows và Mac.
 
-If you work a lot with Less files, you should definitely try it out. Crunch is built on the Adobe AIR platform. Get more info: [http://crunchapp.net/](http://crunchapp.net/).
+Nếu như bạn làm việc với nhiều tệp tin Less, bạn nên sử dụng công cụ này. Crunch được xây dựng trên nền tảng Adobe AIR. Để biết thêm thông tin chi tiết, hãy tham khảo: [http://crunchapp.net/](http://crunchapp.net/).
 
 ![Crunch screenshot](http://crunchapp.net/wp-content/themes/crunch/img/screenshot2.png)
 
 
 ### [Mixture](http://mixture.io/)
 
-> A rapid prototyping and static site generation tool for designers and developers
+> Một công cụ tạo nguyên mẫu và trang web tĩnh nhanh gọn dành cho nhà thiết kế và nhà phát triển
 
-Mixture brings together a collection of awesome tools and best practices. It's quick, no-fuss, super-powerful and works with your favourite editor.
+Mixture mang đến cho bạn một bộ sưu tập các công cụ và các bài thực hành tuyệt vời. Nó rất nhanh, không quá cầu kỳ, đầy tính năng và hoạt động với trình biên tập ưa thích của bạn.
 
-Get more info: [http://mixture.io/](http://mixture.io)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [http://mixture.io/](http://mixture.io)
 
-![mixture screenshot](https://s3.amazonaws.com/mixture-mixed/1/775/assets/img/img1.jpg)
+![Mixture screenshot](https://s3.amazonaws.com/mixture-mixed/1/775/assets/img/img1.jpg)
 
 
 ### [SimpLESS](http://wearekiss.com/simpless)
 
-> SimpLESS is a minimalistic Less compiler. Just drag, drop and compile.
+> SimpLESS là một trình dịch Less gọn nhẹ. Bạn chỉ việc kéo, thả và dịch.
 
-One of the unique features of SimpLESS is that it supports 'prefixing' your CSS by using [http://prefixr.com.](http://prefixr.com). SimpLESS is built on the Titanium platform. Get more info: [http://wearekiss.com/simpless](http://wearekiss.com/simpless)
+Một trong số những tính năng hay nhất của SimpLESS là nó hỗ trợ 'thêm tiền tố' vào mã CSS của bạn bằng cách sử dụng [http://prefixr.com.](http://prefixr.com). SimpLESS được xây dựng trên nền tảng Titanium. Để biết thêm thông tin chi tiết, hãy tham khảo: [http://wearekiss.com/simpless](http://wearekiss.com/simpless)
 
 ![SimpLESS screenshot](http://wearekiss.com/lib/img/simpless/app-windows.png?1)
 
 
 ### [Koala](http://koala-app.com/)
 
-> Koala is a cross-platform GUI application for compiling less, sass and coffeescript.
+> Koala là một ứng dụng GUI đa nền tảng để dịch less, sass và coffeescript.
 
-Features: cross platform, compile error notification supports and compile options supports.
+Các tính năng: đa nền tảng, hỗ trợ thông báo lỗi khi dịch và các tùy chọn dịch.
 
-Get more info: [http://koala-app.com/](http://koala-app.com/)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [http://koala-app.com/](http://koala-app.com/)
 
 ![koala screenshot](http://koala-app.com/img/screenshot.png)
 
 
-## Specific platforms
+## Các nền tảng cụ thể
 
 ### Windows
 
 #### [Prepros App](http://alphapixels.com/prepros)
->Prepros is a free and open source app that can compile less, sass, stylus, jade, haml and much more with live browser refresh.
+>Prepros là một ứng dụng mã nguồn mở miễn phí cho phép dịch less, sass, stylus, jade, haml và rất nhiều ngôn ngữ khác với tính năng refresh trình duyệt trực tiếp.
 
-Get more info at [http://alphapixels.com/prepros](http://alphapixels.com/prepros)
+Để biết thêm thông tin chi tiết, hãy tham khảo [http://alphapixels.com/prepros](http://alphapixels.com/prepros)
 
 ![Prepros screenshot](http://alphapixels.com/prepros/static/img/prepros.jpg)
 
 #### [WinLess](https://github.com/marklagendijk/WinLess)
 
-> WinLess started out as a clone of Less.app, it takes a more feature-complete approach and has several settings. It also supports starting with command line arguments.
+> WinLess khởi đầu như một bản sao của Less.app, nó mang đến một cách tiếp cận nhiều tính năng hơn đi kèm với một số thiết lập. Ứng dụng này cũng hỗ trợ bắt đầu với các tham số dòng lệnh.
 
-Get more info: [https://github.com/marklagendijk/WinLess](https://github.com/marklagendijk/WinLess)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [https://github.com/marklagendijk/WinLess](https://github.com/marklagendijk/WinLess)
 
 ### OSx
 
 #### [LESS.app](http://incident57.com/less)
 
-> LESS.app was the first GUI compiler for Less. LESS.app has a 'Compiler' tab where you can see the compiler results.
+> LESS.app là trình dịch GUI đầu tiên cho Less. LESS.app có một tab "Trình dịch" là nơi để cho bạn thấy các kết quả khi dịch.
 
-Get more info: [http://incident57.com/less](http://incident57.com/less)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [http://incident57.com/less](http://incident57.com/less)
 
 ![LESS.app screenshot](http://incident57.com/less/images/hero-window.png)
 
 #### [CodeKit](http://incident57.com/codekit)
 
-> CodeKit is the successor to LESS.app, and supports Less among many other preprocessing languages, such as SASS, Jade, Markdown, and many more.
+> CodeKit là hậu duệ của LESS.app, và hỗ trợ Less trong số rất nhiều các ngôn ngữ tiền xử lý khác như SASS, Jade, Markdown,...
 
-Get more info: [http://incident57.com/codekit](http://incident57.com/codekit)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [http://incident57.com/codekit](http://incident57.com/codekit)
 
 ![CodeKit screenshot](http://incident57.com/codekit/images/screenshot-images.jpg)
 
 #### [LiveReload](http://livereload.com)
 
-> CSS edits and image changes apply live. CoffeeScript, SASS, Less and others just work.
+> Việc cập nhật CSS và thay thế ảnh được áp dụng một cách trực tiếp. Hoạt động với CoffeeScript, SASS, Less và hầu hết các ngôn ngữ tiền xử lý khác.
 
-Get more info: [http://livereload.com](http://livereload.com)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [http://livereload.com](http://livereload.com)
 
 ![LiveReload screenshot](http://assets.livereload.com/embedded-images/LiveReload-LESS-screenshot-on-white.png)
 
@@ -95,9 +95,9 @@ Get more info: [http://livereload.com](http://livereload.com)
 
 #### [Plessc](https://github.com/Mte90/Plessc)
 
-> Plessc is a gui fronted made with PyQT.
+> Plessc là một GUI được làm bằng PyQT.
 
-Auto compile, log viewer, open the less file with the editor choosen, settings for compile the file.
-Get more info: [https://github.com/Mte90/Plessc](https://github.com/Mte90/Plessc)
+Tự động dịch, xem log, mở tệp tin less với trình biên tập được chọn, thiết lập các thông số cho việc dịch.
+Để biết thêm thông tin chi tiết, hãy tham khảo: [https://github.com/Mte90/Plessc](https://github.com/Mte90/Plessc)
 
 ![Plessc screenshot](https://github.com/Mte90/Plessc/raw/master/screenshot.png)
