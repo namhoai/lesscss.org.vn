@@ -135,11 +135,11 @@
 <li><a href="#using-less-in-the-browser-options">Options</a></li>
 <li><a href="#using-less-in-the-browser-relativeurls">relativeUrls</a></li></ul></li>
 <li><a href="#browser-support">C&#xE1;c tr&#xEC;nh duy&#x1EC7;t &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3;</a></li>
-<li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#plugins-how-do-i-use-a-plugin-command-line">How do I use a plugin ? - command line</a></li>
-<li><a href="#plugins-using-a-plugin-in-code">Using a plugin in code</a></li>
-<li><a href="#plugins-in-the-browser">In the browser</a></li>
-<li><a href="#plugins-list-of-less-plugins">List of less plugins</a></li>
-<li><a href="#plugins-for-plugin-authors">For plugin authors</a></li></ul></li>
+<li><a href="#plugins">Plugins</a><ul class="nav"><li><a href="#plugins-l-m-th-n-o-s-d-ng-plugin-command-line">L&#xE0;m th&#x1EBF; n&#xE0;o &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng plugin? - command line</a></li>
+<li><a href="#plugins-s-d-ng-plugin-trong-code">S&#x1EED; d&#x1EE5;ng plugin trong code</a></li>
+<li><a href="#plugins-trong-tr-nh-duy-t">Trong tr&#xEC;nh duy&#x1EC7;t</a></li>
+<li><a href="#plugins-danh-s-ch-plugin">Danh s&#xE1;ch plugin</a></li>
+<li><a href="#plugins-d-nh-cho-ng-i-vi-t-plugin">D&#xE0;nh cho ng&#x1B0;&#x1EDD;i vi&#x1EBF;t plugin</a></li></ul></li>
 <li><a href="#programmatic-usage">S&#x1EED; d&#x1EE5;ng Less trong code</a><ul class="nav"><li><a href="#programmatic-usage-getting-access-to-the-log">Getting access to the log</a></li></ul></li>
 <li><a href="#online-less-compilers">Tr&#xEC;nh d&#x1ECB;ch Less online</a><ul class="nav"><li><a href="#online-less-compilers--less2css-org-http-less2css-org-">less2css.org</a></li>
 <li><a href="#online-less-compilers--winless-org-online-less-compiler-http-winless-org-online-less-compiler-">winless.org/online-less-compiler</a></li>
@@ -154,12 +154,12 @@
 <li><a href="#online-less-compilers--fiddle-salad-http-fiddlesalad-com-less-">Fiddle Salad</a></li>
 <li><a href="#online-less-compilers--js-bin-http-jsbin-com-">JS Bin</a></li>
 <li><a href="#online-less-compilers--jsfiddle-http-jsfiddle-net-hb2rsm2x-">jsFiddle</a></li></ul></li>
-<li><a href="#guis-for-less">C&#xE1;c c&#xF4;ng c&#x1EE5; GUI cho Less</a><ul class="nav"><li><a href="#guis-for-less-cross-platform">Cross platform</a></li>
+<li><a href="#guis-for-less">C&#xE1;c c&#xF4;ng c&#x1EE5; GUI cho Less</a><ul class="nav"><li><a href="#guis-for-less--a-n-n-t-ng">&#x110;a n&#x1EC1;n t&#x1EA3;ng</a></li>
 <li><a href="#guis-for-less--crunch-http-crunchapp-net-">Crunch!</a></li>
 <li><a href="#guis-for-less--mixture-http-mixture-io-">Mixture</a></li>
 <li><a href="#guis-for-less--simpless-http-wearekiss-com-simpless-">SimpLESS</a></li>
 <li><a href="#guis-for-less--koala-http-koala-app-com-">Koala</a></li>
-<li><a href="#guis-for-less-specific-platforms">Specific platforms</a></li>
+<li><a href="#guis-for-less-c-c-n-n-t-ng-c-th-">C&#xE1;c n&#x1EC1;n t&#x1EA3;ng c&#x1EE5; th&#x1EC3;</a></li>
 <li><a href="#guis-for-less-windows">Windows</a></li>
 <li><a href="#guis-for-less-osx">OSx</a></li>
 <li><a href="#guis-for-less-linux">Linux</a></li></ul></li>
@@ -775,11 +775,11 @@ If you use the watcher or call refresh with reload set to true, then the cache w
        
 
 
-<p>Less only supports running on modern browsers (recent versions of Chrome, Firefox, Safari and IE). We do not want to encourage client-side usage in production - this is because it adds a performance degradation for the user, who will see a delay (even if it is sub 1 second) while Less styles are compiled to CSS, and may cause cosmetic issues if Javascript errors occur.</p>
-<p>Note that PhantomJS does not currently implement <code>Function.prototype.bind</code> so you will require a es-5 shim for this function to run under PhantomJS (We use PhantomJS for tests and we append an es5-shim to make it work).</p>
-<p>There are reasons to use client-side less in production, such as if you want to allow users to tweak variables which will affect the theme and you want to show it to them in real-time - in this instance a user is not worried about waiting for a style to update before seeing it.</p>
-<p>If you need to run less in an older browser, please use an <a href="https://github.com/kriskowal/es5-shim">es-5 shim</a> which will add the javascript features that less requires.</p>
-<p>In addition, if you use options as attributes on the script or link tags, you will require browser support for <code>JSON.parse</code> or an appropriate polyfill.</p>
+<p>Less ch&#x1EC9; h&#x1ED7; tr&#x1EE3; khi ch&#x1EA1;y tr&#xEA;n c&#xE1;c tr&#xEC;nh duy&#x1EC7;t hi&#x1EC7;n &#x111;&#x1EA1;i (c&#xE1;c phi&#xEA;n b&#x1EA3;n g&#x1EA7;n &#x111;&#xE2;y c&#x1EE7;a Chrome, Firefox, Safari and IE). Ch&#xFA;ng t&#xF4;i kh&#xF4;ng khuy&#x1EBF;n kh&#xED;ch s&#x1EED; d&#x1EE5;ng Less ph&#xED;a client khi ph&#xE1;t h&#xE0;nh - v&#xEC; n&#xF3; s&#x1EBD; l&#xE0;m gi&#x1EA3;m hi&#x1EC7;u n&#x103;ng c&#x1EE7;a ng&#x1B0;&#x1EDD;i d&#xF9;ng v&#xE0; h&#x1ECD; s&#x1EBD; th&#x1EA5;y m&#x1ED9;t kho&#x1EA3;ng th&#x1EDD;i gian tr&#x1EC5; (th&#x1EAD;m ch&#xED; k&#x1EC3; c&#x1EA3; l&#xE0; 1 gi&#xE2;y) khi Less &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh CSS, v&#xE0; c&#xF3; th&#x1EC3; g&#xE2;y ra l&#x1ED7;i n&#x1EBF;u nh&#x1B0; c&#xF3; l&#x1ED7;i c&#x1EE7;a Javascript.</p>
+<p>L&#x1B0;u &#xFD; r&#x1EB1;ng PhantomJS hi&#x1EC7;n t&#x1EA1;i kh&#xF4;ng th&#x1EF1;c thi <code>Function.prototype.bind</code>, v&#xEC; th&#x1EBF; b&#x1EA1;n s&#x1EBD; c&#x1EA7;n th&#xEA;m b&#xE1;n v&#xE1; es-5 cho ch&#x1EE9;c n&#x103;ng n&#xE0;y &#x111;&#x1EC3; ch&#x1EA1;y d&#x1B0;&#x1EDB;i PhantomJS (Ch&#xFA;ng t&#xF4;i s&#x1EED; d&#x1EE5;ng PhantomJS &#x111;&#x1EC3; ki&#x1EC3;m th&#x1EED; v&#xE0; ch&#xFA;ng t&#xF4;i &#x111;&#xE3; g&#x1EAF;n th&#xEA;m es5-shim &#x111;&#x1EC3; c&#xF3; th&#x1EC3; l&#xE0;m &#x111;&#x1B0;&#x1EE3;c &#x111;i&#x1EC1;u &#x111;&#xF3;).</p>
+<p>C&#x169;ng c&#xF3; nh&#x1EEF;ng l&#xFD; do &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng Less ph&#xED;a client khi ph&#xE1;t h&#xE0;nh, ch&#x1EB3;ng h&#x1EA1;n nh&#x1B0; n&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n cho ph&#xE9;p ng&#x1B0;&#x1EDD;i d&#xF9;ng t&#xF9;y ch&#x1EC9;nh &#x111;&#x1B0;&#x1EE3;c bi&#x1EBF;n s&#x1ED1; m&#xE0; t&#x1EEB; &#x111;&#xF3; t&#xE1;c &#x111;&#x1ED9;ng &#x111;&#x1EBF;n s&#x1EF1; thay &#x111;&#x1ED5;i c&#x1EE7;a theme v&#xE0; b&#x1EA1;n mu&#x1ED1;n cho ng&#x1B0;&#x1EDD;i d&#xF9;ng th&#x1EA5;y &#x111;&#x1B0;&#x1EE3;c &#x111;i&#x1EC1;u &#x111;&#xF3; &#x1EDF; th&#x1EDD;i gian th&#x1EF1;c - trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p n&#xE0;y ng&#x1B0;&#x1EDD;i d&#xF9;ng kh&#xF4;ng c&#x1EA7;n ph&#x1EA3;i ch&#x1EDD; &#x111;&#x1EE3;i style &#x111;&#x1B0;&#x1EE3;c c&#x1EAD;p nh&#x1EAD;t tr&#x1B0;&#x1EDB;c khi nh&#xEC;n th&#x1EA5;y nh&#x1EEF;ng thay &#x111;&#x1ED5;i.</p>
+<p>N&#x1EBF;u nh&#x1B0; b&#x1EA1;n mu&#x1ED1;n s&#x1EED; d&#x1EE5;ng less tr&#xEA;n c&#xE1;c tr&#xEC;nh duy&#x1EC7;t c&#x169;, h&#xE3;y s&#x1EED; d&#x1EE5;ng <a href="https://github.com/kriskowal/es5-shim">es-5 shim</a> &#x111;&#x1EC3; th&#xEA;m c&#xE1;c t&#xED;nh n&#x103;ng javascript m&#xE0; less y&#xEA;u c&#x1EA7;u.</p>
+<p>Ngo&#xE0;i ra, n&#x1EBF;u nh&#x1B0; b&#x1EA1;n s&#x1EED; d&#x1EE5;ng c&#xE1;c t&#xF9;y ch&#x1ECD;n nh&#x1B0; l&#xE0; c&#xE1;c thu&#x1ED9;c t&#xED;nh tr&#xEA;n script ho&#x1EB7;c c&#xE1;c th&#x1EBB; link, b&#x1EA1;n s&#x1EBD; c&#x1EA7;n tr&#xEC;nh duy&#x1EC7;t h&#x1ED7; tr&#x1EE3; <code>JSON.parse</code> ho&#x1EB7;c  m&#x1ED9;t ph&#x1B0;&#x1A1;ng &#xE1;n d&#x1EF1; ph&#xF2;ng t&#x1B0;&#x1A1;ng &#x1EE9;ng.</p>
 
 
       <br>
@@ -811,25 +811,25 @@ If you use the watcher or call refresh with reload set to true, then the cache w
        
 
 
-<h2 class="docs-heading">How do I use a plugin ? - command line<span class="anchor-target" id="plugins-how-do-i-use-a-plugin-command-line"></span>
-<a href="#plugins-how-do-i-use-a-plugin-command-line" name="plugins-how-do-i-use-a-plugin-command-line" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>If you are using lessc, the first thing you need to do is install that plugin. We reccommend the plugin starts &quot;less-plugin&quot; though that isn&apos;t required. For the clean css plugin you would install <code>npm install less-plugin-clean-css</code>.</p>
-<p>To use the plugin, if you specify a unrecognised option, we attempt to load that, for example</p>
+<h2 class="docs-heading">L&#xE0;m th&#x1EBF; n&#xE0;o &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng plugin? - command line<span class="anchor-target" id="plugins-l-m-th-n-o-s-d-ng-plugin-command-line"></span>
+<a href="#plugins-l-m-th-n-o-s-d-ng-plugin-command-line" name="plugins-l-m-th-n-o-s-d-ng-plugin-command-line" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>N&#x1EBF;u b&#x1EA1;n s&#x1EED; d&#x1EE5;ng lessc, &#x111;i&#x1EC1;u &#x111;&#x1EA7;u ti&#xEA;n c&#x1EA7;n l&#xE0;m l&#xE0; c&#xE0;i plugin &#x111;&#xF3;. Less khuy&#xEA;n d&#xF9;ng c&#xE1;c plugin c&#xF3; t&#xEA;n b&#x1EAF;t &#x111;&#x1EA7;u b&#x1EB1;ng &quot;less-plugin&quot;, tuy nhi&#xEA;n kh&#xF4;ng b&#x1EAF;t bu&#x1ED9;c. V&#xED; d&#x1EE5;, &#x111;&#x1EC3; c&#xE0;i plugin clean css, b&#x1EA1;n c&#x1EA7;n g&#xF5; l&#x1EC7;nh n&#xE0;y v&#xE0;o command line <code>npm install less-plugin-clean-css</code>.</p>
+<p>&#x110;&#x1EC3; s&#x1EED; d&#x1EE5;ng plugin, n&#x1EBF;u b&#x1EA1;n truy&#x1EC1;n v&#xE0;o m&#x1ED9;t t&#xF9;y ch&#x1ECD;n &#x111;&#x1B0;&#x1EE3;c h&#x1ED7; tr&#x1EE3; trong chu&#x1EA9;n lessc, lessc s&#x1EBD; th&#x1EED; load plugin v&#x1EDB;i t&#xEA;n t&#x1B0;&#x1A1;ng &#x1EE9;ng, v&#xED; d&#x1EE5;:</p>
 <pre><code>lessc --clean-css=&quot;advanced&quot;
-</code></pre><p>Will use the plugin you just installed. You can also be more direct, for example</p>
+</code></pre><p>V&#x1EDB;i l&#x1EC7;nh tr&#xEA;n, less s&#x1EBD; load v&#xE0; s&#x1EED; d&#x1EE5;ng plugin clean css v&#x1EEB;a &#x111;&#x1B0;&#x1EE3;c c&#xE0;i &#x111;&#x1EB7;t b&#xEA;n tr&#xEA;n. B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; g&#x1ECD;i plugin m&#x1ED9;t c&#xE1;ch c&#x1EE5; th&#x1EC3; h&#x1A1;n, v&#xED; d&#x1EE5;:</p>
 <pre><code>lessc --plugin=path_to_plugin=options
-</code></pre><h2 class="docs-heading">Using a plugin in code<span class="anchor-target" id="plugins-using-a-plugin-in-code"></span>
-<a href="#plugins-using-a-plugin-in-code" name="plugins-using-a-plugin-in-code" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>In Node, require the plugin and pass it to less in an array as an option plugins. E.g.</p>
+</code></pre><h2 class="docs-heading">S&#x1EED; d&#x1EE5;ng plugin trong code<span class="anchor-target" id="plugins-s-d-ng-plugin-trong-code"></span>
+<a href="#plugins-s-d-ng-plugin-trong-code" name="plugins-s-d-ng-plugin-trong-code" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>&#x110;&#x1EC3; s&#x1EED; d&#x1EE5;ngl m&#x1ED9;t plugin trong Node, b&#x1EA1;n c&#x1EA7;n truy&#x1EC1;n plugin &#x111;&#xF3; v&#xE0;o l&#xE0;m m&#x1ED9;t ph&#x1EA7;n t&#x1EED; trong m&#x1EA3;ng plugins, v&#xED; d&#x1EE5;:</p>
 <pre><code>var myPlugin = require(&quot;my-plugin&quot;);
 less.render(myCSS, { plugins: [myPlugin] })
    .then(function(output) {
     },
     function(error) {
     });
-</code></pre><h2 class="docs-heading">In the browser<span class="anchor-target" id="plugins-in-the-browser"></span>
-<a href="#plugins-in-the-browser" name="plugins-in-the-browser" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>Plugin authors should provide a javascript file, just include that in the page <em>before</em> the less.js script.</p>
+</code></pre><h2 class="docs-heading">Trong tr&#xEC;nh duy&#x1EC7;t<span class="anchor-target" id="plugins-trong-tr-nh-duy-t"></span>
+<a href="#plugins-trong-tr-nh-duy-t" name="plugins-trong-tr-nh-duy-t" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xE1;c plugin th&#x1B0;&#x1EDD;ng &#x111;i c&#xF9;ng m&#x1ED9;t file javascript, &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n th&#xEA;m file javascript n&#xE0;y v&#xE0;o <em>tr&#x1B0;&#x1EDB;c</em> file less.js.</p>
 <pre><code>&lt;script src=&quot;plugin.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
 less = { 
@@ -837,50 +837,50 @@ less = {
 };
 &lt;/script&gt;  
 &lt;script src=&quot;less.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h2 class="docs-heading">List of less plugins<span class="anchor-target" id="plugins-list-of-less-plugins"></span>
-<a href="#plugins-list-of-less-plugins" name="plugins-list-of-less-plugins" class="anchor glyphicon glyphicon-link"></a></h2>
-<p> Feature Plugins (postprocess)</p>
+</code></pre><h2 class="docs-heading">Danh s&#xE1;ch plugin<span class="anchor-target" id="plugins-danh-s-ch-plugin"></span>
+<a href="#plugins-danh-s-ch-plugin" name="plugins-danh-s-ch-plugin" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#xE1;c plugin n&#x1ED5;i b&#x1EAD;t</p>
 <ul>
-<li><a href="https://github.com/less/less-plugin-clean-css">Clean CSS plugin to compress less</a></li>
-<li><a href="https://github.com/less/less-plugin-autoprefix">Autoprefixer plugin to add backwards compatibility to your css</a></li>
-<li><a href="https://github.com/less/less-plugin-inline-urls">Inline urls - converts <code>url()</code> to a call to <code>data-uri()</code></a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-group-css-media-queries">Group CSS Media Queries - group CSS media queries</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-csswring">Compresses the css output from Less using csswring</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-css-flip">Generate left-to-right (LTR) or right-to-left (RTL) CSS from Less using css-flip</a></li>
-<li><a href="https://github.com/less/less-plugin-rtl">Reverses Less code from ltr to rtl</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-pleeease">Postprocess Less using pleeease</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-csscomb/">CSScomb plugin for less.js</a></li>
+<li><a href="https://github.com/less/less-plugin-clean-css">Clean CSS - n&#xE9;n css</a></li>
+<li><a href="https://github.com/less/less-plugin-autoprefix">Autoprefixer - th&#xEA;m c&#xE1;c ti&#x1EC1;n t&#x1ED1; tr&#xEC;nh duy&#x1EC7;t, n&#xE2;ng cao t&#xED;nh t&#x1B0;&#x1A1;ng th&#xED;ch ng&#x1B0;&#x1EE3;c cho css c&#x1EE7;a b&#x1EA1;n</a></li>
+<li><a href="https://github.com/less/less-plugin-inline-urls">Inline urls - thay c&#xE1;c url &#x1EA3;nh d&#x1EA1;ng <code>url()</code> th&#xE0;nh <code>data-uri()</code></a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-group-css-media-queries">Group CSS Media Queries - gom nh&#xF3;m c&#xE1;c media query</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-csswring">CSS Wiring - n&#xE9;n css</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-css-flip">CSS Flip - t&#x1EA1;o CSS cho ng&#xF4;n ng&#x1EEF; tr&#xE1;i-sang-ph&#x1EA3;i (LTR) ho&#x1EB7;c ph&#x1EA3;i-sang-tr&#xE1;i (RTL)</a></li>
+<li><a href="https://github.com/less/less-plugin-rtl">RTL - &#x111;&#x1EA3;o ng&#x1B0;&#x1EE3;c Less t&#x1EEB; LTR th&#xE0;nh RTL</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-pleeease">Pleeease - b&#x1ED9; x&#x1EED; l&#xFD; Less</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-csscomb/">CSScomb</a></li>
 </ul>
-<p>Framework/Library Wrappers (preprocess):</p>
+<p>C&#xE1;c th&#x1B0; vi&#x1EC7;n/framework ti&#x1EC1;n x&#x1EED; l&#xFD;:</p>
 <ul>
-<li><a href="https://github.com/less/less-plugin-npm-import">Npm Import - import from a sub npm repository</a></li>
-<li><a href="https://github.com/Mercateo/less-plugin-bower-resolve">Bower Resolve - import from a Bower package</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-bootstrap/">Bootstrap for less.js</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-lesshat/">Lesshat for less.js</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-flexboxgrid">Flexbox grid from flexboxgrid.com for less.js</a> </li>
-<li><a href="https://github.com/bassjobsen/less-plugin-flexiblegs">Flexible Grid System (flexible.gs) for less.js </a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-cardinal">Cardinal CSS for less.js</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-ionic">Ionic for less.js</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-skeleton">Skeleton for less.js</a></li>
+<li><a href="https://github.com/less/less-plugin-npm-import">Npm Import - nh&#x1EAD;p m&#x1ED9;t repo npm con</a></li>
+<li><a href="https://github.com/Mercateo/less-plugin-bower-resolve">Bower Resolve - nh&#x1EAD;p t&#x1EEB; g&#xF3;i bower</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-bootstrap/">Bootstrap cho less.js</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-lesshat/">Lesshat cho less.js</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-flexboxgrid">Flexbox grid t&#x1EEB; flexboxgrid.com cho less.js</a> </li>
+<li><a href="https://github.com/bassjobsen/less-plugin-flexiblegs">Flexible Grid System (flexible.gs) cho less.js </a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-cardinal">Cardinal CSS cho less.js</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-ionic">Ionic cho less.js</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-skeleton">Skeleton cho less.js</a></li>
 </ul>
-<p>Plugins which adds functions:</p>
+<p>Plugin th&#xEA;m function cho Less:</p>
 <ul>
-<li><a href="https://github.com/less/less-plugin-advanced-color-functions/">Adds some advanced colour functions that helps in finding more contrasting colors</a></li>
-<li><a href="https://github.com/bassjobsen/less-plugin-cubehelix">The cubehelix(y,a,b,t) function returns a color between the two colors a and b, using a gamma correction value of 1</a>. (Based on <a href="https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/">Dave Green&apos;s `cubehelix&apos; colour scheme</a>)</li>
+<li><a href="https://github.com/less/less-plugin-advanced-color-functions/">Th&#xEA;m c&#xE1;c function x&#x1EED; l&#xFD; &#x1EA3;nh n&#xE2;ng cao gi&#xFA;p t&#xEC;m c&#xE1;c m&#xE0;u t&#x1B0;&#x1A1;ng ph&#x1EA3;n</a></li>
+<li><a href="https://github.com/bassjobsen/less-plugin-cubehelix">Function cubehelix(y,a,b,t) tr&#x1EA3; v&#x1EC1; m&#xE0;u gi&#x1EEF;a hai m&#xE0;u a v&#xE0; b, s&#x1EED; d&#x1EE5;ng gi&#xE1; tr&#x1ECB; hi&#x1EC7;u ch&#x1EC9;nh gamma b&#x103;ng 1</a>. (D&#x1EF1;a tr&#xEA;n <a href="https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/">b&#x1EA3;ng ph&#x1ED1;i m&#xE0;u <code>cubehelix</code> c&#x1EE7;a Dave Green</a>)</li>
 </ul>
-<h2 class="docs-heading">For plugin authors<span class="anchor-target" id="plugins-for-plugin-authors"></span>
-<a href="#plugins-for-plugin-authors" name="plugins-for-plugin-authors" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>Less supports some entry points that allow an author to integrate with less. We may add some more in the future.</p>
-<p>The plugin itself has a very simple signtaure, like this</p>
+<h2 class="docs-heading">D&#xE0;nh cho ng&#x1B0;&#x1EDD;i vi&#x1EBF;t plugin<span class="anchor-target" id="plugins-d-nh-cho-ng-i-vi-t-plugin"></span>
+<a href="#plugins-d-nh-cho-ng-i-vi-t-plugin" name="plugins-d-nh-cho-ng-i-vi-t-plugin" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>Less h&#x1ED7; tr&#x1EE3; v&#xE0;i &#x111;i&#x1EC3;m m&#x1EDF; cho ph&#xE9;p c&#xE1;c plugin g&#x1EAF;n k&#x1EBF;t v&#x1EDB;i less. Less s&#x1EBD; h&#x1ED7; tr&#x1EE3; th&#xEA;m m&#x1ED9;t s&#x1ED1; &#x111;i&#x1EC3;m m&#x1EDF; trong th&#x1EDD;i gian t&#x1EDB;i.</p>
+<p>M&#x1ED9;t plugin c&#x1A1; b&#x1EA3;n ch&#x1EC9; c&#x1EA7;n m&#x1ED9;t c&#x1EA5;u tr&#xFA;c &#x111;&#x1A1;n gi&#x1EA3;n nh&#x1B0; sau:</p>
 <pre><code>{
     install: function(less, pluginManager) {
     },
     minVersion: [2, 0, 0] /* optional */
 }
-</code></pre><p>So, the plugin gets the less object, which in v2 has more classes on it (making it easy to extend), a plugin manager which provides some hooks to add visitors, file managers and post processors.</p>
-<p>If your plugin supports lessc, there are a few more details and the signature looks like this</p>
+</code></pre><p>Nh&#x1B0; tr&#xEA;n, plugin c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng &#x111;&#x1ED1;i t&#x1B0;&#x1EDF;ng less (Less v2 c&#xF3; th&#xEA;m nhi&#x1EC1;u class, thu&#x1EAD;n ti&#x1EC7;n cho vi&#x1EC7;c k&#x1EBF; th&#x1EEB;a v&#xE0; m&#x1EDF; r&#x1ED9;ng) v&#xE0; tr&#xEC;nh qu&#x1EA3;n l&#xFD; plugin (cung c&#x1EA5;p m&#x1ED9;t s&#x1ED1; hook &#x111;&#x1EC3; th&#xEA;m visitor, tr&#xEC;nh qu&#x1EA3;n l&#xFD; file v&#xE0; b&#x1ED9; x&#x1EED; l&#xFD;).</p>
+<p>N&#x1EBF;u plugin c&#x1EE7;a b&#x1EA1;n h&#x1ED7; tr&#x1EE3; lessc, d&#x1B0;&#x1EDB;i &#x111;&#xE2;y l&#xE0; c&#x1EA5;u tr&#xFA;c chi ti&#x1EBF;t h&#x1A1;n &#x111;&#x1EC3; g&#x1EAF;n k&#x1EBF;t v&#x1EDB;i lessc</p>
 <pre><code>{
-    install: function(less, pluginManager) {
+    install: function(less, pluginManager) { 
     },
     setOptions: function(argumentString) { /* optional */
     },
@@ -888,11 +888,11 @@ less = {
     },
     minVersion: [2, 0, 0] /* optional */
 }
-</code></pre><p>The additions are the setOptions function which passes the string the user enters when specifying your plugin and also the printUsage function which you should use to explain your options and how the plugin works.</p>
-<p>Here are some example repos showing the different plugin types
-post-processor: <a href="https://github.com/less/less-plugin-clean-css">https://github.com/less/less-plugin-clean-css</a>
+</code></pre><p>&#x1EDE; &#x111;&#xE2;y c&#xF3; th&#xEA;m h&#xE0;m setOptions (nh&#x1EAD;n v&#xE0;o chu&#x1ED7;i ng&#x1B0;&#x1EDD;i d&#xF9;ng nh&#x1EAD;p khi g&#x1ECD;i plugin c&#x1EE7;a b&#x1EA1;n), v&#xE0; h&#xE0;m printUsage s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; in ra h&#x1B0;&#x1EDB;ng d&#x1EAB;n v&#x1EC1; c&#xE1;c t&#xF9;y ch&#x1ECD;n v&#xE0; chi ti&#x1EBF;t v&#x1EC1; plugin c&#x1EE7;a b&#x1EA1;n.</p>
+<p>&#x110;&#xE2;y l&#xE0; m&#x1ED9;t v&#xE0;i v&#xED; d&#x1EE5; v&#x1EC1; c&#xE1;c ki&#x1EC3;u plugin kh&#xE1;c nhau:
+b&#x1ED9; x&#x1EED; l&#xFD;: <a href="https://github.com/less/less-plugin-clean-css">https://github.com/less/less-plugin-clean-css</a>
 visitor: <a href="https://github.com/less/less-plugin-inline-urls">https://github.com/less/less-plugin-inline-urls</a>
-file-manager: <a href="https://github.com/less/less-plugin-npm-import">https://github.com/less/less-plugin-npm-import</a></p>
+tr&#xEC;nh qu&#x1EA3;n l&#xFD; file: <a href="https://github.com/less/less-plugin-npm-import">https://github.com/less/less-plugin-npm-import</a></p>
 <p>Note: Plugins are different from creating a version of less for a different environment but they do have similarities, for example node provides 2 file managers by default and browser provides one and that is the main step in getting less to run within a specific environment. The plugin allows you to add file managers.</p>
 
 
@@ -1099,89 +1099,89 @@ less.render(lessInput, {sourceMap: {sourceMapFileInline: true}})
        
 
 
-<p><span class="warning"><strong>Tip</strong>: try out the different Less tools available for your platform to see which one meets your needs.</span></p>
-<p><em>This page focuses on GUI compilers. For command line usage and tools see <a href="#command-line-usage">Command Line Usage</a>.</em></p>
-<h2 class="docs-heading">Cross platform<span class="anchor-target" id="guis-for-less-cross-platform"></span>
-<a href="#guis-for-less-cross-platform" name="guis-for-less-cross-platform" class="anchor glyphicon glyphicon-link"></a></h2>
+<p><span class="warning"><strong>Ch&#xFA; &#xFD;</strong>: H&#xE3;y th&#x1EED; c&#xE1;c c&#xF4;ng c&#x1EE5; Less kh&#xE1;c nhau h&#x1ED7; tr&#x1EE3; n&#x1EC1;n t&#x1EA3;ng c&#x1EE7;a b&#x1EA1;n &#x111;&#x1EC3; xem c&#xF4;ng c&#x1EE5; n&#xE0;o l&#xE0; ph&#xF9; h&#x1EE3;p v&#x1EDB;i b&#x1EA1;n nh&#x1EA5;t.</span></p>
+<p><em>Trang n&#xE0;y ch&#x1EE7; y&#x1EBF;u &#x111;&#x1EC1; c&#x1EAD;p t&#x1EDB;i c&#xE1;c tr&#xEC;nh d&#x1ECB;ch GUI. &#x110;&#x1ED1;i v&#x1EDB;i tr&#x1B0;&#x1EDD;ng h&#x1EE3;p s&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh ho&#x1EB7;c c&#xF4;ng c&#x1EE5;, h&#xE3;y tham kh&#x1EA3;o <a href="#command-line-usage">S&#x1EED; d&#x1EE5;ng d&#xF2;ng l&#x1EC7;nh</a>.</em></p>
+<h2 class="docs-heading">&#x110;a n&#x1EC1;n t&#x1EA3;ng<span class="anchor-target" id="guis-for-less--a-n-n-t-ng"></span>
+<a href="#guis-for-less--a-n-n-t-ng" name="guis-for-less--a-n-n-t-ng" class="anchor glyphicon glyphicon-link"></a></h2>
 <h3 class="docs-heading"><a href="http://crunchapp.net/">Crunch!</a><span class="anchor-target" id="guis-for-less--crunch-http-crunchapp-net-"></span>
 <a href="#guis-for-less--crunch-http-crunchapp-net-" name="guis-for-less--crunch-http-crunchapp-net-" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Crunch is not just a Less compiler, it is also a Less editor for Windows and Mac.</p>
+<p>Crunch kh&#xF4;ng ch&#x1EC9; l&#xE0; m&#x1ED9;t tr&#xEC;nh d&#x1ECB;ch Less m&#xE0; n&#xF3; c&#xF2;n l&#xE0; tr&#xEC;nh bi&#xEA;n t&#x1EAD;p Less cho Windows v&#xE0; Mac.</p>
 </blockquote>
-<p>If you work a lot with Less files, you should definitely try it out. Crunch is built on the Adobe AIR platform. Get more info: <a href="http://crunchapp.net/">http://crunchapp.net/</a>.</p>
+<p>N&#x1EBF;u nh&#x1B0; b&#x1EA1;n l&#xE0;m vi&#x1EC7;c v&#x1EDB;i nhi&#x1EC1;u t&#x1EC7;p tin Less, b&#x1EA1;n n&#xEA;n s&#x1EED; d&#x1EE5;ng c&#xF4;ng c&#x1EE5; n&#xE0;y. Crunch &#x111;&#x1B0;&#x1EE3;c x&#xE2;y d&#x1EF1;ng tr&#xEA;n n&#x1EC1;n t&#x1EA3;ng Adobe AIR. &#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://crunchapp.net/">http://crunchapp.net/</a>.</p>
 <p><img src="http://crunchapp.net/wp-content/themes/crunch/img/screenshot2.png" alt="Crunch screenshot"></p>
 <h3 class="docs-heading"><a href="http://mixture.io/">Mixture</a><span class="anchor-target" id="guis-for-less--mixture-http-mixture-io-"></span>
 <a href="#guis-for-less--mixture-http-mixture-io-" name="guis-for-less--mixture-http-mixture-io-" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>A rapid prototyping and static site generation tool for designers and developers</p>
+<p>M&#x1ED9;t c&#xF4;ng c&#x1EE5; t&#x1EA1;o nguy&#xEA;n m&#x1EAB;u v&#xE0; trang web t&#x129;nh nhanh g&#x1ECD;n d&#xE0;nh cho nh&#xE0; thi&#x1EBF;t k&#x1EBF; v&#xE0; nh&#xE0; ph&#xE1;t tri&#x1EC3;n</p>
 </blockquote>
-<p>Mixture brings together a collection of awesome tools and best practices. It&apos;s quick, no-fuss, super-powerful and works with your favourite editor.</p>
-<p>Get more info: <a href="http://mixture.io">http://mixture.io/</a></p>
-<p><img src="https://s3.amazonaws.com/mixture-mixed/1/775/assets/img/img1.jpg" alt="mixture screenshot"></p>
+<p>Mixture mang &#x111;&#x1EBF;n cho b&#x1EA1;n m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p c&#xE1;c c&#xF4;ng c&#x1EE5; v&#xE0; c&#xE1;c b&#xE0;i th&#x1EF1;c h&#xE0;nh tuy&#x1EC7;t v&#x1EDD;i. N&#xF3; r&#x1EA5;t nhanh, kh&#xF4;ng qu&#xE1; c&#x1EA7;u k&#x1EF3;, &#x111;&#x1EA7;y t&#xED;nh n&#x103;ng v&#xE0; ho&#x1EA1;t &#x111;&#x1ED9;ng v&#x1EDB;i tr&#xEC;nh bi&#xEA;n t&#x1EAD;p &#x1B0;a th&#xED;ch c&#x1EE7;a b&#x1EA1;n.</p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://mixture.io">http://mixture.io/</a></p>
+<p><img src="https://s3.amazonaws.com/mixture-mixed/1/775/assets/img/img1.jpg" alt="Mixture screenshot"></p>
 <h3 class="docs-heading"><a href="http://wearekiss.com/simpless">SimpLESS</a><span class="anchor-target" id="guis-for-less--simpless-http-wearekiss-com-simpless-"></span>
 <a href="#guis-for-less--simpless-http-wearekiss-com-simpless-" name="guis-for-less--simpless-http-wearekiss-com-simpless-" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>SimpLESS is a minimalistic Less compiler. Just drag, drop and compile.</p>
+<p>SimpLESS l&#xE0; m&#x1ED9;t tr&#xEC;nh d&#x1ECB;ch Less g&#x1ECD;n nh&#x1EB9;. B&#x1EA1;n ch&#x1EC9; vi&#x1EC7;c k&#xE9;o, th&#x1EA3; v&#xE0; d&#x1ECB;ch.</p>
 </blockquote>
-<p>One of the unique features of SimpLESS is that it supports &apos;prefixing&apos; your CSS by using <a href="http://prefixr.com">http://prefixr.com.</a>. SimpLESS is built on the Titanium platform. Get more info: <a href="http://wearekiss.com/simpless">http://wearekiss.com/simpless</a></p>
+<p>M&#x1ED9;t trong s&#x1ED1; nh&#x1EEF;ng t&#xED;nh n&#x103;ng hay nh&#x1EA5;t c&#x1EE7;a SimpLESS l&#xE0; n&#xF3; h&#x1ED7; tr&#x1EE3; &apos;th&#xEA;m ti&#x1EC1;n t&#x1ED1;&apos; v&#xE0;o m&#xE3; CSS c&#x1EE7;a b&#x1EA1;n b&#x1EB1;ng c&#xE1;ch s&#x1EED; d&#x1EE5;ng <a href="http://prefixr.com">http://prefixr.com.</a>. SimpLESS &#x111;&#x1B0;&#x1EE3;c x&#xE2;y d&#x1EF1;ng tr&#xEA;n n&#x1EC1;n t&#x1EA3;ng Titanium. &#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://wearekiss.com/simpless">http://wearekiss.com/simpless</a></p>
 <p><img src="http://wearekiss.com/lib/img/simpless/app-windows.png?1" alt="SimpLESS screenshot"></p>
 <h3 class="docs-heading"><a href="http://koala-app.com/">Koala</a><span class="anchor-target" id="guis-for-less--koala-http-koala-app-com-"></span>
 <a href="#guis-for-less--koala-http-koala-app-com-" name="guis-for-less--koala-http-koala-app-com-" class="anchor glyphicon glyphicon-link"></a></h3>
 <blockquote>
-<p>Koala is a cross-platform GUI application for compiling less, sass and coffeescript.</p>
+<p>Koala l&#xE0; m&#x1ED9;t &#x1EE9;ng d&#x1EE5;ng GUI &#x111;a n&#x1EC1;n t&#x1EA3;ng &#x111;&#x1EC3; d&#x1ECB;ch less, sass v&#xE0; coffeescript.</p>
 </blockquote>
-<p>Features: cross platform, compile error notification supports and compile options supports.</p>
-<p>Get more info: <a href="http://koala-app.com/">http://koala-app.com/</a></p>
+<p>C&#xE1;c t&#xED;nh n&#x103;ng: &#x111;a n&#x1EC1;n t&#x1EA3;ng, h&#x1ED7; tr&#x1EE3; th&#xF4;ng b&#xE1;o l&#x1ED7;i khi d&#x1ECB;ch v&#xE0; c&#xE1;c t&#xF9;y ch&#x1ECD;n d&#x1ECB;ch.</p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://koala-app.com/">http://koala-app.com/</a></p>
 <p><img src="http://koala-app.com/img/screenshot.png" alt="koala screenshot"></p>
-<h2 class="docs-heading">Specific platforms<span class="anchor-target" id="guis-for-less-specific-platforms"></span>
-<a href="#guis-for-less-specific-platforms" name="guis-for-less-specific-platforms" class="anchor glyphicon glyphicon-link"></a></h2>
+<h2 class="docs-heading">C&#xE1;c n&#x1EC1;n t&#x1EA3;ng c&#x1EE5; th&#x1EC3;<span class="anchor-target" id="guis-for-less-c-c-n-n-t-ng-c-th-"></span>
+<a href="#guis-for-less-c-c-n-n-t-ng-c-th-" name="guis-for-less-c-c-n-n-t-ng-c-th-" class="anchor glyphicon glyphicon-link"></a></h2>
 <h3 class="docs-heading">Windows<span class="anchor-target" id="guis-for-less-windows"></span>
 <a href="#guis-for-less-windows" name="guis-for-less-windows" class="anchor glyphicon glyphicon-link"></a></h3>
 <h4 class="docs-heading"><a href="http://alphapixels.com/prepros">Prepros App</a><span class="anchor-target" id="guis-for-less--prepros-app-http-alphapixels-com-prepros-"></span>
 <a href="#guis-for-less--prepros-app-http-alphapixels-com-prepros-" name="guis-for-less--prepros-app-http-alphapixels-com-prepros-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>Prepros is a free and open source app that can compile less, sass, stylus, jade, haml and much more with live browser refresh.</p>
+<p>Prepros l&#xE0; m&#x1ED9;t &#x1EE9;ng d&#x1EE5;ng m&#xE3; ngu&#x1ED3;n m&#x1EDF; mi&#x1EC5;n ph&#xED; cho ph&#xE9;p d&#x1ECB;ch less, sass, stylus, jade, haml v&#xE0; r&#x1EA5;t nhi&#x1EC1;u ng&#xF4;n ng&#x1EEF; kh&#xE1;c v&#x1EDB;i t&#xED;nh n&#x103;ng refresh tr&#xEC;nh duy&#x1EC7;t tr&#x1EF1;c ti&#x1EBF;p.</p>
 </blockquote>
-<p>Get more info at <a href="http://alphapixels.com/prepros">http://alphapixels.com/prepros</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o <a href="http://alphapixels.com/prepros">http://alphapixels.com/prepros</a></p>
 <p><img src="http://alphapixels.com/prepros/static/img/prepros.jpg" alt="Prepros screenshot"></p>
 <h4 class="docs-heading"><a href="https://github.com/marklagendijk/WinLess">WinLess</a><span class="anchor-target" id="guis-for-less--winless-https-github-com-marklagendijk-winless-"></span>
 <a href="#guis-for-less--winless-https-github-com-marklagendijk-winless-" name="guis-for-less--winless-https-github-com-marklagendijk-winless-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>WinLess started out as a clone of Less.app, it takes a more feature-complete approach and has several settings. It also supports starting with command line arguments.</p>
+<p>WinLess kh&#x1EDF;i &#x111;&#x1EA7;u nh&#x1B0; m&#x1ED9;t b&#x1EA3;n sao c&#x1EE7;a Less.app, n&#xF3; mang &#x111;&#x1EBF;n m&#x1ED9;t c&#xE1;ch ti&#x1EBF;p c&#x1EAD;n nhi&#x1EC1;u t&#xED;nh n&#x103;ng h&#x1A1;n &#x111;i k&#xE8;m v&#x1EDB;i m&#x1ED9;t s&#x1ED1; thi&#x1EBF;t l&#x1EAD;p. &#x1EE8;ng d&#x1EE5;ng n&#xE0;y c&#x169;ng h&#x1ED7; tr&#x1EE3; b&#x1EAF;t &#x111;&#x1EA7;u v&#x1EDB;i c&#xE1;c tham s&#x1ED1; d&#xF2;ng l&#x1EC7;nh.</p>
 </blockquote>
-<p>Get more info: <a href="https://github.com/marklagendijk/WinLess">https://github.com/marklagendijk/WinLess</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="https://github.com/marklagendijk/WinLess">https://github.com/marklagendijk/WinLess</a></p>
 <h3 class="docs-heading">OSx<span class="anchor-target" id="guis-for-less-osx"></span>
 <a href="#guis-for-less-osx" name="guis-for-less-osx" class="anchor glyphicon glyphicon-link"></a></h3>
 <h4 class="docs-heading"><a href="http://incident57.com/less">LESS.app</a><span class="anchor-target" id="guis-for-less--less-app-http-incident57-com-less-"></span>
 <a href="#guis-for-less--less-app-http-incident57-com-less-" name="guis-for-less--less-app-http-incident57-com-less-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>LESS.app was the first GUI compiler for Less. LESS.app has a &apos;Compiler&apos; tab where you can see the compiler results.</p>
+<p>LESS.app l&#xE0; tr&#xEC;nh d&#x1ECB;ch GUI &#x111;&#x1EA7;u ti&#xEA;n cho Less. LESS.app c&#xF3; m&#x1ED9;t tab &quot;Tr&#xEC;nh d&#x1ECB;ch&quot; l&#xE0; n&#x1A1;i &#x111;&#x1EC3; cho b&#x1EA1;n th&#x1EA5;y c&#xE1;c k&#x1EBF;t qu&#x1EA3; khi d&#x1ECB;ch.</p>
 </blockquote>
-<p>Get more info: <a href="http://incident57.com/less">http://incident57.com/less</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://incident57.com/less">http://incident57.com/less</a></p>
 <p><img src="http://incident57.com/less/images/hero-window.png" alt="LESS.app screenshot"></p>
 <h4 class="docs-heading"><a href="http://incident57.com/codekit">CodeKit</a><span class="anchor-target" id="guis-for-less--codekit-http-incident57-com-codekit-"></span>
 <a href="#guis-for-less--codekit-http-incident57-com-codekit-" name="guis-for-less--codekit-http-incident57-com-codekit-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>CodeKit is the successor to LESS.app, and supports Less among many other preprocessing languages, such as SASS, Jade, Markdown, and many more.</p>
+<p>CodeKit l&#xE0; h&#x1EAD;u du&#x1EC7; c&#x1EE7;a LESS.app, v&#xE0; h&#x1ED7; tr&#x1EE3; Less trong s&#x1ED1; r&#x1EA5;t nhi&#x1EC1;u c&#xE1;c ng&#xF4;n ng&#x1EEF; ti&#x1EC1;n x&#x1EED; l&#xFD; kh&#xE1;c nh&#x1B0; SASS, Jade, Markdown,...</p>
 </blockquote>
-<p>Get more info: <a href="http://incident57.com/codekit">http://incident57.com/codekit</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://incident57.com/codekit">http://incident57.com/codekit</a></p>
 <p><img src="http://incident57.com/codekit/images/screenshot-images.jpg" alt="CodeKit screenshot"></p>
 <h4 class="docs-heading"><a href="http://livereload.com">LiveReload</a><span class="anchor-target" id="guis-for-less--livereload-http-livereload-com-"></span>
 <a href="#guis-for-less--livereload-http-livereload-com-" name="guis-for-less--livereload-http-livereload-com-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>CSS edits and image changes apply live. CoffeeScript, SASS, Less and others just work.</p>
+<p>Vi&#x1EC7;c c&#x1EAD;p nh&#x1EAD;t CSS v&#xE0; thay th&#x1EBF; &#x1EA3;nh &#x111;&#x1B0;&#x1EE3;c &#xE1;p d&#x1EE5;ng m&#x1ED9;t c&#xE1;ch tr&#x1EF1;c ti&#x1EBF;p. Ho&#x1EA1;t &#x111;&#x1ED9;ng v&#x1EDB;i CoffeeScript, SASS, Less v&#xE0; h&#x1EA7;u h&#x1EBF;t c&#xE1;c ng&#xF4;n ng&#x1EEF; ti&#x1EC1;n x&#x1EED; l&#xFD; kh&#xE1;c.</p>
 </blockquote>
-<p>Get more info: <a href="http://livereload.com">http://livereload.com</a></p>
+<p>&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="http://livereload.com">http://livereload.com</a></p>
 <p><img src="http://assets.livereload.com/embedded-images/LiveReload-LESS-screenshot-on-white.png" alt="LiveReload screenshot"></p>
 <h3 class="docs-heading">Linux<span class="anchor-target" id="guis-for-less-linux"></span>
 <a href="#guis-for-less-linux" name="guis-for-less-linux" class="anchor glyphicon glyphicon-link"></a></h3>
 <h4 class="docs-heading"><a href="https://github.com/Mte90/Plessc">Plessc</a><span class="anchor-target" id="guis-for-less--plessc-https-github-com-mte90-plessc-"></span>
 <a href="#guis-for-less--plessc-https-github-com-mte90-plessc-" name="guis-for-less--plessc-https-github-com-mte90-plessc-" class="anchor glyphicon glyphicon-link"></a></h4>
 <blockquote>
-<p>Plessc is a gui fronted made with PyQT.</p>
+<p>Plessc l&#xE0; m&#x1ED9;t GUI &#x111;&#x1B0;&#x1EE3;c l&#xE0;m b&#x1EB1;ng PyQT.</p>
 </blockquote>
-<p>Auto compile, log viewer, open the less file with the editor choosen, settings for compile the file.
-Get more info: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte90/Plessc</a></p>
+<p>T&#x1EF1; &#x111;&#x1ED9;ng d&#x1ECB;ch, xem log, m&#x1EDF; t&#x1EC7;p tin less v&#x1EDB;i tr&#xEC;nh bi&#xEA;n t&#x1EAD;p &#x111;&#x1B0;&#x1EE3;c ch&#x1ECD;n, thi&#x1EBF;t l&#x1EAD;p c&#xE1;c th&#xF4;ng s&#x1ED1; cho vi&#x1EC7;c d&#x1ECB;ch.
+&#x110;&#x1EC3; bi&#x1EBF;t th&#xEA;m th&#xF4;ng tin chi ti&#x1EBF;t, h&#xE3;y tham kh&#x1EA3;o: <a href="https://github.com/Mte90/Plessc">https://github.com/Mte90/Plessc</a></p>
 <p><img src="https://github.com/Mte90/Plessc/raw/master/screenshot.png" alt="Plessc screenshot"></p>
 
 
