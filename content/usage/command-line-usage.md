@@ -1,121 +1,121 @@
 ---
-title: Command Line Usage
+title: Sử dụng dòng lệnh
 ---
 
-> Compile `.less` files to `.css` using the command line
+> Dịch các tệp tin `.less` thành `.css` sử dụng dòng lệnh
 
-<span class="warning">Heads up! If the command line isn't your thing, learn more about [GUIs for Less](#guis-for-less).</span>
+<span class="warning">Lưu ý, nếu như bạn không thành thạo sử dụng dòng lệnh, hãy sử dụng [GUIs cho Less](#guis-for-less).</span>
 
-### Installing lessc for use globally
+### Cài đặt lessc để sử dụng toàn cục
 
-Install with [npm](https://www.npmjs.org/)
+Cài đặt bằng [npm](https://www.npmjs.org/)
 
 ```bash
 npm install less -g
 ```
 
-and then you will have the `lessc` command available globally. For a specific version (or tag) you can add `@VERSION` after our package name, e.g. `npm install less@1.6.2 -g`.
+và sau đó bạn sẽ có thể sử dụng lệnh `lessc` ở bất kỳ nơi đâu bạn muốn. Đối với một phiên bản cụ thể (hoặc thẻ) bạn có thể thêm `@VERSION` vào sau tên gói của chúng tôi, Ví dụ: `npm install less@1.6.2 -g`.
 
-### Installing for node development
+### Cài đặt cho việc phát triển node
 
-Alternatively if you don't use the compiler globally, you may be after
+Ngoài ra, nếu như bạn không sử dụng trình dịch một cách toàn cục, bạn có thể sử dụng:
 
 ```bash
 npm i less --save-dev
 ```
 
-This will install the latest official version of lessc in your project folder, also adding it to the `devDependencies` in your project's `package.json`.
+Dòng lệnh này sẽ cài đặt phiên bản chính thức mới nhất của lessc trong thư mục chứa dự án của bạn, cũng như là thêm nó vào `devDependencies` trong nội dung tệp tin `package.json` trong dự án của bạn.
 
-Note that a [tilde version range][] will be automatically specified in `package.json`. This is good, as new patch releases of the latest version will be installable by npm.
+Lưu ý rằng một [khoảng phiên bản chứa dấu ngã][] sẽ tự động được chỉ rõ trong `package.json`. Việc này sẽ rất có ích vì những bản vá lỗi của phiên bản mới nhất sẽ được tự động cài đặt bởi npm.
 
-#### Beta releases of lessc
+#### Các phiên bản Beta của lessc
 
-Periodically, as new functionality is being developed, lessc builds will be published to npm, tagged as beta. These builds will _not_ be published as a `@latest` official release, and will typically have beta in the version (use `lessc -v` to get current version).
+Theo định kỳ, khi một tính năng mới được phát triển, lessc sẽ công bố trên npm, và được đánh dấu là phiên bản beta. Tuy nhiên phiên bản này _không_ không được công bố như là bản phát hành chính thức `@latest`, và sẽ vẫn có "beta" trong tên phiên bản (hãy sử dụng `lessc -v` để biết phiên bản hiện tại).
 
-Since patch releases are non-breaking we will publish patch releases immediately and alpha/beta/candidate versions will be published as minor or major version upgrades (we endeavour since 1.4.0 to follow [semantic versioning](http://semver.org/)).
+Vì các bản vá lỗi là không thể phá vỡ nên chúng tôi sẽ công bố các bản vá lỗi ngay tức thò và các phiên bản alpha/beta/candidate sẽ được công bố như là phiên bản cập nhật trực tiếp (minor) hoặc chủ yếu (major) (Chúng tôi đã cố gằng từ phiên bản 1.4.0 để làm theo việc [đánh dấu phiên bản dạng ngữ nghĩa](http://semver.org/)).
 
-#### Installing an unpublished development version of lessc
+#### Cài đặt một phiên bản đang phát triển chưa được công bố của lessc
 
-If you want to install a bleeding-edge, unpublished version of lessc, follow the instructions for specifying a [git URL as a dependency][] and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of lessc.
+Nếu như bạn muốn cài đặt một phiên bản đang phát triển, chưa được công bố của lessc, hãy làm theo những chỉ dẫn sau để chỉ rõ một [URL git như một sự phụ thuộc][] và phải chắc chắn chỉ rõ một commit SHA thực sự (không phải một tên của nhánh) theo dạng `commit-ish`. Việc này đảm bảo cho dự án của bạn luôn sử dụng phiên bản chính xác của lessc.
 
-The specified git URL may be that of the official lessc repo or a fork.
+URL git có thể trực tiếp dẫn đến repo chính thức của lessc hoặc một fork.
 
 
-[tilde version range]: https://www.npmjs.org/doc/misc/semver.html#Ranges
-[git URL as a dependency]: https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies
+[khoảng phiên ản có dấu ngã]: https://www.npmjs.org/doc/misc/semver.html#Ranges
+[URL git như một sự phụ thuộc]: https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies
 
-### Server-Side and Command Line Usage
+### Cách sử dụng dòng lệnh phía server
 
-The binary included in this repository, `bin/lessc` works with [Node.js](http://nodejs.org/) on *nix, OSX and Windows.
+Mã nhị phân đã được bao gồm trong repository này, `bin/lessc` hoạt động với [Node.js](http://nodejs.org/) trên *nix, OSX và Windows.
 
-**Usage**: `lessc [option option=parameter ...] <source> [destination]`
+**Cách sử dụng**: `lessc [option option=parameter ...] <source> [destination]`
 
-### Command line usage
+### Sử dụng dòng lệnh
 
 ```bash
 lessc [option option=parameter ...] <source> [destination]
 ```
 
-If source is set to `-' (dash or hyphen-minus), input is read from stdin.
+Nếu như source là `-' (dấu gạch ngang), thì đầu vào sẽ được đọc từ stdin.
 
-#### Examples
+#### Các ví dụ
 
 ```bash
-# compile bootstrap.less to bootstrap.css
+# dịch bootstrap.less thành bootstrap.css
 $ lessc bootstrap.less bootstrap.css
 
-# compile bootstrap.less to bootstrap.css and minify (compress) the result
+# dịch bootstrap.less thành bootstrap.css và sau đó nén kết quả
 $ lessc -x bootstrap.less bootstrap.css
 ```
 
-### Options
+### Các tùy chọn
 
-#### Help
+#### Trợ giúp
 
 ```bash
 lessc --help
 lessc --h
 ```
 
-Prints a help message with available options and exits.
+Hiển thị tin nhắn trợ giúp với các tùy chọn sẵn có và thoát.
 
-#### Include paths
+#### Các đường dẫn
 
 ```bash
 lessc --include-path=PATH1;PATH2
 ```
 
-Sets available include paths. Separated by ':' or ';' on Windows.
+Thiết lập các đường dẫn có sẵn được phân tách bởi dấu ':' hoặc ';' trên Windows.
 
-Use this to configure a list of paths which less will use to find imports in. You might use this for instance to specify a path to a library which you want to be referenced simply and relatively in the less files.
+Sử dụng lệnh này để cấu hình danh sách các đường dẫn mà less sẽ sử dụng để tìm kiếm các import trong đó. Bạn có thể sử dụng lệnh này để chỉ rõ một đường dẫn tới một thư viện mà bạn muốn tham chiếu một cách đơn giản và tương đối trong các tệp tin less.
 
-In node, set a paths option
+Trong node, thiết lập một tùy chọn đường dẫn như sau:
 ```js
 { paths: ['PATH1', 'PATH2']  }
 ```
 
-#### Makefile
+#### Tạo tệp tin
 
 ```bash
 lessc -M
 lessc --depends
 ```
 
-#### No Color
+#### Không màu sắc
 
 ```bash
 lessc --no-color
 ```
 
-#### No IE Compatability
+#### Không tương thích với IE
 
 ```bash
 lessc --no-ie-compat
 ```
 
-Currently only used for the data-uri function to ensure that images aren't created that are too large for the browser to handle.
+Hiện tại chỉ sử dụng cho chức năng data-uri để đảm bảo các hình ảnh không bị tạo ra với dung lượng quá lớn so với mức mà trình duyệt có thể xử lý được.
 
-#### Disable JavaScript
+#### Vô hiệu hóa JavaScript
 
 ```bash
 lessc --no-js
@@ -128,69 +128,69 @@ lessc --lint
 lessc --l
 ```
 
-Runs the less parser and just reports errors without any output.
+Chạy bộ phân tách less và chỉ thông báo lỗi khi không có đầu ra.
 
-#### Silent
+#### Im lặng
 
 ```bash
 lessc -s
 lessc --silent
 ```
 
-Stops any warnings from being shown.
+Vô hiệu hóa việc hiển thị các cảnh báo.
 
-#### Strict Imports
+#### Import chặt chẽ
 
 ```bash
 lessc --strict-imports
 ```
 
-#### Allow imports from insecure https hosts
+#### Cho phép các import từ các host https không an toàn
 
 ```bash
 lessc --insecure
 ```
 
-#### Version
+#### Phiên bản
 
 ```bash
 lessc -v
 lessc --version
 ```
 
-#### Compress
+#### Nén
 
 ```bash
 lessc -x
 lessc --compress
 ```
 
-Compress using less built-in compression. This does an okay job but does not utilise all the tricks of dedicated css compression. Please feel free to improve our compressed output with a pull request.
+Nén sử dụng phương pháp nén được tích hợp sẵn của Less. Phương pháp này hoạt động tốt, nhưng chưa tận dụng hết các thủ thuật nén CSS. Hãy tùy ý cải tiến phương pháp nén của chúng tôi bằng một request pull.
 
-#### Clean CSS
+#### Dọn dẹp rác CSS
 
-In v2 of less, Clean CSS is no longer included as a direct dependency. To use clean css with lessc, use the [clean css plugin](https://github.com/less/less-plugin-clean-css).
+Trong các phiên bản v2 của less, Clean CSS không còn được tích hợp như là một dependency trực tiếp. Để sử dụng clean css với lessc, hãy tham khảo [plugin dọn dẹp css](https://github.com/less/less-plugin-clean-css).
 
-#### Source Map Output Filename
+#### Tên tệp tin trong đầu ra của Source Map
 
 ```bash
 lessc --source-map
 lessc --source-map=file.map
 ```
 
-Tells less to generate a sourcemap. If you have the sourcemap option without a filename it will use the source less file name but with the extension map.
+Yêu cầu less tạo ra sourcemap. Nếu bạn sử dụng tùy chọn sourcemap mà không cung cấp tên tệp tin, dòng lệnh sẽ sử dụng tên tệp tin less nguồn nhưng với phần mở rộng map.
 
-#### Source Map Rootpath
+#### Đường dẫn gốc của Source Map
 
 ```bash
 lessc --source-map-rootpath=dev-files/
 ```
 
-Specifies a rootpath that should be prepended to each of the less file paths inside the sourcemap and also to the path to the map file specified in your output css.
+Chỉ rõ một đường dẫn gốc (thường là đường dẫn liền trước đường dẫn của mỗi tệp tin less trong sourcemap và cũng có thể liền trước đường dẫn tới tệp tin map được chỉ rõ trong CSS đầu ra).
 
-Because the basepath defaults to the directory of the input less file, the rootpath defaults to the path from the sourcemap output file to the base directory of the input less file.
+Vì đường dẫn cơ sở mặc định được dẫn đến thư mục chứa tệp tin less đầu vào, nên đường dẫn gốc mặc định sẽ là đường dẫn từ tệp tin đầu ra của sourcemap tới thư mục cơ sở chứa tệp tin less đầu vào.
 
-Use this option if for instance you have a css file generated in the root on your web server but have your source less/css/map files in a different folder. So for the option above you might have
+Sử dụng tùy chọn này nếu như bạn có một tệp tin CSS được sinh ra bởi root trên web server của bạn nhưng không có các tệp tin less/css/map nguồn trong một thư mục khác. Vì vậy đối với tùy chọn bên trên, có thể bạn cần:
 
 ```bash
 output.css
@@ -198,15 +198,15 @@ dev-files/output.map
 dev-files/main.less
 ```
 
-#### Source Map Basepath
+#### Đường dẫn cơ sở Source Map
 
 ```bash
 lessc --source-map-basepath=less-files/
 ```
 
-This is the opposite of the rootpath option, it specifies a path which should be removed from the output paths. For instance if you are compiling a file in the less-files directory but the source files will be available on your web server in the root or current directory, you can specify this to remove the additional `less-files` part of the path.
+Tùy chọn này ngược lại với tùy chọn đường dẫn gốc (rootpath), nó chỉ rõ một đường dẫn sẽ được xóa bỏ khỏi các đường dẫn đầu ra. Chẳng hạn nếu như bạn đang dịch một tệp tin trong thư mục chưa các tệp tin less nhưng các tệp tin nguồn đã có sẵn trên web server của bạn trong thư mục gốc hoặc thư mục hiện tại của bạn, bạn có thể chỉ rõ điều này bằng cách xóa bỏ phần `less-files` trong đường dẫn.
 
-It defaults to the path to the input less file.
+Nó mặc định là đường dẫn tới tệp tin less đầu vào.
 
 #### Source Map Less Inline
 
@@ -214,9 +214,9 @@ It defaults to the path to the input less file.
 lessc --source-map-less-inline
 ```
 
-This option specifies that we should include all of the Less files in to the sourcemap. This means that you only need your map file to get to your original source.
+Tùy chọn này chỉ rõ rằng chúng ta nên thêm toàn bộ các tệp tin Less vào sourcemap. Điều đó có nghĩa là, bạn chỉ cần tệp tin map của bạn để truy xuất tới tệp tin nguồn của bạn.
 
-This can be used in conjunction with the map inline option so that you do not need to have any additional external files at all.
+Tùy chọn này có thể được sử dụng cùng với tùy chọn map inline để bạn không cần có bất kỳ tệp tin bên ngoài nào cả.
 
 #### Source Map Map Inline
 
@@ -224,7 +224,7 @@ This can be used in conjunction with the map inline option so that you do not ne
 lessc --source-map-map-inline
 ```
 
-This option specifies that the map file should be inline in the output CSS. This is not recommended for production, but for development it allows the compiler to produce a single output file which in browsers that support it, use the compiled css but show you the non-compiled less source.
+Tùy chọn này chỉ rõ rằng tệp tin map nên được đặt trên cùng một dòng trong CSS đầu ra. Việc này không khuyến khích đối với khi phát hành, nhưng đối với giai đoạn phát triển nó cho phép trình dịch tạo ra một tệp tin đầu ra riêng lẻ mà trình duyệt hỗ trợ, sử dụng mã CSS đã đươc dịch nhưng hiển thị mã nguồn less chưa được dịch.
 
 #### Source Map URL
 
@@ -232,27 +232,27 @@ This option specifies that the map file should be inline in the output CSS. This
 lessc --source-map-url=../my-map.json
 ```
 
-Allows you to override the URL in the css that points at the map file. This is for cases when the rootpath and basepath options are not producing exactly what you need.
+Cho phép bạn ghi đè URL trong CSS trỏ đến tệp tin map. Tùy chọn này thường được sử dụng trong trường hợp tùy chọn đường dẫn gốc (rootpath) và đường dẫn cơ sở (basepath) không tạo ra chính xác nhưng gì bạn cần.
 
-#### Rootpath
+#### Đường dẫn gốc
 
 ```bash
 lessc -rp=resources/
 lessc --rootpath=resources/
 ```
 
-Allows you to add a path to every generated import and url in your css. This does not affect less import statements that are processed, just ones that are left in the output css.
+Cho phép bạn thêm một đường dẫn vào tất cả các import được sinh ra cũng như là url trong CSS của bạn. Nó không ảnh hưởng tới các câu lệnh import trong less đã được xử lý mà chỉ ảnh hưởng tới các câu lệnh import trong tệp tin CSS đầu ra.
 
-For instance, if all the images the css use are in a folder called resources, you can use this option to add this on to the URL's and then have the name of that folder configurable.
+Chẳng hạn, nếu như toàn bộ hình ảnh mà CSS sử dụng đều ở trong một thư mục được gọi là tài nguyên (resources), bạn có thể sử dụng tùy chọn này để có được tên của thư mục đã được cấu hình.
 
-#### Relative URLs
+#### Các URL tương đối
 
 ```bash
 lessc -ru
 lessc --relative-urls
 ```
 
-By default URLs are kept as-is, so if you import a file in a sub-directory that references an image, exactly the same URL will be output in the css. This option allows you to re-write URL's in imported files so that the URL is always relative to the base imported file. E.g.
+Mặc định, các URL được giữ nguyên, vì thế nếu như bạn import một tệp tin trong một thư mục con tham chiếu đến một hình ảnh thì URL đó sẽ được giữ nguyên trong CSS đầu ra. Tùy chọn này cho phép bạn thay đổi URL trong tệp tin được import để URL luôn luôn ở dạng tương đối với tệp tin được import. Ví dụ:
 
 ```less
 # main.less
@@ -263,7 +263,7 @@ By default URLs are kept as-is, so if you import a file in a sub-directory that 
 }
 ```
 
-this will output the following normally
+Ví dụ trên sẽ cho kết quả đầu ra như sau:
 
 ```css
 .icon-1 {
@@ -271,7 +271,7 @@ this will output the following normally
 }
 ```
 
-but with this option on it will instead output
+Nhưng với tùy chọn này, kết quả đầu ra sẽ là:
 
 ```css
 .icon-1 {
@@ -279,7 +279,7 @@ but with this option on it will instead output
 }
 ```
 
-You may also want to consider using the data-uri function instead of this option, which will embed images into the css.
+Bạn có thể cân nhắc sử dụng chức năng data-uri thay vì tùy chọn này (chức năng cho phép nhúng hình ảnh vào CSS)
 
 #### Strict Math
 
@@ -288,9 +288,9 @@ lessc -sm=on
 lessc --strict-math=on
 ```
 
-Defaults to Off.
+Mặc định, tùy chọn này không được kích hoạt.
 
-Without this option on Less will try and process all maths in your css e.g.
+Nếu như tùy chọn này không được kích hoạt, Less sẽ cố gắng và xử lý toàn bộ các phép toán trong CSS của bạn. Ví dụ:
 
 ```less
 .class {
@@ -298,9 +298,9 @@ Without this option on Less will try and process all maths in your css e.g.
 }
 ```
 
-will be processed currently.
+Sẽ được xử lý như bình thường.
 
-With strict math on, only maths that is inside un-necessary parenthesis will be processed. For instance.
+Nếu như tùy chọn này được kích hoạt, chỉ có những phép toán mà các dấu ngoặc không cần thiết nằm bên trong mới được xử lý. Ví dụ:
 
 ```less
 .class {
@@ -318,18 +318,18 @@ With strict math on, only maths that is inside un-necessary parenthesis will be 
 }
 ```
 
-We originally planned to default this to true in the future, but it has been a contraversial option and we are considering whether we have solved the problem in the right way, or whether less should just have exceptions for instances where `/` is valid or calc is used.
+Lúc đầu chúng tôi dự kiến để mặc định là tùy chọn này được kích hoạt sẵn, nhưng nó là một tùy chọn gây tranh cãi và chúng tôi đang cân nhắc có xử lý vấn đề này theo hướng phù hợp, hoặc less sẽ có các exception cho các trường hợp kiểu như `/` là đúng hoặc calc được sử dụng.
 
-#### Strict Units
+#### Các đơn vị chặt chẽ 
 
 ```bash
 lessc -su=on
 lessc --strict-units=on
 ```
 
-Defaults to off.
+Mặc đinh, tùy chọn này không được kích hoạt.
 
-Without this option, less attempts to guess at the output unit when it does maths. For instance
+Nếu tùy chọn này không được kích hoạt, less sẽ cố gắng để đoán đơn vị đầu ra khi thực hiện phép toán. Ví dụ:
 
 ```less
 .class {
@@ -337,35 +337,35 @@ Without this option, less attempts to guess at the output unit when it does math
 }
 ```
 
-In this case, things are clearly not right - a length multiplied by a length gives an area, but css does not support specifying areas. So we assume that the user meant for one of the values to be a value, not a unit of length and we output `2px`.
+Trong trường hợp này, mọi thứ rõ ràng là không đúng - chiều dài nhân chiều rộng thì bằng diện tích, nhưng CSS không hỗ trợ việc chỉ rõ diện tích. Vì thế chúng tôi giả định một trong các giá trị là giá trị thực sự, không phải là một đơn vị của chiều dài và chúng tôi cho ra kết quả là `2px`.
 
-With strict units on, we assume this is a bug in the calculation and throw an error.
+Nếu tùy chọn này được kích hoạt, chúng tôi giả định đây là lỗi trong khi tính toán và sẽ báo lỗi ở kết quả đầu ra.
 
-#### Global Variable
+#### Biến số toàn cục
 
 ```bash
 lessc --global-var="my-background=red"
 ```
 
-This option defines a variable that can be referenced by the file. Effectively the declaration is put at the top of your base Less file, meaning it can be used but it also can be overridden if this variable is defined in the file.
+Tùy chọn này cho phép định nghĩa một biến số và biến số này có thể được tham chiếu tới bời một tệp tin. Tốt hơn hết, việc khai báo nên được đặt ở phía trên cùng của tệp tin Less cơ sở để có thể sử dụng nó hoặc ghi đè nếu như biến số này được định nghĩa bên trong tệp tin.
 
-#### Modify Variable
+#### Thay đổi biến số
 
 ```bash
 lessc --modify-var="my-background=red"
 ```
 
-As opposed to the global variable option, this puts the declaration at the end of your base file, meaning it will override anything defined in your Less file.
+Trái ngược với tùy chọn biến số toàn cục, tùy chọn này đặt việc khai báo ở phía dưới cùng của tệp tin cơ sở của bạn, có nghĩa là nó sẽ ghi đè toàn bộ những lần định nghĩa trước đó của biến số đó trong tệp tin.
 
-#### URL Arguments
+#### Các tham số của URL
 
 ```bash
 lessc --url-args="cache726357"
 ```
 
-This option allows you to specify a argument to go on to every URL. This may be used for cache-busting for instance.
+Tùy chọn này cho phép bạn chỉ rõ một tham số trên các URL. Chẳng hạn, nó có thể được sử dụng để tăng tốc độ cache.
 
-#### Line Numbers
+#### Số lượng dòng
 
 ```bash
 lessc --line-numbers=comments
@@ -373,7 +373,7 @@ lessc --line-numbers=mediaquery
 lessc --line-numbers=all
 ```
 
-Generates inline source-mapping. This was the only option before browsers started supporting sourcemaps. We are consider deprecating, so please get in touch if you want this option to stick around.
+Tùy chọn này sinh ra source-mapping dạng inline. Đây là tùy chọn duy nhất mà trước khi trình duyệt bắt đầu hỗ trợ sourcemap. Chúng tôi đang cân nhắc loại bỏ nó, vì vậy hãy liên hệ với chúng tôi nếu như bạn thực sự muốn sử dụng tùy chọn này ở đâu đó.
 
 #### Plugin
 
@@ -382,9 +382,9 @@ lessc --clean-css
 lessc --plugin=clean-css="advanced"
 ```
 
---plugin Loads a plugin. You can also omit the --plugin= if the plugin begins
-less-plugin. E.g. the clean css plugin is called less-plugin-clean-css
-once installed (npm install less-plugin-clean-css), use either with
---plugin=less-plugin-clean-css or just --clean-css
-specify options afterwards e.g. --plugin=less-plugin-clean-css="advanced"
+--plugin Load một plugin. Bạn cũng có thể không sử dụng --plugin= nếu như plugin bắt đầu 
+less-plugin. Ví dụ: Plugin dọn dẹp CSS được gọi là less-plugin-clean-css
+khi nó đã được cài đặt (npm install less-plugin-clean-css), sử dụng với
+--plugin=less-plugin-clean-css hoặc just --clean-css
+để chỉ rõ các tùy chọn theo sau. Ví dụ: --plugin=less-plugin-clean-css="advanced"
 or --clean-css="advanced"
