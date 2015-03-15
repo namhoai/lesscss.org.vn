@@ -1,27 +1,27 @@
 ---
-title: Third-party compilers
+title: Trình dịch Less từ các bên thứ ba
 ---
 
-## Node.js compilers
+## Các trình dịch Node.js
 
 * **[grunt-contrib-less](https://github.com/gruntjs/grunt-contrib-less)**
-* **[assemble-less](https://github.com/assemble/assemble-less)**: Full-featured Grunt.js plugin for compiling Less files to CSS, with additional options for maintaining libraries of Less components and themes. For advanced users, this plugin allows you to define and manage Less "packages" or "bundles" using JSON, [Lo-dash](https://github.com/bestiejs/lodash)(underscore) templates (e.g. `<%= bootstrap.less %>`), and [node-glob](https://github.com/isaacs/node-glob) / [minimatch](https://github.com/isaacs/minimatch) (e.g. `'../src/**/*.less"`). _assemble-less_ also has a number of options including minifying CSS
-* **[gulp-less](https://github.com/plus3network/gulp-less)**: Please note that this plugin discards `source-map` options, opting to instead using the [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) library.
-* **[RECESS](https://github.com/twitter/recess)**: Twitter's code quality tool for CSS built on top of Less. RECESS has options for compiling Less to CSS, as well as linting, formatting and minifying CSS.
-* **[autoless](https://github.com/jgonera/autoless)**: A Less files watcher, with dependency tracking (changes to imported files cause other files to be updated too) and growl notifications.
-* **[Connect Middleware for Less.js](https://github.com/emberfeather/less.js-middleware)**: Connect Middleware for Less.js compiling
+* **[assemble-less](https://github.com/assemble/assemble-less)**: Plugin Grunt.js cung cấp đầy đủ tính năng để dịch tệp tin Less thành CSS, với các tùy chọn bổ sung cho việc duy trì các thư viện của các thành phần và theme Less. Nếu bạn là người sử dụng nâng cao, plugin này cho phép bạn định nghĩa và quản lý "các gói" hoặc "các nhóm" Less bằng cách sử dụng JSON, các template [Lo-dash](https://github.com/bestiejs/lodash)(gạch dưới)(Ví dụ: `<%= bootstrap.less %>`), và [node-glob](https://github.com/isaacs/node-glob) / [minimatch](https://github.com/isaacs/minimatch) (Ví dụ: `'../src/**/*.less"`). _assemble-less_ cũng cung cấp một số các tùy chọn bao gồm cả việc nén các tập tin CSS
+* **[gulp-less](https://github.com/plus3network/gulp-less)**: Hãy lưu ý rằng plugin này đã loại bỏ các tùy chọn `source-map` và thay thế bằng thư viện [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps).
+* **[RECESS](https://github.com/twitter/recess)**: Một công cụ đánh giá chất lượng mã nguồn của Twitter dành cho các tệp tin CSS được dịch từ Less. RECESS có các tùy chọn để dịch tệp tin Less thành CSS, cũng như là linting, formatting và nén các tệp tin CSS.
+* **[autoless](https://github.com/jgonera/autoless)**: Một công cụ theo dõi các tệp tin Less, có chức năng truy vết phụ thuộc (bao gồm cả những thay đổi của các tệp tin được import do cập nhật) và các thông báo.
+* **[Connect Middleware for Less.js](https://github.com/emberfeather/less.js-middleware)**: Kết nối Middleware để biên dịch Less
 
 
-## Other technologies
+## Các công nghệ khác
 
 **Wro4j Runner CLI**
-Download the [wro4j-runner.jar](http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-with-dependencies.jar) file and run the following command:
+Tải về tệp tin [wro4j-runner.jar](http://wro4j.googlecode.com/files/wro4j-runner-1.4.1-jar-with-dependencies.jar) và chạy dòng lệnh sau:
 
 ```bash
 java -jar wro4j-runner-1.5.0-jar-with-dependencies.jar --preProcessors lessCss
 ```
 
-More details can be found here: [Wro4j Runner CLI](http://code.google.com/p/wro4j/wiki/wro4jRunner)
+Để biết thêm thông tin chi tiết, hãy tham khảo: [Wro4j Runner CLI](http://code.google.com/p/wro4j/wiki/wro4jRunner)
 
 **CSS::LESSp**
 
@@ -33,14 +33,14 @@ lessp.pl styles.less > styles.css
 
 **Windows Script Host**
 
-Note - the official Less node runs on windows, so we are not sure why you would use this.
+Lưu ý rằng Less node phiên bản chính thức chạy trên Windows, vì thế công nghệ này có thể thực sự không cần thiết.
 
-[Less.js for Windows](https://github.com/duncansmart/less.js-windows) with this usage:
+[Less.js cho Windows](https://github.com/duncansmart/less.js-windows) được sử dụng như sau:
 
 ```bash
 cscript //nologo lessc.wsf input.less [output.css] [-compress]
 ```
-or
+hoặc
 
 ```bash
 lessc input.less [output.css] [-compress]
@@ -48,12 +48,12 @@ lessc input.less [output.css] [-compress]
 
 **dotless**
 
-[dotless for Windows](http://www.dotlesscss.org/) can be run like this:
+[dotless cho Windows](http://www.dotlesscss.org/) được sử dụng như sau:
 
 ```bash
 dotless.Compiler.exe [-switches] <inputfile> [outputfile]
 ```
 
-**Also see:** 
+**Bạn cũng có thể tham khảo:** 
 
-* [Ports of Less](/about/#ports)
+* [Các cổng của Less](/about/#ports)
