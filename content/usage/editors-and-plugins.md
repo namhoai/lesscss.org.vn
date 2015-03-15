@@ -1,22 +1,22 @@
 ---
-title: Editors and plugins
+title: Các trình biên tập và plugin
 ---
 
-Also see: [GUIs for Less.js](#guis-for-less)
+Tham khảo: [GUIs for Less.js](#guis-for-less)
 
-## Editors and IDEs
+## Các trình biên tập và IDE
 
-* [Crunch!](http://crunchapp.net/) (built-in support)
-* [Mindscape Web Workbench][web-workbench] (built-in support)
-* [NetBeans][netbeans] (built-in [syntax highlighting][netbeans-sh])
+* [Crunch!](http://crunchapp.net/) (hỗ trợ sẵn)
+* [Mindscape Web Workbench][web-workbench] (hỗ trợ sẵn)
+* [NetBeans][netbeans] (tích hợp [công cụ làm nổi bật cú pháp][netbeans-sh])
 * [TextMate](https://github.com/appden/less.tmbundle)
 * [Vim](https://github.com/groenewege/vim-less)
 * [Emacs](https://github.com/purcell/less-css-mode)
-* [jetBrains WebStorm][webstorm] and [PhpStorm][phpstorm] (built-in support)
-* [Brackets][brackets] (built-in syntax highlighting, [several extensions][brackets-ext] for compilation)
-* [CodeLobster][codelobster] (built-in [syntax highlighting][codelobster-sh])
-* [KineticWing IDE][kineticwing] (built-in [support][kineticwing-less])
-* [nodeMirror](https://www.npmjs.org/package/node-mirror) (built-in support, built-in HTML/CSS/Less preview)
+* [jetBrains WebStorm][webstorm] và [PhpStorm][phpstorm] (hỗ trợ sẵn)
+* [Brackets][brackets] (tích hợp công cụ làm nổi bật cú pháp, [và một số phần mở rộng khác][brackets-ext] sử dụng cho việc dịch)
+* [CodeLobster][codelobster] (tích hợp [công cụ làm nổi bật cú pháp][codelobster-sh])
+* [KineticWing IDE][kineticwing] ([hỗ trợ sẵn][kineticwing-less])
+* [nodeMirror](https://www.npmjs.org/package/node-mirror) (hỗ trợ sẵn, tích hợp chức năng preview HTML/CSS/Less)
 
 ### [Sublime Text 2 & 3](http://sublimetext.com/)
 
@@ -27,8 +27,8 @@ Also see: [GUIs for Less.js](#guis-for-less)
 
 ### [Eclipse](http://www.eclipse.org/)
 
-* [Eclipse Less Plugin](http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html) by Vincent Simonet
-* [Transpiler Plugin](https://github.com/gossi/eclipse-transpiler-plugin) by Thomas Gossmann
+* [Plugin Less cho Eclipse](http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html) được viết bởi Vincent Simonet
+* [Plugin Transpiler](https://github.com/gossi/eclipse-transpiler-plugin) được viết bởi Thomas Gossmann
 
 ### [Visual Studio](http://www.visualstudio.com/)
 
@@ -43,9 +43,9 @@ Also see: [GUIs for Less.js](#guis-for-less)
 
 ### [Notepad++ 6.x][Npp]
 
-* [Less.js Syntax Highlighting][Npp-Less-Salitrero] User Defined Language by Raúl Salitrero
-* [Less.js Syntax Highlighting][Npp-Less-azrafe7] User Defined Language by azrafe7
-* [How to Install][Npp-How-to]
+* [Less.js Syntax Highlighting][Npp-Less-Salitrero] Ngôn ngữ người dùng định nghĩa được viết bởi Raúl Salitrero
+* [Less.js Syntax Highlighting][Npp-Less-azrafe7] Ngôn ngữ người dùng định nghĩa được viết bởi azrafe7
+* [Cách cài đặt][Npp-How-to]
 
 <!-- invisible links -->
 
