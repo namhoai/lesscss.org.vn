@@ -61,9 +61,9 @@ var less = require('less');
 
 less.render('.class { width: (1 + 1) }',
     {
-      paths: ['.', './lib'],  // Specify search paths for @import directives
-      filename: 'style.less', // Specify a filename, for better error messages
-      compress: true          // Minify CSS output
+      paths: ['.', './lib'],  // các thư mục để @import tìm file
+      filename: 'style.less', // tên file, cho ra các báo lỗi rõ ràng hơn
+      compress: true          // nén CSS
     },
     function (e, output) {
        console.log(output.css);
@@ -118,7 +118,7 @@ Tiếp theo, [tải về less.js](https://github.com/less/less.js/archive/master
 Các tùy chọn trên đối tượng `less` phải được thiết lập **trước** thẻ `<script src="less.js"></script>`:
 
 ``` html
-<!-- set options before less.js script -->
+<!-- thiếp lập less qua biến window.less trước khi load file less.js -->
 <script>
   less = {
     env: "development",
