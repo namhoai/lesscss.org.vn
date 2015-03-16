@@ -14,18 +14,18 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li{{#is slug 'features'}} class="active"{{/is}}>
-          <a href="{{rel 'features'}}/">Language Features</a>
+          <a href="{{rel 'features'}}/">Tính năng</a>
         </li>
         {{#is links.plugins true}}
         <li{{#is slug 'plugins'}} class="active"{{/is}}>
-          <a href="{{rel 'plugins'}}/">Plugins</a>
+          <a href="{{rel 'plugins'}}/">Plugin</a>
         </li>
         {{/is}}
         <li{{#is slug 'functions'}} class="active"{{/is}}>
-          <a href="{{rel 'functions'}}/">Function Reference</a>
+          <a href="{{rel 'functions'}}/">Function</a>
         </li>
         <li{{#is slug 'usage'}} class="active"{{/is}}>
-          <a href="{{rel 'usage'}}/">Usage</a>
+          <a href="{{rel 'usage'}}/">Cách sử dụng</a>
         </li>
         {{#is links.cheatsheet true}}
         <li{{#is slug 'cheatsheet'}} class="active"{{/is}}>
@@ -40,7 +40,7 @@
         </li>
         {{/is}}
         <li{{#is slug 'about'}} class="active"{{/is}}>
-          <a href="{{rel 'about'}}/">About</a>
+          <a href="{{rel 'about'}}/">Về chúng tôi</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub <b class="caret"></b></a>
