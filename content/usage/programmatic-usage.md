@@ -1,8 +1,8 @@
 ---
-title: Programmatic usage
+title: Sử dụng Less trong code
 ---
 
-The main entry point into less is the less.render function. This takes the following format
+Điểm mở chính kết nối vào less là function less.render. Nó có dạng như sau:
 
 ```
 less.render(lessInput, options)
@@ -19,12 +19,12 @@ less.render(lessInput, options)
 less.render(css, options, function(error, output) {})
 ```
 
-The options argument is optional. If you specify a callback then a promise will not be returned, where as if you do not specify a callback a promise will be given.
-Under the hood, the callback version is used so that less can be used synchronously.
+Các tham số tùy chọn là tùy ý. Nếu như bạn cung cấp 1 callback thì một promise sẽ không được trả về, ngược lại promise sẽ được trả vế.
+Thật ra, phiên bản của callback được sử dụng để less có thể được sử dụng một cách đồng bộ.
 
-If you wanted to render a file, you would first read it into a string (to pass to less.render) and then set the filename field on options to be the filename of the main file. less will handle all the processing of the imports.
+Nếu như bạn muốn render một tệp tin, thì trước hết bạn phải đọc nó vào một chuỗi (để truyền vào less.render) và sau đó thiết lập trường tên tệp tin trên các tùy chọn để có được tên của tệp tin chính. Less sẽ xử lý toàn bộ quá trình import.
 
-The `sourceMap` option is an object which enables you to set sub sourcemap options. Available sub options are: `sourceMapURL`,`sourceMapBasepath`,`sourceMapRootpath`,`outputSourceFiles` and `sourceMapFileInline`. Notice that the `sourceMap` option is not available for the less.js in browser compiler now.
+Tùy chọn `sourceMap` là một đối tượng cho phép bạn thiết lập các tùy chọn sourcemap con. Các tùy chọn con gồm có: `sourceMapURL`,`sourceMapBasepath`,`sourceMapRootpath`,`outputSourceFiles` và `sourceMapFileInline`. Lưu ý rằng tùy chọn `sourceMap` không sẵn có cho less.js trên các trình dịch của trình duyêt hiện nay.
 
 ```
 less.render(lessInput)
@@ -46,13 +46,13 @@ less.render(lessInput, {sourceMap: {sourceMapFileInline: true}})
 }
 ```
 
-Previously we also recommended creating a less.Parser and then calling toCSS on the result. However this had 2 serious drawbacks - it meant that our parser was in fact tied to all of less and 2nd it meant that the toCSS call had to be synchronous.
+Trước đây, chúng tối cũng đã khuyên bạn nên tạo một less.Parser và sau đó gọi toCSS trên kết quả trả về. Tuy nhiên việc này gặp phải 2 trở ngại rất nghiêm trọng - thứ nhất đó là bộ phân tách của chúng tôi thực chất bị ràng buộc vào toàn bộ mã less và trở ngại thứ 2 là lời gọi đến toCSS phải đồng bộ.
 
-You can still get the less parse tree, but it requires more steps. You can see how this is done [in the render function](https://github.com/less/less.js/blob/master/lib/less/render.js) but we *do not* support using less in this way and may change this function in a minor release version bump (we will not break it in a patch release).
+Bạn có thể có được cây phân tách less, nhưng sẽ mất khá nhiều bước. Bạn có thể tham khảo cách làm [trong function render](https://github.com/less/less.js/blob/master/lib/less/render.js) nhưng chúng tôi *sẽ không* sẽ không hỗ trợ sử dụng less theo cách này và có thể sẽ thay đổi chức năng này trong một phiên bản nhỏ (chúng tôi sẽ không phá vỡ nó trong các bản vá).
 
-### Getting access to the log
+### Truy cập vào log
 
-You can add a log listener with the following code
+Bạn có thể thêm một bộ nghe log (log listener) với đoạn mã sau đây:
 
 ```
 less.logger.addListener({
@@ -67,4 +67,4 @@ less.logger.addListener({
 });
 ```
 
-Note: all functions are optional. An error will not be logged, but instead is passed back to the callback or promise in less.render
+Lưu ý: Toàn bộ các function là tùy ý. Một lỗi sẽ không được log lại, nhưng sẽ được truyền ngược lại vào callback hoặc promise trong less.render
