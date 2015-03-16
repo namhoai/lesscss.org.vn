@@ -1,47 +1,47 @@
 ---
-title: V2 Upgrade Guide
+title: Hướng dẫn nâng cấp lên phiên bản V2
 ---
 
-Language Changes
+Các thay đổi của ngôn ngữ
 ----------------
 
-Colours now output as they are written, so `purple` stays as `purple` and is not converted to its hex representation.
+Màu sắc sẽ được giữ nguyên trong kết quả trả về, vì thế `purple` sẽ vẫn là `purple` và nó sẽ không bị chuyển đổi thành mã hexa.
 
-Command line usage
+Sử dụng dòng lệnh
 ------------------
 
 ### Clean CSS
 
-We have removed the dependency on clean css and moved it to a [plugin](https://github.com/less/less-plugin-clean-css).
-This allows us to 1. update the dependency and integration without a less release 2. Does not tie people who do not use clean css into having it downloaded by npm.
+Chúng tôi đã xóa bỏ dependency trên clean css và chuyển nó tới [plugin](https://github.com/less/less-plugin-clean-css).
+Việc này cho phép chúng tôi 1. Cập nhật dependency và tích hợp mà không cần đến một bản phát hành của less 2. Không ràng buộc những nguời dùng (người mà không sử dụng clean css) vào việc phải tải xuống bằng npm.
 
-The usage is similar, just install the plugin (`npm install -g less-plugin-clean-css`) then tell less to use it by using the
-`--clean-css` argument.
+Cách sử dụng vẫn tương tự, bạn chỉ việc cài đặt plugin (`npm install -g less-plugin-clean-css`) và sau đó có thể sử dụng bằng tham số 
+`--clean-css`.
 
 ```bash
-# old
+# cũ
 lessc --clean-css --clean-option=--compatibility:ie8 --clean-option=--advanced
-# new
+# mới
 lessc --clean-css="--compatibility=ie8 --advanced"
 ```
 
 ### Sourcemaps
 
-We have improved the source map options and path generation so the sourcemap should be generated at the correct path without specifying any options.
+Chúng tôi đã cải tiến các tùy chọn sourcemap và việc sinh ra đường dẫn để sourcemap có thể được tạo ra tại đúng đường dẫn mà không phải chỉ rõ các tùy chọn.
 
-Programmatic Usage
+Sử dụng chương trình
 ------------------
 
-We have deprecated the use of less.Parser and toCss to generate the css. Instead we require you to use the `less.render` shorthand.
-See [Programmatic Usage](#programmatic-usage) for more information.
+Chúng tôi đã loại bỏ việc sử dụng less.Parser và toCss để sinh ra mã css. Để thay thế, chúng tôi khuyên bạn nên sử dụng `less.render`.
+Hãy tham khảo [Sử dụng chương trình](#programmatic-usage) để biết thêm thông tin chi tiết.
 
-Further, instead of returning a string which is the css, we return an object with a `css` field set to the string and a `map` field set to the sourcemap (if applicable).
+Hơn thế nữa, thay vì việc trả về kết quả là 1 chuỗi css, chúng tôi trả về một đối tượng với trường `css` có giá trị là 1 chuỗi và một trường  `map` được thiết lập giá trị là sourcemap (nếu được áp dụng).
 
-The sourcemap options are now to be set on sourceMap instead of directly on options. So instead of `options.sourceMapFullFilename = ` you would set `options.sourceMap = { sourceMapFullFilename: `.
+Các tùy chọn sourcemap lúc này được thiết lập trên sourceMap thay vì trực tiếp trên các tùy chọn. Do đó, thay vì `options.sourceMapFullFilename = ` bạn sẽ sử dụng `options.sourceMap = { sourceMapFullFilename: `.
 
-Browser usage
+Sử dụng trình duyêt
 -------------
 
-The browser usage has not changed significantly. Options set on the `less` object are exposed as `less.options` after the less script has run, rather than polluting `less`.
+Việc sử dụng trinh duyệt không thay đổi quá nhiều. Các tùy chọn thiết lập trên đối tượng `less` được tìm thấy trên `less.options` sau khi mã less chạy thay vì "làm ô nhiễm" `less`.
 
-It is now possible to specify options on the script and less tags, which should simplify option setting in the browser. See the browser usage section for more information.
+Bạn cũng có thể chỉ rõ các tùy chọn trên script và các thẻ less để đơn giản hóa các thiết lập của tùy chọn trên trình duyệt. Hãy tham khảo phần sử dụng trình duyệt để biết thêm thông tin chi tiết.
