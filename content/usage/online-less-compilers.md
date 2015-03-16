@@ -1,41 +1,41 @@
 ---
-title: Online Less Compilers
+title: Các trình dịch Less online
 ---
 
 ### [less2css.org](http://less2css.org/)
-> Online Integrated Development Environment (IDE) that is hosted in a browser allowing users to edit and compile Less to CSS in real-time.
+> Môi trường phát triên tích hợp online (IDE) được lưu trữ trên một trình duyệt cho phép người dùng chỉnh sửa và dịch Less thành CSS trong thời gian thực.
 
 ### [winless.org/online-less-compiler](http://winless.org/online-less-compiler)
-> This Online Less Compiler can help you to learn Less. You can go through the examples below or try your own Less code.
+> Trình dịch Less online này có thể giúp bạn học Less. Bạn có thể học qua các ví dụ bên duới hoặc thử viết các đoạn mã Less của riêng bạn.
 
 ### [lesstester.com](http://lesstester.com/)
-> Online compiler for Less CSS.
+> Trình dịch online cho Less CSS.
 
 ### [dopefly.com/less-converter](http://www.dopefly.com/less-converter/less-converter.html)
-> A simple Less CSS file converter using the Less JS project.
+> Một bộ chuyển đổi Less thành CSS đơn gian sử dụng đối tượng Less JS.
 
 ### [lessphp.gpeasy.com/demo](http://lessphp.gpeasy.com/demo)
-> [less.php](http://lessphp.gpeasy.com/) live demo.
+> [less.php](http://lessphp.gpeasy.com/) demo trực tiếp.
 
 ### [leafo.net/lessphp/editor](http://leafo.net/lessphp/editor.html)
-> [lessphp](http://leafo.net/lessphp/) live demo.
+> [lessphp](http://leafo.net/lessphp/) demo trực tiếp.
 
 ### [precess](http://precess.co/)
-> A real time preprocesser compiler. 
+> Một trình dịch tiền xử lý trong thời gian thực. 
 
-## Online Web IDEs/Playgrounds with Less support
+## Web IDEs/Playgrounds online hỗ trợ Less
 
 ### [CSSDeck Labs](http://cssdeck.com/labs)
-> CSSDeck Labs is a place where you can quickly create some experiments (or testcases) that involves HTML, CSS, JS code.
+> CSSDeck Labs là nơi bạn có thể nhanh chóng tạo ra các thử nghiệm (hoặc testcase) liên quan đến mã HTML, CSS, JS.
 
 ### [CodePen](http://codepen.io)
-> CodePen is a playground for the front end side of the web.
+> CodePen là một sân chơi cho phía front end trên web.
 
 ### [Fiddle Salad](http://fiddlesalad.com/less/)
-> An online playground with an instantly ready coding environment.
+> Một sân chơi online với một môi trường code luôn sẵn sàng.
 
 ### [JS Bin](http://jsbin.com)
-> JS Bin is a webapp specifically designed to help JavaScript and CSS folk test snippets of code.
+> JS Bin là môt ứng dụng dựa web được thiết kế độc đáo để giúp những nhà phát triển JS và CSS kiểm thử được những đoạn mã của mình.
 
 ### [jsFiddle](http://jsfiddle.net/hb2rsm2x)
-> Online Web Editor
+> Trình biên tập web online
