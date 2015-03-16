@@ -191,7 +191,7 @@ div {
   .m(@x) when (default())    {}
   .m(@x) when not(default()) {}
 
-  .m(1); // Error
+  .m(1); // Lỗi
 }
 ```
 Trong ví dụ trên, ta hoàn toàn có thể xác định giá trị mà mỗi lời gọi `default()` trả về vì chúng phụ thuộc vào nhau một cách đệ quy.
