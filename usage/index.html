@@ -568,7 +568,7 @@ This is because less is a large javascript file and compiling less before the us
 consider that mobile devices will compile slower. For development consider if using a watcher and live reload (e.g. with grunt or gulp) would
 be better suited.</p>
 <p>To use less in the browser, you firstly need to include the less script.</p>
-<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- T&#xED;ch h&#x1EE3;p c&#xE1;c script plugin less, c&#xE1;c shims c&#x1EE7;a tr&#xEC;nh duy&#x1EC7;t &#x111;&#x1B0;&#x1EE3;c y&#xEA;u c&#x1EA7;u t&#x1EA1;i &#x111;&#xE2;y v&#xE0; t&#xF9;y &#xFD; thi&#x1EBF;t l&#x1EAD;p less = b&#x1EA5;t k&#x1EF3; t&#xF9;y ch&#x1ECD;n n&#xE0;o  --&gt;</span>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Here: include any less plugin scripts, any required browser shims and optionally set less = any options  --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;less.js&quot;</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
 <p>This will find any less style tags on the page</p>
@@ -627,7 +627,7 @@ be better suited.</p>
 <h3 class="docs-heading">Options<span class="anchor-target" id="using-less-in-the-browser-options"></span>
 <a href="#using-less-in-the-browser-options" name="using-less-in-the-browser-options" class="anchor glyphicon glyphicon-link"></a></h3>
 <p>Set options in a global <code>less</code> object <strong>before</strong> loading the less.js script:</p>
-<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Thi&#x1EBF;t l&#x1EAD;p c&#xE1;c t&#xF9;y ch&#x1ECD;n tr&#x1B0;&#x1EDB;c script less.js --&gt;</span>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- set options before less.js script --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
   less = {
     env: <span class="hljs-string">&quot;development&quot;</span>,

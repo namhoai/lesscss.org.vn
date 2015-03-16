@@ -221,9 +221,9 @@ less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</spa
 
 less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</span>,
     {
-      paths: [<span class="hljs-string">&apos;.&apos;</span>, <span class="hljs-string">&apos;./lib&apos;</span>],  <span class="hljs-comment">// Specify search paths for @import directives</span>
-      filename: <span class="hljs-string">&apos;style.less&apos;</span>, <span class="hljs-comment">// Specify a filename, for better error messages</span>
-      compress: <span class="hljs-literal">true</span>          <span class="hljs-comment">// Minify CSS output</span>
+      paths: [<span class="hljs-string">&apos;.&apos;</span>, <span class="hljs-string">&apos;./lib&apos;</span>],  <span class="hljs-comment">// c&#xE1;c th&#x1B0; m&#x1EE5;c &#x111;&#x1EC3; @import t&#xEC;m file</span>
+      filename: <span class="hljs-string">&apos;style.less&apos;</span>, <span class="hljs-comment">// t&#xEA;n file, cho ra c&#xE1;c b&#xE1;o l&#x1ED7;i r&#xF5; r&#xE0;ng h&#x1A1;n</span>
+      compress: <span class="hljs-literal">true</span>          <span class="hljs-comment">// n&#xE9;n CSS</span>
     },
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e, output)</span> </span>{
        <span class="hljs-built_in">console</span>.log(output.css);
@@ -267,7 +267,7 @@ less.render(<span class="hljs-string">&apos;.class { width: (1 + 1) }&apos;</spa
 <h2 class="docs-heading">C&#xE1;c t&#xF9;y ch&#x1ECD;n c&#x1EE7;a tr&#xEC;nh duy&#x1EC7;t<span class="anchor-target" id="c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t"></span>
 <a href="#c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t" name="c-ch-s-d-ng-ph-a-client-c-c-t-y-ch-n-c-a-tr-nh-duy-t" class="anchor glyphicon glyphicon-link"></a></h2>
 <p>C&#xE1;c t&#xF9;y ch&#x1ECD;n tr&#xEA;n &#x111;&#x1ED1;i t&#x1B0;&#x1EE3;ng <code>less</code> ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c thi&#x1EBF;t l&#x1EAD;p <strong>tr&#x1B0;&#x1EDB;c</strong> th&#x1EBB; <code>&lt;script src=&quot;less.js&quot;&gt;&lt;/script&gt;</code>:</p>
-<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- set options before less.js script --&gt;</span>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- thi&#x1EBF;p l&#x1EAD;p less qua bi&#x1EBF;n window.less tr&#x1B0;&#x1EDB;c khi load file less.js --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
   less = {
     env: <span class="hljs-string">&quot;development&quot;</span>,

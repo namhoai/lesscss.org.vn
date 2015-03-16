@@ -354,7 +354,7 @@
 <span class="hljs-variable">@width:</span> <span class="hljs-number">0.5</span>;
 
 <span class="hljs-class">.class</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-function">percentage</span>(<span class="hljs-variable">@width</span>); <span class="hljs-comment">// returns `50%`</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-function">percentage</span>(<span class="hljs-variable">@width</span>); <span class="hljs-comment">// tr&#x1EA3; v&#x1EC1; `50%`</span>
   <span class="hljs-attribute">color</span>: <span class="hljs-function">saturate</span>(<span class="hljs-variable">@base</span>, <span class="hljs-number">5%</span>);
   <span class="hljs-attribute">background-color</span>: <span class="hljs-function">spin</span>(<span class="hljs-function">lighten</span>(<span class="hljs-variable">@base</span>, <span class="hljs-number">25%</span>), <span class="hljs-number">8</span>);
 }
@@ -412,11 +412,11 @@
 <h3 class="docs-heading">Ch&#xFA; th&#xED;ch<span class="anchor-target" id="features-overview-feature-ch-th-ch"></span>
 <a href="#features-overview-feature-ch-th-ch" name="features-overview-feature-ch-th-ch" class="anchor glyphicon glyphicon-link"></a></h3>
 <p>C&#x1EA3; ch&#xFA; th&#xED;ch d&#x1EA1;ng block v&#xE0; d&#x1EA1;ng inline &#x111;&#x1EC1;u &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng:</p>
-<pre><code class="lang-less"><span class="hljs-comment">/* One hell of a block
-style comment! */</span>
+<pre><code class="lang-less"><span class="hljs-comment">/* &#x110;&#xE2;y l&#xE0; m&#x1ED9;t ch&#xFA; th&#xED;ch
+r&#x1EA5;t d&#xE0;i d&#x1EA1;ng block (nhi&#x1EC1;u d&#xF2;ng)! */</span>
 <span class="hljs-variable">@var:</span> red;
 
-<span class="hljs-comment">// Get in line!</span>
+<span class="hljs-comment">// &#x110;&#xE2;y l&#xE0; ch&#xFA; th&#xED;ch m&#x1ED9;t d&#xF2;ng!</span>
 <span class="hljs-variable">@var:</span> white;
 </code></pre>
 <h3 class="docs-heading">Import<span class="anchor-target" id="features-overview-feature-import"></span>
@@ -472,11 +472,11 @@ style comment! */</span>
 }
 </code></pre>
 <p>Bi&#x1EBF;n s&#x1ED1; gi&#xFA;p b&#x1EA1;n d&#x1EC5; d&#xE0;ng ki&#x1EC3;m so&#xE1;t c&#xE1;c gi&#xE1; tr&#x1ECB; n&#xE0;y, t&#x1EEB; &#x111;&#xF3; gi&#xFA;p cho m&#xE3; ngu&#x1ED3;n c&#x1EE7;a b&#x1EA1;n d&#x1EC5; b&#x1EA3;o tr&#xEC; h&#x1A1;n:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
-<span class="hljs-variable">@link-color:</span>        <span class="hljs-hexcolor">#428bca</span>; <span class="hljs-comment">// sea blue</span>
+<pre><code class="lang-less"><span class="hljs-comment">// Khai b&#xE1;o bi&#x1EBF;n</span>
+<span class="hljs-variable">@link-color:</span>        <span class="hljs-hexcolor">#428bca</span>; <span class="hljs-comment">// xanh n&#x1B0;&#x1EDB;c bi&#x1EC3;n</span>
 <span class="hljs-variable">@link-color-hover:</span>  <span class="hljs-function">darken</span>(<span class="hljs-variable">@link-color</span>, <span class="hljs-number">10%</span>);
 
-<span class="hljs-comment">// Usage</span>
+<span class="hljs-comment">// S&#x1EED; d&#x1EE5;ng</span>
 <span class="hljs-tag">a</span>,
 <span class="hljs-class">.link</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-variable">@link-color</span>;
@@ -495,10 +495,10 @@ style comment! */</span>
 <h3 class="docs-heading">Selector<span class="anchor-target" id="variables-feature-selector"></span>
 <a href="#variables-feature-selector" name="variables-feature-selector" class="anchor glyphicon glyphicon-link"></a></h3>
 <p>Phi&#xEA;n b&#x1EA3;n: 1.4.0</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
+<pre><code class="lang-less"><span class="hljs-comment">// Khai b&#xE1;o bi&#x1EBF;n</span>
 <span class="hljs-variable">@mySelector:</span> banner;
 
-<span class="hljs-comment">// Usage</span>
+<span class="hljs-comment">// S&#x1EED; d&#x1EE5;ng</span>
 <span class="hljs-class">.@{mySelector}</span> {
   <span class="hljs-attribute">font-weight</span>: bold;
   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">40px</span>;
@@ -514,10 +514,10 @@ style comment! */</span>
 </code></pre>
 <h3 class="docs-heading">URL<span class="anchor-target" id="variables-feature-url"></span>
 <a href="#variables-feature-url" name="variables-feature-url" class="anchor glyphicon glyphicon-link"></a></h3>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
+<pre><code class="lang-less"><span class="hljs-comment">// Khai b&#xE1;o bi&#x1EBF;n</span>
 <span class="hljs-variable">@images:</span> <span class="hljs-string">&quot;../img&quot;</span>;
 
-<span class="hljs-comment">// Usage</span>
+<span class="hljs-comment">// S&#x1EED; d&#x1EE5;ng</span>
 <span class="hljs-tag">body</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-hexcolor">#444</span>;
   <span class="hljs-attribute">background</span>: <span class="hljs-function">url</span>(<span class="hljs-string">&quot;@{images}/white-sand.png&quot;</span>);
@@ -529,10 +529,10 @@ style comment! */</span>
 <p>C&#xFA; ph&#xE1;p: <code>@import &quot;@{themes}/tidal-wave.less&quot;;</code></p>
 <p>L&#x1B0;u &#xFD; r&#x1EB1;ng trong c&#xE1;c phi&#xEA;n b&#x1EA3;n c&#x169; h&#x1A1;n phi&#xEA;n b&#x1EA3;n v2.0.0, ch&#x1EC9; c&#xF3; c&#xE1;c bi&#x1EBF;n s&#x1ED1; &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o trong root ho&#x1EB7;c trong ph&#x1EA1;m vi hi&#x1EC7;n t&#x1EA1;i m&#x1EDB;i c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#xE0; ch&#x1EC9; c&#xF3; t&#x1EC7;p tin hi&#x1EC7;n t&#x1EA1;i v&#xE0; c&#xE1;c t&#x1EC7;p tin &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i &#x111;&#x1EBF;n m&#x1EDB;i &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#xEC;m ki&#x1EBF;m bi&#x1EBF;n s&#x1ED1;.</p>
 <p>V&#xED; d&#x1EE5;:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// Variables</span>
+<pre><code class="lang-less"><span class="hljs-comment">// Khai b&#xE1;o bi&#x1EBF;n</span>
 <span class="hljs-variable">@themes:</span> <span class="hljs-string">&quot;../../src/themes&quot;</span>;
 
-<span class="hljs-comment">// Usage</span>
+<span class="hljs-comment">// S&#x1EED; d&#x1EE5;ng</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;@{themes}/tidal-wave.less&quot;</span>;
 </code></pre>
 <h3 class="docs-heading">C&#xE1;c thu&#x1ED9;c t&#xED;nh<span class="anchor-target" id="variables-feature-c-c-thu-c-t-nh"></span>
@@ -612,11 +612,11 @@ style comment! */</span>
 <a href="#variables-feature-bi-n-s-m-c-nh" name="variables-feature-bi-n-s-m-c-nh" class="anchor glyphicon glyphicon-link"></a></h2>
 <p>&#x110;&#xF4;i khi ch&#xFA;ng ta c&#xF3; nhu c&#x1EA7;u s&#x1EED; d&#x1EE5;ng c&#xE1;c bi&#x1EBF;n s&#x1ED1; m&#x1EB7;c &#x111;&#x1ECB;nh - m&#x1ED9;t kh&#xE1;i ni&#x1EC7;m cho ph&#xE9;p thi&#x1EBF;t l&#x1EAD;p gi&#xE1; tr&#x1ECB; c&#x1EE7;a bi&#x1EBF;n s&#x1ED1; n&#x1EBF;u nh&#x1B0; n&#xF3; ch&#x1B0;a &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o ra tr&#x1B0;&#x1EDB;c &#x111;&#xF3;. T&#xED;nh n&#x103;ng n&#xE0;y kh&#xF4;ng nh&#x1EA5;t thi&#x1EBF;t ph&#x1EA3;i s&#x1EED; d&#x1EE5;ng v&#xEC; l&#xFD; do b&#x1EA1;n c&#xF3; th&#x1EC3; d&#x1EC5; d&#xE0;ng ghi &#x111;&#xE8; m&#x1ED9;t bi&#x1EBF;n s&#x1ED1; b&#x1EB1;ng c&#xE1;ch &#x111;&#x1ECB;nh ngh&#x129;a v&#x1EC1; sau &#x111;&#xF3;.</p>
 <p>V&#xED; d&#x1EE5;:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// library</span>
+<pre><code class="lang-less"><span class="hljs-comment">// Gi&#x1EA3; s&#x1EED; &#x111;o&#x1EA1;n code n&#xE0;y &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o trong th&#x1B0; vi&#x1EC7;n</span>
 <span class="hljs-variable">@base-color:</span> green;
 <span class="hljs-variable">@dark-color:</span> <span class="hljs-function">darken</span>(<span class="hljs-variable">@base-color</span>, <span class="hljs-number">10%</span>);
 
-<span class="hljs-comment">// use of library</span>
+<span class="hljs-comment">// V&#xE0; &#x111;&#xE2;y l&#xE0; &#x111;o&#x1EA1;n code khi s&#x1EED; d&#x1EE5;ng th&#x1B0; vi&#x1EC7;n tr&#xEA;n</span>
 <span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;library.less&quot;</span>;
 <span class="hljs-variable">@base-color:</span> red;
 </code></pre>
@@ -687,16 +687,16 @@ style comment! */</span>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.a</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.b</span>) {}
 
-<span class="hljs-comment">// the above block does the same thing as the below block</span>
+<span class="hljs-comment">// t&#x1B0;&#x1A1;ng &#x111;&#x1B0;&#x1A1;ng v&#x1EDB;i</span>
 <span class="hljs-class">.a</span> {
   <span class="hljs-keyword">&amp;</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.b</span>);
 }
 </code></pre>
 <pre><code class="lang-less"><span class="hljs-class">.c</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.d</span> <span class="hljs-keyword">all</span>) {
-  <span class="hljs-comment">// extends all instances of &quot;.d&quot; e.g. &quot;.x.d&quot; or &quot;.d.x&quot;</span>
+  <span class="hljs-comment">// extend t&#x1EA5;t c&#x1EA3; c&#xE1;c selector c&#xF3; ch&#x1EE9;a &quot;.d&quot;, v&#xED; d&#x1EE5; &quot;.x.d&quot; ho&#x1EB7;c &quot;.d.x&quot;</span>
 }
 <span class="hljs-class">.c</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.d</span>) {
-  <span class="hljs-comment">// extends only instances where the selector will be output as just &quot;.d&quot;</span>
+  <span class="hljs-comment">// ch&#x1EC9; extend c&#xE1;c selector c&#xF3; ch&#x1EE9;a &quot;.d&quot;</span>
 }
 </code></pre>
 <p>B&#x1EA1;n c&#xF3; th&#x1EC3; truy&#x1EC1;n v&#xE0;o nhi&#x1EC1;u class &#x111;&#x1EC3; th&#x1EF1;c hi&#x1EC7;n extend, c&#xE1;c class &#x111;&#x1B0;&#x1EE3;c ph&#xE2;n c&#xE1;ch v&#x1EDB;i nhau b&#x1EB1;ng d&#x1EA5;u ph&#x1EA9;y.</p>
@@ -704,7 +704,7 @@ style comment! */</span>
 <pre><code class="lang-less"><span class="hljs-class">.e</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.f</span>) {}
 <span class="hljs-class">.e</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.g</span>) {}
 
-<span class="hljs-comment">// the above an the below do the same thing</span>
+<span class="hljs-comment">// t&#x1B0;&#x1A1;ng &#x111;&#x1B0;&#x1A1;ng v&#x1EDB;i</span>
 <span class="hljs-class">.e</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.f</span>, <span class="hljs-class">.g</span>) {}
 </code></pre>
 <h3 class="docs-heading">Extend g&#x1EAF;n v&#x1EDB;i selector<span class="anchor-target" id="extend-feature-extend-g-n-v-i-selector"></span>
@@ -741,11 +741,11 @@ style comment! */</span>
 <p>C&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng selector d&#x1EA1;ng l&#x1ED3;ng nhau v&#x1EDB;i extend nh&#x1B0; v&#xED; d&#x1EE5; sau &#x111;&#xE2;y:</p>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.bucket</span> {
-  <span class="hljs-tag">tr</span> { <span class="hljs-comment">// nested ruleset with target selector</span>
+  <span class="hljs-tag">tr</span> { <span class="hljs-comment">// ruleset m&#x1EE9;c trong</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
-<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.bucket</span> <span class="hljs-tag">tr</span>) {} <span class="hljs-comment">// nested ruleset is recognized</span>
+<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.bucket</span> <span class="hljs-tag">tr</span>) {} <span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng ruleset m&#x1EE9;c trong</span>
 </code></pre>
 <p>s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-class">.bucket</span> <span class="hljs-tag">tr</span>,
@@ -756,11 +756,11 @@ style comment! */</span>
 <p>H&#x1A1;n n&#x1EEF;a, extend nh&#x1EAD;n di&#x1EC7;n &#x111;&#x1B0;&#x1EE3;c selector d&#x1EA1;ng l&#x1ED3;ng nhau trong m&#xE3; CSS &#x111;&#xE3; bi&#xEA;n d&#x1ECB;ch ch&#x1EE9; kh&#xF4;ng ph&#x1EA3;i trong m&#xE3; Less g&#x1ED1;c. H&#xE3;y xem v&#xED; d&#x1EE5; sau &#x111;&#xE2;y:</p>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.bucket</span> {
-  <span class="hljs-tag">tr</span> <span class="hljs-keyword">&amp;</span> { <span class="hljs-comment">// nested ruleset with target selector</span>
+  <span class="hljs-tag">tr</span> <span class="hljs-keyword">&amp;</span> { <span class="hljs-comment">// ruleset m&#x1EE9;c trong</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
-<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-tag">tr</span> <span class="hljs-class">.bucket</span>) {} <span class="hljs-comment">// nested ruleset is recognized</span>
+<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-tag">tr</span> <span class="hljs-class">.bucket</span>) {} <span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng ruleset m&#x1EE9;c trong</span>
 </code></pre>
 <p>s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-tag">tr</span> <span class="hljs-class">.bucket</span>,
@@ -777,13 +777,13 @@ style comment! */</span>
 <span class="hljs-class">.class</span> &gt; <span class="hljs-class">.a</span> {
   <span class="hljs-attribute">color</span>: blue;
 }
-<span class="hljs-class">.test</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.class</span>) {} <span class="hljs-comment">// this will NOT match the any selectors above</span>
+<span class="hljs-class">.test</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.class</span>) {} <span class="hljs-comment">// KH&#xD4;NG kh&#x1EDB;p v&#x1EDB;i selector n&#xE0;o b&#xEA;n tr&#xEA;n</span>
 </code></pre>
 <p>Ph&#x1EE5; thu&#x1ED9;c v&#xE0;o k&#xFD; t&#x1EF1; &quot;<em>&quot;. Selector `</em>.class<code>v&#xE0;</code>.class` l&#xE0; t&#x1B0;&#x1A1;ng &#x111;&#x1B0;&#x1A1;ng, tuy nhi&#xEA;n extend hi&#x1EC3;u ch&#xFA;ng kh&#xE1;c nhau:</p>
 <pre><code class="lang-less">*<span class="hljs-class">.class</span> {
   <span class="hljs-attribute">color</span>: blue;
 }
-<span class="hljs-class">.noStar</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.class</span>) {} <span class="hljs-comment">// this will NOT match the *.class selector</span>
+<span class="hljs-class">.noStar</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.class</span>) {} <span class="hljs-comment">// // KH&#xD4;NG kh&#x1EDB;p selector *.class</span>
 </code></pre>
 <p>s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css">*<span class="hljs-class">.class</span> {
@@ -888,16 +888,16 @@ style comment! */</span>
 <p>&#x110;&#xE3; c&#xF3; m&#x1ED9;t y&#xEA;u c&#x1EA7;u v&#x1EC1; v&#x1EA5;n &#x111;&#x1EC1; n&#xE0;y nh&#x1B0;ng vi&#x1EC7;c thay &#x111;&#x1ED5;i l&#xE0; kh&#xF4;ng h&#x1EC1; d&#x1EC5; d&#xE0;ng. Tuy nhi&#xEA;n, extend l&#x1EA1;i c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#x1EDB;i selector d&#x1EA1;ng n&#x1ED9;i suy</p>
 <p>Selector ch&#x1EE9;a bi&#x1EBF;n s&#x1ED1; s&#x1EBD; b&#x1ECB; b&#x1ECF; qua:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@variable:</span> .bucket;
-<span class="hljs-variable">@{variable}</span> { <span class="hljs-comment">// interpolated selector</span>
+<span class="hljs-variable">@{variable}</span> { <span class="hljs-comment">// selector n&#x1ED9;i suy, s&#x1EBD; in ra .bucket { ... }</span>
   <span class="hljs-attribute">color</span>: blue;
 }
-<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.bucket</span>) {} <span class="hljs-comment">// does nothing, no match is found</span>
+<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.bucket</span>) {} <span class="hljs-comment">// KH&#xD4;NG kh&#x1EDB;p v&#x1EDB;i selector tr&#xEA;n</span>
 </code></pre>
 <p>v&#xE0; extend v&#x1EDB;i tham s&#x1ED1; &#x111;&#x1B0;&#x1EE3;c truy&#x1EC1;n v&#xE0;o l&#xE0; bi&#x1EBF;n s&#x1ED1; s&#x1EBD; kh&#xF4;ng th&#x1EC3; s&#x1EED; d&#x1EE5;ng:</p>
 <pre><code class="lang-less"><span class="hljs-class">.bucket</span> {
   <span class="hljs-attribute">color</span>: blue;
 }
-<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-variable">@{variable}</span>) {} <span class="hljs-comment">// interpolated selector matches nothing</span>
+<span class="hljs-class">.some-class</span><span class="hljs-keyword">:extend</span>(<span class="hljs-variable">@{variable}</span>) {} <span class="hljs-comment">// KH&#xD4;NG kh&#x1EDB;p v&#x1EDB;i selector tr&#xEA;n</span>
 <span class="hljs-variable">@variable:</span> .bucket;
 </code></pre>
 <p>C&#x1EA3; hai v&#xED; d&#x1EE5; tr&#xEA;n &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
@@ -921,16 +921,16 @@ style comment! */</span>
 <a href="#extend-feature-scoping-extend-b-n-trong-media" name="extend-feature-scoping-extend-b-n-trong-media" class="anchor glyphicon glyphicon-link"></a></h2>
 <p>Extend &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#xEA;n trong ph&#x1EA7;n khai b&#xE1;o c&#x1EE7;a media s&#x1EBD; ch&#x1EC9; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#x1EDB;i c&#xE1;c selector n&#x1EB1;m trong ph&#x1EA7;n khai b&#xE1;o c&#x1EE7;a media &#x111;&#xF3;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@media</span> print {
-  <span class="hljs-class">.screenClass</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">// extend inside media</span>
-  <span class="hljs-class">.selector</span> { <span class="hljs-comment">// this will be matched - it is in the same media</span>
+  <span class="hljs-class">.screenClass</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">// extend b&#xEA;n trong media</span>
+  <span class="hljs-class">.selector</span> { <span class="hljs-comment">// trong c&#xF9;ng m&#x1ED9;t media, kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh extend</span>
     <span class="hljs-attribute">color</span>: black;
   }
 }
-<span class="hljs-class">.selector</span> { <span class="hljs-comment">// ruleset on top of style sheet - extend ignores it</span>
+<span class="hljs-class">.selector</span> { <span class="hljs-comment">// ruleset &#x1EDF; ngo&#xE0;i media - kh&#xF4;ng extend</span>
   <span class="hljs-attribute">color</span>: red;
 }
 <span class="hljs-at_rule">@media</span> screen {
-  <span class="hljs-class">.selector</span> {  <span class="hljs-comment">// ruleset inside another media - extend ignores it</span>
+  <span class="hljs-class">.selector</span> {  <span class="hljs-comment">// ruleset &#x1EDF; trong media query kh&#xE1;c - kh&#xF4;ng extend</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
@@ -938,24 +938,24 @@ style comment! */</span>
 <p>s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@media</span> print {
   <span class="hljs-class">.selector</span>,
-  <span class="hljs-class">.screenClass</span> { <span class="hljs-comment">/*  ruleset inside the same media was extended */</span>
+  <span class="hljs-class">.screenClass</span> { <span class="hljs-comment">/*  ruleset trong c&#xF9;ng media s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c extend */</span>
     <span class="hljs-attribute">color</span>: black;
   }
 }
-<span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset on top of style sheet was ignored */</span>
+<span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset &#x1EDF; ngo&#xE0;i media s&#x1EBD; kh&#xF4;ng extend */</span>
   <span class="hljs-attribute">color</span>: red;
 }
 <span class="hljs-at_rule">@media</span> screen {
-  <span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset inside another media was ignored */</span>
+  <span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset &#x1EDF; trong media kh&#xE1;c s&#x1EBD; kh&#xF4;ng extend */</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
 </code></pre>
-<p>Extend &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#xEA;n trong ph&#x1EA7;n khai b&#xE1;o c&#x1EE7;a media s&#x1EBD; kh&#xF4;ng th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#x1EDB;i c&#xE1;c selector c&#x1EE7;a c&#xE1;c media l&#x1ED3;ng b&#xEA;n trong:</p>
+<p>Extend &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t b&#xEA;n trong ph&#x1EA7;n khai b&#xE1;o c&#x1EE7;a media s&#x1EBD; kh&#xF4;ng th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#x1EDB;i c&#xE1;c selector c&#x1EE7;a c&#xE1;c media m&#x1EE9;c trong:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@media</span> screen {
-  <span class="hljs-class">.screenClass</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">// extend inside media</span>
+  <span class="hljs-class">.screenClass</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">// extend b&#xEA;n trong media</span>
   <span class="hljs-at_rule">@media</span> (min-width: <span class="hljs-number">1023px</span>) {
-    <span class="hljs-class">.selector</span> {  <span class="hljs-comment">// ruleset inside nested media - extend ignores it</span>
+    <span class="hljs-class">.selector</span> {  <span class="hljs-comment">// ruleset &#x1EDF; media m&#x1EE9;c trong - kh&#xF4;ng extend</span>
       <span class="hljs-attribute">color</span>: blue;
     }
   }
@@ -963,35 +963,35 @@ style comment! */</span>
 </code></pre>
 <p>&#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@media</span> screen and (min-width: <span class="hljs-number">1023px</span>) {
-  <span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset inside another nested media was ignored */</span>
+  <span class="hljs-class">.selector</span> { <span class="hljs-comment">/* ruleset &#x1EDF; media m&#x1EE9;c trong - kh&#xF4;ng extend */</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
 </code></pre>
-<p>Extend s&#x1EBD; k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i to&#xE0;n b&#x1ED9; c&#xE1;c selector t&#xEC;m ki&#x1EBF;m &#x111;&#x1B0;&#x1EE3;c bao g&#x1ED3;m c&#x1EA3; c&#xE1;c selector n&#x1EB1;m b&#xEA;n trong media l&#x1ED3;ng b&#xEA;n trong:</p>
+<p>Extend s&#x1EBD; k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i to&#xE0;n b&#x1ED9; c&#xE1;c selector t&#xEC;m ki&#x1EBF;m &#x111;&#x1B0;&#x1EE3;c bao g&#x1ED3;m c&#x1EA3; c&#xE1;c selector n&#x1EB1;m b&#xEA;n trong media m&#x1EE9;c trong:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@media</span> screen {
-  <span class="hljs-class">.selector</span> {  <span class="hljs-comment">/* ruleset inside nested media - top level extend works */</span>
+  <span class="hljs-class">.selector</span> {  <span class="hljs-comment">/* ruleset &#x1EDF; media m&#x1EE9;c trong - kh&#x1EDB;p v&#x1EDB;i extend &#x1EDF; m&#x1EE9;c ngo&#xE0;i c&#xF9;ng */</span>
     <span class="hljs-attribute">color</span>: blue;
   }
   <span class="hljs-at_rule">@media</span> (min-width: <span class="hljs-number">1023px</span>) {
-    <span class="hljs-class">.selector</span> {  <span class="hljs-comment">/* ruleset inside nested media - top level extend works */</span>
+    <span class="hljs-class">.selector</span> {  <span class="hljs-comment">/* ruleset &#x1EDF; media m&#x1EE9;c trong - kh&#x1EDB;p v&#x1EDB;i extend &#x1EDF; m&#x1EE9;c ngo&#xE0;i c&#xF9;ng */</span>
       <span class="hljs-attribute">color</span>: blue;
     }
   }
 }
 
-<span class="hljs-class">.topLevel</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">/* top level extend matches everything */</span>
+<span class="hljs-class">.topLevel</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.selector</span>) {} <span class="hljs-comment">/* extend m&#x1EE9;c ngo&#xE0;i c&#xF9;ng kh&#x1EDB;p v&#x1EDB;i t&#x1EA5;t c&#x1EA3; c&#xE1;c selector tr&#xEA;n */</span>
 </code></pre>
 <p>s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c d&#x1ECB;ch th&#xE0;nh:</p>
 <pre><code class="lang-css"><span class="hljs-at_rule">@media</span> screen {
   <span class="hljs-class">.selector</span>,
-  <span class="hljs-class">.topLevel</span> { <span class="hljs-comment">/* ruleset inside media was extended */</span>
+  <span class="hljs-class">.topLevel</span> { <span class="hljs-comment">/* ruleset trong media &#x111;&#x1B0;&#x1EE3;c extend */</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
 <span class="hljs-at_rule">@media</span> screen and (min-width: <span class="hljs-number">1023px</span>) {
   <span class="hljs-class">.selector</span>,
-  <span class="hljs-class">.topLevel</span> { <span class="hljs-comment">/* ruleset inside nested media was extended */</span>
+  <span class="hljs-class">.topLevel</span> { <span class="hljs-comment">/* ruleset &#x1EDF; media m&#x1EE9;c trong &#x111;&#x1B0;&#x1EE3;c extend */</span>
     <span class="hljs-attribute">color</span>: blue;
   }
 }
@@ -1002,7 +1002,7 @@ style comment! */</span>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-class">.alert-info</span>,
 <span class="hljs-class">.widget</span> {
-  <span class="hljs-comment">/* declarations */</span>
+  <span class="hljs-comment">/* khai b&#xE1;o */</span>
 }
 
 <span class="hljs-class">.alert</span><span class="hljs-keyword">:extend</span>(<span class="hljs-class">.alert-info</span>, <span class="hljs-class">.widget</span>) {}
@@ -1012,7 +1012,7 @@ style comment! */</span>
 <span class="hljs-class">.widget</span>,
 <span class="hljs-class">.alert</span>,
 <span class="hljs-class">.alert</span> {
-  <span class="hljs-comment">/* declarations */</span>
+  <span class="hljs-comment">/* khai b&#xE1;o */</span>
 }
 </code></pre>
 <h2 class="docs-heading">C&#xE1;c Use Case cho Extend<span class="anchor-target" id="extend-feature-c-c-use-case-cho-extend"></span>
@@ -1098,10 +1098,10 @@ style comment! */</span>
 <p>M&#x1ED9;t use-case kh&#xE1;c c&#x169;ng &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; thay th&#x1EBF; cho mixin khi c&#x1EA7;n thi&#x1EBF;t - v&#xEC; mixin ch&#x1EC9; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng v&#x1EDB;i c&#xE1;c selector &#x111;&#x1A1;n gi&#x1EA3;n, n&#x1EBF;u nh&#x1B0; b&#x1EA1;n c&#xF3; 2 block html kh&#xE1;c nhau, nh&#x1B0;ng c&#x1EA7;n ph&#x1EA3;i &#xE1;p d&#x1EE5;ng c&#xF9;ng m&#x1ED9;t style v&#xE0;o c&#x1EA3; 2 block &#x111;&#xF3;, khi &#x111;&#xF3; b&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng extend &#x111;&#x1EC3; li&#xEA;n k&#x1EBF;t 2 block n&#xE0;y.</p>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-tag">li</span><span class="hljs-class">.list</span> &gt; <span class="hljs-tag">a</span> {
-  <span class="hljs-comment">// list styles</span>
+  <span class="hljs-comment">// style cho list</span>
 }
 <span class="hljs-tag">button</span><span class="hljs-class">.list-style</span> {
-  <span class="hljs-keyword">&amp;</span><span class="hljs-keyword">:extend</span>(<span class="hljs-tag">li</span><span class="hljs-class">.list</span> &gt; <span class="hljs-tag">a</span>); <span class="hljs-comment">// use the same list styles</span>
+  <span class="hljs-keyword">&amp;</span><span class="hljs-keyword">:extend</span>(<span class="hljs-tag">li</span><span class="hljs-class">.list</span> &gt; <span class="hljs-tag">a</span>); <span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng l&#x1EA1;i style cho list v&#x1EEB;a khai b&#xE1;o &#x1EDF; tr&#xEA;n</span>
 }
 </code></pre>
 
@@ -1161,7 +1161,8 @@ style comment! */</span>
 }
 </code></pre>
 <p>L&#x1B0;u &#xFD; r&#x1EB1;ng &#x111;&#x1EC3; g&#x1ECD;i mixin kh&#xF4;ng b&#x1EAF;t bu&#x1ED9;c ph&#x1EA3;i c&#xF3; d&#x1EA5;u ngo&#x1EB7;c.</p>
-<pre><code class="lang-less"><span class="hljs-class">.a</span>();   <span class="hljs-comment">//these lines do the same thing</span>
+<pre><code class="lang-less"><span class="hljs-comment">// hai c&#xE1;ch g&#x1ECD;i sau l&#xE0; nh&#x1B0; nhau</span>
+<span class="hljs-class">.a</span>();
 <span class="hljs-class">.a</span>;
 </code></pre>
 <h2 class="docs-heading">Kh&#xF4;ng in ra mixin<span class="anchor-target" id="mixins-feature-kh-ng-in-ra-mixin"></span>
@@ -1428,16 +1429,17 @@ style comment! */</span>
 <h3 class="docs-heading">Tham s&#x1ED1; n&#xE2;ng cao v&#xE0; bi&#x1EBF;n <code>@rest</code><span class="anchor-target" id="mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-"></span>
 <a href="#mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-" name="mixins-parametric-feature-tham-s-n-ng-cao-v-bi-n-rest-" class="anchor glyphicon glyphicon-link"></a></h3>
 <p>B&#x1EA1;n c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng <code>...</code> n&#x1EBF;u b&#x1EA1;n mu&#x1ED1;n mixin c&#x1EE7;a b&#x1EA1;n nh&#x1EAD;n m&#x1ED9;t s&#x1ED1; l&#x1B0;&#x1EE3;ng tham s&#x1ED1; b&#x1EA5;t k&#x1EF3;. S&#x1EED; dunjg <code>...</code> sau m&#x1ED9;t t&#xEA;n bi&#x1EBF;n s&#x1EBD; g&#xE1;n c&#xE1;c tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o v&#xE0;o bi&#x1EBF;n &#x111;&#xF3;.</p>
-<pre><code class="lang-less"><span class="hljs-class">.mixin</span>(...) {        <span class="hljs-comment">// matches 0-N arguments</span>
-<span class="hljs-class">.mixin</span>() {           <span class="hljs-comment">// matches exactly 0 arguments</span>
-<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>) {      <span class="hljs-comment">// matches 0-1 arguments</span>
-<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>; ...) { <span class="hljs-comment">// matches 0-N arguments</span>
-<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>; ...) {    <span class="hljs-comment">// matches 1-N arguments</span>
+<p>!@# [19m]</p>
+<pre><code class="lang-less"><span class="hljs-class">.mixin</span>(...) {        <span class="hljs-comment">// kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh g&#x1ECD;i c&#xF3; 0-N tham s&#x1ED1;</span>
+<span class="hljs-class">.mixin</span>() {           <span class="hljs-comment">// kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh g&#x1ECD;i kh&#xF4;ng c&#xF3; tham s&#x1ED1;</span>
+<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>) {      <span class="hljs-comment">// kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh g&#x1ECD;i c&#xF3; 0-1 tham s&#x1ED1;</span>
+<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>: <span class="hljs-number">1</span>; ...) { <span class="hljs-comment">// kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh g&#x1ECD;i c&#xF3; 0-N tham s&#x1ED1;</span>
+<span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>; ...) {    <span class="hljs-comment">// kh&#x1EDB;p v&#x1EDB;i l&#x1EC7;nh g&#x1ECD;i c&#xF3; 1-N tham s&#x1ED1;</span>
 </code></pre>
 <p>Ngo&#xE0;i ra:</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span>(<span class="hljs-variable">@a</span>; <span class="hljs-variable">@rest</span>...) {
-   <span class="hljs-comment">// @rest is bound to arguments after @a</span>
-   <span class="hljs-comment">// @arguments is bound to all arguments</span>
+   <span class="hljs-comment">// c&#xE1;c tham s&#x1ED1; sau @a &#x111;&#x1B0;&#x1EE3;c g&#x1EAF;n v&#xE0;o bi&#x1EBF;n @rest</span>
+   <span class="hljs-comment">// bi&#x1EBF;n @arguments gi&#x1EEF; t&#x1EA5;t c&#x1EA3; c&#xE1;c tham s&#x1ED1;</span>
 }
 </code></pre>
 <h2 class="docs-heading">So kh&#x1EDB;p m&#x1EAB;u<span class="anchor-target" id="mixins-parametric-feature-so-kh-p-m-u"></span>
@@ -1553,8 +1555,8 @@ Anything other than a variable matches only with a value equal to itself.</p>
 }
 
 <span class="hljs-tag">div</span> {
-  <span class="hljs-class">.average</span>(<span class="hljs-number">16px</span>, <span class="hljs-number">50px</span>); <span class="hljs-comment">// &quot;call&quot; the mixin</span>
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">@average</span>;    <span class="hljs-comment">// use its &quot;return&quot; value</span>
+  <span class="hljs-class">.average</span>(<span class="hljs-number">16px</span>, <span class="hljs-number">50px</span>); <span class="hljs-comment">// &quot;g&#x1ECD;i&quot; mixin</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">@average</span>;    <span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng gi&#xE1; tr&#x1ECB; &quot;tr&#x1EA3; v&#x1EC1;&quot;</span>
 }
 </code></pre>
 <p>K&#x1EBF;t qu&#x1EA3;:</p>
@@ -1573,7 +1575,7 @@ Anything other than a variable matches only with a value equal to itself.</p>
   <span class="hljs-class">.mixin</span>(); 
 }
 
-<span class="hljs-variable">@size:</span> globaly-defined-value; <span class="hljs-comment">// callers parent scope - no protection</span>
+<span class="hljs-variable">@size:</span> globaly-defined-value; <span class="hljs-comment">// bi&#x1EBF;n &#x1EDF; ph&#x1EA1;m vi cha - c&#xF3; th&#x1EC3; b&#x1ECB; &#x111;&#x1EC1;</span>
 </code></pre>
 <p>K&#x1EBF;t qu&#x1EA3;:</p>
 <pre><code class="lang-css"><span class="hljs-class">.class</span> {
@@ -1581,15 +1583,15 @@ Anything other than a variable matches only with a value equal to itself.</p>
 }
 </code></pre>
 <p>Cu&#x1ED1;i c&#xF9;ng, mixin khai b&#xE1;o trong mixin c&#x169;ng ho&#x1EA1;t &#x111;&#x1ED9;ng nh&#x1B0; bi&#x1EBF;n tr&#x1EA3; v&#x1EC1;:</p>
-<pre><code class="lang-less"><span class="hljs-class">.unlock</span>(<span class="hljs-variable">@value</span>) { <span class="hljs-comment">// outer mixin</span>
-  <span class="hljs-class">.doSomething</span>() { <span class="hljs-comment">// nested mixin</span>
+<pre><code class="lang-less"><span class="hljs-class">.unlock</span>(<span class="hljs-variable">@value</span>) { <span class="hljs-comment">// mixin b&#x1ECD;c ngo&#xE0;i</span>
+  <span class="hljs-class">.doSomething</span>() { <span class="hljs-comment">// mixin l&#x1ED3;ng trong</span>
     <span class="hljs-attribute">declaration</span>: <span class="hljs-variable">@value</span>;
   }
 }
 
 <span class="hljs-id">#namespace</span> {
-  <span class="hljs-class">.unlock</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// unlock doSomething mixin</span>
-  <span class="hljs-class">.doSomething</span>(); <span class="hljs-comment">//nested mixin was copied here and is usable </span>
+  <span class="hljs-class">.unlock</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// m&#x1EDF; kh&#xF3;a doSomething mixin</span>
+  <span class="hljs-class">.doSomething</span>(); <span class="hljs-comment">// c&#xE1;c mixin l&#x1ED3;ng trong &#x111;&#x1B0;&#x1EE3;c copy v&#xE0;o &#x111;&#xE2;y v&#xE0; c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng</span>
 }
 </code></pre>
 <p>K&#x1EBF;t qu&#x1EA3;:</p>
@@ -1634,10 +1636,10 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <p>C&#xF3; t&#x1EEB; phi&#xEA;n b&#x1EA3;n <a href="https://github.com/less/less.js/blob/master/CHANGELOG.md">v1.7.0</a></p>
 <p>Ruleset t&#xE1;ch r&#x1EDD;i l&#xE0; m&#x1ED9;t nh&#xF3;m c&#xE1;c thu&#x1ED9;c t&#xED;nh css, c&#xE1;c ruleset l&#x1ED3;ng, c&#xE1;c khai b&#xE1;o media ho&#x1EB7;c b&#x1EA5;t c&#x1EE9; th&#x1EE9; g&#xEC; kh&#xE1;c l&#x1B0;u trong m&#x1ED9;t bi&#x1EBF;n. B&#x1EA1;n c&#xF3; th&#x1EC3; th&#xEA;m n&#xF3; v&#xE0;o m&#x1ED9;t ruleset kh&#xE1;c ho&#x1EB7;c m&#x1ED9;t c&#x1EA5;u tr&#xFA;c kh&#xE1;c, v&#xE0; t&#x1EA5;t c&#x1EA3; c&#xE1;c thu&#x1ED9;c t&#xED;nh c&#x1EE7;a n&#xF3; s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c sao ch&#xE9;p sang &#x111;&#xF3;. B&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t tham s&#x1ED1; g&#x1ECD;i mixin hay s&#x1EED; d&#x1EE5;ng n&#xF3; nh&#x1B0; m&#x1ED9;t bi&#x1EBF;n b&#xEC;nh th&#x1B0;&#x1EDD;ng.</p>
 <p>V&#xED; d&#x1EE5; &#x111;&#x1A1;n gi&#x1EA3;n:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// declare detached ruleset</span>
+<pre><code class="lang-less"><span class="hljs-comment">// khai b&#xE1;o ruleset t&#xE1;ch r&#x1EDD;i</span>
 <span class="hljs-variable">@detached-ruleset:</span> { <span class="hljs-attribute">background</span>: red; };
 
-<span class="hljs-comment">// use detached ruleset</span>
+<span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng ruleset t&#xE1;ch r&#x1EDD;i</span>
 <span class="hljs-class">.top</span> {
     <span class="hljs-variable">@detached-ruleset</span>(); 
 }
@@ -1703,13 +1705,13 @@ Anything other than a variable matches only with a value equal to itself.</p>
 </code></pre>
 <p>L&#x1EC7;nh g&#x1ECD;i ruleset t&#xE1;ch r&#x1EDD;i c&#xF3; th&#x1EC3; m&#x1EDF; (tr&#x1EA3; v&#x1EC1;) t&#x1EA5;t c&#x1EA3; c&#xE1;c mixin v&#xE0;o trong selector g&#x1ECD;i, t&#x1B0;&#x1A1;ng t&#x1EF1; nh&#x1B0; khi s&#x1EED; d&#x1EE5;ng mixin. Tuy nhi&#xEA;n, n&#xF3; KH&#xD4;NG tr&#x1EA3; v&#x1EC1; bi&#x1EBF;n.</p>
 <p>Mixin tr&#x1EA3; v&#x1EC1;:</p>
-<pre><code class="lang-less"><span class="hljs-comment">// detached ruleset with a mixin</span>
+<pre><code class="lang-less"><span class="hljs-comment">// ruleset t&#xE1;ch r&#x1EDD;i v&#x1EDB;i mixin</span>
 <span class="hljs-variable">@detached-ruleset:</span> { 
     <span class="hljs-class">.mixin</span>() {
         <span class="hljs-attribute">color</span>:blue;
     }
 };
-<span class="hljs-comment">// call detached ruleset</span>
+<span class="hljs-comment">// g&#x1ECD;i &#x111;&#x1EBF;n ruleset t&#xE1;ch r&#x1EDD;i</span>
 <span class="hljs-class">.caller</span> {
     <span class="hljs-variable">@detached-ruleset</span>(); 
     <span class="hljs-class">.mixin</span>();
@@ -1722,10 +1724,10 @@ Anything other than a variable matches only with a value equal to itself.</p>
 </code></pre>
 <p>Bi&#x1EBF;n private:</p>
 <pre><code class="lang-less"><span class="hljs-tag">detached-ruleset</span>: { 
-    <span class="hljs-variable">@color:</span>blue; <span class="hljs-comment">// this variable is private</span>
+    <span class="hljs-variable">@color:</span>blue; <span class="hljs-comment">// bi&#x1EBF;n ch&#x1EC9; c&#xF3; ph&#x1EA1;m vi trong ruleset</span>
 };
 <span class="hljs-class">.caller</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">@color</span>; <span class="hljs-comment">// syntax error</span>
+    <span class="hljs-attribute">color</span>: <span class="hljs-variable">@color</span>; <span class="hljs-comment">// l&#x1ED7;i c&#xFA; ph&#xE1;p, bi&#x1EBF;n @color kh&#xF4;ng t&#x1ED3;n t&#x1EA1;i</span>
 }
 </code></pre>
 <h2 class="docs-heading">Ph&#x1EA1;m v&#x1ECB;<span class="anchor-target" id="detached-rulesets-feature-ph-m-v-"></span>
@@ -1737,15 +1739,15 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <a href="#detached-rulesets-feature-t-m-nh-n-c-a-ph-m-vi-khai-b-o-v-ph-m-vi-g-i" name="detached-rulesets-feature-t-m-nh-n-c-a-ph-m-vi-khai-b-o-v-ph-m-vi-g-i" class="anchor glyphicon glyphicon-link"></a></h4>
 <p>Ruleset t&#xE1;ch r&#x1ED3;i nh&#xEC;n th&#x1EA5;y c&#xE1;c bi&#x1EBF;n v&#xE0; mixin c&#x1EE7;a selector g&#x1ECD;i n&#xF3;:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@detached-ruleset:</span> {
-  <span class="hljs-attribute">caller-variable</span>: <span class="hljs-variable">@callerVariable</span>; <span class="hljs-comment">// variable is undefined here</span>
-  <span class="hljs-class">.callerMixin</span>(); <span class="hljs-comment">// mixin is undefined here</span>
+  <span class="hljs-attribute">caller-variable</span>: <span class="hljs-variable">@callerVariable</span>; <span class="hljs-comment">// bieens kh&#xF4;ng t&#x1ED3;n t&#x1EA1;i</span>
+  <span class="hljs-class">.callerMixin</span>(); <span class="hljs-comment">// mixin kh&#xF4;ng t&#x1ED3;n t&#x1EA1;i </span>
 };
 
 <span class="hljs-tag">selector</span> {
-  <span class="hljs-comment">// use detached ruleset</span>
+  <span class="hljs-comment">// s&#x1EED; d&#x1EE5;ng ruleset t&#xE1;ch r&#x1EDD;i</span>
   <span class="hljs-variable">@detached-ruleset</span>(); 
 
-  <span class="hljs-comment">// define variable and mixin needed inside the detached ruleset</span>
+  <span class="hljs-comment">// khai b&#xE1;o bi&#x1EBF;n v&#xE0; mixin c&#x1EA7;n &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng trong ruleset t&#xE1;ch r&#x1EDD;i</span>
   <span class="hljs-variable">@callerVariable:</span> value;
   <span class="hljs-class">.callerMixin</span>() {
     <span class="hljs-attribute">variable</span>: declaration;
@@ -1761,14 +1763,15 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <p>Bi&#x1EBF;n v&#xE0; mixin c&#xF3; th&#x1EC3; truy c&#x1EAD;p &#x111;&#x1B0;&#x1EE3;c t&#x1EEB; n&#x1A1;i khai b&#xE1;o &#x111;&#x1B0;&#x1EE3;c &#x1B0;u ti&#xEA;n h&#x1A1;n bi&#x1EBF;n v&#xE0; mixin &#x1EDF; n&#x1A1;i g&#x1ECD;i:</p>
 <pre><code class="lang-less"><span class="hljs-variable">@variable:</span> global;
 <span class="hljs-variable">@detached-ruleset:</span> {
-  <span class="hljs-comment">// will use global variable, because it is accessible</span>
-  <span class="hljs-comment">// from detached-ruleset definition</span>
+  <span class="hljs-comment">// s&#x1EBD; s&#x1EED; d&#x1EE5;ng bi&#x1EBF;n to&#xE0;n c&#x1EE5;c (gi&#xE1; tr&#x1ECB; global)</span>
+  <span class="hljs-comment">// do bi&#x1EBF;n n&#xE0;y c&#xF3; th&#x1EC3; truy c&#x1EAD;p &#x111;&#x1B0;&#x1EE3;c t&#x1EEB;</span>
+  <span class="hljs-comment">// n&#x1A1;i khai b&#xE1;o ruleset t&#xE1;ch r&#x1EDD;i</span>
   <span class="hljs-attribute">variable</span>: <span class="hljs-variable">@variable</span>; 
 };
 
 <span class="hljs-tag">selector</span> {
   <span class="hljs-variable">@detached-ruleset</span>();
-  <span class="hljs-variable">@variable:</span> value; <span class="hljs-comment">// variable defined in caller - will be ignored</span>
+  <span class="hljs-variable">@variable:</span> value; <span class="hljs-comment">// gi&#xE1; tr&#x1ECB; &#x111;&#x1B0;&#x1EE3;c khai b&#xE1;o &#x1EDF; n&#x1A1;i g&#x1ECD;i s&#x1EBD; b&#x1ECB; b&#x1ECF; qua</span>
 }
 </code></pre>
 <p>K&#x1EBF;t qu&#x1EA3;:</p>
@@ -1783,8 +1786,8 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <span class="hljs-class">.one</span> {
   <span class="hljs-variable">@one:</span> visible;
   <span class="hljs-class">.two</span> {
-    <span class="hljs-variable">@detached-2:</span> <span class="hljs-variable">@detached-1</span>; <span class="hljs-comment">// copying/renaming ruleset </span>
-    <span class="hljs-variable">@two:</span> visible; <span class="hljs-comment">// ruleset can not see this variable</span>
+    <span class="hljs-variable">@detached-2:</span> <span class="hljs-variable">@detached-1</span>; <span class="hljs-comment">// copy/&#x111;&#x1ED5;i t&#xEA;n ruleset</span>
+    <span class="hljs-variable">@two:</span> visible; <span class="hljs-comment">// ruleset kh&#xF4;ng th&#x1EC3; th&#x1EA5;y bi&#x1EBF;n n&#xE0;y</span>
   }
 }
 
@@ -1800,17 +1803,17 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <p>M&#x1ED9;t ruleset t&#xE1;ch r&#x1EDD;i s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c th&#xEA;m quy&#x1EC1;n truy c&#x1EAD;p khi &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; kh&#xF3;a (&#x111;&#x1B0;&#x1EE3;c nh&#x1EAD;p) &#x1EDF; trong m&#x1ED9;t ph&#x1EA1;m vi:</p>
 <pre><code class="lang-less"><span class="hljs-id">#space</span> {
   <span class="hljs-class">.importer1</span>() {
-    <span class="hljs-variable">@detached:</span> { <span class="hljs-attribute">scope-detached</span>: <span class="hljs-variable">@variable</span>; }; <span class="hljs-comment">// define detached ruleset</span>
+    <span class="hljs-variable">@detached:</span> { <span class="hljs-attribute">scope-detached</span>: <span class="hljs-variable">@variable</span>; }; <span class="hljs-comment">// khai b&#xE1;o ruleset t&#xE1;ch r&#x1EDD;i</span>
   }
 }
 
 <span class="hljs-class">.importer2</span>() {
-  <span class="hljs-variable">@variable:</span> value; <span class="hljs-comment">// unlocked detached ruleset CAN see this variable</span>
-  <span class="hljs-id">#space</span> &gt; <span class="hljs-class">.importer1</span>(); <span class="hljs-comment">// unlock/import detached ruleset</span>
+  <span class="hljs-variable">@variable:</span> value; <span class="hljs-comment">// ruleset t&#xE1;ch r&#x1EDD;i &#x111;&#xE3; &#x111;&#x1B0;&#x1EE3;c m&#x1EDF; kh&#xF3;a C&#xD3; TH&#x1EC2; nh&#xEC;n th&#x1EA5;y bi&#x1EBF;n n&#xE0;y</span>
+  <span class="hljs-id">#space</span> &gt; <span class="hljs-class">.importer1</span>(); <span class="hljs-comment">// m&#x1EDF; kh&#xF3;a/nh&#x1EAD;p ruleset t&#xE1;ch r&#x1EDD;i</span>
 }
 
 <span class="hljs-class">.usePlace</span> {
-  <span class="hljs-class">.importer2</span>(); <span class="hljs-comment">// unlock/import detached ruleset second time</span>
+  <span class="hljs-class">.importer2</span>(); <span class="hljs-comment">// m&#x1EDF; kh&#xF3;a/nh&#x1EAD;p ruleset t&#xE1;ch r&#x1EDD;i</span>
    <span class="hljs-variable">@detached</span>();
 }
 </code></pre>
@@ -1869,10 +1872,10 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <li>T&#xEA;n file kh&#xF4;ng c&#xF3; &#x111;u&#xF4;i, Less s&#x1EBD; m&#x1EB7;c &#x111;&#x1ECB;nh hi&#x1EC3;u l&#xE0; file <code>.less</code> v&#xE0; s&#x1EBD; nh&#x1EAD;p file d&#x1EA1;ng less</li>
 </ul>
 <p>V&#xED; d&#x1EE5;:</p>
-<pre><code class="lang-less"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo&quot;</span>;      <span class="hljs-comment">// foo.less is imported</span>
-<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// foo.less is imported</span>
-<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.php&quot;</span>;  <span class="hljs-comment">// foo.php imported as a less file</span>
-<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.css&quot;</span>;  <span class="hljs-comment">// statement left in place, as-is</span>
+<pre><code class="lang-less"><span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo&quot;</span>;      <span class="hljs-comment">// nh&#x1EAD;p foo.less</span>
+<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// nh&#x1EAD;p foo.less</span>
+<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.php&quot;</span>;  <span class="hljs-comment">// nh&#x1EAD;p foo.php v&#xE0; d&#x1ECB;ch nh&#x1B0; file less</span>
+<span class="hljs-at_rule">@import</span> <span class="hljs-string">&quot;foo.css&quot;</span>;  <span class="hljs-comment">// &#x111;&#x1EC3; nguy&#xEA;n, kh&#xF4;ng d&#x1ECB;ch</span>
 </code></pre>
 <p>C&#xE1;c t&#xF9;y ch&#x1ECD;n sau c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; thay &#x111;&#x1ED5;i h&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh tr&#xEA;n.</p>
 <h1 class="docs-heading">T&#xF9;y ch&#x1ECD;n nh&#x1EAD;p<span class="anchor-target" id="t-y-ch-n-nh-p"></span>
@@ -1957,7 +1960,7 @@ Anything other than a variable matches only with a value equal to itself.</p>
 <p>&#x110;&#xE2;y l&#xE0; h&#xE0;nh vi m&#x1EB7;c &#x111;&#x1ECB;nh c&#x1EE7;a c&#xE1;c c&#xE2;u l&#x1EC7;nh <code>@import</code>.</p>
 <p>V&#xED; d&#x1EE5;:</p>
 <pre><code class="lang-less"><span class="hljs-at_rule">@import</span> (once) <span class="hljs-string">&quot;foo.less&quot;</span>;
-<span class="hljs-at_rule">@import</span> (once) <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// this statement will be ignored</span>
+<span class="hljs-at_rule">@import</span> (once) <span class="hljs-string">&quot;foo.less&quot;</span>; <span class="hljs-comment">// l&#x1EC7;nh nh&#x1EAD;p n&#xE0;y s&#x1EBD; b&#x1ECB; b&#x1ECF; qua</span>
 </code></pre>
 <h2 class="docs-heading">multiple<span class="anchor-target" id="t-y-ch-n-nh-p-multiple"></span>
 <a href="#t-y-ch-n-nh-p-multiple" name="t-y-ch-n-nh-p-multiple" class="anchor glyphicon glyphicon-link"></a></h2>
@@ -2057,7 +2060,7 @@ Anything other than a variable matches only with a value equal to itself.</p>
 </code></pre>
 <p>C&#xE1;c gi&#xE1; tr&#x1ECB; kh&#xE1;c ngo&#xE0;i <code>true</code> &#x111;&#x1EC1;u l&#xE0; ph&#x1EE7; &#x111;&#x1ECB;nh:</p>
 <pre><code class="lang-less"><span class="hljs-class">.class</span> {
-  <span class="hljs-class">.truth</span>(<span class="hljs-number">40</span>); <span class="hljs-comment">// Will not match any of the above definitions.</span>
+  <span class="hljs-class">.truth</span>(<span class="hljs-number">40</span>); <span class="hljs-comment">// Kh&#xF4;ng kh&#x1EDB;p v&#x1EDB;i khai b&#xE1;o n&#xE0;o &#x1EDF; tr&#xEA;n</span>
 }
 </code></pre>
 <p>L&#x1B0;u &#xFD; r&#x1EB1;ng b&#x1EA1;n c&#x169;ng c&#xF3; th&#x1EC3; so s&#xE1;nh c&#xE1;c tham s&#x1ED1; v&#x1EDB;i nhau, ho&#x1EB7;c v&#x1EDB;i m&#x1ED9;t gi&#xE1; tr&#x1ECB;:</p>
@@ -2107,7 +2110,7 @@ S&#x1EED; d&#x1EE5;ng t&#x1EEB; kh&#xF3;a <code>not</code> &#x111;&#x1EC3; ph&#x
 <a href="#mixin-guards-feature-mixin-c-i-u-ki-n" name="mixin-guards-feature-mixin-c-i-u-ki-n" class="anchor glyphicon glyphicon-link"></a></h3>
 <p><em>(<strong>FIXME</strong>)</em> Additionally, the <code>default</code> function may be used to make a mixin match depending on other mixing matches, and you may use it to create &quot;conditional mixins&quot; similar to <code>else</code> or <code>default</code> statements (of <code>if</code> and <code>case</code> structures respectively):</p>
 <pre><code class="lang-less"><span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@a</span> &gt; <span class="hljs-number">0</span>) { ...  }
-<span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">default</span>()) { ... } <span class="hljs-comment">// matches only if first mixin does not, i.e. when @a &lt;= 0</span>
+<span class="hljs-class">.mixin</span> (<span class="hljs-variable">@a</span>) <span class="hljs-keyword">when</span> (<span class="hljs-function">default</span>()) { ... } <span class="hljs-comment">// ch&#x1EC9; kh&#x1EDB;p khi mixin &#x111;&#x1EA7;u ti&#xEA;n kh&#xF4;ng kh&#x1EDB;p, v&#xED; d&#x1EE5; khi @a &lt;= 0</span>
 </code></pre>
 
 
@@ -2205,12 +2208,12 @@ S&#x1EED; d&#x1EE5;ng t&#x1EEB; kh&#xF3;a <code>not</code> &#x111;&#x1EC3; ph&#x
 <p>V&#x1EDB;i Less, c&#xE1;c mixin c&#xF3; th&#x1EC3; g&#x1ECD;i &#x111;&#x1EBF;n ch&#xED;nh n&#xF3;. Nh&#x1EEF;ng mixin nh&#x1B0; v&#x1EAD;y, khi k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i <a href="#mixin-guards-feature">bi&#x1EC3;u th&#x1EE9;c ch&#x1EAF;n</a> v&#xE0; <a href="#mixins-parametric-feature-pattern-matching">so kh&#x1EDB;p m&#x1EAB;u</a>, s&#x1EBD; t&#x1EA1;o th&#xE0;nh nhi&#x1EC1;u c&#x1EA5;u tr&#xFA;c l&#x1EB7;p kh&#xE1;c nhau.</p>
 <p>Example:</p>
 <pre><code class="lang-less"><span class="hljs-class">.loop</span>(<span class="hljs-variable">@counter</span>) <span class="hljs-keyword">when</span> (<span class="hljs-variable">@counter</span> &gt; <span class="hljs-number">0</span>) {
-  <span class="hljs-class">.loop</span>((<span class="hljs-variable">@counter</span> - <span class="hljs-number">1</span>));    <span class="hljs-comment">// next iteration</span>
-  <span class="hljs-attribute">width</span>: (<span class="hljs-number">10px</span> * <span class="hljs-variable">@counter</span>); <span class="hljs-comment">// code for each iteration</span>
+  <span class="hljs-class">.loop</span>((<span class="hljs-variable">@counter</span> - <span class="hljs-number">1</span>));    <span class="hljs-comment">// g&#x1ECD;i &#x111;&#x1EBF;n l&#x1EA7;n l&#x1EB7;p ti&#x1EBF;p theo</span>
+  <span class="hljs-attribute">width</span>: (<span class="hljs-number">10px</span> * <span class="hljs-variable">@counter</span>); <span class="hljs-comment">// code cho m&#x1ED7;i l&#x1EA7;n l&#x1EB7;p</span>
 }
 
 <span class="hljs-tag">div</span> {
-  <span class="hljs-class">.loop</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// launch the loop</span>
+  <span class="hljs-class">.loop</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// b&#x1EAF;t &#x111;&#x1EA7;u v&#xF2;ng l&#x1EB7;p</span>
 }
 </code></pre>
 <p>K&#x1EBF;t qu&#x1EA3;:</p>
