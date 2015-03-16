@@ -45,7 +45,7 @@ Ví dụ:
 ```less
 .a:extend(.b) {}
 
-// the above block does the same thing as the below block
+// tương đương với
 .a {
   &:extend(.b);
 }
@@ -53,10 +53,10 @@ Ví dụ:
 
 ```less
 .c:extend(.d all) {
-  // extends all instances of ".d" e.g. ".x.d" or ".d.x"
+  // extend tất cả các selector có chứa ".d", ví dụ ".x.d" hoặc ".d.x"
 }
 .c:extend(.d) {
-  // extends only instances where the selector will be output as just ".d"
+  // chỉ extend các selector có chứa ".d"
 }
 ```
 
@@ -68,7 +68,7 @@ Ví dụ:
 .e:extend(.f) {}
 .e:extend(.g) {}
 
-// the above an the below do the same thing
+// tương đương với
 .e:extend(.f, .g) {}
 ```
 
@@ -117,11 +117,11 @@ Ví dụ:
 
 ```less
 .bucket {
-  tr { // nested ruleset with target selector
+  tr { // ruleset mức trong
     color: blue;
   }
 }
-.some-class:extend(.bucket tr) {} // nested ruleset is recognized
+.some-class:extend(.bucket tr) {} // sử dụng ruleset mức trong
 ```
 sẽ được dịch thành:
 
@@ -138,11 +138,11 @@ Ví dụ:
 
 ```less
 .bucket {
-  tr & { // nested ruleset with target selector
+  tr & { // ruleset mức trong
     color: blue;
   }
 }
-.some-class:extend(tr .bucket) {} // nested ruleset is recognized
+.some-class:extend(tr .bucket) {} // sử dụng ruleset mức trong
 ```
 
 sẽ được dịch thành:
@@ -166,7 +166,7 @@ Ví dụ:
 .class > .a {
   color: blue;
 }
-.test:extend(.class) {} // this will NOT match the any selectors above
+.test:extend(.class) {} // KHÔNG khớp với selector nào bên trên
 ```
 
 Phụ thuộc vào ký tự "*". Selector `*.class` và `.class` là tương đương, tuy nhiên extend hiểu chúng khác nhau:
@@ -175,7 +175,7 @@ Phụ thuộc vào ký tự "*". Selector `*.class` và `.class` là tương đ�
 *.class {
   color: blue;
 }
-.noStar:extend(.class) {} // this will NOT match the *.class selector
+.noStar:extend(.class) {} // // KHÔNG khớp selector *.class
 ```
 
 sẽ được dịch thành:
@@ -309,10 +309,10 @@ Selector chứa biến số sẽ bị bỏ qua:
 
 ```less
 @variable: .bucket;
-@{variable} { // interpolated selector
+@{variable} { // selector nội suy, sẽ in ra .bucket { ... }
   color: blue;
 }
-.some-class:extend(.bucket) {} // does nothing, no match is found
+.some-class:extend(.bucket) {} // KHÔNG khớp với selector trên
 ```
 
 và extend với tham số được truyền vào là biến số sẽ không thể sử dụng:
@@ -321,7 +321,7 @@ và extend với tham số được truyền vào là biến số sẽ không th
 .bucket {
   color: blue;
 }
-.some-class:extend(@{variable}) {} // interpolated selector matches nothing
+.some-class:extend(@{variable}) {} // KHÔNG khớp với selector trên
 @variable: .bucket;
 ```
 
@@ -357,16 +357,16 @@ Extend được viết bên trong phần khai báo của media sẽ chỉ có th
 
 ```less
 @media print {
-  .screenClass:extend(.selector) {} // extend inside media
-  .selector { // this will be matched - it is in the same media
+  .screenClass:extend(.selector) {} // extend bên trong media
+  .selector { // trong cùng một media, khớp với lệnh extend
     color: black;
   }
 }
-.selector { // ruleset on top of style sheet - extend ignores it
+.selector { // ruleset ở ngoài media - không extend
   color: red;
 }
 @media screen {
-  .selector {  // ruleset inside another media - extend ignores it
+  .selector {  // ruleset ở trong media query khác - không extend
     color: blue;
   }
 }
@@ -377,27 +377,27 @@ sẽ được dịch thành:
 ```css
 @media print {
   .selector,
-  .screenClass { /*  ruleset inside the same media was extended */
+  .screenClass { /*  ruleset trong cùng media sẽ được extend */
     color: black;
   }
 }
-.selector { /* ruleset on top of style sheet was ignored */
+.selector { /* ruleset ở ngoài media sẽ không extend */
   color: red;
 }
 @media screen {
-  .selector { /* ruleset inside another media was ignored */
+  .selector { /* ruleset ở trong media khác sẽ không extend */
     color: blue;
   }
 }
 ```
 
-Extend được viết bên trong phần khai báo của media sẽ không thể sử dụng với các selector của các media lồng bên trong:
+Extend được viết bên trong phần khai báo của media sẽ không thể sử dụng với các selector của các media mức trong:
 
 ```less
 @media screen {
-  .screenClass:extend(.selector) {} // extend inside media
+  .screenClass:extend(.selector) {} // extend bên trong media
   @media (min-width: 1023px) {
-    .selector {  // ruleset inside nested media - extend ignores it
+    .selector {  // ruleset ở media mức trong - không extend
       color: blue;
     }
   }
@@ -408,27 +408,27 @@ Extend được viết bên trong phần khai báo của media sẽ không thể
 
 ```css
 @media screen and (min-width: 1023px) {
-  .selector { /* ruleset inside another nested media was ignored */
+  .selector { /* ruleset ở media mức trong - không extend */
     color: blue;
   }
 }
 ```
 
-Extend sẽ kết hợp với toàn bộ các selector tìm kiếm được bao gồm cả các selector nằm bên trong media lồng bên trong:
+Extend sẽ kết hợp với toàn bộ các selector tìm kiếm được bao gồm cả các selector nằm bên trong media mức trong:
 
 ```less
 @media screen {
-  .selector {  /* ruleset inside nested media - top level extend works */
+  .selector {  /* ruleset ở media mức trong - khớp với extend ở mức ngoài cùng */
     color: blue;
   }
   @media (min-width: 1023px) {
-    .selector {  /* ruleset inside nested media - top level extend works */
+    .selector {  /* ruleset ở media mức trong - khớp với extend ở mức ngoài cùng */
       color: blue;
     }
   }
 }
 
-.topLevel:extend(.selector) {} /* top level extend matches everything */
+.topLevel:extend(.selector) {} /* extend mức ngoài cùng khớp với tất cả các selector trên */
 ```
 
 sẽ được dịch thành:
@@ -436,13 +436,13 @@ sẽ được dịch thành:
 ```css
 @media screen {
   .selector,
-  .topLevel { /* ruleset inside media was extended */
+  .topLevel { /* ruleset trong media được extend */
     color: blue;
   }
 }
 @media screen and (min-width: 1023px) {
   .selector,
-  .topLevel { /* ruleset inside nested media was extended */
+  .topLevel { /* ruleset ở media mức trong được extend */
     color: blue;
   }
 }
@@ -457,7 +457,7 @@ Ví dụ:
 ```less
 .alert-info,
 .widget {
-  /* declarations */
+  /* khai báo */
 }
 
 .alert:extend(.alert-info, .widget) {}
@@ -469,7 +469,7 @@ sẽ được dịch thành:
 .widget,
 .alert,
 .alert {
-  /* declarations */
+  /* khai báo */
 }
 ```
 
@@ -584,9 +584,9 @@ Ví dụ:
 
 ```less
 li.list > a {
-  // list styles
+  // style cho list
 }
 button.list-style {
-  &:extend(li.list > a); // use the same list styles
+  &:extend(li.list > a); // sử dụng lại style cho list vừa khai báo ở trên
 }
 ```

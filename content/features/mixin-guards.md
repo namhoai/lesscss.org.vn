@@ -51,7 +51,7 @@ Các giá trị khác ngoài `true` đều là phủ định:
 
 ```less
 .class {
-  .truth(40); // Will not match any of the above definitions.
+  .truth(40); // Không khớp với khai báo nào ở trên
 }
 ```
 
@@ -120,5 +120,5 @@ _(**FIXME**)_ Additionally, the `default` function may be used to make a mixin m
 
 ```less
 .mixin (@a) when (@a > 0) { ...  }
-.mixin (@a) when (default()) { ... } // matches only if first mixin does not, i.e. when @a <= 0
+.mixin (@a) when (default()) { ... } // chỉ khớp khi mixin đầu tiên không khớp, ví dụ khi @a <= 0
 ```

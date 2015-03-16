@@ -187,7 +187,7 @@ Cách sử dụng function khá rõ ràng. Ví dụ sau đây sử dụng phần
 @width: 0.5;
 
 .class {
-  width: percentage(@width); // returns `50%`
+  width: percentage(@width); // trả về `50%`
   color: saturate(@base, 5%);
   background-color: spin(lighten(@base, 25%), 8);
 }
@@ -264,11 +264,11 @@ Các biến số và mixin không nhất thiết phải được khai báo trư�
 Cả chú thích dạng block và dạng inline đều được sử dụng:
 
 ```less
-/* One hell of a block
-style comment! */
+/* Đây là một chú thích
+rất dài dạng block (nhiều dòng)! */
 @var: red;
 
-// Get in line!
+// Đây là chú thích một dòng!
 @var: white;
 ```
 

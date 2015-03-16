@@ -6,12 +6,12 @@ Example:
 
 ```less
 .loop(@counter) when (@counter > 0) {
-  .loop((@counter - 1));    // next iteration
-  width: (10px * @counter); // code for each iteration
+  .loop((@counter - 1));    // gọi đến lần lặp tiếp theo
+  width: (10px * @counter); // code cho mỗi lần lặp
 }
 
 div {
-  .loop(5); // launch the loop
+  .loop(5); // bắt đầu vòng lặp
 }
 ```
 

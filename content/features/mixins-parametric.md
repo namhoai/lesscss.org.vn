@@ -169,20 +169,21 @@ Kết quả:
 
 Bạn có thể sử dụng `...` nếu bạn muốn mixin của bạn nhận một số lượng tham số bất kỳ. Sử dunjg `...` sau một tên biến sẽ gán các tham số truyền vào vào biến đó.
 
+!@# [19m]
 ```less
-.mixin(...) {        // matches 0-N arguments
-.mixin() {           // matches exactly 0 arguments
-.mixin(@a: 1) {      // matches 0-1 arguments
-.mixin(@a: 1; ...) { // matches 0-N arguments
-.mixin(@a; ...) {    // matches 1-N arguments
+.mixin(...) {        // khớp với lệnh gọi có 0-N tham số
+.mixin() {           // khớp với lệnh gọi không có tham số
+.mixin(@a: 1) {      // khớp với lệnh gọi có 0-1 tham số
+.mixin(@a: 1; ...) { // khớp với lệnh gọi có 0-N tham số
+.mixin(@a; ...) {    // khớp với lệnh gọi có 1-N tham số
 ```
 
 Ngoài ra:
 
 ```less
 .mixin(@a; @rest...) {
-   // @rest is bound to arguments after @a
-   // @arguments is bound to all arguments
+   // các tham số sau @a được gắn vào biến @rest
+   // biến @arguments giữ tất cả các tham số
 }
 ```
 

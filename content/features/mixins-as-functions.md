@@ -36,8 +36,8 @@ Ví dụ:
 }
 
 div {
-  .average(16px, 50px); // "call" the mixin
-  padding: @average;    // use its "return" value
+  .average(16px, 50px); // "gọi" mixin
+  padding: @average;    // sử dụng giá trị "trả về"
 }
 ```
 
@@ -62,7 +62,7 @@ Các biến khai báo trực tiếp trong phạm vi gọi không thể bị đè
   .mixin(); 
 }
 
-@size: globaly-defined-value; // callers parent scope - no protection
+@size: globaly-defined-value; // biến ở phạm vi cha - có thể bị đề
 ````
 
 Kết quả:
@@ -74,15 +74,15 @@ Kết quả:
 
 Cuối cùng, mixin khai báo trong mixin cũng hoạt động như biến trả về:
 ````less
-.unlock(@value) { // outer mixin
-  .doSomething() { // nested mixin
+.unlock(@value) { // mixin bọc ngoài
+  .doSomething() { // mixin lồng trong
     declaration: @value;
   }
 }
 
 #namespace {
-  .unlock(5); // unlock doSomething mixin
-  .doSomething(); //nested mixin was copied here and is usable 
+  .unlock(5); // mở khóa doSomething mixin
+  .doSomething(); // các mixin lồng trong được copy vào đây và có thể sử dụng
 }
 ````
 

@@ -21,10 +21,10 @@ Câu lệnh `@import` sẽ được Less diễn giải khác nhau tùy theo đu�
 Ví dụ:
 
 ```less
-@import "foo";      // foo.less is imported
-@import "foo.less"; // foo.less is imported
-@import "foo.php";  // foo.php imported as a less file
-@import "foo.css";  // statement left in place, as-is
+@import "foo";      // nhập foo.less
+@import "foo.less"; // nhập foo.less
+@import "foo.php";  // nhập foo.php và dịch như file less
+@import "foo.css";  // để nguyên, không dịch
 ```
 
 Các tùy chọn sau có thể được sử dụng để thay đổi hành vi mặc định trên.
@@ -129,7 +129,7 @@ Ví dụ:
 
 ```less
 @import (once) "foo.less";
-@import (once) "foo.less"; // this statement will be ignored
+@import (once) "foo.less"; // lệnh nhập này sẽ bị bỏ qua
 ```
 
 

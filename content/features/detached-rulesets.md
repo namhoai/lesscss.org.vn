@@ -6,10 +6,10 @@ Ruleset tách rời là một nhóm các thuộc tính css, các ruleset lồng,
 
 Ví dụ đơn giản:
 ````less
-// declare detached ruleset
+// khai báo ruleset tách rời
 @detached-ruleset: { background: red; };
 
-// use detached ruleset
+// sử dụng ruleset tách rời
 .top {
     @detached-ruleset(); 
 }
@@ -96,13 +96,13 @@ Lệnh gọi ruleset tách rời có thể mở (trả về) tất cả các mix
 
 Mixin trả về:
 ````less
-// detached ruleset with a mixin
+// ruleset tách rời với mixin
 @detached-ruleset: { 
     .mixin() {
         color:blue;
     }
 };
-// call detached ruleset
+// gọi đến ruleset tách rời
 .caller {
     @detached-ruleset(); 
     .mixin();
@@ -119,10 +119,10 @@ Kết quả:
 Biến private:
 ````less
 detached-ruleset: { 
-    @color:blue; // this variable is private
+    @color:blue; // biến chỉ có phạm vi trong ruleset
 };
 .caller {
-    color: @color; // syntax error
+    color: @color; // lỗi cú pháp, biến @color không tồn tại
 }
 ````
 
@@ -138,15 +138,15 @@ Ruleset tách rồi nhìn thấy các biến và mixin của selector gọi nó:
 
 ````less
 @detached-ruleset: {
-  caller-variable: @callerVariable; // variable is undefined here
-  .callerMixin(); // mixin is undefined here
+  caller-variable: @callerVariable; // bieens không tồn tại
+  .callerMixin(); // mixin không tồn tại 
 };
 
 selector {
-  // use detached ruleset
+  // sử dụng ruleset tách rời
   @detached-ruleset(); 
 
-  // define variable and mixin needed inside the detached ruleset
+  // khai báo biến và mixin cần được sử dụng trong ruleset tách rời
   @callerVariable: value;
   .callerMixin() {
     variable: declaration;
@@ -166,14 +166,15 @@ Biến và mixin có thể truy cập được từ nơi khai báo được ưu 
 ````less
 @variable: global;
 @detached-ruleset: {
-  // will use global variable, because it is accessible
-  // from detached-ruleset definition
+  // sẽ sử dụng biến toàn cục (giá trị global)
+  // do biến này có thể truy cập được từ
+  // nơi khai báo ruleset tách rời
   variable: @variable; 
 };
 
 selector {
   @detached-ruleset();
-  @variable: value; // variable defined in caller - will be ignored
+  @variable: value; // giá trị được khai báo ở nơi gọi sẽ bị bỏ qua
 }
 ````
 
@@ -191,8 +192,8 @@ Một tập luận không có quyền truy cập tại phạm vi khi chỉ đư�
 .one {
   @one: visible;
   .two {
-    @detached-2: @detached-1; // copying/renaming ruleset 
-    @two: visible; // ruleset can not see this variable
+    @detached-2: @detached-1; // copy/đổi tên ruleset
+    @two: visible; // ruleset không thể thấy biến này
   }
 }
 
@@ -212,17 +213,17 @@ Một ruleset tách rời sẽ được thêm quyền truy cập khi được m�
 ````less
 #space {
   .importer1() {
-    @detached: { scope-detached: @variable; }; // define detached ruleset
+    @detached: { scope-detached: @variable; }; // khai báo ruleset tách rời
   }
 }
 
 .importer2() {
-  @variable: value; // unlocked detached ruleset CAN see this variable
-  #space > .importer1(); // unlock/import detached ruleset
+  @variable: value; // ruleset tách rời đã được mở khóa CÓ THỂ nhìn thấy biến này
+  #space > .importer1(); // mở khóa/nhập ruleset tách rời
 }
 
 .usePlace {
-  .importer2(); // unlock/import detached ruleset second time
+  .importer2(); // mở khóa/nhập ruleset tách rời
    @detached();
 }
 ````

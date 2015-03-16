@@ -29,7 +29,8 @@ Kết quả:
 Lưu ý rằng để gọi mixin không bắt buộc phải có dấu ngoặc.
 
 ```less
-.a();   //these lines do the same thing
+// hai cách gọi sau là như nhau
+.a();
 .a;
 ```
 

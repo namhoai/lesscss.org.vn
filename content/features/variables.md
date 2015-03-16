@@ -22,11 +22,11 @@ a,
 Biến số giúp bạn dễ dàng kiểm soát các giá trị này, từ đó giúp cho mã nguồn của bạn dễ bảo trì hơn:
 
 ```less
-// Variables
-@link-color:        #428bca; // sea blue
+// Khai báo biến
+@link-color:        #428bca; // xanh nước biển
 @link-color-hover:  darken(@link-color, 10%);
 
-// Usage
+// Sử dụng
 a,
 .link {
   color: @link-color;
@@ -50,10 +50,10 @@ Ví dụ bên trên chú trọng vào việc sử dụng biến số để kiể
 Phiên bản: 1.4.0
 
 ```less
-// Variables
+// Khai báo biến
 @mySelector: banner;
 
-// Usage
+// Sử dụng
 .@{mySelector} {
   font-weight: bold;
   line-height: 40px;
@@ -73,10 +73,10 @@ Phiên bản: 1.4.0
 ### URL
 
 ```less
-// Variables
+// Khai báo biến
 @images: "../img";
 
-// Usage
+// Sử dụng
 body {
   color: #444;
   background: url("@{images}/white-sand.png");
@@ -94,10 +94,10 @@ Lưu ý rằng trong các phiên bản cũ hơn phiên bản v2.0.0, chỉ có c
 Ví dụ:
 
 ```less
-// Variables
+// Khai báo biến
 @themes: "../../src/themes";
 
-// Usage
+// Sử dụng
 @import "@{themes}/tidal-wave.less";
 ```
 
@@ -206,11 +206,11 @@ Sẽ được dịch thành:
 Ví dụ:
 
 ```less
-// library
+// Giả sử đoạn code này được khai báo trong thư viện
 @base-color: green;
 @dark-color: darken(@base-color, 10%);
 
-// use of library
+// Và đây là đoạn code khi sử dụng thư viện trên
 @import "library.less";
 @base-color: red;
 ```
