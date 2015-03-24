@@ -174,11 +174,11 @@
 <li><a href="#frameworks-using-less">C&#xE1;c frameworks s&#x1EED; d&#x1EE5;ng Less</a><ul class="nav"><li><a href="#frameworks-using-less-c-c-framework-v-th-nh-ph-n-ui-theme">C&#xE1;c Framework v&#xE0; th&#xE0;nh ph&#x1EA7;n UI/Theme</a></li>
 <li><a href="#frameworks-using-less-c-c-h-th-ng-l-i">C&#xE1;c h&#x1EC7; th&#x1ED1;ng l&#x1B0;&#x1EDB;i</a></li>
 <li><a href="#frameworks-using-less-c-c-th-vi-n-kh-c">C&#xE1;c th&#x1B0; vi&#x1EC7;n kh&#xE1;c</a></li></ul></li>
-<li><a href="#developing-less">Ph&#xE1;t tri&#x1EC3;n Less</a><ul class="nav"><li><a href="#developing-less-install-these-tools">Install these tools</a></li>
-<li><a href="#developing-less-usage">Usage</a></li>
-<li><a href="#developing-less-how-to-run-less-in-other-environments">How to run less in other environments</a></li>
-<li><a href="#developing-less-guide">Guide</a></li>
-<li><a href="#developing-less-books">Books</a></li></ul></li></ul></div>
+<li><a href="#developing-less">Ph&#xE1;t tri&#x1EC3;n Less</a><ul class="nav"><li><a href="#developing-less-c-i-t-nh-ng-c-ng-c-sau">C&#xE0;i &#x111;&#x1EB7;t nh&#x1EEF;ng c&#xF4;ng c&#x1EE5; sau</a></li>
+<li><a href="#developing-less-s-d-ng">S&#x1EED; d&#x1EE5;ng</a></li>
+<li><a href="#developing-less-ch-y-less-tr-n-c-c-m-i-tr-ng-kh-c">Ch&#x1EA1;y less tr&#xEA;n c&#xE1;c m&#xF4;i tr&#x1B0;&#x1EDD;ng kh&#xE1;c</a></li>
+<li><a href="#developing-less-h-ng-d-n">H&#x1B0;&#x1EDB;ng d&#x1EAB;n</a></li>
+<li><a href="#developing-less-s-ch">S&#xE1;ch</a></li></ul></li></ul></div>
           </div>
         </div>
         <div class="col-md-9" role="main">
@@ -1646,49 +1646,44 @@ T&#x1EA3;i v&#x1EC1; t&#x1EC7;p tin <a href="http://wro4j.googlecode.com/files/w
        
 
 
-<p>Thanks for thinking about contributing. Please read the <a href="https://github.com/less/less.js/blob/master/CONTRIBUTING.md">contributing instructions</a> carefully to avoid wasted work.</p>
-<h2 class="docs-heading">Install these tools<span class="anchor-target" id="developing-less-install-these-tools"></span>
-<a href="#developing-less-install-these-tools" name="developing-less-install-these-tools" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>C&#x1EA3;m &#x1A1;n b&#x1EA1;n v&#xEC; &#x111;&#xE3; ngh&#x129; &#x111;&#x1EBF;n chuy&#x1EC7;n g&#xF3;p s&#x1EE9;c x&#xE2;y d&#x1EF1;ng less. Vui l&#xF2;ng &#x111;&#x1ECD;c <a href="https://github.com/less/less.js/blob/master/CONTRIBUTING.md">h&#x1B0;&#x1EDB;ng d&#x1EAB;n &#x111;&#xF3;ng g&#xF3;p</a> c&#x1EA9;n th&#x1EAD;n &#x111;&#x1EC3; tr&#xE1;nh l&#xE3;ng ph&#xED; c&#xF4;ng s&#x1EE9;c.</p>
+<h2 class="docs-heading">C&#xE0;i &#x111;&#x1EB7;t nh&#x1EEF;ng c&#xF4;ng c&#x1EE5; sau<span class="anchor-target" id="developing-less-c-i-t-nh-ng-c-ng-c-sau"></span>
+<a href="#developing-less-c-i-t-nh-ng-c-ng-c-sau" name="developing-less-c-i-t-nh-ng-c-ng-c-sau" class="anchor glyphicon glyphicon-link"></a></h2>
 <ul>
 <li><strong>node</strong> - <a href="http://nodejs.org/">http://nodejs.org/</a></li>
 <li><strong>phantomjs</strong> - <a href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a></li>
 </ul>
-<p>make sure the paths are setup. If you start your favourite command line and type <code>node -v</code> you should see the node compiler. If you run <code>phantomjs -v</code> you should see the phantomjs version number.</p>
+<p>h&#xE3;y g&#xF5; l&#x1EC7;nh <code>node -v</code> v&#xE0; <code>phantomjs -v</code> t&#x1EEB; m&#xF4;i tr&#x1B0;&#x1EDD;ng d&#xF2;ng l&#x1EC7;nh &#x111;&#x1EC3; &#x111;&#x1EA3;m b&#x1EA3;o r&#x1EB1;ng b&#x1EA1;n &#x111;&#xE3; c&#xE0;i &#x111;&#x1EB7;t &#x111;&#xFA;ng c&#xE1;c &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n.</p>
 <ul>
-<li>clone your less.js repository locally</li>
-<li>navigate to your local less.js repository and run <code>npm install</code> this installs less&apos; npm dependencies.</li>
-<li>If you haven&apos;t used grunt before, run <code>npm install grunt-cli -g</code> - this allows you to use the &quot;grunt&quot; command anywhere</li>
+<li>clone repo less.js v&#x1EC1; m&#xE1;y</li>
+<li>t&#x1EA1;i repo less.js t&#x1EA1;i m&#xE1;y b&#x1EA1;n, g&#xF5; l&#x1EC7;nh <code>npm install</code> &#x111;&#x1EC3; c&#xE0;i &#x111;&#x1EB7;t c&#xE1;c g&#xF3;i c&#x1EA7;n thi&#x1EBF;t</li>
+<li>n&#x1EBF;u tr&#x1B0;&#x1EDB;c &#x111;&#xE2;y nh&#x1B0; b&#x1EA1;n ch&#x1B0;a s&#x1EED; d&#x1EE5;ng grunt, b&#x1EA1;n c&#x1EA7;n c&#xE0;i &quot;grunt&quot; b&#x1EB1;ng l&#x1EC7;nh <code>npm instal grunt-cli -g</code></li>
 </ul>
-<h2 class="docs-heading">Usage<span class="anchor-target" id="developing-less-usage"></span>
-<a href="#developing-less-usage" name="developing-less-usage" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>If you go to the root of the less repository you should be able to do <code>grunt test</code> - this should run all the tests. For the browser specific only, run <code>grunt browsertest</code> If you want to try out the current version of less against a file, from here do <code>node bin/lessc path/to/file.less</code></p>
-<p>To debug the browser tests, run <code>grunt browsertest-server</code> then go to <a href="http://localhost:8088/tmp/browser/">http://localhost:8088/tmp/browser/</a> to see the test runner pages.</p>
-<p>Optional: To get the current version of the less compiler do <code>npm -g install less</code> - npm is the node package manager and &quot;-g&quot; installs it to be available globally.</p>
-<p>You should now be able to do <code>lessc file.less</code> and if there is an appropriate file.less then it will be compiled and output to the stdout. You can then compare it to running localy (<code>node bin/lessc file.less</code>).</p>
-<p>Other grunt commands</p>
+<h2 class="docs-heading">S&#x1EED; d&#x1EE5;ng<span class="anchor-target" id="developing-less-s-d-ng"></span>
+<a href="#developing-less-s-d-ng" name="developing-less-s-d-ng" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>T&#x1EA1;i th&#x1B0; m&#x1EE5;c g&#x1ED1;c c&#x1EE7;a repo less t&#x1EA1;i m&#xE1;y b&#x1EA1;n, g&#xF5; l&#x1EC7;nh <code>grunt test</code> &#x111;&#x1EC3; ch&#x1EA1;y t&#x1EA5;t c&#x1EA3; c&#xE1;c test. G&#xF5; <code>grunt browsertest</code> &#x111;&#x1EC3; ch&#x1EA1;y ri&#xEA;ng nh&#x1EEF;ng test li&#xEA;n quan &#x111;&#x1EBF;n tr&#xEC;nh duy&#x1EC7;t. G&#xF5; l&#x1EC7;nh <code>node bin/lessc duong/dan/den/file.less</code> &#x111;&#x1EC3; th&#x1EED; d&#x1ECB;ch m&#x1ED9;t file b&#x1EB1;ng phi&#xEA;n b&#x1EA3;n less hi&#x1EC7;n t&#x1EA1;i.</p>
+<p>&#x110;&#x1EC3; debug c&#xE1;c test li&#xEA;n quan &#x111;&#x1EBF;n tr&#xEC;nh duy&#x1EC7;t, g&#xF5; l&#x1EC7;nh <code>grunt browsertest-server</code>, sau &#x111;&#xF3; d&#xF9;ng tr&#xEC;nh duy&#x1EC7;t m&#x1EDF; <a href="http://localhost:8088/tmp/browser/">http://localhost:8088/tmp/browser/</a>.</p>
+<p>Kh&#xF4;ng b&#x1EAF;t bu&#x1ED9;c: G&#xF5; l&#x1EC7;nh <code>npm -g install less</code> &#x111;&#x1EC3; c&#xE0;i phi&#xEA;n b&#x1EA3;n less m&#x1EDB;i nh&#x1EA5;t.</p>
+<p>Sau khi c&#xE0;i less, b&#x1EA1;n c&#xF3; th&#x1EC3; g&#xF5; <code>lessc file.less</code> &#x111;&#x1EC3; d&#x1ECB;ch file.less v&#xE0; in k&#x1EBF;t qu&#x1EA3; ra stdout, t&#x1EEB; &#x111;&#xF3; so s&#xE1;nh k&#x1EBF;t qu&#x1EA3; v&#x1EDB;i phi&#xEA;n b&#x1EA3;n ch&#x1EA1;y &#x1EDF; m&#xE1;y b&#x1EA1;n (<code>node bin/lessc file.less</code>).</p>
+<p>C&#xE1;c l&#x1EC7;nh grunt kh&#xE1;c</p>
 <ul>
-<li><code>grunt benchmark</code> - run our benchmark tests to get some numbers on performance</li>
-<li><code>grunt stable</code> to create a new release</li>
-<li><code>grunt readme</code> to generate a new readme.md in the root directory (after each release)</li>
+<li><code>grunt benchmark</code> - ch&#x1EA1;y c&#xE1;c test &#x111;o hi&#x1EC7;u n&#x103;ng</li>
+<li><code>grunt stable</code> - t&#x1EA1;o b&#x1EA3;n release m&#x1EDB;i</li>
+<li><code>grunt readme</code> - t&#x1EA1;o file readme.md m&#x1EDB;i t&#x1EA1;i th&#x1B0; m&#x1EE5;c g&#x1ED1;c (sau khi release)</li>
 </ul>
-<h2 class="docs-heading">How to run less in other environments<span class="anchor-target" id="developing-less-how-to-run-less-in-other-environments"></span>
-<a href="#developing-less-how-to-run-less-in-other-environments" name="developing-less-how-to-run-less-in-other-environments" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>If you look in the libs folder you will see <code>less</code>, <code>less-node</code>, <code>less-browser</code>. The less folder is pure javascript with no environment
-specifics. if you require <code>less/libs/less</code>, you get a function that takes an environment object and an array of file managers. The file
-managers are the same file managers that can also be written as a plugin.</p>
+<h2 class="docs-heading">Ch&#x1EA1;y less tr&#xEA;n c&#xE1;c m&#xF4;i tr&#x1B0;&#x1EDD;ng kh&#xE1;c<span class="anchor-target" id="developing-less-ch-y-less-tr-n-c-c-m-i-tr-ng-kh-c"></span>
+<a href="#developing-less-ch-y-less-tr-n-c-c-m-i-tr-ng-kh-c" name="developing-less-ch-y-less-tr-n-c-c-m-i-tr-ng-kh-c" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>Trong folder libs, b&#x1EA1;n s&#x1EBD; th&#x1EA5;y c&#xE1;c folder <code>less</code>, <code>less-node</code>, <code>less-browser</code>. Folder less ch&#x1EC9; ch&#x1EE9;a javascript m&#xE3; ngu&#x1ED3;n v&#xE0; kh&#xF4;ng ph&#x1EE5; thu&#x1ED9;c v&#xE0;o m&#xF4;i tr&#x1B0;&#x1EDD;ng. Require <code>less/libs/less</code> s&#x1EBD; tr&#x1EA3; v&#x1EC1; m&#x1ED9;t function nh&#x1EAD;n v&#xE0;o tham s&#x1ED1; l&#xE0; bi&#x1EBF;n m&#xF4;i tr&#x1B0;&#x1EDD;ng v&#xE0; m&#x1EA3;ng c&#xE1;c tr&#xEC;nh qu&#x1EA3;n l&#xFD; file. C&#xE1;c tr&#xEC;nh qu&#x1EA3;n l&#xFD; file n&#xE0;y c&#xF3; th&#x1EC3; l&#xE0; c&#xE1;c plugin.</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> createLess = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;less/libs/less&quot;</span>),
     myLess = createLess(environment, [myFileManager]);
 </code></pre>
-<p>The environment api is specified in <a href="https://github.com/less/less.js/blob/master/lib/less/environment/environment-api.js">less/libs/less/environment/environment-api.js</a>
-and the file manager api is specified in <a href="https://github.com/less/less.js/blob/master/lib/less/environment/file-manager-api.js">less/libs/less/environment/file-manager-api.js</a>.</p>
-<p>For file managers we highly recommend setting the prototype as a new AbstractFileManager - this allows you to override what is needed and allows us
-to implement new functions without breaking existing file managers. For an example of file managers, see the 2 node implementations, the browser implementation or
-the npm import plugin implementation.</p>
-<h2 class="docs-heading">Guide<span class="anchor-target" id="developing-less-guide"></span>
-<a href="#developing-less-guide" name="developing-less-guide" class="anchor glyphicon glyphicon-link"></a></h2>
-<p>If you look at <a href="http://www.gliffy.com/go/publish/4784259">http://www.gliffy.com/go/publish/4784259</a>,  This is an overview diagram of how less works. Warning! It needs updating with v2 changes.</p>
-<h2 class="docs-heading">Books<span class="anchor-target" id="developing-less-books"></span>
-<a href="#developing-less-books" name="developing-less-books" class="anchor glyphicon glyphicon-link"></a></h2>
+<p>API m&#xF4;i tr&#x1B0;&#x1EDD;ng &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t trong <a href="https://github.com/less/less.js/blob/master/lib/less/environment/environment-api.js">less/libs/less/environment/environment-api.js</a> v&#xE0; API tr&#xEC;nh qu&#x1EA3;n l&#xFD; file &#x111;&#x1B0;&#x1EE3;c vi&#x1EBF;t trong <a href="https://github.com/less/less.js/blob/master/lib/less/environment/file-manager-api.js">less/libs/less/environment/file-manager-api.js</a>.</p>
+<p>V&#x1EDB;i c&#xE1;c tr&#xEC;nh qu&#x1EA3;n l&#xFD; file, ch&#xFA;ng t&#xF4;i khuy&#x1EBF;n ngh&#x1ECB; vi&#x1EC7;c s&#x1EED; d&#x1EE5;ng new AbstractFileManager l&#xE0;m prototype. V&#x1EDB;i c&#xE1;ch l&#xE0;m &#x111;&#xF3;, b&#x1EA1;n c&#xF3; th&#x1EC3; t&#xF9;y &#xFD; override, v&#xE0; ch&#xFA;ng t&#xF4;i c&#xF3; th&#x1EC3; th&#xEA;m function m&#x1EDB;i m&#xE0; kh&#xF4;ng l&#xE0;m h&#x1ECF;ng c&#xE1;c tr&#xEC;nh qu&#x1EA3;n l&#xFD; file &#x111;&#xE3; c&#xF3;. &#x110;&#x1EC3; c&#xF3; c&#xE1;i nh&#xEC;n th&#x1EF1;c t&#x1EBF; v&#x1EC1; tr&#xEC;nh qu&#x1EA3;n l&#xFD; file, b&#x1EA1;n c&#xF3; th&#x1EC3; xem 2 b&#x1EA3;n node, b&#x1EA3;n cho tr&#xEC;nh duy&#x1EC7;t ho&#x1EB7;c b&#x1EA3;n cho plugin import npm.</p>
+<h2 class="docs-heading">H&#x1B0;&#x1EDB;ng d&#x1EAB;n<span class="anchor-target" id="developing-less-h-ng-d-n"></span>
+<a href="#developing-less-h-ng-d-n" name="developing-less-h-ng-d-n" class="anchor glyphicon glyphicon-link"></a></h2>
+<p><a href="http://www.gliffy.com/go/publish/4784259">http://www.gliffy.com/go/publish/4784259</a>, &#x111;&#xE2;y l&#xE0; s&#x1A1; &#x111;&#x1ED3; bi&#x1EC3;u di&#x1EC5;n thi&#x1EBF;t k&#x1EBF; c&#x1EE7;a less. L&#x1B0;u &#xFD;! S&#x1A1; &#x111;&#x1ED3; n&#xE0;y c&#x1EA7;n &#x111;&#x1B0;&#x1EE3;c c&#x1EAD;p nh&#x1EAD;t v&#x1EDB;i nh&#x1EEF;ng thay &#x111;&#x1ED5;i &#x1EDF; v2.</p>
+<h2 class="docs-heading">S&#xE1;ch<span class="anchor-target" id="developing-less-s-ch"></span>
+<a href="#developing-less-s-ch" name="developing-less-s-ch" class="anchor glyphicon glyphicon-link"></a></h2>
 <ul>
 <li><a href="http://www.packtpub.com/less-web-development-essentials/book">Less Web Development Essentials</a>, by Bass Jobsen, Foreword by Alexis Sellier</li>
 <li><a href="https://www.packtpub.com/web-development/less-web-development-cookbook">Less Web Development Cookbook</a>, by Bass Jobsen and Amin Meyghani, Foreword by Luke Page</li>
