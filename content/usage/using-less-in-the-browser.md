@@ -1,30 +1,29 @@
 ---
-title: Using Less in the Browser
+title: Sử dụng Less trong trình duỵệt
 ---
 
-We recommend using less in the browser only for development or when you need to dynamically compile less and cannot do it serverside.
-This is because less is a large javascript file and compiling less before the user can see the page means a delay for the user. In addition,
-consider that mobile devices will compile slower. For development consider if using a watcher and live reload (e.g. with grunt or gulp) would
-be better suited.
+Chúng tôi khuyên bạn chỉ nên sử dụng less trong trình duyệt khi phát triển hoặc khi bạn cần dịch less động và không thể làm thế trên server.
+Bởi vì less là một file có kích thước khá lớn và quá trình dịch less trước khi người dùng có thể nhìn thấy kết quả sẽ tốn rất nhiều thời gian. Thêm vào đó,
+quá trình dịch trên các thiết bị di động còn chậm hơn thế nữa. Khi phát triển, bạn hãy cân nhắc sử dụng công cụ theo dõi (watcher) và live reload (có thể chạy bằng grunt hoặc gulp) sẽ phù hợp hơn.
 
-To use less in the browser, you firstly need to include the less script.
+Để sử dụng less trong trình duyệt, điều đầu tiên là bạn phải tích hợp mã less.
 
 ```html
-<!-- Here: include any less plugin scripts, any required browser shims and optionally set less = any options  -->
+<!-- Trong trường hợp này, bạn có thẻ tích hợp bất kỳ plugin less nào, bất kỳ shim của các trình duyệt yêu cầu và tùy ý thiết lập less = bất kỳ tùy chọn nào  -->
 <script src="less.js"></script>
 ```
 
-This will find any less style tags on the page
+Đoạn mã sau đây sẽ tìm kiếm bất kỳ thẻ less style nào trên trang này:
 
 ```html
 <link rel="stylesheet/less" type="text/css" href="styles.less" />
 ```
 
-and create style tags with the compiled css synchronously.
+và tạo ra các thẻ style với mã css đã được dịch một cách đồng bộ.
 
-### Setting options
+### Các tùy chọn thiết lập
 
-You can set options either programmatically, by setting them on a less object before the script tag - this then effects all initial link tags and programmatic usage of less.
+Bạn cũng có thể thiết lập các tùy chọn một cách lập trình hóa (programmatically), bằng cách thiết lập chúng trên một đối tượng less trước thẻ script sẽ tác động đến toàn bộ các thẻ link khởi tạo và việc sử dụng less một cách lập trình hóa (programmatic).
 
 ```html
 <script>
@@ -35,7 +34,7 @@ You can set options either programmatically, by setting them on a less object be
 <script src="less.js"></script>
 ```
 
-The other way is to specify the options on the script tag, e.g.
+Ngoài ra, có một cách khác nữa là chỉ rõ các tùy chọn trên các thẻ script. Ví dụ:
 
 ```html
 <script>
@@ -46,21 +45,21 @@ The other way is to specify the options on the script tag, e.g.
 <script src="less.js" data-env="development"></script>
 ```
 
-And you can also do this on link tags to override certain settings (some less settings like verbose are global and can not be overridden).
+Và bạn cũng có thể làm như thế này đối với các thẻ link để ghi đè các các thiết lập (một số các thiết lập của less toàn cục như verbose không thể bị ghi đè).
 
 ```html
 <link data-dump-line-numbers="all" data-global-vars='{ "myvar": "#ddffee", "mystr": "\"quoted\"" }' rel="stylesheet/less" type="text/css" href="less/styles.less">
 ```
 
-The important points for attribute options are..
+Một số điểm quan trọng đối với các tùy chọn thuộc tính gồm có..
 
- - importance level: window.less < script tag < link tag
- - data attributes names are not camelCase (e.g logLevel -> data-log-level)
- - link tag options are just render time options (e.g verbose, logLevel ... are not supported)
- - non-string data attributes values should be JSON valid (e.g use double quotes instead of single quotes like in `data-global-vars='{ "myvar": "#ddffee", "mystr": "\"quoted\"" }'`)
+ - Mức độ quan trọng: window.less < script tag < link tag
+ - Tên của các thuộc tính dữ liệu không phải ở dạng camelCase (Ví dụ: logLevel -> data-log-level)
+ - Các tùy chọn thẻ link chỉ sinh ra các tùy chọn thời gian (Ví dụ: verbose, logLevel ... không được hỗ trợ)
+ - Giá trị của các thuộc tính dữ liệu không phải là chuỗi phải ở dạng đúng của JSON (Ví dụ: Sử dụng dấu ngoặc kép thay vì ngoặc đơn như sau `data-global-vars='{ "myvar": "#ddffee", "mystr": "\"quoted\"" }'`)
 
-### Watch mode
-To enable Watch mode, option `env` must be set to `development`. Then AFTER the less.js file is included, call `less.watch()`, like this:
+### Chế độ theo dõi (Watch mode)
+Để kích hoạt chế độ theo dõi (Watch mode), tùy chọn `env` phải được thiết lập `development`. Và SAU KHI file less.js được tích hợp, hãy gọi `less.watch()`, như sau:
 
 ```html
 <script>less = { env: 'development'};</script>
@@ -68,10 +67,10 @@ To enable Watch mode, option `env` must be set to `development`. Then AFTER the 
 <script>less.watch();</script>
 ```
 
-Alternatively, you can enable Watch mode temporarily by appending `#!watch` to the URL.
+Ngoài ra, bạn có thể kích hoạt chế độ theo dõi một cách tạm thời bằng cách thêm `#!watch` vào sau URL.
 
-### Modify variables
-Enables run-time modification of Less variables. When called with new values, the Less file is recompiled without reloading. Simple basic usage:
+### Chỉnh sửa biến số
+Kích hoạt tính năng cho phép sửa đổi các biến số Less trong thời gian chạy (run-time). Khi được gọi với một giá trị mới, file Less sẽ được dịch lại mà không cần phải tải lại. Cách sử dụng đơn giản:
 
 ```js
 less.modifyVars({
@@ -80,19 +79,19 @@ less.modifyVars({
 });
 ```
 
-### Debugging
-It is possible to output rules in your CSS which allow tools to locate the source of the rule.
+### Debug
+Bạn có thể sinh ra các rule trong CSS của bạn cho phép các công cụ xác định nguồn của các rule đó.
 
-Either specify the option `dumpLineNumbers` as above or add `!dumpLineNumbers:mediaquery` to the url.
+Ngoài ra, bạn cũng có thể chỉ rõ tùy chọn `dumpLineNumbers` giống như trên hoặc thêm `!dumpLineNumbers:mediaquery` vào url.
 
-You can use the `comments` option with [FireLESS](https://addons.mozilla.org/en-us/firefox/addon/fireless/) and the `mediaquery` option with FireBug/Chrome dev tools (it is identical to the SCSS media query debugging format).
+Bạn có thể sử dụng tùy chọn `comments` với công cụ [FireLESS](https://addons.mozilla.org/en-us/firefox/addon/fireless/) và tùy chọn `mediaquery` option công cụ phát triển FireBug/Chrome (tương tự như dạng debug media query của SCSS).
 
-### Options
+### Các tùy chọn
 
-Set options in a global `less` object **before** loading the less.js script:
+Thiết lập các tùy chọn trên đối tượng `less` toàn cục **trước khi** tải script less.js:
 
 ``` html
-<!-- set options before less.js script -->
+<!-- thiết lập các tùy chọn trước script less.js -->
 <script>
   less = {
     env: "development",
@@ -114,60 +113,59 @@ Set options in a global `less` object **before** loading the less.js script:
 ```
 
 #### async
-Type: `Boolean`
+Kiểu dữ liệu: `Boolean`
+Giá trị mặc định: `false`
 
-Default: `false`
-
-Whether to request the import files with the async option or not. See [fileAsync](#using-less-in-the-browser-fileasync).
+Sử dụng tùy chọn async với request các file import hoặc không. Hãy tham khảo [fileAsync](#using-less-in-the-browser-fileasync).
 
 #### dumpLineNumbers
-Type: `String`
-Options: `''`| `'comments'`|`'mediaquery'`|`'all'`
-Default: `''`
+Kiểu dữ liệu: `String`
+Các giá trị: `''`| `'comments'`|`'mediaquery'`|`'all'`
+Giá trị mặc định: `''`
 
-When set, this adds source line information to the output css file. This helps you debug where a particular rule came from.
+Khi thiết lập, tùy chọn này sẽ thêm thông tin dòng ở file nguồn trong file css đầu ra. Việc này giúp bạn debug được nguồn gốc của một rule nào đó.
 
-The `comments` option is used for outputting user-understandable content, whilst `mediaquery` is for use with a firefox extension which parses the css and extracts the information.
+Giá trị `comments` được sử dụng cho nội dung mà người dùng có thể hiểu được ở đầu ra, trong khi đó giá trị `mediaquery` sử dụng cho các extension của firefox để phân tách mã css và lấy thông tin.
 
-In the future we hope this option to be superseded by sourcemaps.
+Trong tương lai chúng tôi hy vọng tùy chọn này sẽ được thay thế bằng sourcemaps.
 
 #### env
-Type: `String`
-Default: depends on page URL
+Kiểu dữ liệu: `String`
+Giá trị mặc định: phụ thuộc vào URL của trang
 
-Environment to run may be either `development` or `production`.
+Môi trường chạy có thể là `development` hoặc `production`.
 
-In production, your css is cached in local storage and information messages are not output to the console.
+Ở môi trường production, css của bạn được cache trong kho lưu trữ cục bộ và các thông báo không được in ra console.
 
-If the document's URL starts with `file://` or is on your local machine or has a non standard port, it will automatically be set to `development`.
+Nếu như URL của trang bắt đầu bằng `file://` hoặc URL đó ở trên máy tính cá nhân của bạn (local machine) hoặc có cổng kết nối không phải ở dạng chuẩn, giá trị của tùy chọn này sẽ tự động được thiết lập `development`.
 
-e.g.
+Ví dụ:
 ```js
 less = { env: 'production' };
 ```
 
 #### errorReporting
-Type: `String`
+Kiểu dữ liệu: `String`
 
-Options: `html`|`console`|`function`
+Các tùy chọn: `html`|`console`|`function`
 
-Default: `html`
+Giá trị mặc định: `html`
 
-Set the method of error reporting when compilation fails.
+Thiết lập phương thức thông báo lỗi khi quá trình dịch gặp lỗi.
 
 #### fileAsync
-Type: `Boolean`
+Kiểu dữ liệu: `Boolean`
 
-Default: `false`
+Giá trị mặc định: `false`
 
-Whether to request the import asynchronously when in a page with a file protocol.
+Request import một cách không đồng bộ trong một trang với một giao thức file.
 
 #### functions
-Type: `object`
+Kiểu dữ liệu: `object`
 
-User functions, keyed by name.
+Các function của người dùng, được xác định bằng tên.
 
-e.g.
+Ví dụ:
 ```js
 less = {
     functions: {
@@ -178,7 +176,7 @@ less = {
 };
 ```
 
-and it can be used like a native Less function e.g.
+và nó cũng có thể được sử dụng như function thuần túy trong Less. Ví dụ:
 
 ```less
 .my-class {
@@ -187,67 +185,67 @@ and it can be used like a native Less function e.g.
 ```
 
 #### logLevel
-Type: `Number`
+Kiểu dữ liệu: `Number`
 
-Default: 2
+Giá trị mặc định: 2
 
-The amount of logging in the javascript console. Note: If you are in the `production` environment you will not get any logging.
+Số lượng log trong console của javascript. Lưu ý rằng: Nếu bạn đang trong môi trường `production` bạn sẽ không thể thấy được bất kỳ log nào.
 
 ```bash
-2 - Information and errors
-1 - Errors
-0 - Nothing
+2 - Lỗi và nội dung lỗi
+1 - Lỗi (Không có thông tin)
+0 - Không có gì
 ```
 
 #### poll
-Type: `Integer`
+Kiểu dữ liệu: `Integer`
 
-Default: `1000`
+Giá trị mặc định: `1000`
 
-The amount of time (in milliseconds) between polls while in watch mode.
+Lượng thời gian (tính bằng mili giây) giữa những lần poll trong chế độ theo dõi (watch mode).
 
 ### relativeUrls
-Type: `Boolean`
+Kiểu dữ liệu: `Boolean`
 
-Default: `false`
+Giá trị mặc định: `false`
 
-Optionally adjust URLs to be relative. When false, URLs are already relative to the entry less file.
+Tùy ý điều chỉnh URL về dạng tương đối. Nếu giá trị là false thì có nghĩa là URL đang ở dạng tương đối với toàn bộ file less.
 
 #### globalVars
-Type: `Object`
+Kiểu dữ liệu: `Object`
 
-Default: `undefined`
+Giá trị mặc định: `undefined`
 
-List of global variables to be injected into the code. Keys of the object are variables names, values are variables values. Variables of "string" type must explicitly include quotes if needed.
+Danh sách các biến số toàn cục được thêm vào code. Khóa của các đối tượng là tên của các biến số, giá trị của các đối tượng cũng sẽ là giá trị của biến số. Các biến số dạng "chuỗi" phải được thêm quote một cách rõ ràng nếu cần thiết.
 
-E.g.
+Ví dụ:
 
 ```js
 less.globalVars = { myvar: "#ddffee", mystr: "\"quoted\"" };
 ```
 
-This option defines a variable that can be referenced by the file. Effectively the declaration is put at the top of your base Less file, meaning it can be used but it also can be overridden if this variable is defined in the file.
+Tùy chọn này định nghĩa một biến số có thể được tham chiếu đến từ một file. Để hiệu quả nhất, việc khai báo nên đặt ở phía trên cùng của file Less cơ sở, điều đó có nghĩa là nó có thể được sử dụng nhưng cũng có thể bị ghi đè nếu như biến số này được định nghĩa trong file đó.
 
 #### modifyVars
-Type: `Object`
+Kiểu dữ liệu: `Object`
 
-Default: `undefined`
+Giá trị mặc định: `undefined`
 
-Same format as [globalVars](#using-less-in-the-browser-globalvars).
+Có cùng format với [globalVars](#using-less-in-the-browser-globalvars).
 
-As opposed to the [globalVars](#using-less-in-the-browser-globalvars) option, this puts the declaration at the end of your base file, meaning it will override anything defined in your Less file.
+Ngược lại với tùy chọn [globalVars](#using-less-in-the-browser-globalvars), tùy chọn này đặt việc khai báo ở phía dưới cùng của file Less cơ sở, điều đó có nghĩa là nó sẽ ghi đè toàn bộ những lần được định nghĩa trước đó trong file.
 
 #### rootpath
-Type: `String`
+Kiểu dữ liệu: `String`
 
-Default: `false`
+Giá trị mặc định: `false`
 
-A path to add on to the start of every URL resource.
+Một đường dẫn được dùng để thêm vào điểm bắt đầu của các URL resource.
 
 #### useFileCache
-Type: `Boolean`
+Kiểu dữ liệu: `Boolean`
 
-Default: `true` (previously `false` in before v2)
+Giá trị mặc định: `true` (trước đó là `false` trong các phiên bản cũ hơn phiên bản v2)
 
-Whether to use the per session file cache. This caches less files so that you can call modifyVars and it will not retrieve all the less files again.
-If you use the watcher or call refresh with reload set to true, then the cache will be cleared before running.
+Được dùng để chỉ rõ việc có sử dụng session file cache hay không. Tùy chọn này cache các file less để bạn có thể gọi modifyVars và nó sẽ không truy xuất toàn bộ các file less một lần nữa.
+Nếu như bạn sử dụng công cụ theo dõi (watcher) hoặc gọi refresh với tùy chọn reload được thiết lập là true, thì cache sẽ được làm sạch trước khi chạy.
